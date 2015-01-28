@@ -1,0 +1,596 @@
+/* ************              defaults*/
+#controls-holder {
+	display: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+}
+body {
+	background-color: #E9E8E3;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	color: black;
+}
+a {
+	text-decoration: none;
+}
+ul, li {
+	list-style: none;
+}
+h1, h2, h3, h4, h5,h6 {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 600; 
+	text-align: right;
+}
+h1 {
+	font-size: inherit;
+	text-transform: uppercase;
+}
+p {
+	font-size: .15em;
+}
+
+/* ************              classes*/
+.clearfix {
+	clear: both;
+}
+.fixed {
+	position: fixed;
+}
+.fixed-ghost {
+	height: 116px; /*same as fixed div*/
+}
+
+.container {
+	width: 100%;
+}
+.screen-reader-text {
+	left: -9999px;
+	position: absolute;
+	top: -9999px;
+}
+/* ************              base styles*/
+
+/* ************              fonts*/
+/* lato light (100)
+/* lato regular (400)
+/* lato bold (700)
+/* lato black (900)
+/* dosis semibold (600)
+ */
+
+/* *******************************             basic layout*/
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+/* *******************************              header */
+/* ************      logo */
+.logo {
+	display: inline-block;
+	float: left;
+	margin-left: 4.53%; /*62px;*/
+	margin-top: 42px;
+}
+.logo img {
+	width: 146px;
+	height: 99px;
+}
+.logo a {
+	display: block;
+}
+
+/* ************      main menu */
+.header-nav {
+	top: 0;
+	height: 116px;
+	width: 100%;
+	background-color: #E9E8E3;
+	z-index: 1000;
+}
+.main-menu, .collapsed-menu {
+	float: right;
+	margin-right: 80px;
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.main-menu {
+	margin-top: 77px;
+	position: relative;
+}
+.main-menu a {
+	float: left;
+	padding: 3.5px 4px;
+	margin-left: 10px;
+	color: inherit;
+}
+.main-menu a.active-link, .main-menu a:hover {
+	font-weight: 900;
+	border-bottom: solid #DF3F54 3px;
+}
+.collapsed-menu {
+	display: none;
+	margin-top: 47px;
+	height: 32px;
+	width: 20px;
+	position: absolute;
+	right: 0;
+	background: url("../images/menu.png") no-repeat center right;
+	text-indent: -99999px;
+}
+.collapsed-menu:hover {
+	cursor: pointer;
+}
+.main-menu.is-collapsed {
+	margin-top: 47px;
+	display: none;
+}
+.main-menu.is-collapsed a.active-link, .main-menu.is-collapsed a:hover {
+	border-top: solid #DF3F54 3px;
+	border-bottom: none;
+	margin-top: -3.5px;
+}
+/* *********************************              pages*/
+hr {
+	border: 0;
+	height: 3px;
+	width: 18%;
+	margin: 0 auto 3%;
+	clear: both;
+}
+.page {
+/*	padding-right: 68px;*/
+	text-align: right;
+	width: 100%;
+}
+.page.is-active {
+}
+.page header {
+	display: inline-block;
+	width: 95%;
+}
+.page  header > div {
+	display: inline-block;
+	text-align: center;
+}
+.page header span {
+	display: inline-block;
+	float: right;
+}
+.s-header-one {
+	margin-bottom: -7%;
+}
+.s-header-two {
+	clear: both;
+}
+.page .sub-header {
+	text-align: center;
+	float: right;
+}
+.content {
+	margin-right: -68px;
+	text-align: center;
+	padding-top: 10%;
+}
+/* ************              home*/
+.home {
+	padding-top: 22vh;
+	background-color: #E9E8E3;
+}
+.home #smile {	
+	position: relative;
+	left: 15px;
+	height: 0.456em;
+}
+.home header hr {
+	margin-top: -6px;
+	margin-bottom: 16px;
+	color: #272727;
+	background-color: #272727; 
+}
+.home .s-header-one {
+	color: #272727;
+}
+.home .s-header-two {
+	color: #393939;
+}
+.home .sub-header {
+	margin-top: 15px;
+	color: #4A4A4A;
+	float: none;
+	padding-left: 4%;
+}
+/* ************              work*/
+.work {
+	padding-bottom: 138px;
+	padding-top: 34px;
+	background-color: #3A3A3A;
+}
+.work h1 {
+	color: #E9E6E3;
+}
+.work header hr {
+	color: #F17C71;
+	background-color: #F17C71; 
+}
+.work .sub-header {
+	width: 100%;
+	color: #E9E5E3;
+}
+.work .content ul {
+	display: inline-block;
+}
+.work .content li {
+	display: inline-block;
+	margin: 16px 22px;
+}
+.work .content li img {
+	display: inline-block;
+}
+.work #portfolio a {
+	display: block;
+}
+.work #portfolio img:hover {
+	cursor: pointer;
+}
+.work #portfolio a:hover {
+	cursor: pointer;
+}
+.work #portfolio li:hover {
+	cursor: pointer;
+}
+/* ************              about*/
+.about {
+	padding-top: 6%;
+	padding-bottom: 7%;
+	background-color: #363B48;
+}
+.about h1 {
+	color: #E9E7E3;
+}
+.about header hr {
+	color: #F17C71;
+	background-color: #F17C71; 
+}
+.about .sub-header {
+	color: #E9E5E3;
+}
+.about p {
+	font-size: 0.14em;
+}
+.about .content {
+	padding-top: 7%;
+}
+.about .content article {
+	display: inline-block;
+	margin: 36px 40px;
+	text-align: center;
+	color: #E9E5E3;
+	width: 21%;
+	vertical-align: top;
+}
+.about .content article img {
+	display: inline-block;
+	width: 91%;
+}
+.about .content hr {
+	color: #E9E8E3;
+	background-color: #E9E8E3;
+	width: 50px;
+	margin: 0 auto 4%;
+}
+/* ************              contact*/
+.page.contact {
+	background-color: #DF3F54;
+}
+.contact header {
+	padding-top: 12vh;
+}
+.contact header hr {
+	color: #F17C71;
+	background-color: #F17C71; 
+}
+.contact h1.s-header-one {
+	color: #393939;
+}
+.contact .sub-header {
+	width: 41.8%;
+	margin-right: 4%;
+	display: inline-block;
+	color: #E9E7E3;
+	font-weight: 400;
+}
+.contact .s-header-one {
+	margin-bottom: -3vh;
+}
+.contact .s-header-two {
+	color: #E9E7E3;
+}
+.contact p {
+	font-size: 0.21em;
+}
+/* **************************              footer */
+ footer {
+ 	height: 100px;
+	background-color: #3A3A3A;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+}
+footer p {
+	float: left;
+	padding: 38px 70px;
+	font-weight: 700;
+	font-size: 16px;
+	color: #E9E6E3;
+}
+footer p a {
+	color: #DF3F53;
+	font-weight: 900;
+}
+#social {
+	margin: 0 68px;
+	padding-top: 35px;	
+	text-align: right;
+}
+#social li {
+	display: inline-block;
+	padding-left: 6px;
+}
+#social li:hover {
+	cursor: pointer;
+}
+
+/* ************              project gallery */
+#closeGallery a {
+	width:95px;
+	height:95px;
+	background:transparent url(../images/close.png) no-repeat top left;
+	position:absolute;
+	top:50px;
+	right:70px;
+	text-indent:-9000px;
+}
+/* ************              PORTFOLIO project details */
+#portfolio ul li a {
+	position: relative;	
+}
+#portfolio img {
+	transition: transform 0.4s;
+}
+.no-touch #portfolio li:hover img, #portfolio li.cs-hover img {
+	transform:  translate(-70px, -70px) scale(0.7);
+}
+.he-second {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .2em;
+	height: 100%;
+	width: 100%;
+	color: white;
+	text-align: left;
+	transition: opacity 1s;
+}
+.he-second:hover {
+	opacity: 1;
+}
+.he-second h3 {
+	margin-top: 60%;
+	text-align: left;
+}
+.he-second p {
+	position absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 0.5em;
+}
+.he-second span {
+	font-size: .75em;
+}
+
+/* ************              responsive WINDOW WIDTH */
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 1.15em;
+	}
+	p, .about p {
+		font-size: .2em;
+	}
+	.home {
+		padding-top: 10vh; /*17%;*/
+	}
+	.home .sub-header {
+		float: right;
+		width: 95%;
+		padding-left: 0;
+	}
+	.contact .sub-header {
+		margin-right; 0;
+		width: 51.8%;	
+	}
+	.contact p {
+		font-size: .3em;
+	}
+}
+@media screen and (max-width: 768px) {
+	h1 {
+		text-align: center;
+	}
+	header.header-nav {
+		height: auto;
+		padding-bottom: 2%;
+	}
+	.main-menu {
+		font-size: 1.28em;
+		margin: 16px 0 18px 0 !important; 
+		float: none;
+		text-align: center;
+	}
+	.main-menu a {
+		float: none;
+		margin: 0 1.5%;
+	}
+	.logo {
+		display: block;
+		float: none;
+		text-align: center;
+		margin-left: 0;
+		margin-top: 20px;		
+	}
+	.logo a {
+		display: inline-block;
+	}
+	.logo a img {
+		height: 5em;
+		width: auto;
+	}	
+	.page {
+		padding: 0;
+		text-align: center;
+	}
+	.page header {
+		width: 95%;
+		margin-top: 5%;
+	}
+	.sub-header {
+		width: 100%;
+		float: none;
+	}
+	.page header span {
+		float: none;
+	}
+	.home.page header, .contact.page header {
+		margin-top: 15%;
+	}
+	.about .content article {
+		width: 50%;
+	}
+	
+	.contact header {
+		padding-top: 5%;
+	}
+	.contact h1 {
+		text-align: right;
+	}
+	.contact .sub-header {
+		margin: 0;
+		width: 55%;
+	}	
+	.page .content {
+		padding-top: 5%;
+		margin: 0;
+	}
+	.work .content li {
+		margin: 3% 4%;
+		width: 33%;
+	}
+	.work .content li img {
+		width: 100%;
+	}
+	p, .about p {
+		font-size: .23em;
+	}
+	.contact p {
+		font-size: 0.4em;
+	}
+	hr {
+		margin: 0px auto 3%;
+	}
+	footer p {
+		font-size: .85em;
+	}
+}
+@media screen and (max-width: 640px) {
+	.main-menu {
+		font-size: 0.86em;
+		margin: 16px 0 18px 0;
+	}
+	.logo a img {
+		height: 60px;
+	}
+	.home.page header {
+		margin-top: 15%;
+	}
+	footer p {
+		font-size: .75em;
+		padding: 3%;
+		margin-top: 3.5%;
+	}
+	#social {
+		margin: 0;
+		padding: 3.5%;
+		margin-top: 2%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.main-menu {
+		font-size: 0.76em;
+		margin: 16px 0 18px 0;
+	}
+	.main-menu a {
+		margin: 0 0.3%;
+		padding: 3.5px 2px;
+	}
+	.contact.page header {
+		margin-top: 40%;
+	}
+	.contact h1.s-header-one {
+		font-size: 2em;
+	}
+	.contact p {
+		font-size: 0.5em;
+	}
+	footer p {
+		font-size: .65em;
+		margin-top: 1.5%;
+		text-align: center;
+		width: 100%;
+	}
+	#social {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	
+}
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+  /* some CSS here */
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+  /* some CSS here */
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+  /* some CSS here */
+}
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+  /* some CSS here */
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  /* some CSS here */
+}
+
+/* #### Desktops #### */
+@media screen and (min-width: 1024px){
+  /* some CSS here */
+}
+
