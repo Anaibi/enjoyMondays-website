@@ -1,4 +1,14 @@
 $(function() {
+// /////// BEGIN script couldn't load on server :/
+	//safari horizontal scroll bug
+$('.load-item').css('display', 'none');	//initial state hide
+$('#portolio a').click(function() {
+	('.load-item').css('display', 'block');	//when opening work, show
+};
+$('#closeGallery').click(function() {
+	$('.load-item').css('display', 'none');	//when closing work
+})
+// /////// END script couldn't load on server :/
 	
 //layout: fit section to window height
 	pageHeight();
