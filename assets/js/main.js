@@ -1,5 +1,5 @@
 $(function() {
-	
+
 //layout: fit section to window height
 	pageHeight();
 	setLayout();
@@ -10,7 +10,7 @@ $(function() {
 	});	
 //scroll navigation 
 	//scrolling down from home
-	$('#home header').waypoint(function(direction) {
+	$('#home header').waypoint(function(direction) {console.log('in waypoing call home/down');
 		if (direction === 'down') {
 			smallLogo();
 			//hideMenu(); no hide menu except mobile TODO
@@ -19,7 +19,7 @@ $(function() {
 		}
 	}, {offset: 115});
 	//scrolling up from work
-	$('#home header').waypoint(function(direction) {
+	$('#home header').waypoint(function(direction) {console.log('in waypoint call home/up');
 		if (direction === 'up') {
 			bigLogo();			
 			//showMenu(); no hide menu except mobile TODO
@@ -28,34 +28,34 @@ $(function() {
 		}
 	}, {offset: 115});
 	
-	$('#home header').waypoint(function(direction) {
+	$('#home header').waypoint(function(direction) {console.log('in waypoint call home/up2');
 		if (direction === 'up')
 			updateLinks('#home');
 	});
 		
-	$('#work header').waypoint(function(direction) {
+	$('#work header').waypoint(function(direction) {console.log('in waypoint call work/down');
 		if (direction === 'down')
 			updateLinks('#work');
 	}, {offset: '50%'});
 	
-	$('#work').waypoint(function(direction) {
+	$('#work').waypoint(function(direction) {console.log('in waypoint call work/up');
 		if (direction == 'up') {
 			updateLinks('#work');
 		}
 	}, {offset: 'bottom-in-view'});	
 	
-	$('#about header').waypoint(function(direction) {
+	$('#about header').waypoint(function(direction) {console.log('in waypoint call work/down');
 		if (direction === 'down')
 			updateLinks('#about');
 	}, {offset: '50%'});
 		
-	$('#about').waypoint(function(direction) {
+	$('#about').waypoint(function(direction) {console.log('in waypoint call work/up');
 		if (direction == 'up') {
 			updateLinks('#about');
 		}
 	}, {offset: 'bottom-in-view'});	
 	
-	$('#contact header').waypoint(function(direction) {
+	$('#contact header').waypoint(function(direction) {console.log('in waypoint call contact/down');
 		if (direction === 'down')
 			updateLinks('#contact');
 	}, {offset: '50%'});
@@ -83,7 +83,7 @@ $(function() {
 		updateLinks(page);
 		
 		//scroll to position if not NOTES clicked
-		if(!isPage('notes')) {
+		if(!isPage('notes')) { console.log('fix here, check scrollTop value not correct');
 			$('html, body').animate({
     			scrollTop: $(page).offset().top - $('.fixed-ghost').height()
      		}, 750);
@@ -207,7 +207,7 @@ $(function() {
 	};
 	
 	//set min height for pages/sections
-	function pageHeight() {
+	function pageHeight() { 
 		var h = $(window).height() - 116;
 		$('.page').css('min-height', h);
 	};
@@ -218,12 +218,9 @@ $(function() {
 	};
 	
 	//set layout class
-	function setLayout() { 
+	function setLayout() {  console.log('setLayout called');
 		var w = $(window).width(); 
-		
-		console.log('$(window).width() ' + $(window).width());
-		console.log('Math.max(document.documentElement.clientWidth, window.innerWidth || 0) '+ Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
-		
+				
 		var page = $('.active-link').attr('href'); 
 		if (w<768) {
 			showMenu();

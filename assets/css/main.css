@@ -1,3 +1,11 @@
+/* ************	Safari scroll-x quick fix */
+html {
+	overflow-x: hidden;
+}
+.load-item {
+	display: none !important;
+}
+
 /* ************              defaults*/
 #controls-holder {
 	display: none;
