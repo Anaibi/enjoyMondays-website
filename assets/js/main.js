@@ -1,5 +1,9 @@
 $(function() {
 
+//comment: to fix scroll-x on mac, the issue is with the .load-item objects and the timing
+// if they are hidden at the time of loading the page, later they don't work
+
+
 //layout: fit section to window height
 	pageHeight();
 	setLayout();
@@ -257,6 +261,7 @@ $(function() {
 		setTimeout(function() { 
 			fixedGhost(); 
 			scrollToPosition(page);
+			//$('.load-item').hide() //else on mac it will scroll-x
 	   	}, 400);
 	};
 	

@@ -333,7 +333,7 @@
 					$img.next().bind('click',function(event){
 						api.setGallery(index - 1);
 						$('.container').hide();
-					//	$('#emb_container').css('display','none');
+						$('#emb_container').css('display','none');
 						$('#closeGallery a').fadeTo("fast", 1).css({'display':'visible'});
 						
 						$.supersized.api.options.slideshow = true;
@@ -358,7 +358,8 @@
 				
 				theme.hide();		
 						
-				$('#closeGallery a').fadeTo(0, 0).css({'display':'none'});							
+				$('#closeGallery a').fadeTo(0, 0).css({'display':'none'});	
+				$('.load-item').hide();									
 			});
 		</script>		
 	
