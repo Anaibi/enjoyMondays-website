@@ -77,17 +77,15 @@ $(function() {
 		
 		var $link = $(this); //clicked link 		
 		var page = $link.attr('href');  //called page id
-		var $actual = $link.parent().find('.active-link');  //actual page
+		var $actual = $link.parent().find('.active-link');  //actual page -- borrar?
 		
-		//update links
+		//update links class active link
 		updateLinks(page);
+
+		console.log('page: ' + page);
 		
 		//scroll to position if not NOTES clicked
-		if(!isPage('notes')) { console.log('fix here, check scrollTop value not correct');
-			$('html, body').animate({
-    			scrollTop: $(page).offset().top - $('.fixed-ghost').height()
-     		}, 750);
-		} 									
+		if(!isPage('notes')) scrollToPosition(page);								
 	});			
 	
 //no hover on menu all commented out	
@@ -119,6 +117,27 @@ $(function() {
 	//TODO
 	
 //functions		
+
+	//scroll to pages position
+	function scrollToPosition(page) {
+
+		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
+
+		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
+            window.scrollTo(0, newTop) // first value for left offset, second value for top offset
+		} else { 
+			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
+			$('body, html')
+				.stop()
+				.animate({
+	    			scrollTop: newTop
+	     		}, 750, function(){
+	     			$('htmll body').css('overflow-x', 'hidden'); //volver a poner hidden el fix para mac de scroll-x
+                	$('html, body').clearQueue();
+            });
+		}
+	}
+
 	//show expanded menu
 	function showMenu() { 
 	//	$('.wide .collapsed-menu')
@@ -218,32 +237,27 @@ $(function() {
 	};
 	
 	//set layout class
-	function setLayout() {  console.log('setLayout called');
+	function setLayout() {  
 		var w = $(window).width(); 
-				
 		var page = $('.active-link').attr('href'); 
-		if (w<768) {
+		if (w<768) { 	
 			showMenu();
 			smallLogo();
 			fixMenu();
 			$('body').addClass('mobile').removeClass('wide');												
 		}
-		if (w>768) {			
+		if (w>768) {	 	
 			$('body').removeClass('mobile').addClass('wide');	
-			if (isPage('home'))	{
+			if (isPage('home'))	{ 
 				bigLogo();
 			} else {
 				smallLogo();
 			}
 		}
-		setTimeout(function() {
+		setTimeout(function() { 
 			fixedGhost(); 
-			$('html, body')
-				.stop()
-				.animate({
-	    			scrollTop: $(page).offset().top - $('.fixed-ghost').height()
-	     		}, 750);
-	   }, 400);
+			scrollToPosition(page);
+	   	}, 400);
 	};
 	
 	function fixedGhost() {		
