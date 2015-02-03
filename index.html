@@ -88,8 +88,8 @@
 						<h1>Services</h1>
 						<div class="sub-header">
 							<hr>
-							<p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and ease-to-access
-								content. The <br />finished product will be totally unique and represent <br />awesomeness</p>
+							<p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and easy-to-access
+								content. The <br />finished product will be totally unique and represent <br />awesomeness.</p>
 						</div>
 					</div>					
 				</header>
@@ -110,7 +110,7 @@
 						<img src="assets/images/test.png" title="test" alt="test" />
 						<hr>
 						<p>Test concepts, designs, and prototypes with real users. Combine learnings with gut instinct and experience. Iterate, refine, and
-						relentlessly hone in persuit of perfection.</p>
+						relentlessly hone in in the persuit of perfection.</p>
 					</article>
 				</div>				
 			</section>	
@@ -121,8 +121,8 @@
 					<h1 class="s-header-two">hola@enjoy-mondays.com</h1>									
 					<div class="sub-header">
 						<hr>
-						<p>Our vision is simple. We want to create websites and applications with both high quality design and ease-to-access
-							content. The finished product will be totally unique and represent awesomeness</p>
+						<p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access
+							content. The finished product will be totally unique and represent awesomeness.</p>
 					</div>	
 				</header>						
 			</section>	
@@ -161,9 +161,9 @@
 		</div>
 
 		<!--Arrow Navigation-->
-		<a id="prevslide" class="load-item">			
+		<a id="prevslideb" class="load-item" style="display: none;">			
 		</a>
-		<a id="nextslide" class="load-item">			
+		<a id="nextslideb" class="load-item" style="display: none;">			
 		</a>
 		<div id="controls-holder">
 			<div id="thumb-tray" class="load-item">
@@ -217,7 +217,7 @@
 		<script type="text/javascript" src="assets/js/waypoints.min.js"></script>
 		
 		<!-- MAIN JS -->		
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		 <script type="text/javascript" src="assets/js/main.js"></script>  
 
 		<!-- FIT TEXT -->	
 		<script src="assets/js/jquery.fittext.js"></script>
@@ -231,14 +231,17 @@
 		<script type="text/javascript" src="assets/theme/supersized.shutter.js"></script>
 		
 		<script type="text/javascript">
-		$(document).ready(function () { 
+
+		$(window).load(function() {
+			$('.load-item').hide();
+		//$(document).ready(function () { 
 				///////////
 				var slides = [];
 				var projects = [
 					{p:'enjoy-mondays.com' ,i:3, t:"",e:true}					
 			//		,{p:'yourlostmemories.com' ,i:12, t:"Your Lost Memories", d:"Complete website and database implementation. Moovie uploader, admin panel. Dedicated server configuration and codification", tech: "red5,"}
 			//		,{p:'sanmiguel.com' ,i:11, t:"San Miguel Primavera Sound", d:"Mobile app with facebook login"}
-					,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site"}
+					,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site."}
 			//		,{p:'old.com' ,i:7, t:"Open Luxury Days", d:"Website for campaig with registration and admin panel. Server settup."}
 					,{p:'goliatone.com' ,i:8, t:"Goliatone", d:"Website with portfolio and downloadable items. Hand coded."}
 			//		,{p:'cristinacostales.cat' ,i:8, t:"Cristina Costales", d:"Personalized wordpress site. Integration and personalization of plugins. Domain and hosting settings."}
@@ -311,8 +314,8 @@
 					min_height		        :   0,			// Min height allowed (in pixels)
 					vertical_center         :   1,			// Vertically center background
 					horizontal_center       :   1,			// Horizontally center background
-					fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-					fit_portrait         	:   0,			// Portrait images will not exceed browser height
+					fit_always				:	1,			// Image will never exceed browser width or height (Ignores min. dimensions)
+					fit_portrait         	:   1,			// Portrait images will not exceed browser height
 					fit_landscape			:   1,			// Landscape images will not exceed browser width
 
 					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
@@ -335,7 +338,7 @@
 						$('.container').hide();
 						$('#emb_container').css('display','none');
 						$('#closeGallery a').fadeTo("fast", 1).css({'display':'visible'});
-						
+						$('.load-item').show();
 						$.supersized.api.options.slideshow = true;
 						$.supersized.api.playToggle();
 						$.supersized.api.$el.bind('supersizedLaunchEvent',function(event){
@@ -347,6 +350,7 @@
 				});
 				$('#closeGallery a').bind('click',function(event){
 					$('#closeGallery a').fadeTo("fast", 0).css({'display':'none'});
+					$('.load-item').hide(); //fix scroll-x apple
 					api.setGallery(0);
 					$('.container').fadeIn("fast", function() {
 						$("a[href|='#work']").trigger('click');	
@@ -359,7 +363,6 @@
 				theme.hide();		
 						
 				$('#closeGallery a').fadeTo(0, 0).css({'display':'none'});	
-				$('.load-item').hide();									
 			});
 		</script>		
 	

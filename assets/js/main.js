@@ -122,26 +122,6 @@ $(function() {
 	
 //functions		
 
-	//scroll to pages position
-	function scrollToPosition(page) {
-
-		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
-
-		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
-            window.scrollTo(0, newTop) // first value for left offset, second value for top offset
-		} else { 
-			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
-			$('body, html')
-				.stop()
-				.animate({
-	    			scrollTop: newTop
-	     		}, 750, function(){
-	     			$('htmll body').css('overflow-x', 'hidden'); //volver a poner hidden el fix para mac de scroll-x
-                	$('html, body').clearQueue();
-            });
-		}
-	}
-
 	//show expanded menu
 	function showMenu() { 
 	//	$('.wide .collapsed-menu')
@@ -282,5 +262,25 @@ $(function() {
 			'height': '0'
 		});
 	};
+
+	//scroll to pages position
+	function scrollToPosition(page) {
+
+		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
+
+		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
+            window.scrollTo(0, newTop) // first value for left offset, second value for top offset
+		} else { 
+			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
+			$('body, html')
+				.stop()
+				.animate({
+	    			scrollTop: newTop
+	     		}, 750, function(){ console.log('in callback animate');
+	     			//$('html, body').css('overflow-x', 'hidden');//volver a poner hidden el fix para mac de scroll-x
+                	$('html, body').clearQueue();
+            });
+		}
+	}
 		
 });
