@@ -54,14 +54,14 @@ $(function() {
 	}, {offset: 'bottom-in-view'});	
 
 	//when scrolling in or out of last section, show or hide footer
-	$('#bg').waypoint(function(direction) {
+	$('#contact .sub-header').waypoint(function(direction) { 
 		if (direction === 'down') {
-				showFooter();
+			showFooter();
 		} 
 		else if (direction === 'up') {
 			hideFooter();
 		}
-	});
+	}, {offset: 'bottom-in-view'});	
 	
 	//main menu navigation
 	$('.main-menu a').click(function(e){ 
@@ -115,18 +115,23 @@ $(function() {
 		$(".main-menu a[href='"+id+"']").addClass('active-link');
 	};
 	
-	//set min height for pages/sections
+	//set height for pages/sections
 	function pageHeight() { 
-		var h = $(window).height() - headerHeight;
-		
-		if (isPage('contact')) {
-			//check if footer fits into page, if it does, final min height = h - footer height
-			if ((headerHeight + $('#contact').height + $('footer').height) <= $(window).height()) {
-				h = h - $('#bg').height();
-			}
-			//if it doesn't, min height = h and footer has to deal with that?
-		}
+		//efective space for content
+		var h = $(window).height() - headerHeight; 
+		var contactPageHeight = $('#contact.page').height()
+		//simple case just make sure page + header fills window
 		$('.page').css('min-height', h);
+
+		//case page + header height is less then window height, center page content
+		
+		//check if footer fits into page contact, if it does, set height = h - footer height
+		if ((headerHeight + contactPageHeight + $('footer').height()) <= $(window).height()) {
+			console.log('set height');
+			$('#contact.page').css('height', (h - $('footer').height()));
+			$('#contact.page').css('min-height', (h - $('footer').height()));
+		}
+		//if it doesn't, min height = h and footer has to deal with that?
 	};
 	
 	//return true if is active page
@@ -152,6 +157,7 @@ $(function() {
 				smallLogo();
 			}
 		}
+		if (!isPage('contact')) hideFooter();
 		setTimeout(function() { 
 			fixedGhost(); 
 			scrollToPosition(page);
@@ -164,16 +170,18 @@ $(function() {
 	};
 	
 	//footer animation
-	function showFooter() {
+	function showFooter() { //se puede pulir mas/mejor 
+		$('footer').show();
 		$('#bg').animate({
 			'height': '0'
-		});
+		}, 'slow');
 	};
 	
 	function hideFooter() {
 		$('#bg').animate({
 			'height': '100'
 		});
+		$('footer').hide();
 	};
 
 	//scroll to pages position
@@ -189,8 +197,7 @@ $(function() {
 				.stop()
 				.animate({
 	    			scrollTop: newTop
-	     		}, 750, function(){ console.log('in callback animate');
-	     			//$('html, body').css('overflow-x', 'hidden');//volver a poner hidden el fix para mac de scroll-x
+	     		}, 750, function(){ 
                 	$('html, body').clearQueue();
             });
 		}
