@@ -1,182 +1,90 @@
 $(function() {
 
-//comment: to fix scroll-x on mac, the issue is with the .load-item objects and the timing
-// if they are hidden at the time of loading the page, later they don't work
+	var headerHeight = 116;
 
-
-//layout: fit section to window height
+	//first thing, layout: fit display to window height
 	pageHeight();
 	setLayout();
 	
+	//on changing window size, fit section again
 	$(window).resize(function() {
 		pageHeight();
 		setLayout();	
 	});	
-//scroll navigation 
-	//scrolling down from home
-	$('#home header').waypoint(function(direction) {console.log('in waypoing call home/down');
-		if (direction === 'down') {
-			smallLogo();
-			//hideMenu(); no hide menu except mobile TODO
-			//moveMenu to new position
-			moveMenu('moveUp');
-		}
-	}, {offset: 115});
-	//scrolling up from work
-	$('#home header').waypoint(function(direction) {console.log('in waypoint call home/up');
+
+	//scroll navigation, calls to WAYPOINT plugin:
+	//call when entering new section to update links, special case home section.
+
+	//when scrolling in and out of home section, and offset headerHeight - 1 
+	$('#home header').waypoint(function(direction) {		
+		//scrolling out
 		if (direction === 'up') {
+			smallLogo();
+			moveMenu('moveUp');
+		} 
+		//scrolling in
+		else if (direction === 'up') {
 			bigLogo();			
-			//showMenu(); no hide menu except mobile TODO
-			//moveMenu to new position
 			moveMenu('moveDown');
 		}
-	}, {offset: 115});
-	
-	$('#home header').waypoint(function(direction) {console.log('in waypoint call home/up2');
+	}, {offset: headerHeight-1});
+
+	//when scrolling into home section from works section, and no offset
+	$('#home header').waypoint(function(direction) {
 		if (direction === 'up')
 			updateLinks('#home');
 	});
 		
-	$('#work header').waypoint(function(direction) {console.log('in waypoint call work/down');
-		if (direction === 'down')
-			updateLinks('#work');
+	//when scrolling down into new section, at the middle of the section
+	//for sections #work, #about, #contact	
+	$('.page header').waypoint(function(direction) { 		 
+		if (direction === 'down') {
+			var page = '#' + $(this).parent().attr('id');
+			updateLinks(page);
+		}
 	}, {offset: '50%'});
 	
-	$('#work').waypoint(function(direction) {console.log('in waypoint call work/up');
+	//when scrolling up into new section, once the bottom is in view
+	//for sections #work and #about
+	$('.page').waypoint(function(direction) {
 		if (direction == 'up') {
-			updateLinks('#work');
+			var page = '#' + $(this).attr('id');
+			updateLinks(page);
 		}
 	}, {offset: 'bottom-in-view'});	
-	
-	$('#about header').waypoint(function(direction) {console.log('in waypoint call work/down');
-		if (direction === 'down')
-			updateLinks('#about');
-	}, {offset: '50%'});
-		
-	$('#about').waypoint(function(direction) {console.log('in waypoint call work/up');
-		if (direction == 'up') {
-			updateLinks('#about');
-		}
-	}, {offset: 'bottom-in-view'});	
-	
-	$('#contact header').waypoint(function(direction) {console.log('in waypoint call contact/down');
-		if (direction === 'down')
-			updateLinks('#contact');
-	}, {offset: '50%'});
-	
+
+	//when scrolling in or out of last section, show or hide footer
 	$('#contact .sub-header').waypoint(function(direction) {
-		if (direction === 'down')
+		if (direction === 'down') {
 			showFooter();
-	}, {offset: 'bottom-in-view'});
-	$('#contact .sub-header').waypoint(function(direction) {
-		if (direction === 'up')
+		} 
+		else if (direction === 'up') {
 			hideFooter();
+		}
 	}, {offset: 'bottom-in-view'});
 	
-	
-//main menu navigation
+	//main menu navigation
 	$('.main-menu a').click(function(e){ 
 		
 		e.preventDefault();
 		
-		var $link = $(this); //clicked link 		
-		var page = $link.attr('href');  //called page id
-		var $actual = $link.parent().find('.active-link');  //actual page -- borrar?
+		var page = $(this).attr('href'); 
 		
 		//update links class active link
 		updateLinks(page);
-
-		console.log('page: ' + page);
 		
 		//scroll to position if not NOTES clicked
 		if(!isPage('notes')) scrollToPosition(page);								
 	});			
 	
-//no hover on menu all commented out	
-//main menu animation 
-	// on header
-	//$('.header-nav').hover(
-	//	function() {
-	//		if (!$('body').hasClass('mobile')) {
-	//			showMenu();				
-	//		}
-	//	},
-	//	function() {
-	//		if (!$('body').hasClass('mobile')) {
-	//			if (!isPage('home')) 			
-	//				hideMenu();
-	//		}		
-	//	}
-	//);	
-	
-	//on collapsed menu
-	$('.mobile .collapsed-menu').hover(function() {
-		showMenu();
-	});
-	$('.collapsed-menu').click(function(event) {
-		 event.stopPropagation();
-		 showMenu();
-	});
-	// on scroll
-	//TODO
 	
 //functions		
 
-	//show expanded menu
-	function showMenu() { 
-	//	$('.wide .collapsed-menu')
-		$('.collapsed-menu')
-			.fadeOut('fast', function() {
-				$('.main-menu')
-				.show()
-				.animate({
-					'right': '0',
-				}, 300, function() {
-					if (isPage('home')) {
-						$('.main-menu').animate({
-							'margin-top': '77px'
-						}, 300);
-						fixMenu();
-					}
-				});	
-			})
-			.hide();			
-	};
-	
-	//hide expanded menu
-	function hideMenu() { 
-	//	$('.wide .main-menu')
-		$('.main-menu')
-		.animate({
-			'margin-top': '47px',
-		}, 300, function(){ 
-			$('.main-menu').animate({ 
-				'right': '-1000px'
-			}, 300, function(){
-				collapseMenu();				
-				$('.main-menu').hide();
-				$('.collapsed-menu').fadeIn();	 });				
-		});	
-	};
-	
-	//fix expanded menu if at home
-	function fixMenu() {
-		if (isPage('home'))
-			$('.main-menu').removeClass('is-collapsed');
-	};
-	
-	//collapse expanded menu if not at home
-	function collapseMenu() {  
-		$('.main-menu').addClass('is-collapsed');	
-	};	
-	
 	//animate logo to big
 	function bigLogo() {		
-	//	$('.wide .logo').animate({
 		$('.logo').animate({
-			'margin-top': '42px'
-		});
-	//	$('.wide .logo img').animate({
+			'margin-top': '42px'});
+		
 		$('.logo img').animate({
 			height: '99px',
 			width: '146px'});	
@@ -184,10 +92,8 @@ $(function() {
 	
 	//animate logo to small
 	function smallLogo() {
-	//	$('.wide .logo').animate({
 		$('.logo').animate({
 			'margin-top': '17px'});
-	//	$('.wide .logo img').animate({
 		$('.logo img').animate({
 			height: '75px',
 			width: '111px'});
@@ -195,10 +101,10 @@ $(function() {
 
 	//move main menu
 	function moveMenu(direction) {
-		if (direction == "moveUp") $('.main-menu').animate({
+		if (direction === "moveUp") $('.main-menu').animate({
 			'margin-top': '43px'
 		});
-		if (direction == "moveDown") $('.main-menu').animate({
+		if (direction === "moveDown") $('.main-menu').animate({
 			'margin-top': '77px'
 		});
 	}
@@ -211,7 +117,7 @@ $(function() {
 	
 	//set min height for pages/sections
 	function pageHeight() { 
-		var h = $(window).height() - 116;
+		var h = $(window).height() - headerHeight;
 		$('.page').css('min-height', h);
 	};
 	
@@ -241,7 +147,6 @@ $(function() {
 		setTimeout(function() { 
 			fixedGhost(); 
 			scrollToPosition(page);
-			//$('.load-item').hide() //else on mac it will scroll-x
 	   	}, 400);
 	};
 	

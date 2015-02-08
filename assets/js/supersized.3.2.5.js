@@ -1,4 +1,4 @@
-		/*
+/*
 
 	Supersized - Fullscreen Slideshow jQuery Plugin
 	Version : 3.2.5
@@ -20,37 +20,19 @@
     
     
     $.supersized = function(options){
-
-
-    	//base.$el, base.el, base.$el.data, base.init, base.options, base.options.slide
-    	//vars, api, 
-
-    	//$.supersized = function(options)
-    	//$.supersized.vars
-
-
-    	//el = "#supersized"
-
-
-    	//base = this = $.supersized function ?
-    	//base.$el = $(el) = $('#supersized') supersized div
-    	//base.el = el = "#supersized"
-    	//
     	
     	/* Variables
 		----------------------------*/
     	var el = '#supersized',
-        	base = this; console.log('this: ' + this);
-        	console.log('base: ' + base);
+        	base = this;
         
         // Access to jQuery and DOM versions of element
-        base.$el = $(el);  //#supersized div
-        base.el = el;  //#supersized as txt
-        console.log('base.$el = $(el);  //#supersized div : ' + base.$el + ' = ' + $(el) + '/nbase.el = el;  //#supersized as txt : ' + base.el);
-        vars = $.supersized.vars; console.log('vars: ' + vars);
+        base.$el = $(el);
+        base.el = el;
+        vars = $.supersized.vars;
         // Add a reverse reference to the DOM object
-        base.$el.data("supersized", base); console.log('base.$el.data("supersized", base); ');
-        api = base.$el.data('supersized'); console.log('api: ' + api);
+        base.$el.data("supersized", base);
+        api = base.$el.data('supersized');
         
         /*
          * Let's clean the global space a bit.
@@ -60,27 +42,19 @@
 		
 		base.init = function(){
 			console.log("-INITIALIZING!");
-
-			console.log('$.supersized.vars before extending what?: ' + $.supersized.vars);
 			
         	/**
         	 * Combine options and vars
         	 * Too involved...fix(?).
         	 */
-        	$.supersized.vars = $.extend($.supersized.vars, $.supersized.themeVars); //? used where?
-        	console.log('$.supersized.vars after extending what?: ' + $.supersized.vars);
-        	console.log('$.supersized.themeVar' + $.supersized.themeVar);
-        	$.supersized.vars.options = $.extend({},$.supersized.defaultOptions, $.supersized.themeOptions, options); //add -class??- either default or set options
-            base.options = $.supersized.vars.options; //save in base.options
-            console.log('base.options: ' + base.options);
+        	$.supersized.vars = $.extend($.supersized.vars, $.supersized.themeVars);
+        	$.supersized.vars.options = $.extend({},$.supersized.defaultOptions, $.supersized.themeOptions, options);
+            base.options = $.supersized.vars.options;
             
             //check if ours is a single gallery slide.
             if(! $.isArray(base.options.slides[0])){
             	console.log("--WE NEED TO MAKE MAGIC NOW!");
-
             	base.options.slides = [base.options.slides];
-
-            	console.log('slides saved in base.options.slides: ' + base.options.slides);
             }  
             
             
@@ -267,7 +241,7 @@
 			
 			// Call theme function for before slide transition
 			if( typeof theme != 'undefined' && typeof theme.beforeAnimation == "function" ) theme.beforeAnimation('next');
-			//$('.load-item').show();  sroll-x safari fix
+			$('.load-item').show();
 			
 			base.$el.trigger("supersizedLaunchEvent");
 			

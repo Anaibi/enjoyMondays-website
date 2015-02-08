@@ -1,10 +1,3 @@
-/* ************	Safari scroll-x quick fix */
-html {
-	overflow-x: hidden;
-}
-.load-item {
-	/*display: none !important;*/
-}
 
 /* ************              defaults*/
 #controls-holder {
@@ -103,7 +96,7 @@ body {
 	background-color: #E9E8E3;
 	z-index: 1000;
 }
-.main-menu, .collapsed-menu {
+.main-menu {
 	float: right;
 	margin-right: 80px;
 	font-weight: 700;
@@ -120,32 +113,12 @@ body {
 	margin-left: 10px;
 	color: inherit;
 }
-.main-menu a.active-link, .main-menu a:hover {
+.main-menu a.active-link, 
+.main-menu a:hover {
 	font-weight: 900;
 	border-bottom: solid #DF3F54 3px;
 }
-.collapsed-menu {
-	display: none;
-	margin-top: 47px;
-	height: 32px;
-	width: 20px;
-	position: absolute;
-	right: 0;
-	background: url("../images/menu.png") no-repeat center right;
-	text-indent: -99999px;
-}
-.collapsed-menu:hover {
-	cursor: pointer;
-}
-.main-menu.is-collapsed {
-	margin-top: 47px;
-	display: none;
-}
-.main-menu.is-collapsed a.active-link, .main-menu.is-collapsed a:hover {
-	border-top: solid #DF3F54 3px;
-	border-bottom: none;
-	margin-top: -3.5px;
-}
+
 /* *********************************              pages*/
 hr {
 	border: 0;
@@ -155,7 +128,7 @@ hr {
 	clear: both;
 }
 .page {
-/*	padding-right: 68px;*/
+	padding-right: 68px;
 	text-align: right;
 	width: 100%;
 }
@@ -165,7 +138,7 @@ hr {
 	display: inline-block;
 	width: 95%;
 }
-.page  header > div {
+.page header > div {
 	display: inline-block;
 	text-align: center;
 }
@@ -190,8 +163,9 @@ hr {
 }
 /* ************              home*/
 .home {
-	padding-top: 22vh;
+	padding-top: 3%; /*12vh;*/
 	background-color: #E9E8E3;
+	color: #393939;
 }
 .home #smile {	
 	position: relative;
@@ -205,16 +179,16 @@ hr {
 	background-color: #272727; 
 }
 .home .s-header-one {
-	color: #272727;
+	float: none;
 }
 .home .s-header-two {
-	color: #393939;
 }
 .home .sub-header {
 	margin-top: 15px;
+	margin-bottom: 6%;
 	color: #4A4A4A;
-	float: none;
 	padding-left: 4%;
+	width: 50%;
 }
 /* ************              work*/
 .work {
@@ -358,54 +332,7 @@ footer p a {
 	cursor: pointer;
 }
 
-/* ************              project gallery */
-#closeGallery a {
-	width:95px;
-	height:95px;
-	background:transparent url(../images/close.png) no-repeat top left;
-	position:absolute;
-	top:50px;
-	right:70px;
-	text-indent:-9000px;
-}
-/* ************              PORTFOLIO project details */
-#portfolio ul li a {
-	position: relative;	
-}
-#portfolio img {
-	transition: transform 0.4s;
-}
-.no-touch #portfolio li:hover img, #portfolio li.cs-hover img {
-	transform:  translate(-70px, -70px) scale(0.7);
-}
-.he-second {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	font-size: .2em;
-	height: 100%;
-	width: 100%;
-	color: white;
-	text-align: left;
-	transition: opacity 1s;
-}
-.he-second:hover {
-	opacity: 1;
-}
-.he-second h3 {
-	margin-top: 60%;
-	text-align: left;
-}
-.he-second p {
-	position absolute;
-	bottom: 20px;
-	right: 20px;
-	font-size: 0.5em;
-}
-.he-second span {
-	font-size: .75em;
-}
+
 
 /* ************              responsive WINDOW WIDTH */
 @media screen and (max-width: 1024px) {
