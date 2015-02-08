@@ -229,6 +229,57 @@ hr {
 .work #portfolio li:hover {
 	cursor: pointer;
 }
+
+/* ************              project gallery */
+#closeGallery a {
+	width:95px;
+	height:95px;
+	background:transparent url(../images/close.png) no-repeat top left;
+	position:absolute;
+	top:50px;
+	right:70px;
+	text-indent:-9000px;
+}
+/* ************              PORTFOLIO project details */
+#portfolio ul li a {
+	position: relative;	
+}
+#portfolio img {
+	transition: transform 0.4s;
+}
+.no-touch #portfolio li:hover img, #portfolio li.cs-hover img {
+	transform:  translate(-70px, -70px) scale(0.7);
+}
+.he-second {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .2em;
+	height: 100%;
+	width: 100%;
+	color: white;
+	text-align: left;
+	transition: opacity 1s;
+}
+.he-second:hover {
+	opacity: 1;
+}
+.he-second h3 {
+	margin-top: 60%;
+	text-align: left;
+}
+.he-second p {
+	position absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 0.5em;
+}
+.he-second span {
+	font-size: .75em;
+}
+
+
 /* ************              about*/
 .about {
 	padding-top: 6%;

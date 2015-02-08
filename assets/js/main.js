@@ -119,15 +119,13 @@ $(function() {
 	function pageHeight() { 
 		//efective space for content
 		var h = $(window).height() - headerHeight; 
+		//save contact page height before modifying
 		var contactPageHeight = $('#contact.page').height()
 		//simple case just make sure page + header fills window
 		$('.page').css('min-height', h);
-
-		//case page + header height is less then window height, center page content
 		
 		//check if footer fits into page contact, if it does, set height = h - footer height
 		if ((headerHeight + contactPageHeight + $('footer').height()) <= $(window).height()) {
-			console.log('set height');
 			$('#contact.page').css('height', (h - $('footer').height()));
 			$('#contact.page').css('min-height', (h - $('footer').height()));
 		}
