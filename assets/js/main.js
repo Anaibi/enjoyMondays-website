@@ -18,7 +18,7 @@ $(function() {
 	//when scrolling in and out of home section, and offset headerHeight - 1 
 	$('#home header').waypoint(function(direction) {		
 		//scrolling out
-		if (direction === 'up') {
+		if (direction === 'down') {
 			smallLogo();
 			moveMenu('moveUp');
 		} 
@@ -54,14 +54,14 @@ $(function() {
 	}, {offset: 'bottom-in-view'});	
 
 	//when scrolling in or out of last section, show or hide footer
-	$('#contact .sub-header').waypoint(function(direction) {
+	$('#bg').waypoint(function(direction) {
 		if (direction === 'down') {
-			showFooter();
+				showFooter();
 		} 
 		else if (direction === 'up') {
 			hideFooter();
 		}
-	}, {offset: 'bottom-in-view'});
+	});
 	
 	//main menu navigation
 	$('.main-menu a').click(function(e){ 
@@ -118,6 +118,14 @@ $(function() {
 	//set min height for pages/sections
 	function pageHeight() { 
 		var h = $(window).height() - headerHeight;
+		
+		if (isPage('contact')) {
+			//check if footer fits into page, if it does, final min height = h - footer height
+			if ((headerHeight + $('#contact').height + $('footer').height) <= $(window).height()) {
+				h = h - $('#bg').height();
+			}
+			//if it doesn't, min height = h and footer has to deal with that?
+		}
 		$('.page').css('min-height', h);
 	};
 	
@@ -157,14 +165,14 @@ $(function() {
 	
 	//footer animation
 	function showFooter() {
-		$('footer').animate({
-			'height': '100'
+		$('#bg').animate({
+			'height': '0'
 		});
 	};
 	
 	function hideFooter() {
-		$('footer').animate({
-			'height': '0'
+		$('#bg').animate({
+			'height': '100'
 		});
 	};
 
