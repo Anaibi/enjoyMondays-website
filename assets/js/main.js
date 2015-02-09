@@ -189,8 +189,8 @@ $(function() {
 
 		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
             window.scrollTo(0, newTop); // first value for left offset, second value for top offset
-            alert('in ips or android'); //this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
-		} else { alert('not in ips or android'); 
+            //alert('in ips or android'); //this alerts ok on my phone
+		} else { //alert('not in ips or android');  /this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
 			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
 			$('body, html')
 				.stop()
