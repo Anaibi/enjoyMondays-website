@@ -142,9 +142,7 @@ $(function() {
 		var w = $(window).width(); 
 		var page = $('.active-link').attr('href'); 
 		if (w<768) { 	
-			showMenu();
 			smallLogo();
-			fixMenu();
 			$('body').addClass('mobile').removeClass('wide');												
 		}
 		if (w>768) {	 	
@@ -164,6 +162,8 @@ $(function() {
 	
 	function fixedGhost() {		
 		h = $('header.header-nav').height() + parseInt($('header.header-nav').css('padding-bottom'));
+		console.log('header ' + $('header.header-nav').height());
+		console.log('padding ' + parseInt($('header.header-nav').css('padding-bottom')))
 		$('.fixed-ghost').height(h);
 	};
 	
@@ -188,8 +188,9 @@ $(function() {
 		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
 
 		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
-            window.scrollTo(0, newTop) // first value for left offset, second value for top offset
-		} else { 
+            window.scrollTo(0, newTop); // first value for left offset, second value for top offset
+            alert('in ips or android'); //this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
+		} else { alert('not in ips or android'); 
 			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
 			$('body, html')
 				.stop()
