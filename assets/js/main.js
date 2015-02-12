@@ -141,11 +141,12 @@ $(function() {
 	function setLayout() {  
 		var w = $(window).width(); 
 		var page = $('.active-link').attr('href'); 
-		if (w<768) { 	
+		//if (w<768) { 
+		if (mobileLayout())	{
 			smallLogo();
 			$('body').addClass('mobile').removeClass('wide');												
 		}
-		if (w>768) {	 	
+		else {	 	
 			$('body').removeClass('mobile').addClass('wide');	
 			if (isPage('home'))	{ 
 				bigLogo();
@@ -154,7 +155,8 @@ $(function() {
 			}
 		}
 		if (!isPage('contact')) hideFooter();
-		setTimeout(function() { 
+		
+		setTimeout(function() { console.log('in timesetout');
 			fixedGhost(); 
 			scrollToPosition(page);
 	   	}, 400);
@@ -187,10 +189,10 @@ $(function() {
 
 		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
 
-		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {        //check in devices  
-            window.scrollTo(0, newTop); // first value for left offset, second value for top offset
+		//if (mobileLayout()) {        //check in devices which ones scrollTop doesn't work
+          //  window.scrollTo(0, newTop); // first value for left offset, second value for top offset
             //alert('in ips or android'); //this alerts ok on my phone
-		} else { //alert('not in ips or android');  /this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
+		//} else { //alert('not in ips or android');  /this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
 			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
 			$('body, html')
 				.stop()
@@ -199,7 +201,46 @@ $(function() {
 	     		}, 750, function(){ 
                 	$('html, body').clearQueue();
             });
-		}
+		//}
 	}
-		
+
+	//return true if device mobile or if window width less then 768px
+	function mobileLayout() {
+		if ($('window').width() < 768 || navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) return true;		
+		else return false;
+	}
+
+
+	// study if necessary add to mobileLayout
+	//	http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/	
+	/*var isMobile = {
+    	Android: function() {
+        	return navigator.userAgent.match(/Android/i);
+    	},
+	    BlackBerry: function() {
+	        return navigator.userAgent.match(/BlackBerry/i);
+	    },
+	    iOS: function() {
+	        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	    },
+	    Opera: function() {
+	        return navigator.userAgent.match(/Opera Mini/i);
+	    },
+	    Windows: function() {
+	        return navigator.userAgent.match(/IEMobile/i);
+	    },
+	    any: function() {
+	        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+	    }
+	};*/
+
+	// study plugin option for css transition hover effects
+	// http://ianlunn.github.io/Hover/
+	
+	// or flip effect:
+	// http://css3.bradshawenterprises.com/flip/
+	
+	// also css animatable
+	//http://www.w3schools.com/cssref/css_animatable.asp
+
 });

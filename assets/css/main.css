@@ -544,25 +544,28 @@ footer p a {
 		padding: 3.5px 2px;
 	}
 	/* WORKS */
-	.work .thumb,
-	.work .he-second {
+	.work .thumb {
 		width: 85%;
+		transition: transform 0.4s;
 	}
-	.no-touch #portfolio .thumb img {
-		/* For Safari 3.1 to 6.0 */
-    	-webkit-transition-property: height;
-   		-webkit-transition-duration: 1s;
-    	-webkit-transition-timing-function: linear;
-   	 	-webkit-transition-delay: 2s;
-    	/* Standard syntax */
-    	transition-property: height;
-    	transition-duration: 1s;
-    	transition-timing-function: linear;
-    	transition-delay: .5s;
+	.work .thumb:hover img {
+		transform: translate(-70px, -70px) scale(0);
 	}
-	.no-touch #portfolio .thumb:hover img
-	, #portfolio .thumb.cs-hover img {
+	.work .he-second {
+		width: 100%;
+		position: initial;
+		font-size: 0.5em;
+		opacity: 1;
+		padding-top: 20px;
+		padding-bottom: 60%;
 		height: 0;
+		transition: height 1s;
+	}
+	.work .he-second h3 {
+		margin-top: 0;
+	}
+	.work .he-second:hover {
+		transform: translate(-70px, -70px) scale(0.7);
 	}
 	/* CONTACT */
 	.contact.page header {
