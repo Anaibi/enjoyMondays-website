@@ -1,6 +1,6 @@
 
-/* ************              defaults*/
-#controls-holder {
+/* *********************************** defaults */
+#controls-holder { /* TODO check if still needed */
 	display: none;
 }
 * {
@@ -9,7 +9,7 @@
 	-moz-box-sizing: border-box;
 }
 body {
-	background-color: #E9E8E3;
+	background-color: #E9E8E3; 
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
 	color: black;
@@ -32,8 +32,14 @@ h1 {
 p {
 	font-size: .15em;
 }
-
-/* ************              classes*/
+hr {
+	border: 0;
+	height: 3px;
+	width: 18%;
+	margin: 0 auto 3%;
+	clear: both;
+}
+/* ************************************** classes */
 .clearfix {
 	clear: both;
 }
@@ -41,21 +47,23 @@ p {
 	position: fixed;
 }
 .fixed-ghost {
-	height: 116px; /*same as fixed div*/
+	height: 116px; /* same as fixed div */
 }
 
 .container {
 	width: 100%;
 }
-.screen-reader-text {
+.screen-reader-text { /* TODO check if using this */
 	left: -9999px;
 	position: absolute;
 	top: -9999px;
 }
+.wrapper {
 
-/* ************              base styles*/
+}
+/* ********************************* base styles */
 
-/* ************              fonts*/
+/* ************ fonts */
 /* lato light (100)
 /* lato regular (400)
 /* lato bold (700)
@@ -63,7 +71,7 @@ p {
 /* dosis semibold (600)
  */
 
-/* *******************************             basic layout*/
+/* ******************************* basic layout*/
 html {
 	height: 100%;
 }
@@ -72,8 +80,8 @@ body {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-/* *******************************              header */
-/* ************      logo */
+/* ************************************ header */
+/* *********************** logo */
 .logo {
 	display: inline-block;
 	float: left;
@@ -88,7 +96,7 @@ body {
 	display: block;
 }
 
-/* ************      main menu */
+/* ******************* main menu */
 .header-nav {
 	top: 0;
 	height: 116px;
@@ -119,28 +127,23 @@ body {
 	border-bottom: solid #DF3F54 3px;
 }
 
-/* *********************************              pages*/
-hr {
-	border: 0;
-	height: 3px;
-	width: 18%;
-	margin: 0 auto 3%;
-	clear: both;
-}
+/* *********************************** pages */
+
 .page {
 	padding-right: 68px;
 	text-align: right;
-	/*width: 100%;*/ /*yupiiiii found at last what was making mac scroll-x work funny :) */
+	/*width: 100%;*/ /*yupiiiii found at last what was making mac scroll-x work funny :) page width 100% was pushing margins out of window */
 }
 .page.is-active {
 }
 .page header {
 	display: inline-block;
-	width: 95%;
+	/* width: 95%; */ /* TODO take out next revision if not needed ..don't remember if in pc made difference */
 }
-.page header > div {
-	display: inline-block;
-	text-align: center;
+.page header > div { /* TODO change for .wrapper */
+/*	display: inline-block;
+	text-align: right;
+	float: none; */ /* TODO take out next revision if not needed ..don't remember if in pc made difference */
 }
 .page header span {
 	display: inline-block;
