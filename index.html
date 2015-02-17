@@ -242,7 +242,7 @@
 						});						
 					}
 					
-					//attach project preview and description:
+					//attach project preview and description to page ready onload:
 					if( project.e != true) {						
 							link = '<li class="thumb"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="he-second"><h3>'+project.t+'</h3><p>'+project.d+'</p><span class=".he-link">view project</span></div></a></li>';
 						$('#emb_container ul.emb_gallery').append(link);						
@@ -253,7 +253,8 @@
 				}
 				
 				///////////////////////////
-
+				//SUPERSIZED options///////
+				///////////////////////////
 				$.supersized({
 
 					// Functionality
@@ -309,6 +310,7 @@
 							$('#pauseplay').trigger('click');
 						});
 						
+						//checking theme working
 						theme.show();
 					});
 				});
@@ -325,7 +327,8 @@
 					theme.hide();
 				});
 				
-				theme.hide();		
+				//checking theme working -> can't see what this is doing. TODO check
+				//theme.hide();		
 						
 				$('#closeGallery a').fadeTo(0, 0).css({'display':'none'});							
 			});

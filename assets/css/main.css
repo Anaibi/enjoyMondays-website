@@ -355,7 +355,7 @@ body {
 .contact p {
 	font-size: 0.21em;
 }
-/* ************************** footer */
+/* ************************** FOOTER */
  footer {
  	height: 100px;
 	background-color: #3A3A3A;
@@ -389,7 +389,7 @@ footer p a {
 	cursor: pointer;
 }
 
-/* ************ slideshow */
+/* ************ SLIDESHOW */
 #slideshow {
 	display: none;
 }
@@ -408,7 +408,7 @@ footer p a {
 	}
 	.home .sub-header {
 		float: right;
-		width: 95%;
+		/*width: 95%;*/ /* TODO check if needed in other devices, else take out */
 		padding-left: 0;
 	}
 	/* CONTACT */
@@ -537,7 +537,14 @@ footer p a {
 		margin-top: 2%;
 	}
 }
+/*checking this for mobile layout */
 @media screen and (max-width: 480px) {
+	h1 {
+		font-size: 0.7em;
+	}
+	.container {
+		overflow-x: hidden;
+	}
 	.main-menu {
 		font-size: 0.76em;
 		margin: 16px 0 18px 0;
@@ -546,29 +553,36 @@ footer p a {
 		margin: 0 0.3%;
 		padding: 3.5px 2px;
 	}
+	/* HOME */
+	.home .sub-header {
+		float: none;
+		width: 95%;
+		margin: auto;
+	}
 	/* WORKS */
-	.work .thumb {
+	.work #portfolio .thumb {
 		width: 85%;
 		transition: transform 0.4s;
+		margin: auto;
 	}
-	.work .thumb:hover img {
-		transform: translate(-70px, -70px) scale(0);
+	.work #portfolio .thumb:hover img {
+		transform: translate(0px, -50px) scale(0.5);
 	}
-	.work .he-second {
+	.work #portfolio .he-second {
 		width: 100%;
-		position: initial;
-		font-size: 0.5em;
-		opacity: 1;
-		padding-top: 20px;
-		padding-bottom: 60%;
-		height: 0;
-		transition: height 1s;
+		font-size: 0.35em;
+		text-align: center;
 	}
-	.work .he-second h3 {
-		margin-top: 0;
+	.work #portfolio .he-second h3 {
+		margin-top: 51%;
+		text-align: center;
 	}
-	.work .he-second:hover {
-		transform: translate(-70px, -70px) scale(0.7);
+	#closeGallery a { /* TODO check in other window sizes*/
+		width: 50px;
+		height: 50px;
+		background-size: cover;
+		top: 5%;
+		right: 5%;
 	}
 	/* CONTACT */
 	.contact.page header {
