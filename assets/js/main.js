@@ -5,7 +5,12 @@ $(function() {
 
 	var windowWidth = function() {
 		return $(window).width();
+	};
+
+	var windowHeight = function() {
+		return $(window).height();
 	}
+
 	//first thing, layout: fit display to window height and set layout according to dimensions/device
 	pageHeight();
 	setLayout();
@@ -124,19 +129,20 @@ $(function() {
 	//set height for pages/sections
 	function pageHeight() { 
 		//efective space for content
-		var h = $(window).height() - HEADER_HEIGHT; 
+		var h = windowHeight() - HEADER_HEIGHT; 
+		
 		//save contact page height before modifying
 		var contactPageHeight = $('#contact.page').height()
+		
 		//simple case just make sure page + header fills window
 		$('.page').css('min-height', h);
 		
 		//check if footer fits into page contact, if it does, set height = h - footer height
-		if ((HEADER_HEIGHT + contactPageHeight + $('footer').height()) <= $(window).height()) {
+		if ((HEADER_HEIGHT + contactPageHeight + $('footer').height()) <= windowHeight()) {
 			$('#contact.page').css('height', (h - $('footer').height()));
 			$('#contact.page').css('min-height', (h - $('footer').height()));
 		}
 		//if it doesn't, min height = h and footer has to deal with that?
-		//TODO on some devices contact page too long
 	};
 	
 	//return true if is active page
@@ -151,18 +157,22 @@ $(function() {
 		// depending on the display width, small or big logo
 		if (windowWidth() < WINDOW_WIDTH_MARK) { 
 			smallLogo();
-			$('body').addClass('mobile').removeClass('wide');												
+			//$('body').addClass('mobile').removeClass('wide');	//not used, take out											
 		}
 		else {	 	
-			$('body').removeClass('mobile').addClass('wide');	
+			//$('body').removeClass('mobile').addClass('wide');	//not used, take out
 			if (isPage('home'))	{ 
 				bigLogo();
 			} else {
 				smallLogo();
 			}
 		}
+		//unless on contact page, footer is hidden untill contact page reached
 		if (!isPage('contact')) hideFooter();
 		
+		//center seccion contents (y axis)
+		centerContents();
+
 		setTimeout(function() { 
 			fixedGhost(); 
 			scrollToPosition(page);
@@ -174,6 +184,15 @@ $(function() {
 		$('.fixed-ghost').height(h);
 	};
 	
+	//center home and contact page content
+	function centerContents() {
+		//set top margin for each aprox 50% of free space
+		var yH = $('#home').height() - $('#home .wrapper').height(); 
+		var cH = $('#contact').height() - $('#contact .wrapper').height(); 
+		$('#home .wrapper').css('margin-top', (yH/3));
+		$('#contact .wrapper').css('margin-top', (cH/3));
+	}
+
 	//footer animation
 	function showFooter() { //se puede pulir mas/mejor 
 		$('footer').show();

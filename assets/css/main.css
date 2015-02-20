@@ -160,7 +160,7 @@ body {
 	text-align: center;
 	padding-top: 10%;
 }
-/* ************ home*/
+/* ************ HOME */
 .home {
 	padding-top: 3%; /*12vh;*/
 	background-color: #E9E8E3;
@@ -189,7 +189,7 @@ body {
 	padding-left: 4%;
 	width: 50%;
 }
-/* ************ work*/
+/* ************ WORK */
 .work {
 	padding-bottom: 138px;
 	padding-top: 34px;
@@ -229,7 +229,7 @@ body {
 	cursor: pointer;
 }
 
-/* ************ project gallery */
+/* ************ PROJECT gallery */
 #closeGallery a {
 	width:95px;
 	height:95px;
@@ -320,13 +320,9 @@ body {
 	width: 50px;
 	margin: 0 auto 4%;
 }
-/* ************ contact*/
+/* ************ CONTACT */
 .page.contact {
 	background-color: #DF3F54;
-}
-.contact header {
-	padding-top: 3%;
-	padding-bottom: 3%;
 }
 .contact header hr {
 	color: #F17C71;

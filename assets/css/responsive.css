@@ -9,12 +9,8 @@
 		font-size: .2em;
 	}
 	/* HOME */
-	.home {
-		padding-top: 10vh; /*17%;*/
-	}
 	.home .sub-header {
 		float: right;
-		/*width: 95%;*/ /* TODO check if needed in other devices, else take out */
 		padding-left: 0;
 	}
 	/* CONTACT */
@@ -86,26 +82,17 @@
 	hr {
 		margin: 0px auto 3%;
 	}
-
-	/* HOME */
-	.home header 
-	, .contact header {
-		margin-top: 15%;
-	}
 	/* ABOUT */
 	.about .content article {
 		width: 50%;
 	}
 	/* CONTACT */
-	.contact header {
-		padding-top: 5%;
-	}
 	.contact h1 {
 		text-align: right;
 	}
 	.contact .sub-header {
 		margin: 0;
-		width: 55%;
+		width: 75%;
 	}	
 	.contact p {
 		font-size: 0.4em;
@@ -141,9 +128,7 @@
 	.logo a img {
 		height: 60px;
 	}
-	.home.page header {
-		margin-top: 15%;
-	}
+	/* FOOTER */
 	footer p {
 		font-size: .75em;
 		padding: 3%;
@@ -179,9 +164,6 @@
 		padding: 3.5px 2px;
 	}
 	/* HOME */
-	.home.page header {
-		margin-top: 25%;
-	}
 	.home .sub-header {
 		float: none;
 		width: 95%;
@@ -216,10 +198,6 @@
 	}
 	
 	/* CONTACT */
-	.contact.page header {
-		margin-top: 12%;
-		padding-top: 0;
-	}
 	.contact h1 {
 		text-align: center;
 	}
