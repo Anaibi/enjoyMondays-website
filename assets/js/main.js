@@ -2,18 +2,18 @@ $(function() {
 
 	var headerHeight = 116;
 
-	//first thing, layout: fit display to window height
+	//first thing, layout: fit display to window height and set layout according to dimensions/device
 	pageHeight();
 	setLayout();
 	
-	//on changing window size, fit section again
+	//on changing window size, fit again
 	$(window).resize(function() {
 		pageHeight();
 		setLayout();	
 	});	
 
 	//scroll navigation, calls to WAYPOINT plugin:
-	//call when entering new section to update links, special case home section.
+	//call when entering new section to update links, special cases home section and footer
 
 	//when scrolling in and out of home section, and offset headerHeight - 1 
 	$('#home header').waypoint(function(direction) {		
@@ -130,10 +130,12 @@ $(function() {
 			$('#contact.page').css('min-height', (h - $('footer').height()));
 		}
 		//if it doesn't, min height = h and footer has to deal with that?
+		//TODO on some devices contact page too long
 	};
 	
 	//return true if is active page
 	function isPage(id) {
+		console.log($('.active-link').attr('href'));
 		return ($('.active-link').attr('href') === '#' + id);
 	};
 	
@@ -141,8 +143,8 @@ $(function() {
 	function setLayout() {  
 		var w = $(window).width(); 
 		var page = $('.active-link').attr('href'); 
-		//if (w<768) { 
-		if (mobileLayout())	{
+		if (w<768) { 
+		//if (mobileLayout())	{
 			smallLogo();
 			$('body').addClass('mobile').removeClass('wide');												
 		}
@@ -156,7 +158,7 @@ $(function() {
 		}
 		if (!isPage('contact')) hideFooter();
 		
-		setTimeout(function() { console.log('in timesetout');
+		setTimeout(function() { 
 			fixedGhost(); 
 			scrollToPosition(page);
 	   	}, 400);

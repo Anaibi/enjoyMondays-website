@@ -15,6 +15,7 @@
 # rearrange works grid (08)
 # footer doesn't show (09)
 # rearrange services grid (10)
+# init page with small header (11)
 
 
 
