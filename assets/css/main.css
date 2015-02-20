@@ -1,5 +1,8 @@
 
 /* *********************************** defaults */
+.ui-loader {
+	display: none;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -118,10 +121,13 @@ body {
 	margin-left: 10px;
 	color: inherit;
 }
-.main-menu a.active-link, 
+.main-menu a.active-link {
+	font-weight: 900;
+	border-bottom: solid #DF3F54 3px !important; /* need to override .touch class no border */
+}
 .main-menu a:hover {
 	font-weight: 900;
-	border-bottom: solid #DF3F54 3px;
+	border-bottom: solid #DF3F54 3px; /* .touch has to override this */
 }
 
 /* *********************************** pages */
@@ -384,29 +390,4 @@ footer p a {
 	display: none;
 }
 
-/* ************ responsive WINDOW WIDTH */
-@media screen and (max-width: 1024px) {
-	h1 {
-		font-size: 1.15em;
-	}
-	p, .about p {
-		font-size: .2em;
-	}
-	/* HOME */
-	.home {
-		padding-top: 10vh; /*17%;*/
-	}
-	.home .sub-header {
-		float: right;
-		/*width: 95%;*/ /* TODO check if needed in other devices, else take out */
-		padding-left: 0;
-	}
-	/* CONTACT */
-	.contact .sub-header {
-		margin-right; 0;
-		width: 51.8%;	
-	}
-	.contact p {
-		font-size: .3em;
-	}
-}
+

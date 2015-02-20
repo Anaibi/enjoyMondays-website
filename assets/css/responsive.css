@@ -158,6 +158,9 @@
 
 /* ///////////////////////////////////////////////// MAX WIDTH 480px //// */
 @media screen and (max-device-width: 480px) {
+	.main-menu a:hover {
+		border-bottom: none;
+	}
 	.logo {
 		/*margin-top: 2px;*/
 	}
@@ -176,6 +179,9 @@
 		padding: 3.5px 2px;
 	}
 	/* HOME */
+	.home.page header {
+		margin-top: 25%;
+	}
 	.home .sub-header {
 		float: none;
 		width: 95%;
@@ -199,20 +205,41 @@
 		margin-top: 51%;
 		text-align: center;
 	}
+
+	/* ABOUT */
+	.about .content article {
+		width: 80%;	
+		margin: 36px auto;
+	}
+	.about .content article img {
+		width: 68%;
+	}
 	
 	/* CONTACT */
 	.contact.page header {
-		margin-top: 40%;
+		margin-top: 12%;
+		padding-top: 0;
+	}
+	.contact h1 {
+		text-align: center;
 	}
 	.contact h1.s-header-one {
 		font-size: 2em;
 	}
+	.contact .sub-header {
+		text-align: center;
+		float: none;
+	}
 	.contact p {
 		font-size: 0.5em;
 	}
+	.contact hr {
+		margin-top: 3%;
+	}
+	/* FOOTER */
 	footer p {
 		font-size: .65em;
-		margin-top: 1.5%;
+		margin-top: 0;
 		text-align: center;
 		width: 100%;
 	}
@@ -221,6 +248,8 @@
 		text-align: center;
 		/*width: 100%;*/
 		width: auto;
+		margin: 0;
+		padding: 0;
 	}
 	/* FOOTER */
 	footer p {
@@ -230,5 +259,43 @@
 	
 }
 
+/* ************************************ responsive by: .touch class */
+
+/* ///////////////////////////////////////////////// MAX WIDTH 1024px //// */
+@media screen and (max-width: 1024px) {
+	.touch .main-menu a:hover {
+		border-bottom: none;
+	}
 
 
+
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+  /* some CSS here */
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+  /* some CSS here */
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+  /* some CSS here */
+}
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+  /* some CSS here */
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  /* some CSS here */
+}
+
+/* #### Desktops #### */
+@media screen and (min-width: 1024px){
+  /* some CSS here */
+}
