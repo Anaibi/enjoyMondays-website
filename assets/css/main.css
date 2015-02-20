@@ -603,7 +603,13 @@ footer p a {
 	#social {
 		float: none;
 		text-align: center;
-		width: 100%;
+		/*width: 100%;*/
+		width: auto;
+	}
+	/* FOOTER */
+	footer p {
+		width: auto;
+		float: none;
 	}
 	
 }
