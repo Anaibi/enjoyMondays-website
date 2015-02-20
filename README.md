@@ -5,7 +5,7 @@
 
 #list of issues:
 
-# scrolling updates ok new active link but doesn't turn off initial active link --> TODO (01)
+# FIXED scrolling updates ok new active link but doesn't turn off initial active link --> TODO (01) 
 # home header too big --> make small version for mobile landscape in general --> TODO (02)
 # footer fix margins and paddings (check to make only on landscape) --> TODO (03)
 # footer appears after loooong contact page --> TODO (04)
@@ -15,8 +15,9 @@
 # rearrange works grid (08)
 # footer doesn't show (09)
 # rearrange services grid (10)
-# init page with small header (all) (11) --> fixed
+# FIXED init page with small header (all) (11) 
 
+# (XX) means checked on chrome dev tools and ok
 
 
 # amazon kindle fire first generation
@@ -60,7 +61,7 @@
 # on iphone 3GS
 ##################
 # 320x480 PORTRAIT
-# 01
+# (01)
 
 # 480x320 LANDSCAPE
 # 02
@@ -70,7 +71,7 @@
 # on iphone 4 
 ##################
 # 320x480 PORTRAIT
-# 01
+# (01)
 # 02
 # 03
 # 04
@@ -84,7 +85,7 @@
 # on iphone 5 
 ##################
 # 320x568 PORTRAIT 
-# 01
+# (01)
 
 # 568x320 LANDSCAPE
 # 01
@@ -95,7 +96,7 @@
 # on iphone 6
 ##################
 # 375x667 PORTRAIT
-# 01
+# (01)
 #(check footer can't see on small screen)
 
 # 667x375 LANDSCAPE
