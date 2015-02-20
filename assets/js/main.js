@@ -1,7 +1,11 @@
 $(function() {
 
-	var headerHeight = 116;
+	const HEADER_HEIGHT = 116
+	    , WINDOW_WIDTH_MARK = 768;
 
+	var windowWidth = function() {
+		return $(window).width();
+	}
 	//first thing, layout: fit display to window height and set layout according to dimensions/device
 	pageHeight();
 	setLayout();
@@ -15,7 +19,7 @@ $(function() {
 	//scroll navigation, calls to WAYPOINT plugin:
 	//call when entering new section to update links, special cases home section and footer
 
-	//when scrolling in and out of home section, and offset headerHeight - 1 
+	//when scrolling in and out of home section, and offset HEADER_HEIGHT - 1 
 	$('#home header').waypoint(function(direction) {		
 		//scrolling out
 		if (direction === 'down') {
@@ -27,7 +31,7 @@ $(function() {
 			bigLogo();			
 			moveMenu('moveDown');
 		}
-	}, {offset: headerHeight-1});
+	}, {offset: HEADER_HEIGHT-1});
 
 	//when scrolling into home section from works section, and no offset
 	$('#home header').waypoint(function(direction) {
@@ -82,8 +86,10 @@ $(function() {
 
 	//animate logo to big
 	function bigLogo() {		
-		$('.logo').animate({
-			'margin-top': '42px'});
+		$('.logo')
+			.animate({
+				'margin-top': '42px'
+			});
 		
 		$('.logo img').animate({
 			height: '99px',
@@ -118,14 +124,14 @@ $(function() {
 	//set height for pages/sections
 	function pageHeight() { 
 		//efective space for content
-		var h = $(window).height() - headerHeight; 
+		var h = $(window).height() - HEADER_HEIGHT; 
 		//save contact page height before modifying
 		var contactPageHeight = $('#contact.page').height()
 		//simple case just make sure page + header fills window
 		$('.page').css('min-height', h);
 		
 		//check if footer fits into page contact, if it does, set height = h - footer height
-		if ((headerHeight + contactPageHeight + $('footer').height()) <= $(window).height()) {
+		if ((HEADER_HEIGHT + contactPageHeight + $('footer').height()) <= $(window).height()) {
 			$('#contact.page').css('height', (h - $('footer').height()));
 			$('#contact.page').css('min-height', (h - $('footer').height()));
 		}
@@ -135,16 +141,15 @@ $(function() {
 	
 	//return true if is active page
 	function isPage(id) {
-		console.log($('.active-link').attr('href'));
 		return ($('.active-link').attr('href') === '#' + id);
 	};
 	
 	//set layout class
 	function setLayout() {  
-		var w = $(window).width(); 
+		//var windowWidth = $(window).width(); 
 		var page = $('.active-link').attr('href'); 
-		if (w<768) { 
-		//if (mobileLayout())	{
+		// depending on the display width, small or big logo
+		if (windowWidth() < WINDOW_WIDTH_MARK) { 
 			smallLogo();
 			$('body').addClass('mobile').removeClass('wide');												
 		}
@@ -166,8 +171,6 @@ $(function() {
 	
 	function fixedGhost() {		
 		h = $('header.header-nav').height() + parseInt($('header.header-nav').css('padding-bottom'));
-		console.log('header ' + $('header.header-nav').height());
-		console.log('padding ' + parseInt($('header.header-nav').css('padding-bottom')))
 		$('.fixed-ghost').height(h);
 	};
 	
@@ -207,8 +210,8 @@ $(function() {
 	}
 
 	//return true if device mobile or if window width less then 768px
-	function mobileLayout() {
-		if ($('window').width() < 768 || navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) return true;		
+	function mobileDevice() {
+		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) return true;		
 		else return false;
 	}
 

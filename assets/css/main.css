@@ -1,8 +1,5 @@
 
 /* *********************************** defaults */
-#controls-holder { /* TODO check if still needed */
-	display: none;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -47,7 +44,7 @@ hr {
 	position: fixed;
 }
 .fixed-ghost {
-	height: 116px; /* same as fixed div */
+	height: 116px; /* same as fixed div : const HEADER_HEIGHT = 116 */
 }
 
 .container {
@@ -132,18 +129,11 @@ body {
 .page {
 	padding-right: 68px;
 	text-align: right;
-	/*width: 100%;*/ /*yupiiiii found at last what was making mac scroll-x work funny :) page width 100% was pushing margins out of window */
 }
 .page.is-active {
 }
 .page header {
 	display: inline-block;
-	/* width: 95%; */ /* TODO take out next revision if not needed ..don't remember if in pc made difference */
-}
-.page header > div { /* TODO change for .wrapper */
-/*	display: inline-block;
-	text-align: right;
-	float: none; */ /* TODO take out next revision if not needed ..don't remember if in pc made difference */
 }
 .page header span {
 	display: inline-block;
@@ -420,227 +410,3 @@ footer p a {
 		font-size: .3em;
 	}
 }
-@media screen and (max-width: 768px) {
-	h1 {
-		text-align: center;
-	}
-	header.header-nav {
-		height: auto;
-		padding-bottom: 2%;
-	}
-	.main-menu {
-		font-size: 1.28em;
-		margin: 16px 0 18px 0 !important; 
-		float: none;
-		text-align: center;
-	}
-	.main-menu a {
-		float: none;
-		margin: 0 1.5%;
-	}
-	.logo {
-		display: block;
-		float: none;
-		text-align: center;
-		margin-left: 0;
-		margin-top: 20px;		
-	}
-	.logo a {
-		display: inline-block;
-	}
-	.logo a img {
-		height: 5em;
-		width: auto;
-	}	
-	.page {
-		padding: 0;
-		text-align: center;
-	}
-	.page header {
-		width: 95%;
-		margin-top: 5%;
-	}
-	.page .content {
-		padding-top: 5%;
-		margin: 0;
-	}
-	.page header span {
-		float: none;
-	}
-	.sub-header {
-		width: 100%;
-		float: none;
-	}
-	p, .about p {
-		font-size: .23em;
-	}	
-	hr {
-		margin: 0px auto 3%;
-	}
-
-	/* HOME */
-	.home header 
-	, .contact header {
-		margin-top: 15%;
-	}
-	/* ABOUT */
-	.about .content article {
-		width: 50%;
-	}
-	/* CONTACT */
-	.contact header {
-		padding-top: 5%;
-	}
-	.contact h1 {
-		text-align: right;
-	}
-	.contact .sub-header {
-		margin: 0;
-		width: 55%;
-	}	
-	.contact p {
-		font-size: 0.4em;
-	}
-	
-	/* WORK */
-	.work .thumb {
-		margin: 3% 4%;
-		width: 33%;
-	}
-	.work .thumb img {
-		width: 100%;
-	}
-	/* FOOTER */
-	footer p {
-		font-size: .85em;
-	}
-}
-@media screen and (max-width: 640px) {
-	.main-menu {
-		font-size: 0.86em;
-		margin: 16px 0 18px 0;
-	}
-	.logo a img {
-		height: 60px;
-	}
-	.home.page header {
-		margin-top: 15%;
-	}
-	footer p {
-		font-size: .75em;
-		padding: 3%;
-		margin-top: 3.5%;
-	}
-	#social {
-		margin: 0;
-		padding: 3.5%;
-		margin-top: 2%;
-	}
-}
-/*checking this for mobile layout */
-@media screen and (max-width: 480px) {
-	h1 {
-		font-size: 0.7em;
-	}
-	.container {
-		overflow-x: hidden;
-	}
-	.main-menu {
-		font-size: 0.76em;
-		margin: 16px 0 18px 0;
-	}
-	.main-menu a {
-		margin: 0 0.3%;
-		padding: 3.5px 2px;
-	}
-	/* HOME */
-	.home .sub-header {
-		float: none;
-		width: 95%;
-		margin: auto;
-	}
-	/* WORKS */
-	.work #portfolio .thumb {
-		width: 85%;
-		transition: transform 0.4s;
-		margin: auto;
-	}
-	.work #portfolio .thumb:hover img {
-		transform: translate(0px, -50px) scale(0.5);
-	}
-	.work #portfolio .he-second {
-		width: 100%;
-		font-size: 0.35em;
-		text-align: center;
-	}
-	.work #portfolio .he-second h3 {
-		margin-top: 51%;
-		text-align: center;
-	}
-	#closeGallery a { /* TODO check in other window sizes*/
-		width: 50px;
-		height: 50px;
-		background-size: cover;
-		top: 5%;
-		right: 5%;
-	}
-	/* CONTACT */
-	.contact.page header {
-		margin-top: 40%;
-	}
-	.contact h1.s-header-one {
-		font-size: 2em;
-	}
-	.contact p {
-		font-size: 0.5em;
-	}
-	footer p {
-		font-size: .65em;
-		margin-top: 1.5%;
-		text-align: center;
-		width: 100%;
-	}
-	#social {
-		float: none;
-		text-align: center;
-		/*width: 100%;*/
-		width: auto;
-	}
-	/* FOOTER */
-	footer p {
-		width: auto;
-		float: none;
-	}
-	
-}
-
-/* #### Mobile Phones Portrait #### */
-@media screen and (max-device-width: 480px) and (orientation: portrait){
-  /* some CSS here */
-}
-
-/* #### Mobile Phones Landscape #### */
-@media screen and (max-device-width: 640px) and (orientation: landscape){
-  /* some CSS here */
-}
-
-/* #### Mobile Phones Portrait or Landscape #### */
-@media screen and (max-device-width: 640px){
-  /* some CSS here */
-}
-
-/* #### iPhone 4+ Portrait or Landscape #### */
-@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
-  /* some CSS here */
-}
-
-/* #### Tablets Portrait or Landscape #### */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
-  /* some CSS here */
-}
-
-/* #### Desktops #### */
-@media screen and (min-width: 1024px){
-  /* some CSS here */
-}
-
