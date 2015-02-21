@@ -5,21 +5,27 @@ $(function() {
 
 	var windowWidth = function() {
 		return $(window).width();
-	};
+	}();
 
 	var windowHeight = function() {
 		return $(window).height();
-	}
+	};
+
+////////////////////////////////////////
+////////////////////////////////////////
 
 	//first thing, layout: fit display to window height and set layout according to dimensions/device
-	pageHeight();
+	setPageHeight();
 	setLayout();
 	
 	//on changing window size, fit again
 	$(window).resize(function() {
-		pageHeight();
+		setPageHeight();
 		setLayout();	
 	});	
+
+//////////////////////////////////////// SCROLL FUNCTIONS
+//////////////////////////////////////// WAYPOINT PLUGIN 
 
 	//scroll navigation, calls to WAYPOINT plugin:
 	//call when entering new section to update links, special cases home section and footer
@@ -28,12 +34,21 @@ $(function() {
 	$('#home header').waypoint(function(direction) {		
 		//scrolling out
 		if (direction === 'down') {
-			smallLogo();
+			if (isLandscapeHeader()) {
+				hideLogo();
+			} else {
+				smallLogo();
+			};
 			moveMenu('moveUp');
 		} 
 		//scrolling in
 		else if (direction === 'up') {
-			bigLogo();			
+			if (isLandscapeHeader()) {
+				smallLogo();
+				showLogo();	
+			} else {
+				bigLogo();
+			};		
 			moveMenu('moveDown');
 		}
 	}, {offset: HEADER_HEIGHT-1});
@@ -71,24 +86,27 @@ $(function() {
 			hideFooter();
 		}
 	}, {offset: 'bottom-in-view'});	
+
+
+//////////////////////////////////////// MENU FUNCTIONALITY
+////////////////////////////////////////
 	
 	//main menu navigation
 	$('.main-menu a').click(function(e){ 
-		
 		e.preventDefault();
-		
 		var page = $(this).attr('href'); 
-		
-		//update links class active link
+
 		updateLinks(page);
 		
-		//scroll to position if not NOTES clicked
 		if(!isPage('notes')) scrollToPosition(page);								
 	});			
-	
-	
+		
+////////////////////////////////////////
+////////////////////////////////////////
+
 //functions		
 
+	//////////////////////////////////////// LOGO ANIMATION
 	//animate logo to big
 	function bigLogo() {		
 		$('.logo')
@@ -110,6 +128,19 @@ $(function() {
 			width: '111px'});
 	};
 
+	function landscapeLogo() {
+
+	}
+
+	function hideLogo() { 
+		$('.logo').slideUp();
+	}
+
+	function showLogo() {
+		$('.logo').slideDown();
+	}
+	
+	//////////////////////////////////////// MENU ANIMATION AND HELPER FUNCTIONS
 	//move main menu
 	function moveMenu(direction) {
 		if (direction === "moveUp") $('.main-menu').animate({
@@ -119,15 +150,16 @@ $(function() {
 			'margin-top': '77px'
 		});
 	}
-	
+
 	//update active link on main menu nav id string 
 	function updateLinks(id) { 
 		$('.main-menu a.active-link').removeClass('active-link');
 		$(".main-menu a[href='"+id+"']").addClass('active-link');
 	};
-	
+
+	//////////////////////////////////////// PAGES / LAYOUT SETTINGS AND HELPER FUNCTIONS
 	//set height for pages/sections
-	function pageHeight() { 
+	function setPageHeight() { 
 		//efective space for content
 		var h = windowHeight() - HEADER_HEIGHT; 
 		
@@ -142,48 +174,86 @@ $(function() {
 			$('#contact.page').css('height', (h - $('footer').height()));
 			$('#contact.page').css('min-height', (h - $('footer').height()));
 		}
-		//if it doesn't, min height = h and footer has to deal with that?
+		// if it doesn't, min height = h and footer has to deal with that?
 	};
 	
-	//return true if is active page
-	function isPage(id) {
-		return ($('.active-link').attr('href') === '#' + id);
-	};
 	
-	//set layout class
+	
+	// resolve layout
 	function setLayout() {  
-		//var windowWidth = $(window).width(); 
+		// check if is landscape or fixed header
+		setHeaderClass();
+
 		var page = $('.active-link').attr('href'); 
-		// depending on the display width, small or big logo
-		if (windowWidth() < WINDOW_WIDTH_MARK) { 
+
+		// depending on the display width, small, big or landscape LOGO
+		// big logo only on home and over WINDOW_WIDTH_MARK screens
+		// landscape logo only on  
+		// small logo all other 
+		if (windowWidth < WINDOW_WIDTH_MARK) { 
 			smallLogo();
-			//$('body').addClass('mobile').removeClass('wide');	//not used, take out											
 		}
 		else {	 	
-			//$('body').removeClass('mobile').addClass('wide');	//not used, take out
-			if (isPage('home'))	{ 
+			if (isPage('home') && !isLandscapeHeader())	{ 
 				bigLogo();
 			} else {
 				smallLogo();
 			}
 		}
-		//unless on contact page, footer is hidden untill contact page reached
-		if (!isPage('contact')) hideFooter();
+
+		// unless on contact page, FOOTER is hidden untill contact page reached
+		if (!isPage('contact')) hideFooter(); //was used for slideUp, if not used take out
 		
-		//center seccion contents (y axis)
+		// center seccion contents (y axis)
 		centerContents();
 
-		setTimeout(function() { 
-			fixedGhost(); 
-			scrollToPosition(page);
-	   	}, 400);
+		// set HEADER and PAGE position 
+		if (isFixedHeader()) {
+			setTimeout(function() { 
+				fixHeader(); 
+				scrollToPosition(page);
+	   		}, 400);
+		}	
 	};
 	
-	function fixedGhost() {		
-		h = $('header.header-nav').height() + parseInt($('header.header-nav').css('padding-bottom'));
-		$('.fixed-ghost').height(h);
+	// set fixed header or landscape header 
+	function setHeaderClass() { console.log('checking or')
+		/*$(window).on("orientationchange", "load" ,function(){ console.log('checking or p');
+  			if(window.orientation == 0) { //PORTRAIT --> always fixed
+    			$("html").removeClass('landscape');
+  			}
+  			else { // LANDSCAPE 
+    			$("html").addClass('landscape'); console.log('checking or l');
+  			}
+  			// if window width / height ratio xx, set to landscape TODO maybe
+		});
+
+		$(window).on("load",function(event){
+    		alert("Orientation changed to: " + window.orientation);
+  		});*/ //this doesn't work
+	
+		// check caveats described here for further tuning
+		// http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation/
+		if (windowWidth < windowHeight()) { // Portrait
+			$("html").removeClass('landscape');
+		} else {
+			$("html").addClass('landscape'); // Landscape
+		}
+	}
+
+	// set fixed header
+	function fixHeader() {
+		var header = $('#main-header');	
+		var h;
+		if (isLandscapeHeader()) {
+			h = $(header + ' nav').height() + parseInt($(header).css('padding-bottom'));
+		} else {
+			h = $(header).height() + parseInt($(header).css('padding-bottom'));
+		}
+		$('.fixed-fixed').height(h);
 	};
 	
+
 	//center home and contact page content
 	function centerContents() {
 		//set top margin for each aprox 50% of free space
@@ -193,6 +263,34 @@ $(function() {
 		$('#contact .wrapper').css('margin-top', (cH/3));
 	}
 
+	//scroll to pages position
+	function scrollToPosition(page) {		
+		//con overflow-x hidden el scrollTop no funciona
+		$('html, body').css('overflow-x', 'visible'); 
+
+		$('body, html')
+			.stop()
+			.animate({
+	   			scrollTop: $(page).offset().top - $('.fixed-fixed').height()
+	   		}, 750, function(){ 
+               	$('html, body').clearQueue();
+    	});
+	}
+
+	// return true if is active page
+	function isPage(id) {
+		return ($('.active-link').attr('href') === '#' + id);
+	};
+
+	function isLandscapeHeader() {
+		return $("html").hasClass('landscape');
+	}
+
+	function isFixedHeader() {
+		return $('#main-header header').hasClass('fixed');
+	}
+
+	//////////////////////////////////////// FOOTER
 	//footer animation
 	function showFooter() { //se puede pulir mas/mejor 
 		$('footer').show();
@@ -208,31 +306,13 @@ $(function() {
 		$('footer').hide();
 	};
 
-	//scroll to pages position
-	function scrollToPosition(page) {
+	
 
-		var newTop = $(page).offset().top - $('.fixed-ghost').height(); 
-
-		//if (mobileLayout()) {        //check in devices which ones scrollTop doesn't work
-          //  window.scrollTo(0, newTop); // first value for left offset, second value for top offset
-            //alert('in ips or android'); //this alerts ok on my phone
-		//} else { //alert('not in ips or android');  /this alerts on mac. on window resize alerts 2/3 times check unnecessary calls
-			$('html, body').css('overflow-x', 'visible'); //con overflow-x hidden el scrollTop no funciona
-			$('body, html')
-				.stop()
-				.animate({
-	    			scrollTop: newTop
-	     		}, 750, function(){ 
-                	$('html, body').clearQueue();
-            });
-		//}
-	}
-
-	//return true if device mobile or if window width less then 768px
-	function mobileDevice() {
-		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) return true;		
-		else return false;
-	}
+	//return true if device mobile 
+	//function mobileDevice() {
+	//	if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) return true;		
+	//	else return false;
+	//}
 
 
 	// study if necessary add to mobileLayout

@@ -46,8 +46,8 @@ hr {
 .fixed {
 	position: fixed;
 }
-.fixed-ghost {
-	height: 116px; /* same as fixed div : const HEADER_HEIGHT = 116 */
+.fixed-fixed {
+	height: 0; /* same as fixed div : const HEADER_HEIGHT = 116 */
 }
 
 .container {
