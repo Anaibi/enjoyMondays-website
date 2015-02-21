@@ -34,7 +34,7 @@ $(function() {
 	$('#home header').waypoint(function(direction) {		
 		//scrolling out
 		if (direction === 'down') {
-			if (isLandscapeHeader()) {
+			if (isLandscapeHeader() && !isPage('home')) {
 				hideLogo();
 			} else {
 				smallLogo();
@@ -186,21 +186,7 @@ $(function() {
 
 		var page = $('.active-link').attr('href'); 
 
-		// depending on the display width, small, big or landscape LOGO
-		// big logo only on home and over WINDOW_WIDTH_MARK screens
-		// landscape logo only on  
-		// small logo all other 
-		if (windowWidth < WINDOW_WIDTH_MARK) { 
-			smallLogo();
-		}
-		else {	 	
-			if (isPage('home') && !isLandscapeHeader())	{ 
-				bigLogo();
-			} else {
-				smallLogo();
-			}
-		}
-
+		
 		// unless on contact page, FOOTER is hidden untill contact page reached
 		if (!isPage('contact')) hideFooter(); //was used for slideUp, if not used take out
 		
@@ -208,12 +194,12 @@ $(function() {
 		centerContents();
 
 		// set HEADER and PAGE position 
-		if (isFixedHeader()) {
+		//if (!isLandscapeHeader()) {
 			setTimeout(function() { 
 				fixHeader(); 
 				scrollToPosition(page);
 	   		}, 400);
-		}	
+		//}	
 	};
 	
 	// set fixed header or landscape header 
@@ -234,21 +220,22 @@ $(function() {
 	
 		// check caveats described here for further tuning
 		// http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation/
-		if (windowWidth < windowHeight()) { // Portrait
-			$("html").removeClass('landscape');
-		} else {
-			$("html").addClass('landscape'); // Landscape
+
+		if ((windowWidth >= windowHeight()) && (windowWidth <= WINDOW_WIDTH_MARK)) { // Portrait
+			$("html").addClass('landscape'); console.log('not landscape for mobile');
+		} else { console.log('landscape for mobile');
+			$("html").removeClass('landscape'); // Landscape
 		}
 	}
 
 	// set fixed header
 	function fixHeader() {
-		var header = $('#main-header');	
+		var header = $('#main-header header');	
 		var h;
 		if (isLandscapeHeader()) {
-			h = $(header + ' nav').height() + parseInt($(header).css('padding-bottom'));
+			h = $('#main-header nav').height() + parseInt(header.css('padding-bottom'));
 		} else {
-			h = $(header).height() + parseInt($(header).css('padding-bottom'));
+			h = header.height() + parseInt(header.css('padding-bottom'));
 		}
 		$('.fixed-fixed').height(h);
 	};
