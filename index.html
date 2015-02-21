@@ -25,52 +25,50 @@
 	</head>
 	<body>
 		<!-- web displays either #front-page either works #slideshow (fullwidth) -->
-		<!-- #front-page (header + sections + footer) -->
+		<!-- #front-page (header + pages + footer) -->
 		<div id="front-page">
-			<!--  header -->
-			<div id="main-header" class="top fixed fullwidth container">
-				<!-- header can be fix or landscape, by default fixed -->
-				<header>
-					<!-- logo -->
-					<div class="logo">
-						<a href="#"><img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
-							<span class="screen-reader-text">Enjoy Mondays</span>
-						</a>
-					</div>
+			<!-- main header can be fix or landscape, by default fixed -->
+			<header id="main-header" class="top fixed fullwidth container">
+				<!-- logo -->
+				<div id="logo">
+					<a href="#"><img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
+						<span class="screen-reader-text">Enjoy Mondays</span>
+					</a>
+				</div>
 
-					<!-- Navigation -->
-					<nav class="main-menu">
-						<a href="#home" class="active-link">Home</a>
-						<a href="#work">Work</a>
-						<a href="#about">About</a>
-						<a href="#contact">Contact</a>
-						<a href="#notes">Notes</a>
-					</nav>	
-				</header>			
-			</div>	
+				<!-- Navigation -->
+				<nav>
+					<a href="#home" class="active-link">Home</a>
+					<a href="#work">Work</a>
+					<a href="#about">About</a>
+					<a href="#contact">Contact</a>
+					<a href="#notes">Notes</a>
+				</nav>	
+			</header>
 
-			<!-- sections x pages + footer -->
-			<div id="sections" class="fullwidth container clearfix">	
-				<!--  SECTION HOME -->
-				<section id="home" class="home page clearfix">
+			<div id="fixed-header-aux"></div>			
+
+			<!-- pages + footer -->
+			<div id="pages" class="fullwidth container clearfix">	
+				<!-- HOME PAGE -->
+				<section id="home" class="page clearfix">
 					<header>					
-						<div class="wrapper">
-							<h1>
-								<span class="s-header-one">
-									<img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
+						<h1>
+							<span class="s-header-one">
+								<img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
 									We code</span>
-								<span class="s-header-two">you smile</span>	
-							</h1>				
-							<div class="sub-header">
-								<hr>
-								<p>Crafting clean and fresh awesomnes for the web and beyond.</p>
-								<p>We make it funky. Want to work with us?</p>
-							</div>
-						</div>					
+							<span class="s-header-two">you smile</span>	
+						</h1>				
+						<div class="sub-header">
+							<hr>
+							<p>Crafting clean and fresh awesomnes for the web and beyond.</p>
+							<p>We make it funky. Want to work with us?</p>
+						</div>
 					</header>									
 				</section>
-				<!--  SECTION WORK -->
-				<section id="work" class="work page clearfix responsive_headline">
+				<!--  END HOME PAGE -->
+				<!--  WORK PAGE -->
+				<section id="work" class="page clearfix responsive_headline">
 					<header>
 						<div>
 							<h1>Works</h1>					
@@ -84,12 +82,12 @@
 						<div id="emb_container">
 							<ul class="emb_gallery">							
 							</ul>
-						</div>
-																
+						</div>										
 					</div>				
 				</section>
-				<!--  SECTION ABOUT -->
-				<section id="about" class="about page clearfix responsive_headline">
+				<!-- END WORK PAGE -->
+				<!-- ABOUT PAGE -->
+				<section id="about" class="page clearfix responsive_headline">
 					<header>
 						<div>
 							<h1>Services</h1>
@@ -121,10 +119,10 @@
 						</article>
 					</div>				
 				</section>	
-				<!--  SECTION CONTACT -->
-				<section id="contact" class="contact page clearfix responsive_headline-2">
+				<!-- END ABOUT PAGE -->
+				<!-- CONTACT PAGE -->
+				<section id="contact" class="page clearfix responsive_headline-2">
 					<header>
-						<div class="wrapper">
 						<h1 class="s-header-one">say hello</h1>
 						<h1 class="s-header-two">hola@enjoy-mondays.com</h1>									
 						<div class="sub-header">
@@ -132,9 +130,9 @@
 							<p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access
 								content. The finished product will be totally unique and represent awesomeness.</p>
 						</div>	
-						</div>
 					</header>						
 				</section>	
+				<!-- END CONTACT PAGE -->
 
 				<footer class="clearfix">
 					<div id="bg"></div>
@@ -169,10 +167,8 @@
 			</div>
 
 			<!--Arrow Navigation-->
-			<a id="prevslide" class="load-item">			
-			</a>
-			<a id="nextslide" class="load-item">			
-			</a>
+			<a id="prevslide" class="load-item"></a>
+			<a id="nextslide" class="load-item"></a>
 			<!-- END PROJECT NAVIGATION -->
 		</div>
 
@@ -192,7 +188,7 @@
 		<!-- FIT TEXT -->	
 		<script src="assets/js/jquery.fittext.js"></script>
 		<script>
-			jQuery(".home").fitText(1.1, { minFontSize: '70px', maxFontSize: '150px' });
+			jQuery("#home").fitText(1.1, { minFontSize: '70px', maxFontSize: '150px' });
   			jQuery(".responsive_headline").fitText(0.98, { minFontSize: '70px', maxFontSize: '150px' });
   			jQuery(".responsive_headline-2").fitText(1.5, { minFontSize: '23px', maxFontSize: '150px' });
 		</script>

@@ -44,8 +44,8 @@ $(function() {
 		//scrolling in
 		else if (direction === 'up') {
 			if (isLandscapeHeader()) {
-				smallLogo();
-				showLogo();	
+				showLogo();
+				smallLogo();	
 			} else {
 				bigLogo();
 			};		
@@ -60,7 +60,7 @@ $(function() {
 	});
 		
 	//when scrolling down into new section, at the middle of the section
-	//for sections #work, #about, #contact	
+	//for pages #work, #about, #contact	
 	$('.page header').waypoint(function(direction) { 		 
 		if (direction === 'down') {
 			var page = '#' + $(this).parent().attr('id');
@@ -69,7 +69,7 @@ $(function() {
 	}, {offset: '50%'});
 	
 	//when scrolling up into new section, once the bottom is in view
-	//for sections #work and #about
+	//for pages #work and #about
 	$('.page').waypoint(function(direction) {
 		if (direction == 'up') {
 			var page = '#' + $(this).attr('id');
@@ -92,7 +92,7 @@ $(function() {
 ////////////////////////////////////////
 	
 	//main menu navigation
-	$('.main-menu a').click(function(e){ 
+	$('nav a').click(function(e){ 
 		e.preventDefault();
 		var page = $(this).attr('href'); 
 
@@ -143,22 +143,22 @@ $(function() {
 	//////////////////////////////////////// MENU ANIMATION AND HELPER FUNCTIONS
 	//move main menu
 	function moveMenu(direction) {
-		if (direction === "moveUp") $('.main-menu').animate({
+		if (direction === "moveUp") $('nav').animate({
 			'margin-top': '43px'
 		});
-		if (direction === "moveDown") $('.main-menu').animate({
+		if (direction === "moveDown") $('nav').animate({
 			'margin-top': '77px'
 		});
 	}
 
 	//update active link on main menu nav id string 
 	function updateLinks(id) { 
-		$('.main-menu a.active-link').removeClass('active-link');
-		$(".main-menu a[href='"+id+"']").addClass('active-link');
+		$('nav a.active-link').removeClass('active-link');
+		$("nav a[href='"+id+"']").addClass('active-link');
 	};
 
 	//////////////////////////////////////// PAGES / LAYOUT SETTINGS AND HELPER FUNCTIONS
-	//set height for pages/sections
+	//set height for pages
 	function setPageHeight() { 
 		//efective space for content
 		var h = windowHeight() - HEADER_HEIGHT; 
@@ -232,10 +232,10 @@ $(function() {
 	//center home and contact page content
 	function centerContents() {
 		//set top margin for each aprox 50% of free space
-		var yH = $('#home').height() - $('#home .wrapper').height(); 
-		var cH = $('#contact').height() - $('#contact .wrapper').height(); 
-		$('#home .wrapper').css('margin-top', (yH/3));
-		$('#contact .wrapper').css('margin-top', (cH/3));
+		var yH = $('#home').height() - $('#home header').height(); 
+		var cH = $('#contact').height() - $('#contact header').height(); 
+		$('#home header').css('margin-top', (yH/3));
+		$('#contact header').css('margin-top', (cH/3));
 	}
 
 	//scroll to pages position
@@ -246,7 +246,7 @@ $(function() {
 		$('body, html')
 			.stop()
 			.animate({
-	   			scrollTop: $(page).offset().top - $('.fixed-fixed').height()
+	   			scrollTop: $(page).offset().top - $('#fixed-header-aux').height()
 	   		}, 750, function(){ 
                	$('html, body').clearQueue();
     	});
@@ -262,7 +262,7 @@ $(function() {
 	}
 
 	function isFixedHeader() {
-		return $('#main-header header').hasClass('fixed');
+		return $('#main-header').hasClass('fixed');
 	}
 
 	//////////////////////////////////////// FOOTER

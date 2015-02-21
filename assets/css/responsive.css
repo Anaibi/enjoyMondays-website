@@ -5,20 +5,20 @@
 	h1 {
 		font-size: 1.15em;
 	}
-	p, .about p {
+	p, #about p {
 		font-size: .2em;
 	}
 	/* HOME */
-	.home .sub-header {
+	#home .sub-header {
 		float: right;
 		padding-left: 0;
 	}
 	/* CONTACT */
-	.contact .sub-header {
+	#contact .sub-header {
 		margin-right; 0;
 		width: 51.8%;	
 	}
-	.contact p {
+	#contact p {
 		font-size: .3em;
 	}
 }
@@ -26,45 +26,48 @@
 
 /* ///////////////////////////////////////////////// MAX WIDTH 768px //// */
 @media screen and (max-device-width: 768px) {
-	/* text */
+	/* generals text */
 	h1 {
 		text-align: center;
 	}
-	p, .about p {
+	p, #about p {
 		font-size: .23em;
 	}	
 	hr {
 		margin: 0px auto 3%;
 	}
-	/* menu */
-	.header-nav {
+	/* MAIN HEADER */
+	#main-header {
 		height: auto;
 	}
-	.main-menu {
-		font-size: 1.28em;
-		margin: 16px 0 18px 0 !important; 
-		float: none;
-		text-align: center;
-	}
-	.main-menu a {
-		float: none;
-		margin: 0 1.5%;
-	}
-	.logo {
+	/* logo */
+	#logo {
 		display: block;
 		float: none;
 		text-align: center;
 		margin-left: 0;
 		margin-top: 20px;		
 	}
-	.logo a {
+	#logo a {
 		display: inline-block;
 	}
-	.logo a img {
+	#logo a img {
 		height: 5em;
 		width: auto;
 	}
-	/* class pages */	
+	/* menu navigation */
+	nav {
+		font-size: 1.28em;
+		margin: 16px 0 18px 0 !important; 
+		float: none;
+		text-align: center;
+	}
+	nav a {
+		float: none;
+		margin: 0 1.5%;
+	}
+	
+	/* PAGES */	
 	.page {
 		padding: 0;
 		text-align: center;
@@ -86,27 +89,27 @@
 	}
 	
 	/* ABOUT */
-	.about .content article {
+	#about .content article {
 		width: 50%;
 	}
 	/* CONTACT */
-	.contact h1 {
+	#contact h1 {
 		text-align: right;
 	}
-	.contact .sub-header {
+	#contact .sub-header {
 		margin: 0;
 		width: 75%;
 	}	
-	.contact p {
+	#contact p {
 		font-size: 0.4em;
 	}
 	
 	/* WORK */
-	.work .thumb {
+	#work .thumb {
 		margin: 3% 4%;
 		width: 33%;
 	}
-	.work .thumb img {
+	#work .thumb img {
 		width: 100%;
 	}
 	/* PORTFOLIO */
@@ -124,11 +127,11 @@
 }
 /* ///////////////////////////////////////////////// MAX WIDTH 640px //// */
 @media screen and (max-device-width: 640px) {
-	.main-menu {
+	nav {
 		font-size: 0.86em;
 		margin: 16px 0 18px 0;
 	}
-	.logo a img {
+	#logo a img {
 		height: 60px;
 	}
 	/* FOOTER */
@@ -178,10 +181,10 @@
 /* */
 
 @media screen and (max-device-width: 480px) {
-	.main-menu a:hover {
+	nav a:hover {
 		border-bottom: none;
 	}
-	.logo {
+	#logo {
 		/*margin-top: 2px;*/
 	}
 	h1 {
@@ -190,63 +193,63 @@
 	.container {
 		overflow-x: hidden;
 	}
-	.main-menu {
+	nav {
 		font-size: 0.76em;
 		margin: 16px 0 18px 0;
 	}
-	.main-menu a {
+	nav a {
 		margin: 0 0.3%;
 		padding: 3.5px 2px;
 	}
 	/* HOME */
-	.home .sub-header {
+	#home .sub-header {
 		float: none;
 		width: 95%;
 		margin: auto;
 	}
-	/* WORKS */
-	.work #portfolio .thumb {
+	/* WORKS / portfolio */
+	#portfolio .thumb {
 		width: 85%;
 		transition: transform 0.4s;
 		margin: auto;
 	}
-	.work #portfolio .thumb:hover img {
+	#portfolio .thumb:hover img {
 		transform: translate(0px, -50px) scale(0.5);
 	}
-	.work #portfolio .he-second {
+	#portfolio .he-second {
 		width: 100%;
 		font-size: 0.35em;
 		text-align: center;
 	}
-	.work #portfolio .he-second h3 {
+	#portfolio .he-second h3 {
 		margin-top: 51%;
 		text-align: center;
 	}
 
 	/* ABOUT */
-	.about .content article {
+	#about .content article {
 		width: 80%;	
 		margin: 36px auto;
 	}
-	.about .content article img {
+	#about .content article img {
 		width: 68%;
 	}
 	
 	/* CONTACT */
-	.contact h1 {
+	#contact h1 {
 		text-align: center;
 	}
-	.contact h1.s-header-one {
+	#contact h1.s-header-one {
 		font-size: 2em;
 	}
-	.contact .sub-header {
+	#contact .sub-header {
 		text-align: center;
 		float: none;
 	}
-	.contact p {
+	#contact p {
 		font-size: 0.5em;
 	}
-	.contact hr {
+	#contact hr {
 		margin-top: 3%;
 	}
 	/* FOOTER */
@@ -274,7 +277,7 @@
 
 /* ************************************ responsive by orientation: landscape */
 @media screen and (max-device-width: 640px) and (orientation: landscape){
-	.landscape .logo {
+	.landscape #logo {
 		float: left;
 		margin: 12px;
 	}
@@ -294,7 +297,7 @@
 
 /* ///////////////////////////////////////////////// MAX WIDTH 1024px //// */
 @media screen and (max-width: 1024px) {
-	.touch .main-menu a:hover {
+	.touch nav a:hover {
 		border-bottom: none;
 	}
 
