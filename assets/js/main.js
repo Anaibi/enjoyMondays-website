@@ -109,21 +109,21 @@ $(function() {
 	//////////////////////////////////////// LOGO ANIMATION
 	//animate logo to big
 	function bigLogo() {		
-		$('.logo')
+		$('#logo')
 			.animate({
 				'margin-top': '42px'
 			});
 		
-		$('.logo img').animate({
+		$('#logo img').animate({
 			height: '99px',
 			width: '146px'});	
 	};
 	
 	//animate logo to small
 	function smallLogo() {
-		$('.logo').animate({
+		$('#logo').animate({
 			'margin-top': '17px'});
-		$('.logo img').animate({
+		$('#logo img').animate({
 			height: '75px',
 			width: '111px'});
 	};
@@ -133,11 +133,11 @@ $(function() {
 	}
 
 	function hideLogo() { 
-		$('.logo').slideUp();
+		$('#logo').slideUp();
 	}
 
 	function showLogo() {
-		$('.logo').slideDown();
+		$('#logo').slideDown();
 	}
 	
 	//////////////////////////////////////// MENU ANIMATION AND HELPER FUNCTIONS
@@ -202,42 +202,30 @@ $(function() {
 		//}	
 	};
 	
-	// set fixed header or landscape header 
-	function setHeaderClass() { console.log('checking or')
-		/*$(window).on("orientationchange", "load" ,function(){ console.log('checking or p');
-  			if(window.orientation == 0) { //PORTRAIT --> always fixed
-    			$("html").removeClass('landscape');
-  			}
-  			else { // LANDSCAPE 
-    			$("html").addClass('landscape'); console.log('checking or l');
-  			}
-  			// if window width / height ratio xx, set to landscape TODO maybe
-		});
-
-		$(window).on("load",function(event){
-    		alert("Orientation changed to: " + window.orientation);
-  		});*/ //this doesn't work
+	// set header, can be fixed (desktops and portrait mobile) --> do collapsed menu for landscape mobile?
+	function setHeaderClass() { 
 	
 		// check caveats described here for further tuning
 		// http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation/
 
 		if ((windowWidth >= windowHeight()) && (windowWidth <= WINDOW_WIDTH_MARK)) { // Portrait
-			$("html").addClass('landscape'); console.log('not landscape for mobile');
-		} else { console.log('landscape for mobile');
+			$("html").addClass('landscape'); 
+		} else { 
 			$("html").removeClass('landscape'); // Landscape
 		}
 	}
 
 	// set fixed header
 	function fixHeader() {
-		var header = $('#main-header header');	
+		/*var header = $('#main-header header');	
 		var h;
 		if (isLandscapeHeader()) {
 			h = $('#main-header nav').height() + parseInt(header.css('padding-bottom'));
 		} else {
 			h = header.height() + parseInt(header.css('padding-bottom'));
 		}
-		$('.fixed-fixed').height(h);
+		$('.fixed-fixed').height(h);*/
+
 	};
 	
 

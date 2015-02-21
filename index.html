@@ -10,27 +10,27 @@
 		<meta name="author" content="Enjoy-Mondays" />
 		<link rel="shortcut icon" href="favicon.ico"> 
 		
-		<!-- MAIN CSS-->
+		<!-- MAIN CSS -->
 		<link media="screen" rel="stylesheet" type="text/css" href="assets/css/main.css" />
 
-		<!-- RESPONSIVE CSS-->
+		<!-- RESPONSIVE CSS -->
 		<link media="screen" rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 		
-		<!-- SUPERSIZED -->
+		<!-- SUPERSIZED CSS -->
 		<link rel="stylesheet" href="assets/css/supersized.min.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="assets/theme/supersized.shutter.css" type="text/css" media="screen" />
 		
-		<!-- MODERNIZR -->				
+		<!-- MODERNIZR JS -->				
 		<script src="assets/js/modernizr.custom.js"></script>								
 	</head>
 	<body>
-		<!-- web displays either front pages (header + sections + footer) either works slideshow -->
-		<!-- front pages -->
-		<div id="pages">
-			<!-- header -->
-			<div id="main-header" class="container">
+		<!-- web displays either #front-page either works #slideshow (fullwidth) -->
+		<!-- #front-page (header + sections + footer) -->
+		<div id="front-page">
+			<!--  header -->
+			<div id="main-header" class="top fixed fullwidth container">
 				<!-- header can be fix or landscape, by default fixed -->
-				<header class="fixed header-nav">
+				<header>
 					<!-- logo -->
 					<div class="logo">
 						<a href="#"><img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
@@ -49,10 +49,8 @@
 				</header>			
 			</div>	
 
-			<div class="fixed-fixed"></div>
-
 			<!-- sections x pages + footer -->
-			<div class="container clearfix">	
+			<div id="sections" class="fullwidth container clearfix">	
 				<!--  SECTION HOME -->
 				<section id="home" class="home page clearfix">
 					<header>					
@@ -160,9 +158,9 @@
 					</ul>
 				</footer>				
 			</div><!-- end SECCIONS + footer -->	
-		</div><!-- end front pages -->
+		</div><!-- end #page -->
 
-		<!-- slideshow for works -->	
+		<!-- fullwidth #slideshow for works implemented by supersized TODO revisar -->
 		<div id="slideshow">
 			<!--  SUPERSIZED -->	
 			<!--  PROJECT NAVIGATION -->	

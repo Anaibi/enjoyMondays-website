@@ -64,7 +64,7 @@
 		height: 5em;
 		width: auto;
 	}
-	/* pages */	
+	/* class pages */	
 	.page {
 		padding: 0;
 		text-align: center;
@@ -279,7 +279,7 @@
 		margin: 12px;
 	}
 	/* HOME */
-	
+
 }
 
 /* #### iPhone 4+ Portrait or Landscape #### */

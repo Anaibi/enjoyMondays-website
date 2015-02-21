@@ -46,20 +46,13 @@ hr {
 .fixed {
 	position: fixed;
 }
-.fixed-fixed {
-	height: 0; /* same as fixed div : const HEADER_HEIGHT = 116 */
-}
-
-.container {
+.fullwidth.container {
 	width: 100%;
 }
 .screen-reader-text { /* TODO check if using this */
 	left: -9999px;
 	position: absolute;
 	top: -9999px;
-}
-.wrapper {
-
 }
 /* ********************************* base styles */
 
@@ -80,7 +73,15 @@ body {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-/* ************************************ header */
+/* ************************************ HEADER */
+#main-header.top.fixed {
+	top: 0;
+	height: 116px;
+	width: 100%;
+	background-color: #E9E8E3;
+	z-index: 1000;
+}
+
 /* *********************** logo */
 .logo {
 	display: inline-block;
@@ -96,14 +97,7 @@ body {
 	display: block;
 }
 
-/* ******************* main menu */
-.header-nav {
-	top: 0;
-	height: 116px;
-	width: 100%;
-	background-color: #E9E8E3;
-	z-index: 1000;
-}
+/* ******************* menu */
 .main-menu {
 	float: right;
 	margin-right: 80px;
@@ -130,7 +124,7 @@ body {
 	border-bottom: solid #DF3F54 3px; /* .touch has to override this */
 }
 
-/* *********************************** pages */
+/* *********************************** pages/sections */
 
 .page {
 	padding-right: 68px;
