@@ -1,5 +1,6 @@
 $(function() {
 
+
 	const HEADER_HEIGHT = 116
 	    , WINDOW_WIDTH_MARK = 768;
 
@@ -11,6 +12,8 @@ $(function() {
 		return $(window).height();
 	};
 
+	var i=1; console.log(i);
+
 ////////////////////////////////////////
 ////////////////////////////////////////
 
@@ -19,7 +22,7 @@ $(function() {
 	setLayout();
 	
 	//on changing window size, fit again
-	$(window).resize(function() {
+	$(window).resize(function() { console.log('in window resize');
 		setPageHeight();
 		setLayout();	
 	});	
@@ -33,11 +36,11 @@ $(function() {
 	//when scrolling in and out of home section, and offset HEADER_HEIGHT - 1 
 	$('#home header').waypoint(function(direction) {		
 		//scrolling out
-		if (direction === 'down') {
-			if (isLandscapeHeader() && !isPage('home')) {
+		if (direction === 'down') { //running this on page reload, it shouldn't
+			if (isLandscapeHeader() && !isPage('home')) {  console.log('in waypoint home down with offset, hide logo');
 				hideLogo();
-			} else {
-				smallLogo();
+			} else { console.log('in waypoint home, down, small logo ');
+				smallLogo(); 
 			};
 			moveMenu('moveUp');
 		} 
@@ -46,7 +49,7 @@ $(function() {
 			if (isLandscapeHeader()) {
 				showLogo();
 				smallLogo();	
-			} else {
+			} else { console.log('in waypoint home, up, big logo ');
 				bigLogo();
 			};		
 			moveMenu('moveDown');
@@ -108,7 +111,7 @@ $(function() {
 
 	//////////////////////////////////////// LOGO ANIMATION
 	//animate logo to big
-	function bigLogo() {		
+	function bigLogo() {	 	
 		$('#logo')
 			.animate({
 				'margin-top': '42px'
@@ -120,7 +123,7 @@ $(function() {
 	};
 	
 	//animate logo to small
-	function smallLogo() {
+	function smallLogo() { 
 		$('#logo').animate({
 			'margin-top': '17px'});
 		$('#logo img').animate({
@@ -136,23 +139,27 @@ $(function() {
 		$('#logo').slideUp();
 	}
 
-	function showLogo() {
+	function showLogo() { 
 		$('#logo').slideDown();
 	}
 	
 	//////////////////////////////////////// MENU ANIMATION AND HELPER FUNCTIONS
 	//move main menu
-	function moveMenu(direction) {
-		if (direction === "moveUp") $('nav').animate({
-			'margin-top': '43px'
-		});
-		if (direction === "moveDown") $('nav').animate({
-			'margin-top': '77px'
-		});
+	function moveMenu(direction) { 
+		if (direction === "moveUp") {
+			$('nav').animate({
+				'margin-top': '43px'
+			});
+		}
+		if (direction === "moveDown") {
+			$('nav').animate({
+				'margin-top': '77px'
+			});
+		}
 	}
 
 	//update active link on main menu nav id string 
-	function updateLinks(id) { 
+	function updateLinks(id) {  
 		$('nav a.active-link').removeClass('active-link');
 		$("nav a[href='"+id+"']").addClass('active-link');
 	};
@@ -180,7 +187,8 @@ $(function() {
 	
 	
 	// resolve layout
-	function setLayout() {  
+	function setLayout() {  console.log(i);
+
 		// check if is landscape or fixed header
 		setHeaderClass();
 
@@ -195,11 +203,14 @@ $(function() {
 
 		// set HEADER and PAGE position 
 		//if (!isLandscapeHeader()) {
+		if (i) {
 			setTimeout(function() { 
 				fixHeader(); 
 				scrollToPosition(page);
 	   		}, 400);
-		//}	
+		//}
+		}
+		i = false;
 	};
 	
 	// set header, can be fixed (desktops and portrait mobile) --> do collapsed menu for landscape mobile?
@@ -216,7 +227,7 @@ $(function() {
 	}
 
 	// set fixed header
-	function fixHeader() {
+	function fixHeader() { 
 		/*var header = $('#main-header header');	
 		var h;
 		if (isLandscapeHeader()) {
@@ -230,7 +241,7 @@ $(function() {
 	
 
 	//center home and contact page content
-	function centerContents() {
+	function centerContents() { 
 		//set top margin for each aprox 50% of free space
 		var yH = $('#home').height() - $('#home header').height(); 
 		var cH = $('#contact').height() - $('#contact header').height(); 
@@ -239,7 +250,7 @@ $(function() {
 	}
 
 	//scroll to pages position
-	function scrollToPosition(page) {		
+	function scrollToPosition(page) {	console.log('scroll to position called');	
 		//con overflow-x hidden el scrollTop no funciona
 		$('html, body').css('overflow-x', 'visible'); 
 
@@ -267,14 +278,16 @@ $(function() {
 
 	//////////////////////////////////////// FOOTER
 	//footer animation
-	function showFooter() { //se puede pulir mas/mejor 
+	function showFooter() { 
+
+		//se puede pulir mas/mejor 
 		$('footer').show();
 		$('#bg').animate({
 			'height': '0'
 		}, 'slow');
 	};
 	
-	function hideFooter() {
+	function hideFooter() { 
 		$('#bg').animate({
 			'height': '100'
 		});

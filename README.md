@@ -23,7 +23,7 @@
 # 14 rearrange services grid
 # 15 header sizes
 # 16 slideshow doesn't have touch scroll for screenshots
-# 17 header load not smooth, check called functions
+# 17 FIX header load not smooth, DONE check called functions --> waypoint home down called on loading screen.. on regular display, once (that would kick small logo and move menu) then waypoint home up gets called?
 # 18 big screen layout!
 
 # 30 loading time??
