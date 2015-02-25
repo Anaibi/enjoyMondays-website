@@ -1,6 +1,5 @@
 $(function() {
 
-
 	const HEADER_HEIGHT = 116
 	    , WINDOW_WIDTH_MARK = 768;
 
@@ -12,10 +11,10 @@ $(function() {
 		return $(window).height();
 	};
 
-	var no_of_items = sessionStorage.length;  console.log(no_of_items); 
+	//var no_of_items = sessionStorage.length;  console.log(no_of_items); 
 	var page = 'home'; console.log(page);
 
-	var $firstLoad = $('#firstLoad'); console.log($firstLoad);
+	//var $firstLoad = $('#firstLoad'); 
 
 ////////////////////////////////////////
 ////////////////////////////////////////
@@ -185,7 +184,7 @@ $(function() {
 
 	//////////////////////////////////////// PAGES / LAYOUT SETTINGS AND HELPER FUNCTIONS
 	//set height for pages
-	function setPageHeight() { console.log($firstLoad);
+	function setPageHeight() { //console.log($firstLoad);
 		//efective space for content
 		var h = windowHeight() - HEADER_HEIGHT; 
 		
@@ -206,7 +205,7 @@ $(function() {
 	
 	
 	// resolve layout
-	function setLayout() {  console.log($firstLoad);
+	function setLayout() {  //console.log($firstLoad);
 
 		// check if is landscape or fixed header
 		setHeaderClass();
