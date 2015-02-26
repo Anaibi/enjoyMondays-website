@@ -68,12 +68,11 @@ $('nav a').click(function(e){
 //////////////////////////////////////// WAYPOINT PLUGIN
 //////////////////////////////////////// http://imakewebthings.com/waypoints/
 
-//FOR HOME 
+// HOME scrolling UP
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
   handler: function(direction) {
   	if (direction === 'up') {
-  		updateLinks('#home');
   		bigLogo();
   		moveMenu('down');
   	}
@@ -81,22 +80,21 @@ var waypointHomeUp = new Waypoint({
   offset: 'bottom-in-view'
 });
 
-//FOR HOME 
+// HOME scrolling DOWN
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
   handler: function(direction) {
   	if (direction === 'down') {
-  		updateLinks('#work');
   		smallLogo();
   		moveMenu('up');
   	}
   }
 });
 
-//FOR CONTACT : hide/show footer
+// CONTACT : hide/show footer
 var waypointContact = new Waypoint({
   element: document.getElementById('contact'),
-  handler: function(direction) { console.log('waypoint contact called');
+  handler: function(direction) { 
 	if (direction === 'down') {
 		showFooter();
 	} else {
@@ -106,17 +104,28 @@ var waypointContact = new Waypoint({
   offset: 'bottom-in-view'
 });
 
-var waypointContact2 = new Waypoint({
-  element: document.getElementById('contact'),
-  handler: function(direction) { console.log('waypoint contact2 called');
-	if (direction === 'down') {
-		updateLinks('#contact');
-	} else {
-		updateLinks('#about')
-	}; 
-  },
-  offset: '50%'
-});
+var $elements = $('.page');
+
+$elements.each(function() {
+	new Waypoint({
+    	element: this,
+      	handler: function(direction) { 
+        	var previousWaypoint = this.previous(); 
+
+        	$elements.removeClass('.active-link');
+
+        	if (direction === 'down') {
+        		updateLinks($(this.element).attr('id'));
+        	} 
+        	if (previousWaypoint && (direction === 'up')) {
+        		updateLinks($(previousWaypoint.element).attr('id'));
+        	}
+        	
+      	},
+      	offset: '50%',
+      	group: 'page'
+	})
+})
 
 // FUNCTIONS	
 
@@ -275,8 +284,13 @@ function moveMenu(direction) {
 
 //update active link on main menu nav id string 
 function updateLinks(id) {  
-	$('nav a.active-link').removeClass('active-link');
-	$("nav a[href='"+id+"']").addClass('active-link');
+	$('nav a.active-link').removeClass('active-link'); console.log(id);
+	if (id.charAt(0) === '#') {
+		$("nav a[href='"+id+"']").addClass('active-link');
+	}
+	else {
+		$("nav a[href='#"+id+"']").addClass('active-link');
+	}
 }
 
 	
