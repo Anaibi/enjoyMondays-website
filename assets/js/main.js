@@ -47,7 +47,6 @@ $('nav a').click(function(e){
 
 	switch (page)	 {
 		case '#home':
-		case '#notes':
 			bigLogo();
 			moveMenu('down');
 			hideFooter();
@@ -57,6 +56,8 @@ $('nav a').click(function(e){
 			moveMenu('up');
 			showFooter();
 			break;
+		case '#notes':
+			break;
 		default: //works and about 
 			smallLogo();
 			moveMenu('up');
@@ -64,8 +65,58 @@ $('nav a').click(function(e){
 	}
 });			
 		
-////////////////////////////////////////
-////////////////////////////////////////
+//////////////////////////////////////// WAYPOINT PLUGIN
+//////////////////////////////////////// http://imakewebthings.com/waypoints/
+
+//FOR HOME 
+var waypointHomeUp = new Waypoint({
+  element: document.getElementById('home'),
+  handler: function(direction) {
+  	if (direction === 'up') {
+  		updateLinks('#home');
+  		bigLogo();
+  		moveMenu('down');
+  	}
+  },
+  offset: 'bottom-in-view'
+});
+
+//FOR HOME 
+var waypointHomeUp = new Waypoint({
+  element: document.getElementById('home'),
+  handler: function(direction) {
+  	if (direction === 'down') {
+  		updateLinks('#work');
+  		smallLogo();
+  		moveMenu('up');
+  	}
+  }
+});
+
+//FOR CONTACT : hide/show footer
+var waypointContact = new Waypoint({
+  element: document.getElementById('contact'),
+  handler: function(direction) { console.log('waypoint contact called');
+	if (direction === 'down') {
+		showFooter();
+	} else {
+		hideFooter();
+	}; 
+  },
+  offset: 'bottom-in-view'
+});
+
+var waypointContact2 = new Waypoint({
+  element: document.getElementById('contact'),
+  handler: function(direction) { console.log('waypoint contact2 called');
+	if (direction === 'down') {
+		updateLinks('#contact');
+	} else {
+		updateLinks('#about')
+	}; 
+  },
+  offset: '50%'
+});
 
 // FUNCTIONS	
 
@@ -121,6 +172,8 @@ function setHeaderClass() {
 }
 
 // do header, can be fixed or landscape
+// TODO on mobile (google nexus) header height varies depending on browser? device? 
+// on landscape orientation logo stays centered and menu fills all layout
 function doHeader() { 
 	if (isLandscapeHeader()) {
 		var $nav = $('nav');
@@ -168,9 +221,11 @@ function bigLogo() {
 	if (isLandscapeHeader()) {
 		var marginTop = '17px';
 		var height = '75px';
+		var width = '111px';
 	} else {
 		var marginTop = '42px';
 		var height = '99px';
+		var width = '146px'
 	}
 
 	$('#logo').animate({
@@ -179,7 +234,7 @@ function bigLogo() {
 		
 	$('#logo img').animate({
 		height: height,
-		width: '146px'
+		width: width
 	});	
 }
 	
