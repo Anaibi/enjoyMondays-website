@@ -5,32 +5,35 @@ $(function() {
 
 	var windowWidth = function() {
 		return $(window).width();
-	}(); 
+	}; 
 
 	var windowHeight = function() {
 		return $(window).height();
-	}(); 
+	}; 
 
-	var page = 'home'; 
-	var i=0; 
 ////////////////////////////////////////
 ////////////////////////////////////////
 
-	// first thing, layout: fit display to window height and set layout according to dimensions/device
+	// fit display to window height and set layout according to dimensions/device
 	// to calculate heights wait untill all content loaded
 	$(window).load(function () {
-    	setLayout();
+    	setLayout(function() {
+    		setTimeout(function() {
+    			doWaypoints();
+    		}, 500);
+    	});
 	});	
 	
-	//on changing window size, fit again
-	$(window).resize(function() {  
+	// TODO not doing contact page height recalculation 
+	$(window).resize(function() {  console.log('resize');
 		setLayout();
-		//scrollToPosition(page);	
+		Waypoint.refreshAll(); //check if really needed
+		scrollToPosition($('.active-link').attr('href'));	
 	});	
 
 
 //////////////////////////////////////// MENU FUNCTIONALITY
-//////////////////////////////////////// works on clicks, not on scrolling
+//////////////////////////////////////// 
 	
 //main menu navigation
 $('nav a').click(function(e){  
@@ -41,7 +44,7 @@ $('nav a').click(function(e){
 
 	updateLinks(page);
 
-	if(!isPage('notes')) { //page notes not active, better could just turn off event for this value?
+	if(!isPage('notes')) { 
 		scrollToPosition(page);
 	}
 
@@ -56,22 +59,24 @@ $('nav a').click(function(e){
 			moveMenu('up');
 			showFooter();
 			break;
-		case '#notes':
-			break;
-		default: //works and about 
+		default: //works, about and notes
 			smallLogo();
 			moveMenu('up');
 			hideFooter();
 	}
 });			
-		
+	
+$('nav a[href="#notes"]').off('click');
+
 //////////////////////////////////////// WAYPOINT PLUGIN
 //////////////////////////////////////// http://imakewebthings.com/waypoints/
 
+function doWaypoints() { 
 // HOME scrolling UP
+// TODO refactor into one function deals with all header (logo + nav) animations
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
-  handler: function(direction) {
+  handler: function(direction) { 
   	if (direction === 'up') {
   		bigLogo();
   		moveMenu('down');
@@ -81,6 +86,8 @@ var waypointHomeUp = new Waypoint({
 });
 
 // HOME scrolling DOWN
+// small logo and menu up
+// TODO refactor into one function deals with all header (logo + nav) animations
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
   handler: function(direction) {
@@ -95,7 +102,7 @@ var waypointHomeUp = new Waypoint({
 var waypointContact = new Waypoint({
   element: document.getElementById('contact'),
   handler: function(direction) { 
-	if (direction === 'down') {
+	if (direction === 'down') { 
 		showFooter();
 	} else {
 		hideFooter();
@@ -104,15 +111,15 @@ var waypointContact = new Waypoint({
   offset: 'bottom-in-view'
 });
 
-var $elements = $('.page');
+var $pages = $('.page');
 
-$elements.each(function() {
+$pages.each(function() {
 	new Waypoint({
     	element: this,
       	handler: function(direction) { 
         	var previousWaypoint = this.previous(); 
 
-        	$elements.removeClass('.active-link');
+        	$pages.removeClass('.active-link');
 
         	if (direction === 'down') {
         		updateLinks($(this.element).attr('id'));
@@ -126,12 +133,13 @@ $elements.each(function() {
       	group: 'page'
 	})
 })
+}
 
 // FUNCTIONS	
 
 //////////////////////////////////////// PAGES / LAYOUT SETTINGS AND HELPER FUNCTIONS
 // RESOLVE LAYOUT
-function setLayout() {  
+function setLayout(callback) {  
 
 	// check if is landscape or fixed header
 	setHeaderClass();
@@ -145,26 +153,10 @@ function setLayout() {
 
 	// center page/section contents (y axis)
 	centerContents();	
-}
 
-//set height for pages to fill all window, take in account fix spaces (header/footer)
-function setPageHeight() { 
-	//efective space for content
-	var h = windowHeight - $('#main-header').height(); 
-		
-	//save contact page height before modifying
-	var contactPageHeight = $('#contact.page').height()
-		
-	//simple case just make sure page + header fills window
-	$('.page').css('min-height', h);
-
-	//check if footer fits into page contact, if it does, set height = h - footer height
-	if ((HEADER_HEIGHT + contactPageHeight + $('footer').height()) <= windowHeight){
-		$('#contact.page').css('height', (h - $('footer').height()));
-		$('#contact.page').css('min-height', (h - $('footer').height()));
-	}
-	// TODO
-	// if it doesn't, min height = h and footer has to deal with that?
+	if (typeof callback == 'function') { 
+        callback.call(this); 
+    }
 }
 	
 // set header, can be fixed (desktops and portrait mobile) or landscape
@@ -173,7 +165,7 @@ function setHeaderClass() {
 	// check caveats described here for further tuning
 	// http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation/
 
-	if ((windowWidth >= windowHeight) && (windowWidth <= WINDOW_WIDTH_MARK)) { // Landscape
+	if ((windowWidth() >= windowHeight()) && (windowWidth() <= WINDOW_WIDTH_MARK)) { // Landscape
 		$("html").addClass('landscape'); 
 	} else { 
 		$("html").removeClass('landscape'); // Portrait
@@ -181,8 +173,10 @@ function setHeaderClass() {
 }
 
 // do header, can be fixed or landscape
-// TODO on mobile (google nexus) header height varies depending on browser? device? 
-// on landscape orientation logo stays centered and menu fills all layout
+// TODO 
+// * on mobile (google nexus) header height varies depending on browser? device? 
+// * on landscape orientation logo stays centered and menu fills all layout
+// * case menu doesnt't fit in so shifts down (either css or script)
 function doHeader() { 
 	if (isLandscapeHeader()) {
 		var $nav = $('nav');
@@ -192,6 +186,28 @@ function doHeader() {
 	}
 }
 	
+// SET HEIGHT for PAGES to Fill Window
+// fix spaces: header, footer
+function setPageHeight() { 
+	//efective space for content
+	var h = windowHeight() - $('#main-header').height(); 
+		
+	//save contact page height before modifying
+	var contactPageHeight = $('#contact.page').height()
+		
+	//simple case just make sure page + header fills window
+	$('.page').css('min-height', h);
+
+	//check if footer fits into page contact, if it does, set height = h - footer height
+	if ((HEADER_HEIGHT + contactPageHeight + $('footer').height()) <= windowHeight()){
+		$('#contact.page').css('height', (h - $('footer').height()));
+		$('#contact.page').css('min-height', (h - $('footer').height()));
+	} else {
+		$('#contact.page header h1')
+	}
+	// if it doesn't, min height = h and footer has to deal with that?
+}
+
 //center home and contact page content
 function centerContents() { 
 	//set top margin for each aprox 50% of free space
@@ -268,7 +284,7 @@ function smallLogo() {
 }
 
 
-//////////////////////////////////////// MENU ANIMATION AND HELPER FUNCTIONS
+//////////////////////////////////////// MENU ANIMATION and updateLinks
 //move main menu
 function moveMenu(direction) { 
 	if (direction === "up") {
@@ -284,7 +300,7 @@ function moveMenu(direction) {
 
 //update active link on main menu nav id string 
 function updateLinks(id) {  
-	$('nav a.active-link').removeClass('active-link'); console.log(id);
+	$('nav a.active-link').removeClass('active-link'); 
 	if (id.charAt(0) === '#') {
 		$("nav a[href='"+id+"']").addClass('active-link');
 	}
