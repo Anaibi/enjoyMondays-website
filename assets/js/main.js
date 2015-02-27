@@ -1,7 +1,10 @@
 $(function() {
 
 	const HEADER_HEIGHT = 116
-	    , WINDOW_WIDTH_MARK = 768;
+	    , WINDOW_WIDTH_MARK = 768	 // layout changes depending on this mark
+	    , WINDOW_HEIGHT_MARK = 768;  // layout changes depending on this mark
+
+	// TODO refactor into window ratios instead 
 
 	var windowWidth = function() {
 		return $(window).width();
@@ -20,6 +23,7 @@ $(function() {
     	setLayout(function() {
     		setTimeout(function() {
     			doWaypoints();
+    			doHeader('home', 'up');
     		}, 500);
     	});
 	});	
@@ -27,7 +31,12 @@ $(function() {
 	// TODO not doing contact page height recalculation 
 	$(window).resize(function() {  console.log('resize');
 		setLayout();
-		Waypoint.refreshAll(); //check if really needed
+		Waypoint.refreshAll();
+		if (isPage('home')) {
+			doHeader('home', 'up');
+		} else {
+			doHeader($('.active-link').attr('href'), 'up');
+		}
 		scrollToPosition($('.active-link').attr('href'));	
 	});	
 
@@ -42,30 +51,11 @@ $('nav a').click(function(e){
 	//get clicked page 
 	page = $(this).attr('href'); 
 
-	updateLinks(page);
-
-	if(!isPage('notes')) { 
-		scrollToPosition(page);
-	}
-
-	switch (page)	 {
-		case '#home':
-			bigLogo();
-			moveMenu('down');
-			hideFooter();
-			break;
-		case '#contact': 
-			smallLogo();
-			moveMenu('up');
-			showFooter();
-			break;
-		default: //works, about and notes
-			smallLogo();
-			moveMenu('up');
-			hideFooter();
-	}
-});			
+	scrollToPosition(page);
 	
+});			
+
+// notes link off	
 $('nav a[href="#notes"]').off('click');
 
 //////////////////////////////////////// WAYPOINT PLUGIN
@@ -73,14 +63,10 @@ $('nav a[href="#notes"]').off('click');
 
 function doWaypoints() { 
 // HOME scrolling UP
-// TODO refactor into one function deals with all header (logo + nav) animations
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
   handler: function(direction) { 
-  	if (direction === 'up') {
-  		bigLogo();
-  		moveMenu('down');
-  	}
+  	doHeader('home', direction);
   },
   offset: 'bottom-in-view'
 });
@@ -91,10 +77,7 @@ var waypointHomeUp = new Waypoint({
 var waypointHomeUp = new Waypoint({
   element: document.getElementById('home'),
   handler: function(direction) {
-  	if (direction === 'down') {
-  		smallLogo();
-  		moveMenu('up');
-  	}
+  	doHeader('home', direction)
   }
 });
 
@@ -113,7 +96,7 @@ var waypointContact = new Waypoint({
 
 var $pages = $('.page');
 
-$pages.each(function() {
+$pages.each(function() { // update nav links
 	new Waypoint({
     	element: this,
       	handler: function(direction) { 
@@ -127,7 +110,6 @@ $pages.each(function() {
         	if (previousWaypoint && (direction === 'up')) {
         		updateLinks($(previousWaypoint.element).attr('id'));
         	}
-        	
       	},
       	offset: '50%',
       	group: 'page'
@@ -143,8 +125,6 @@ function setLayout(callback) {
 
 	// check if is landscape or fixed header
 	setHeaderClass();
-
-	doHeader();
 
 	hideFooter(); //was used for slideUp, if not used take out
 		
@@ -166,9 +146,11 @@ function setHeaderClass() {
 	// http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation/
 
 	if ((windowWidth() >= windowHeight()) && (windowWidth() <= WINDOW_WIDTH_MARK)) { // Landscape
-		$("html").addClass('landscape'); 
-	} else { 
-		$("html").removeClass('landscape'); // Portrait
+		$("html").addClass('landscape, header-2').removeClass('header-1, header-3'); 
+	} else  if ((windowWidth() <= windowHeight()) && (windowHeight() <= WINDOW_HEIGHT_MARK)) { // Portrait header-three
+		$("html").removeClass('landscape, header-2, header-1').addClass('header-3');  
+	} else {
+		$("html").removeClass('landscape, header-2, header-3').addClass('header-1'); 
 	}
 }
 
@@ -177,15 +159,55 @@ function setHeaderClass() {
 // * on mobile (google nexus) header height varies depending on browser? device? 
 // * on landscape orientation logo stays centered and menu fills all layout
 // * case menu doesnt't fit in so shifts down (either css or script)
-function doHeader() { 
-	if (isLandscapeHeader()) {
+// possible headers:
+// 1. big logo at left, menu at right --> for home page when width and height allow for it. 
+//    on scroll, logo animates to small and menu moves up
+// 2. small logo at top, menu under logo, centered --> for home page when width < xx and height > yy 
+//    On scroll, header slides up and only small menu bar visible
+// 3. small logo at left and menu at right --> for home page when landscape orientation and height > yy
+//    on scroll, header slides to left, logo hidden and menu centered
+function doHeader(page, direction) {
+ 	if (page.charAt(0) === '#') {
+ 		page = page.trim('#');
+	}
+	if (isHeader(1)) { // home big/small logo left, menu right dowb/up
+		if (direction === 'up') {
+			bigLogo();
+  			moveMenu('down');
+		} else {
+			showLogo('right');
+			smallLogo();
+  			moveMenu('up');
+		}
+	} else if (isHeader(2)) { // landscape
+		if (direction === 'up') {
+			showLogo('right');
+		} else {
+			hideLogo('left');
+		}
+	} else if (isHeader(3)) { // portrait
+		if (direction === 'up' && page === 'home') { 
+			smallLogo();
+			showLogo('down');
+			moveMenu('up');
+		} else {
+			hideLogo('up');
+			moveMenu('up');
+		}
+	}
+	setHeaderHeight();
+}
+
+function setHeaderHeight() { console.log('doing header height');
+	console.log(isPage('home'));
+	if ((isHeader(2) || isHeader(3)) && !isPage('home')) {
 		var $nav = $('nav');
+		console.log($nav.height() + parseInt($nav.css('margin-top')) + parseInt($nav.css('margin-bottom')));
 		$('#fixed-header-aux, #main-header').height($nav.height() + parseInt($nav.css('margin-top')) + parseInt($nav.css('margin-bottom')));
 	} else {
 		$('#fixed-header-aux, #main-header').height(HEADER_HEIGHT);
 	}
 }
-	
 // SET HEIGHT for PAGES to Fill Window
 // fix spaces: header, footer
 function setPageHeight() { 
@@ -232,7 +254,7 @@ function scrollToPosition(page) {
 }
 
 // return true if is active page
-function isPage(id) { 
+function isPage(id) {  console.log(id); console.log($('.active-link').attr('href'));
 	return ($('.active-link').attr('href') === '#' + id);
 }
 
@@ -240,49 +262,52 @@ function isLandscapeHeader() {
 	return $("html").hasClass('landscape');
 }
 
+function isHeader(i) { 
+	return $("html").hasClass('header-' + i);
+}
+
 //////////////////////////////////////// LOGO ANIMATION
 //animate logo to big
-function bigLogo() { 	 	
-	if (isLandscapeHeader()) {
-		var marginTop = '17px';
-		var height = '75px';
-		var width = '111px';
-	} else {
-		var marginTop = '42px';
-		var height = '99px';
-		var width = '146px'
-	}
+function bigLogo() { 	
 
 	$('#logo').animate({
-		'margin-top': marginTop
+		'margin-top': '42px'
 	});
 		
 	$('#logo img').animate({
-		height: height,
-		width: width
+		height: '99px',
+		width: '146px'
 	});	
 }
 	
 //animate logo to small
 function smallLogo() { 
-		
-	if (isLandscapeHeader()) {
-		var marginTop = 0;
-		var height = 0;
-	} else {
-		var marginTop = '17px';
-		var height = '75px';
-	}
 	
 	$('#logo').animate({
-			'margin-top': marginTop
+			'margin-top': '17px'
 		});
 	$('#logo img').animate({
-		height: height,
+		height: '75px',
 		width: '111px'
 	});
 }
 
+// 
+function hideLogo(direction) {
+	if (direction === 'up') {
+		$('#logo').slideUp();
+	} else if (direction === 'left') {
+		$('#logo').show("slide", { direction: "left" }, 1000);
+	}
+}
+
+function showLogo(direction) {
+	if (direction === 'down') {
+		$('#logo').slideDown();
+	} else if (direction === 'right') { 
+		$('#logo').show("slide", { direction: "right" }, 1000);
+	}
+}
 
 //////////////////////////////////////// MENU ANIMATION and updateLinks
 //move main menu
@@ -316,7 +341,7 @@ function showFooter() { //se puede pulir mas/mejor
 	$('footer').show();
 	$('#bg').animate({
 		'height': '0'
-	}, '6000');
+	}, '2000');
 }
 	
 function hideFooter() { 
