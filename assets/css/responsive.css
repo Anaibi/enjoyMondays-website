@@ -237,48 +237,38 @@
 	}
 	
 	/* CONTACT */
-	#contact h1 {
-		text-align: center;
-	}
 	#contact h1.s-header-one {
 		font-size: 2em;
 	}
 	#contact .sub-header {
-		text-align: center;
 		float: none;
 	}
-	#contact p {
-		font-size: 0.5em;
-	}
+
 	#contact hr {
 		margin-top: 3%;
 	}
 	/* FOOTER */
 	footer p {
 		font-size: .65em;
-		margin-top: 0;
-		text-align: center;
-		width: 100%;
-	}
-	#social {
-		float: none;
-		text-align: center;
+	/*	text-align: center;*/
 		/*width: 100%;*/
 		width: auto;
 		margin: 0;
-		padding: 0;
+	}
+	#social {
+		margin: 0;
 	}
 	/* FOOTER */
 	footer p {
 		width: auto;
-		float: none;
+		height: auto;
 	}
 	
 }
 
 /* ************************************ responsive by orientation: landscape */
 @media screen and (max-device-width: 640px) and (orientation: landscape){
-	.landscape #logo {
+	.header-2 #logo {
 		float: left;
 		margin: 12px;
 	}
@@ -301,12 +291,117 @@
 	.touch nav a:hover {
 		border-bottom: none;
 	}
-
+}
 
 
 /* ************************************ responsive by: header class */
 
+/* #### amazon kindle fire first generation 600 x 1024 */
+/* HEADER */
+@media screen and (max-device-width: 640px) and (orientation: portrait) {
+	.header-1 #logo {
+		float: left;
+		margin-left: 4.53%;
+	}
+	.header-1 #home .sub-header {
+		float: none;
+		width: 100%;
+	}
 
+	/* ABOUT */
+	.header-1 #about .content article {
+		width: 25%;
+		margin: 36px 20px;
+	}
+	.header-1 #about p {
+		font-size: .2em;
+	}
+
+	 /* CONTACT */
+	 .header-1 #contact h1 {
+	 	text-align: center;
+	 }
+	.header-1 footer p {
+		margin: 0;
+	}
+	.header-1 #social {
+		margin: 0;
+	}
+}
+
+@media screen and (max-device-width: 1024px) and (orientation: landscape) {
+	/* WORK */
+	.header-1 #work {
+		padding-top: 0;
+	}
+	.header-1 #work h1 {
+		font-size: .7em;
+	}
+	.header-1 #portfolio {
+		padding-top: 2%;
+	}
+	.header-1 #portfolio .thumb {
+		width: 20%;
+	}
+	.header-1 #portfolio .thumb img {
+		width: 100%;
+	}
+
+	/* ABOUT */
+	.header-1 #about {
+		padding-top: 0;
+	}
+	.header-1 #about h1 {
+		font-size: .7em;
+	}
+	.header-1 #about p {
+		font-size: .13em;
+	}
+	.header-1 #about .content {
+		padding-top: 0;
+	}
+	.header-1 #about .content article img {
+		width: 56%;
+	}
+}
+
+/*@media screen and (min-device-width: 2000px) and (orientation: landscape){ */
+@media screen and (min-device-width: 2000px) and (orientation: landscape) {
+/* #### amazon kindle fire HDX 7'' 600 x 1024  */
+	.header-1 #home .s-header-one {
+		display: block;
+		margin-bottom: 0;
+	}
+	.header-1 #home .sub-header {
+		width: 100%;
+	}
+	.header-1 #work {
+		padding-top: 0;
+	}
+	.header-1 #portfolio {
+		padding-top: 1%;
+	}
+	.header-1 #about {
+		padding-top: 0;
+	}
+	.header-1 #about .content {
+		padding-top: 1%;
+	}
+}
+
+@media screen and (max-device-width: 360px) and (orientation: portrait){
+	.header-3 footer #social li {
+		padding: 0;
+	}
+
+	.header-3 footer #social img {
+		width: 22px;
+	}
+	.header-3 #contact h1 {
+		text-align: center;
+	}
+
+}
 
 /* #### Mobile Phones Landscape #### */
   /* some CSS here */
