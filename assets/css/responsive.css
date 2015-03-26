@@ -181,38 +181,71 @@
 /* Milestone X 		####### 320 x 569
 /* */
 
-@media screen and (max-device-width: 480px) {
-	nav a:hover {
-		border-bottom: none;
-	}
-	#logo {
-		/*margin-top: 2px;*/
-	}
+@media screen and (max-width: 480px) {
 	h1 {
 		font-size: 0.7em;
 	}
 	.container {
 		overflow-x: hidden;
 	}
+	.page {
+		text-align: center;
+		padding: 0 5px;
+	}
+
+	#main-header {
+		text-align: center;
+	}
+	#logo {
+		margin: 17px 0 0 10px;
+		float: none;
+	}
+	#logo img {
+		width: 112px;
+		height: auto;
+	}
 	nav {
 		font-size: 0.76em;
-		margin: 16px 0 18px 0;
+		margin: 16px 25px 18px 0;
+		float: none;
+		display: inline-block;
 	}
 	nav a {
-		margin: 0 0.3%;
 		padding: 3.5px 2px;
 	}
+	nav a:hover {
+		border-bottom: none;
+	}
 	/* HOME */
+	#home header {
+		text-align: center;
+	}
+	#home header h1 {
+		text-align: center;
+	}
+	#home header span {
+		float: none;
+	}
 	#home .sub-header {
 		float: none;
 		width: 95%;
 		margin: auto;
 	}
+	#smile {
+		position: initial;
+	}
 	/* WORKS / portfolio */
+	#portfolio {
+		margin: 0 2px;
+		padding-top: 5%;
+	}
 	#portfolio .thumb {
 		width: 85%;
 		transition: transform 0.4s;
 		margin: auto;
+	}
+	#portfolio .thumb img {
+		width: 100%;
 	}
 	#portfolio .thumb:hover img {
 		transform: translate(0px, -50px) scale(0.5);
@@ -228,6 +261,12 @@
 	}
 
 	/* ABOUT */
+	#about h1 {
+		text-align: center;
+	}
+	#about .content {
+		margin-right: 0;
+	}
 	#about .content article {
 		width: 80%;	
 		margin: 36px auto;
@@ -237,6 +276,9 @@
 	}
 	
 	/* CONTACT */
+	#contact h1 {
+		text-align: center;
+	}
 	#contact h1.s-header-one {
 		font-size: 2em;
 	}

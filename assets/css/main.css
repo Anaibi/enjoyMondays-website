@@ -1,4 +1,4 @@
-
+3
 /* *********************************** defaults */
 .ui-loader {
 	display: none;
@@ -49,10 +49,15 @@ hr {
 .fullwidth.container {
 	width: 100%;
 }
-.screen-reader-text { /* TODO check if using this */
-	left: -9999px;
+.screen-reader-text { 
+	/*left: -9999px;
+	top: -9999px;*/
 	position: absolute;
-	top: -9999px;
+	/* says browser will render 9999px wide box otherwise */
+	height: 0;
+	width: 0;
+	opacity: 0;
+	font-size: 0;
 }
 .hidden {
 	display: none;
