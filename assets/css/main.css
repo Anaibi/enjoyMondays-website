@@ -1,3 +1,6 @@
+/* OPTIMIZADO x width 1350px = desigh */
+/* responsive.css x resto widths */
+
 /* ******************************************** */
 /* **************** BACKGROUNDS AND FONT COLORS */
 .light_gray_bg {
@@ -80,6 +83,7 @@ p {
 }
 .fullwidth {
   width: 100%;
+  max-width: 1350px;
 }
 .screen-reader-text { 
   position: absolute;
@@ -181,16 +185,24 @@ p {
 
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES HOME */
+#home {
+  height: 100%;
+}
+#home .centered {
+  transform: none;
+}
 #home .responsive_headline {
   width: 560px;
   height: 332px;
+  margin-top: 155px;
+  margin-bottom: 144px;
 }
 #home .responsive_headline h1 {
   line-height: 1.02;
 }
 #home .responsive_headline p {
   font-size: .156em;
-}
+}  
 
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES WORK */
@@ -233,35 +245,51 @@ p {
 
 /* ******************************** */
 /* *** RESPONSIVE HEADLINES CONTACT */
+#contact {
+  height: 100%;
+}
+#contact .centered {
+  transform: none;
+}
 #contact .responsive_headline {
   width: 1202px;
   height: 353px;
+  padding-top: 166px;
+  padding-bottom: 250px;
 }
 #contact .responsive_headline h1 {
   display: inline-block;
   line-height: 1;
-  margin-bottom: 36px;
+  margin-bottom: 19px;
 }
 #contact .responsive_headline .s-header-one {
-  width: 486px;
+  width: 569px;
   height: 97px;
-  font-size: 1.1em;
-  line-height: 0.8;
   margin-bottom: 33px;
+  margin-right: -8px;
+  font-size: 1.2em;
+  line-height: 0.75;
+  letter-spacing: 4px;
 }
 #contact .responsive_headline .s-header-two {
   width: 1202px;
-  height: 97px;
-  font-size: 1em;
-  line-height: 0.8;
+  height: 90px;
+  font-size: .98em;
+  line-height: 0.75;
+  letter-spacing: 1.2px;
+}
+#contact .responsive_headline .sub-header {
+  width: 486px;
+  margin-top: -23px;
 }
 #contact .responsive_headline hr {
-  margin-bottom: 11px;
+  margin-bottom: 17px;
 }
 #contact .responsive_headline p {
-  padding: 0 12px;
-  font-size: .135em;
-  line-height: 1.4;
+  height: 97px;
+  font-size: .165em;
+  line-height: 1.5;
+  letter-spacing: .17px;
 }
 
 /* ******************************************** */
@@ -280,16 +308,19 @@ p {
 /* ******************************** */
 /* *************************** LOGO */
 #logo {
-  position: relative;
   height: 100%;
 }
-#logo a {
+#logo .img-wrapper {
   display: block;
-  position: absolute;
-  bottom: 0;
+  height: auto;
 }
-#logo.big a {
-  width: 146px;	
+#logo.big .img-wrapper {
+  width: 149px;	
+  margin-top: 40px;
+}
+#logo.small .img-wrapper {
+  width: 111px;
+  margin-top: 40px; 
 }
 #logo img {
 	width: 100%;
@@ -326,10 +357,27 @@ p {
 #collapsed-menu {
   width: 23px;
   height: 19px;
+  margin-top: 40px;
 }
 #collapsed-menu:hover {
   cursor: pointer;
 }
+
+/* ******************************** */
+/* ****************** MENU EXPANDED */
+#header-nav.expanded {
+  margin-top: 0;
+  height: 111px;
+  display: block;
+}
+#header-nav.expanded li {
+  height: 64px; 
+}
+#header-nav.expanded li a {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
 /* ******************************************** */
 /* *********************************** SECTIONS */
 
@@ -481,6 +529,7 @@ footer {
   width: 100%;
 }
 footer p {
+  padding-left: 7px;
   font-weight: 700;
   font-size: 16px;
 }
@@ -489,6 +538,7 @@ footer a {
 	display: inline-block;
 }
 #social {
+  padding-right: 7px;
   /* otherwise webkit adds margin 1em */
   font-size: 0;
 }

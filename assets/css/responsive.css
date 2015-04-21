@@ -1,496 +1,109 @@
 
-/* ************************************ responsive by: WINDOW WIDTH  */
 
-/* ///////////////////////////////////////////////// MAX WIDTH 1024px //// */
-@media screen and (min-width: 1024px) {
-/* HOME */
-#home {
-  height: 100%;
-}
-#home .centered {
-  margin-top: 155px;
-  margin-bottom: 144px;
-  transform: none;
-}
-/* CONTACT */
-#contact {
-  height: 100%;
-}
-#contact .centered {
-  padding-top: 166px;
-  padding-bottom: 250px;
-  transform: none;
-}
-#contact .sub-header {
-		margin-right; 0;
-		width: 51.8%;	
-	}
-	#contact p {
-		font-size: .3em;
-	}
-}
-
-
-/* ///////////////////////////////////////////////// MAX WIDTH 768px //// */
-@media screen and (max-width: 768px) {
-	/* generals text */
-	h1 {
-		text-align: center;
-	}
-	p, #about p {
-		font-size: .23em;
-	}	
-	hr {
-		margin: 0px auto 3%;
-	}
-	/* MAIN HEADER */
-	#main-header {
-		height: auto;
-	}
-	/* logo */
-	#logo {
-		display: block;
-		float: none;
-		text-align: center;
-		margin-left: 0;
-		margin-top: 20px;		
-	}
-	#logo a {
-		display: inline-block;
-	}
-	#logo a img {
-		height: 5em;
-		width: auto;
-	}
-	/* menu navigation */
-	#header-nav {
-		font-size: 1.28em;
-		margin: 16px 0 18px 0 !important; 
-		float: none;
-		text-align: center;
-	}
-	#header-nav a {
-		float: none;
-		margin: 0 1.5%;
-	}
-	
-	/* PAGES */	
-	.page {
-		padding: 0;
-		text-align: center;
-	}
-  .page header {
-    width: 80%;
+/* ///////////////////////////////////////////////// MIN WIDTH 1350px //// */
+@media screen and (min-width: 1350px) {
+  /* ******************************** */
+  /* ****** RESPONSIVE HEADLINES HOME */
+  #home {
+    height: 100%;
   }
-	.page .content {
-		padding-top: 5%;
-		margin: 0;
-	}
-	.page header span {
-		float: none;
-	}
-	.page .sub-header {
-		width: 100%;
-		float: none;
-	}
-
-  /* HOME */
-  #home h1 {
-  	line-height: 1;
+  #home .responsive_headline {
+    width: 560px;
+    height: 332px;
+    margin-top: 155px;
+    margin-bottom: 144px;
   }
-  #home .sub-header {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+  #home .responsive_headline h1 {
+    line-height: 1.02;
+  }
+  #home .responsive_headline p {
+    font-size: .156em;
   }
 
-	
-	/* ABOUT */
-	#about .content article {
-		width: 50%;
-	}
-  /* CONTACT */
-  #contact {
-  	/* total height - header height - footer height */
-  	height: calc(100vh - 58px - 70px);
-  }
-  #contact h1 {
-    /*text-align: right;*/
-  }
-  #contact header {
-  	width: 95%;
-  	margin-top: 8%;
-  }
-  #contact .sub-header {
-  	margin: 0;
-  	width: 75%;
-  }	
-	#contact p {
-		/*font-size: 0.4em;*/
-	}
-	
-	/* WORK */
-	#work .thumb {
-		margin: 3% 4%;
-		width: 33%;
-	}
-	#work .thumb img {
-		width: 100%;
-	}
-	/* PORTFOLIO */
-	#closeGallery a { /* TODO check in other window sizes*/
-		width: 50px;
-		height: 50px;
-		background-size: cover;
-		top: 5%;
-		right: 5%;
-	}
-  /* FOOTER */
-  footer {
-  	height: 70px;
-  }
-  footer p {
-    font-size: .85em;
-  }
-}
-/* ///////////////////////////////////////////////// MAX WIDTH 640px //// */
-@media screen and (max-width: 640px) {
-  #header-nav {
-    font-size: 0.86em;
-    margin: 16px 0 18px 0;
-  }
-  #logo a img {
-  	height: 60px !important;
-  	width: auto !important;
-  }
-	/* FOOTER */
-	footer p {
-		font-size: .75em;
-		padding: 3%;
-		margin-top: 3.5%;
-	}
-	#social {
-		margin: 0;
-		padding: 3.5%;
-		margin-top: 2%;
-	}
-}
-
-/* ///////////////////////////////////////////////// MAX WIDTH 480px //// */
-/* #### Mobile Phones Portrait #### */
-/* #### Mobile Phones Portrait #### */
-/* iPhone 3 GS 		####### 320 x 480
-/* iPhone 4 		####### 320 x 480
-/* iPhone 5 		####### 320 x 568
-/* iPhone 6 				####### 375 x 667
-/* iPhone 6 Plus					####### 414 x 736
-/* BlackBerry Z10				####### 384 x 640
-/* BlackBerry Z30		####### 360 x 640
-/* Google Nexus 4				####### 384 x 640
-/* Google Nexus S	####### 320 x 533	
-/* HTC EVO			####### 320 x 533
-/* HTC Touch HD		####### 320 x 533
-/* HTC Desire SD	####### 320 x 533
-/* HTC Desire 		####### 320 x 533
-/* HTC One X			####### 360 x 640
-/* EVO LT 				####### 360 x 640
-/* HTC Sensation		####### 360 x 640
-/* EVO 3D				####### 360 x 640
-/* LG Optimus 2X	####### 320 x 533
-/* LG Optimus 3D	####### 320 x 533
-/* LG Optimus BLACK	####### 320 x 533
-/* LG Optimus G		####### 320 x 533
-/* LG Optimus LTE					####### 424 x 753
-/* LG Optimus 4X HD					####### 424 x 753
-/* LG Optimus One ####### 213 x 320
-/* Motorola Defy	####### 320 x 569
-/* Droid			####### 320 x 569
-/* Droid X 			####### 320 x 569
-/* Milestone X 		####### 320 x 569
-/* */
-
-@media screen and (max-width: 480px) {
-	h1 {
-		font-size: 0.7em;
-	}
-	.container {
-		overflow-x: hidden;
-	}
-	.page {
-		text-align: center;
-		padding: 0 5px;
-	}
-
-	#main-header {
-		text-align: center;
-	}
-  #logo {
-  	margin: 17px 0 0 0 !important;
-  	float: none;
-  }
-  #header-nav {
-  	font-size: 0.76em;
-  	margin: 16px 25px 18px 0;
-  	float: none;
-  	display: block;
-  }
-  #header-nav a {
-  	padding: 3.5px 2px;
+  #home .centered {
+    transform: none;
   }
 
-	/* HOME */
-	#home header {
-		text-align: center;
-	}
-	#home header h1 {
-		text-align: center;
-	}
-	#home header span {
-		float: none;
-	}
-	#home .sub-header {
-		float: none;
-		width: 95%;
-		margin: auto;
-	}
-	#smile {
-		position: initial;
-	}
-	/* WORKS / portfolio */
-	#portfolio {
-		margin: 0 2px;
-		padding-top: 5%;
-	}
-	#portfolio .thumb {
-		width: 85%;
-		transition: transform 0.4s;
-		margin: auto;
-	}
-	#portfolio .thumb img {
-		width: 100%;
-	}
-	#portfolio .thumb:hover img {
-		transform: translate(0px, -50px) scale(0.5);
-	}
-	#portfolio .he-second {
-		width: 100%;
-		font-size: 0.35em;
-		text-align: center;
-	}
-	#portfolio .he-second h3 {
-		margin-top: 51%;
-		text-align: center;
-	}
+  /* ******************************** */
+  /* ****** RESPONSIVE HEADLINES WORK */
+  #work .responsive_headline {
+    width: 390px;
+    height: 167px;
+    margin-top: 68px;
+  }
+  #work .responsive_headline h1 {
+    line-height: .69;
+    margin-bottom: 44px;
+  }
+  #work .responsive_headline hr {
+    margin-bottom: 11px;
+  }
+  #work .responsive_headline p {
+    font-size: .15em;
+  }
 
-	/* ABOUT */
-	#about h1 {
-		text-align: center;
-	}
-	#about .content {
-		margin-right: 0;
-	}
-	#about .content article {
-		width: 80%;	
-		margin: 36px auto;
-	}
-	#about .content article img {
-		width: 68%;
-	}
-	
-	/* CONTACT */
-	#contact h1 {
-		text-align: center;
-	}
-	#contact h1.s-header-one {
-		font-size: 2em;
-	}
-	#contact .sub-header {
-		float: none;
-	}
+  /* ******************************** */
+  /* ***** RESPONSIVE HEADLINES ABOUT */
+  #about .responsive_headline {
+    width: 510px;
+    height: 240px;
+    margin-top: 167px;
+    margin-bottom: 184px;
+  }
+  #about .responsive_headline h1 {
+    line-height: .69;
+    margin-bottom: 40px;
+  }
+  #about .responsive_headline hr {
+    margin-bottom: 11px;
+  }
+  #about .responsive_headline p {
+    padding: 0 12px;
+    font-size: .135em;
+    line-height: 1.4;
+  }
 
-	#contact hr {
-		margin-top: 3%;
-	}
-	/* FOOTER */
-	footer p {
-		font-size: .65em;
-	/*	text-align: center;*/
-		/*width: 100%;*/
-		width: auto;
-		margin: 0;
-	}
-	#social {
-		margin: 0;
-	}
-	/* FOOTER */
-	footer p {
-		width: auto;
-		height: auto;
-	}
-	
-}
-
-/* ************************************ responsive by orientation: landscape */
-@media screen and (max-width: 640px) and (orientation: landscape){
-	.header-2 #logo {
-		float: left;
-		margin: 12px;
-	}
-	/* HOME */
-
-}
-
-/* #### iPhone 4+ Portrait or Landscape #### */
-@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
-  /* some CSS here */
-}
-
-
-
-
-/* ************************************ responsive by: .touch class */
-
-/* ///////////////////////////////////////////////// MAX WIDTH 1024px //// */
-@media screen and (max-width: 1024px) {
-	.touch nav a:hover {
-		border-bottom: none;
-	}
-}
-
-
-/* ************************************ responsive by: header class */
-
-/* #### amazon kindle fire first generation 600 x 1024 */
-/* HEADER */
-@media screen and (max-width: 640px) and (orientation: portrait) {
-	.header-1 #logo {
-		float: left;
-		margin-left: 4.53%;
-	}
-	.header-1 #home .sub-header {
-		float: none;
-		width: 100%;
-	}
-
-	/* ABOUT */
-	.header-1 #about .content article {
-		width: 25%;
-		margin: 36px 20px;
-	}
-	.header-1 #about p {
-		font-size: .2em;
-	}
-
-	 /* CONTACT */
-	 .header-1 #contact h1 {
-	 	text-align: center;
-	 }
-	.header-1 footer p {
-		margin: 0;
-	}
-	.header-1 #social {
-		margin: 0;
-	}
-}
-
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-	/* WORK */
-	.header-1 #work {
-		padding-top: 0;
-	}
-	.header-1 #work h1 {
-		font-size: .7em;
-	}
-	.header-1 #portfolio {
-		padding-top: 2%;
-	}
-	.header-1 #portfolio .thumb {
-		width: 20%;
-	}
-	.header-1 #portfolio .thumb img {
-		width: 100%;
-	}
-
-	/* ABOUT */
-	.header-1 #about {
-		padding-top: 0;
-	}
-	.header-1 #about h1 {
-		font-size: .7em;
-	}
-	.header-1 #about p {
-		font-size: .13em;
-	}
-	.header-1 #about .content {
-		padding-top: 0;
-	}
-	.header-1 #about .content article img {
-		width: 56%;
-	}
-}
-
-/*@media screen and (min-device-width: 2000px) and (orientation: landscape){ */
-@media screen and (min-width: 2000px) and (orientation: landscape) {
-/* #### amazon kindle fire HDX 7'' 600 x 1024  */
-	.header-1 #home .s-header-one {
-		display: block;
-		margin-bottom: 0;
-	}
-	.header-1 #home .sub-header {
-		width: 100%;
-	}
-	.header-1 #work {
-		padding-top: 0;
-	}
-	.header-1 #portfolio {
-		padding-top: 1%;
-	}
-	.header-1 #about {
-		padding-top: 0;
-	}
-	.header-1 #about .content {
-		padding-top: 1%;
-	}
-}
-
-@media screen and (max-width: 360px) and (orientation: portrait){
-	.header-3 footer #social li {
-		padding: 0;
-	}
-
-	.header-3 footer #social img {
-		width: 22px;
-	}
-	.header-3 #contact h1 {
-		text-align: center;
-	}
-
-}
-
-/* #### Mobile Phones Landscape #### */
-  /* some CSS here */
-}
-
-/* #### Mobile Phones Portrait or Landscape #### */
-@media screen and (max-width: 640px){
-  /* some CSS here */
-}
-
-
-
-/* #### Tablets Portrait or Landscape #### */
-/* blackberry playbook 6 	####### 1024 x 600
-/* google Nexus 7			####### 966 x 604
-/* google Nexus 7.2			####### 960 x 604
-
-
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
-  /* some CSS here */
-}
-
-/* #### Desktops #### */
-/* google Nexus 10	####### 1280 x 800
-
-@media screen and (min-width: 1024px){
-  /* some CSS here */
+  /* ******************************** */
+  /* *** RESPONSIVE HEADLINES CONTACT */
+  
+  #contact .responsive_headline {
+    width: 1202px;
+    height: 353px;
+    padding-top: 166px;
+    padding-bottom: 250px;
+  }
+  #contact .responsive_headline h1 {
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 19px;
+  }
+  #contact .responsive_headline .s-header-one {
+    width: 569px;
+    height: 97px;
+    margin-bottom: 33px;
+    margin-right: -8px;
+    font-size: 1.2em;
+    line-height: 0.75;
+    letter-spacing: 4px;
+  }
+  #contact .responsive_headline .s-header-two {
+    width: 1202px;
+    height: 90px;
+    font-size: .98em;
+    line-height: 0.75;
+    letter-spacing: 1.2px;
+  }
+  #contact .responsive_headline .sub-header {
+    width: 486px;
+    margin-top: -23px;
+  }
+  #contact .responsive_headline hr {
+    margin-bottom: 17px;
+  }
+  #contact .responsive_headline p {
+    height: 97px;
+    font-size: .165em;
+    line-height: 1.5;
+    letter-spacing: .17px;
+  }
 }

@@ -17,16 +17,15 @@ $(function() {
   // collapsed menu
   $('#collapsed-menu').hover(function() {
     $(this).hide();
-    $('#header-nav').css('margin-top', 0).addClass('centered expanded').show();
+    $('#header-nav').addClass('expanded').show();
   });
 
+  // expanded menu
   $('#header-nav').hover(
-  	function() {
-  	  console.log('out');
-    }, 
+  	function() {}, 
     function() {
       if ($(this).hasClass('expanded')) {
-      	$(this).hide().css('margin-top', '85').removeClass('centered expanded');
+      	$(this).hide().removeClass('expanded');
         $('#collapsed-menu').show();
       }   
   });
@@ -38,30 +37,38 @@ $(function() {
   });
 
   function doWaypoints() {  
-	// PAGES : update nav links
-	var $pages = $('.page');
 
+	var $pages = $('.page');
+    
+    // on scroll offset 98%
 	$pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) { 
-	  	  var previousWaypoint = this.previous();
-	  	  $pages.removeClass('.active-link');
-	  	  if (direction === 'down') { updateLinks($(this.element).attr('id'), direction); }
+	  	  // only if scroll down update links
+	  	  if (direction === 'down') { 
+	  	  	$pages.removeClass('.active-link');
+	  	  	updateLinks($(this.element).attr('id')); 
+	  	  }
 	  	},
 	    offset: '98%',
 	    group: 'pages'
 	  });
     });
-
+    
+    // on scroll with offset 10%
     $pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) { 
 	  	  var previousWaypoint = this.previous();
-	  	  $pages.removeClass('.active-link');
-	  	  if ((direction === 'up') && previousWaypoint) { updateLinks($(previousWaypoint.element).attr('id'), direction); }
-	  	  if (isActiveSection('home')) { doHeader(direction); }
+	  	  // only if scroll up
+	  	  if ((direction === 'up') && previousWaypoint) {
+	  	    $pages.removeClass('.active-link'); 
+	  	  	updateLinks($(previousWaypoint.element).attr('id')); }
+	  	  
+	  	  // if scrolling to or from home
+	  	  if (isActiveSection('home')) { animateHeader(direction); }
 	  	},
 	    offset: '10%',
 	    group: 'pages'
@@ -72,11 +79,8 @@ $(function() {
   //////////////////////////////////////// END MENU FUNCTIONALITY
  
   //////////////////////////////////////// HELPER FUNCTIONS
-  //scroll to pages position
-  function scrollToPosition(page) { 
-	//con overflow-x hidden el scrollTop no funciona
-	$('html, body').css('overflow-x', 'visible'); 
-		
+  // scroll to pages position
+  function scrollToPosition(page) { 		
 	$('body, html')
 	  .stop()
 	  .animate({
@@ -86,8 +90,8 @@ $(function() {
    	});
   }
 
-  //update active link on main menu nav id string 
-  function updateLinks(id, direction) { 
+  // update active link on main menu nav
+  function updateLinks(id) { 
     $('#header-nav .active-link').removeClass('active-link'); 
     if (id.charAt(0) === '#') {
       $("#header-nav a[href='"+id+"']").parent().addClass('active-link');
@@ -107,49 +111,44 @@ $(function() {
   // on scroll to home, menu expands
   // logo animates to big,
   // header height animates to big height = 139px
-  function doHeader(direction) { console.log(direction);
+  function animateHeader(direction) { 
+
   	if (direction === 'down') {
     
       $('#header-nav').hide(function() {
         $('#collapsed-menu').show();
-      });
+      }).addClass('expanded');
   		  
-	  $('#logo a').css('position', 'static').animate({
-		height: '75px',
-		width: '111px',
-      });
-	      	
-	  $('#logo.big').animate({
-		'margin-top': '17px'
-	  });
-	        
-	  $('#logo.big').removeClass('big').addClass('small');
+	  $('#logo a').animate({
+	  	'margin-top': '19px',
+		'width': '111px'
+      }, 'fast');
 
 	  $('#main-header, #fixed-header-aux').animate({
 		'height': '111px'
-	  });
+	  }, 'fast');
+
+	  $('#logo.big').removeClass('big').addClass('small');
 
   	} else {
 
   	  $('#collapsed-menu').hide(function() {
-  	  	$('#header-nav').css('margin-top', '85px').show();
+  	  	$('#header-nav').show().removeClass('expanded');
   	  });	
 
   	  $('#main-header, #fixed-header-aux').animate({
 	    'height': '139px'
-	  });
+	  }, 'fast');
 		
-	  $('#logo a').css('position', 'absolute').animate({
-	    height: '102px',
-	    width: '146px'
-	  });
-	    
-	  $('#logo.small').animate({
-	    'margin-top': '0'
-	  });
+	  $('#logo a').animate({
+	  	'margin-top': '40px',
+	    'width': '146px'
+	  }, 'fast');
 	    
 	  $('#logo.small').removeClass('small').addClass('big');
   	}
+
+  	$('#logo a').clearQueue();
   }
  	
   //////////////////////////////////////// END HELPER FUNCTIONS
