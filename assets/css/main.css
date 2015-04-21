@@ -147,6 +147,7 @@ body {
   /* = total - header height */
   min-height: calc(100vh - 139px);
   text-align: right;
+  height: 100%;
 }
 .page header {
   display: inline-block;
@@ -156,7 +157,10 @@ body {
 	text-align: center;
 }
 .content {
-  text-align: center;
+  /* same as .wrapper .left */
+  margin-left: 70px;
+  /* same as .wrapper .right */
+  margin-right: 82px;
 }
 .header_hr {
   border: 0;
@@ -185,9 +189,6 @@ p {
 
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES HOME */
-#home {
-  height: 100%;
-}
 #home .centered {
   transform: none;
 }
@@ -210,6 +211,7 @@ p {
   width: 390px;
   height: 167px;
   margin-top: 68px;
+  margin-bottom: 97px;
 }
 #work .responsive_headline h1 {
   line-height: .8;
@@ -246,9 +248,6 @@ p {
 
 /* ******************************** */
 /* *** RESPONSIVE HEADLINES CONTACT */
-#contact {
-  height: 100%;
-}
 #contact .centered {
   transform: none;
 }
@@ -403,96 +402,90 @@ p {
 }
 
 /* ******************************** */
-/* *************************** WORK */
-#work {
-  padding-bottom: 127px;
+/* *************** WORK - PORTFOLIO */
+#portfolio {
+  margin-bottom: 127px;
+  padding-left: 115px;
+  padding-right: 115px;
+  font-size: 30px;
 }
-
-#work .emb_gallery {
-	display: inline-block;
+#portfolio .thumb {
+  display: inline-block;
+  width: 465px;
+  height: 385px;
+  margin-bottom: 34px;
 }
-#work .content .thumb {
-	display: inline-block;
-	margin: 16px 22px;
+#portfolio .thumb:nth-child(odd) {
+  float: left;
 }
-#work .content .thumb img {
-	display: inline-block;
-}
-#portfolio a {
-	display: block;
-}
-#portfolio img:hover {
-	cursor: pointer;
-}
-#portfolio a:hover {
-	cursor: pointer;
+#portfolio .thumb:nth-child(even) {
+  float: right;
 }
 #portfolio .thumb:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
-
-/* ************************* */
-/* ********* PROJECT gallery */
-#closeGallery a {
-	width:95px;
-	height:95px;
-	background:transparent url(../images/close.png) no-repeat top left;
-	position:absolute;
-	top:50px;
-	right:70px;
-	text-indent:-9000px;
-}
-
-/* ************************* */
-/* PORTFOLIO project details */
 #portfolio .thumb a {
-	position: relative;	
+  display: block;
+  position: relative;
+  height: 100%;	
 }
+/* img hover animation */
 #portfolio img {
-	transition: transform 0.4s;
+  transition: transform 0.4s;
 }
-.no-touch #portfolio .thumb:hover img
-, #portfolio .thumb.cs-hover img {
-	transform:  translate(-70px, -70px) scale(0.7);
+.no-touch #portfolio .thumb:hover img, 
+#portfolio .thumb.cs-hover img {
+  transform:  translate(-70px, -56px) scale(0.7);
 }
-.he-second {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	font-size: .2em;
-	height: 100%;
-	width: 100%;
-	color: white;
-	text-align: left;
-	transition: opacity 1s;
+/* details */
+#portfolio .he-second {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 1s;
 }
-.he-second:hover {
-	opacity: 1;
+#portfolio .he-second:hover {
+  opacity: 1;
 }
-.he-second h3 {
-	margin-top: 60%;
-	text-align: left;
+#portfolio .he-second h3 {
+  font-size: 1em;
+  /* override h3 */
+  text-align: left;
 }
-.he-second p {
-	position absolute;
-	bottom: 20px;
-	right: 20px;
-	font-size: 0.5em;
+#portfolio .he-second > div {
+  position: absolute;
+  bottom: 0;
 }
-.he-second span {
-	font-size: .75em;
+#portfolio .he-second p {
+  font-size: 0.5em;
+}
+#portfolio .he-second span {
+  font-size: .75em;
 }
 
 /* ******************************** */
 /* ************************** ABOUT */
-#about {
-  padding-bottom: 6%;
+#about .content {
+  padding-left: 114px;
+  padding-right: 101px;
+  margin-bottom: 157px;
+  text-align: center;
 }
 #about .content article {
   display: inline-block;
-  width: 26%;
-  margin: 0 20px 40px;
+  text-align: center;
+  vertical-align: top;
+}
+#about .content article:first-child {
+  float: left;
+}
+#about .content article:last-child {
+  float: right;
 }
 #about .content .img-wrapper {
   width: 248px;
@@ -507,7 +500,9 @@ p {
   margin: 0 auto 14px;
 }
 #about .content p {
-  font-size: 1.07em;
+  max-width: 314px;
+  margin: auto;
+  font-size: 1.02em;
   line-height: 1.4;
 }
 
@@ -552,9 +547,19 @@ footer a {
 }
 
 /* ******************************************** */
-/* ********************************** SLIDESHOW */
+/* **************************** PROJECT gallery */
 #slideshow {
-	display: none;
+  /* initial state */
+  display: none;
 }
-
+#closeGallery a {
+  width: 56px;
+  height:56px;
+  background:transparent url(../images/close.png) no-repeat top right;
+  background-size: 100%;
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0;
+}
 
