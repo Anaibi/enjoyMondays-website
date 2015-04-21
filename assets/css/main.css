@@ -212,14 +212,15 @@ p {
   margin-top: 68px;
 }
 #work .responsive_headline h1 {
-  line-height: .69;
-  margin-bottom: 44px;
+  line-height: .8;
+  margin-bottom: 31px;
 }
 #work .responsive_headline hr {
   margin-bottom: 11px;
 }
 #work .responsive_headline p {
   font-size: .15em;
+  line-height: .75;
 }
 
 /* ******************************** */
@@ -281,6 +282,7 @@ p {
 #contact .responsive_headline .sub-header {
   width: 486px;
   margin-top: -23px;
+  margin-right: 41px;
 }
 #contact .responsive_headline hr {
   margin-bottom: 17px;
@@ -340,24 +342,35 @@ p {
 }
 #header-nav a {
   display: block;
-  padding: 0 4px 2px 4px;
+  /* to avoid jumps on hover */
+  /* difference is border size */
+  padding: 30px 24px;
+  margin: -30px -20px;
   color: inherit;
 }
 #header-nav .active-link {
-	font-weight: 900;
-	border-bottom: solid #DF3F54 3px !important; /* need to override .touch class no border */
+  font-weight: 900;
+  /* has to override .touch class no border */
+  border-bottom: solid #DF3F54 3px !important; 
 }
 #header-nav li:hover {
-	font-weight: 900;
-	border-bottom: solid #DF3F54 3px; /* .touch has to override this */
+  font-weight: 900;
+  /* .touch has to override this */
+  border-bottom: solid #DF3F54 3px; 
 }
 
 /* ******************************** */
 /* ***************** MENU COLLAPSED */
 #collapsed-menu {
+  margin-top: 40px;
+}
+#collapsed-menu img {
+  /* icon size */
   width: 23px;
   height: 19px;
-  margin-top: 40px;
+  /* to avoid jumps on hover */
+  padding: 30px;
+  margin: -30px;
 }
 #collapsed-menu:hover {
   cursor: pointer;
@@ -366,16 +379,8 @@ p {
 /* ******************************** */
 /* ****************** MENU EXPANDED */
 #header-nav.expanded {
-  margin-top: 0;
-  height: 111px;
   display: block;
-}
-#header-nav.expanded li {
-  height: 64px; 
-}
-#header-nav.expanded li a {
-  padding-top: 40px;
-  padding-bottom: 30px;
+  margin-top: 40px;
 }
 
 /* ******************************************** */
@@ -400,7 +405,7 @@ p {
 /* ******************************** */
 /* *************************** WORK */
 #work {
-	padding-bottom: 138px;
+  padding-bottom: 127px;
 }
 
 #work .emb_gallery {
@@ -488,12 +493,11 @@ p {
   display: inline-block;
   width: 26%;
   margin: 0 20px 40px;
-  vertical-align: top;
 }
 #about .content .img-wrapper {
   width: 248px;
   height: 248px;
-  margin: auto;
+  margin: 0 auto 24px;
 }
 #about .content .img-wrapper img {
   width: 100%;
@@ -510,16 +514,7 @@ p {
 /* ******************************** */
 /* ************************ CONTACT */
 #contact .sub-header {
-	width: 41.8%;
-	margin-right: 4%;
-	display: inline-block;
-	font-weight: 400;
-}
-#contact .s-header-one {
-	margin-bottom: 0;
-}
-#contact p {
-	font-size: 0.21em;
+  font-weight: 400;
 }
 
 /* ******************************************** */
@@ -534,8 +529,7 @@ footer p {
   font-size: 16px;
 }
 footer a {
-	font-weight: 900;
-	display: inline-block;
+  font-weight: 900;
 }
 #social {
   padding-right: 7px;
@@ -543,8 +537,8 @@ footer a {
   font-size: 0;
 }
 #social li {
-	display: inline-block;
-	padding-left: 6px;
+  display: inline-block;
+  padding-left: 6px;
 }
 #social a {
   width: 32px;
