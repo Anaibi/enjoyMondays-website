@@ -2,20 +2,26 @@
 /* ************************************ responsive by: WINDOW WIDTH  */
 
 /* ///////////////////////////////////////////////// MAX WIDTH 1024px //// */
-@media screen and (max-width: 1024px) {
-	h1 {
-		font-size: 1.15em;
-	}
-	p, #about p {
-		font-size: .2em;
-	}
-	/* HOME */
-	#home .sub-header {
-		float: right;
-		padding-left: 0;
-	}
-	/* CONTACT */
-	#contact .sub-header {
+@media screen and (min-width: 1024px) {
+/* HOME */
+#home {
+  height: 100%;
+}
+#home .centered {
+  margin-top: 155px;
+  margin-bottom: 144px;
+  transform: none;
+}
+/* CONTACT */
+#contact {
+  height: 100%;
+}
+#contact .centered {
+  padding-top: 166px;
+  padding-bottom: 250px;
+  transform: none;
+}
+#contact .sub-header {
 		margin-right; 0;
 		width: 51.8%;	
 	}
@@ -26,7 +32,7 @@
 
 
 /* ///////////////////////////////////////////////// MAX WIDTH 768px //// */
-@media screen and (max-device-width: 768px) {
+@media screen and (max-width: 768px) {
 	/* generals text */
 	h1 {
 		text-align: center;
@@ -57,13 +63,13 @@
 		width: auto;
 	}
 	/* menu navigation */
-	nav {
+	#header-nav {
 		font-size: 1.28em;
 		margin: 16px 0 18px 0 !important; 
 		float: none;
 		text-align: center;
 	}
-	nav a {
+	#header-nav a {
 		float: none;
 		margin: 0 1.5%;
 	}
@@ -73,10 +79,9 @@
 		padding: 0;
 		text-align: center;
 	}
-	.page header {
-		width: 95%;
-		margin-top: 5%;
-	}
+  .page header {
+    width: 80%;
+  }
 	.page .content {
 		padding-top: 5%;
 		margin: 0;
@@ -88,21 +93,40 @@
 		width: 100%;
 		float: none;
 	}
+
+  /* HOME */
+  #home h1 {
+  	line-height: 1;
+  }
+  #home .sub-header {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 	
 	/* ABOUT */
 	#about .content article {
 		width: 50%;
 	}
-	/* CONTACT */
-	#contact h1 {
-		text-align: right;
-	}
-	#contact .sub-header {
-		margin: 0;
-		width: 75%;
-	}	
+  /* CONTACT */
+  #contact {
+  	/* total height - header height - footer height */
+  	height: calc(100vh - 58px - 70px);
+  }
+  #contact h1 {
+    /*text-align: right;*/
+  }
+  #contact header {
+  	width: 95%;
+  	margin-top: 8%;
+  }
+  #contact .sub-header {
+  	margin: 0;
+  	width: 75%;
+  }	
 	#contact p {
-		font-size: 0.4em;
+		/*font-size: 0.4em;*/
 	}
 	
 	/* WORK */
@@ -121,20 +145,24 @@
 		top: 5%;
 		right: 5%;
 	}
-	/* FOOTER */
-	footer p {
-		font-size: .85em;
-	}
+  /* FOOTER */
+  footer {
+  	height: 70px;
+  }
+  footer p {
+    font-size: .85em;
+  }
 }
 /* ///////////////////////////////////////////////// MAX WIDTH 640px //// */
-@media screen and (max-device-width: 640px) {
-	nav {
-		font-size: 0.86em;
-		margin: 16px 0 18px 0;
-	}
-	#logo a img {
-		height: 60px;
-	}
+@media screen and (max-width: 640px) {
+  #header-nav {
+    font-size: 0.86em;
+    margin: 16px 0 18px 0;
+  }
+  #logo a img {
+  	height: 60px !important;
+  	width: auto !important;
+  }
 	/* FOOTER */
 	footer p {
 		font-size: .75em;
@@ -196,26 +224,20 @@
 	#main-header {
 		text-align: center;
 	}
-	#logo {
-		margin: 17px 0 0 10px;
-		float: none;
-	}
-	#logo img {
-		width: 112px;
-		height: auto;
-	}
-	nav {
-		font-size: 0.76em;
-		margin: 16px 25px 18px 0;
-		float: none;
-		display: inline-block;
-	}
-	nav a {
-		padding: 3.5px 2px;
-	}
-	nav a:hover {
-		border-bottom: none;
-	}
+  #logo {
+  	margin: 17px 0 0 0 !important;
+  	float: none;
+  }
+  #header-nav {
+  	font-size: 0.76em;
+  	margin: 16px 25px 18px 0;
+  	float: none;
+  	display: block;
+  }
+  #header-nav a {
+  	padding: 3.5px 2px;
+  }
+
 	/* HOME */
 	#home header {
 		text-align: center;
@@ -309,7 +331,7 @@
 }
 
 /* ************************************ responsive by orientation: landscape */
-@media screen and (max-device-width: 640px) and (orientation: landscape){
+@media screen and (max-width: 640px) and (orientation: landscape){
 	.header-2 #logo {
 		float: left;
 		margin: 12px;
@@ -319,7 +341,7 @@
 }
 
 /* #### iPhone 4+ Portrait or Landscape #### */
-@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
   /* some CSS here */
 }
 
@@ -340,7 +362,7 @@
 
 /* #### amazon kindle fire first generation 600 x 1024 */
 /* HEADER */
-@media screen and (max-device-width: 640px) and (orientation: portrait) {
+@media screen and (max-width: 640px) and (orientation: portrait) {
 	.header-1 #logo {
 		float: left;
 		margin-left: 4.53%;
@@ -371,7 +393,7 @@
 	}
 }
 
-@media screen and (max-device-width: 1024px) and (orientation: landscape) {
+@media screen and (max-width: 1024px) and (orientation: landscape) {
 	/* WORK */
 	.header-1 #work {
 		padding-top: 0;
@@ -408,7 +430,7 @@
 }
 
 /*@media screen and (min-device-width: 2000px) and (orientation: landscape){ */
-@media screen and (min-device-width: 2000px) and (orientation: landscape) {
+@media screen and (min-width: 2000px) and (orientation: landscape) {
 /* #### amazon kindle fire HDX 7'' 600 x 1024  */
 	.header-1 #home .s-header-one {
 		display: block;
@@ -431,7 +453,7 @@
 	}
 }
 
-@media screen and (max-device-width: 360px) and (orientation: portrait){
+@media screen and (max-width: 360px) and (orientation: portrait){
 	.header-3 footer #social li {
 		padding: 0;
 	}
@@ -450,7 +472,7 @@
 }
 
 /* #### Mobile Phones Portrait or Landscape #### */
-@media screen and (max-device-width: 640px){
+@media screen and (max-width: 640px){
   /* some CSS here */
 }
 

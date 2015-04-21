@@ -1,356 +1,373 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Enjoy-Mondays | We Code. You Smile.</title>
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<meta name="author" content="Enjoy-Mondays" />
-		<link rel="shortcut icon" href="favicon.ico"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Enjoy-Mondays | We Code. You Smile.</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Enjoy-Mondays" />
+  <link rel="shortcut icon" href="favicon.ico"> 
 		
-		<!-- MAIN CSS -->
-		<link media="screen" rel="stylesheet" type="text/css" href="assets/css/main.css" />
+  <!-- MAIN CSS -->
+  <link media="screen" rel="stylesheet" type="text/css" href="assets/css/main.css" />
 
-		<!-- RESPONSIVE CSS -->
-		<link media="screen" rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+  <!-- RESPONSIVE CSS -->
+  <link media="screen" rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 		
-		<!-- SUPERSIZED CSS -->
-		<link rel="stylesheet" href="assets/css/supersized.min.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="assets/theme/supersized.shutter.css" type="text/css" media="screen" />
+  <!-- SUPERSIZED CSS -->
+  <link rel="stylesheet" href="assets/css/supersized.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="assets/theme/supersized.shutter.css" type="text/css" media="screen" />
 		
-		<!-- MODERNIZR JS -->				
-		<script src="assets/js/modernizr.custom.js"></script>								
-	</head>
-	<body>
-		<!-- web displays either #front-page either works #slideshow (fullwidth) -->
-		<!-- #front-page (header + pages + footer) -->
-		<div id="front-page">
-			<!-- main header can be fix or landscape, by default fixed -->
-			<header id="main-header" class="top fixed fullwidth container">
-				<!-- logo -->
-				<div id="logo">
-					<a href="#"><img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
-						<span class="screen-reader-text">Enjoy Mondays</span>
-					</a>
-				</div>
+  <!-- MODERNIZR JS -->				
+  <script src="assets/js/modernizr.custom.js"></script>								
+</head>
+<body class="light_gray_bg">
+  <div id="cover"></div>
+  <!-- web displays either #FRONT-PAGE either works #SLIDESHOW (fullwidth) -->
+  <!-- FRONT-PAGE (header + pages + footer) -->
+  <div id="front-page" class="fullwrapper light_gray_bg">
 
-				<!-- Navigation -->
-				<nav>
-					<a href="#home" class="active-link">Home</a>
-					<a href="#work">Work</a>
-					<a href="#about">About</a>
-					<a href="#contact">Contact</a>
-					<a href="#notes">Notes</a>
-				</nav>	
-			</header>
+    <!-- MAIN-HEADER can be fix or landscape, by default fixed -->
+    <header id="main-header" class="wrapper top fixed fullwidth light_gray_bg">
 
-			<div id="fixed-header-aux"></div>			
+      <!-- LOGO -->
+      <div id="logo" class="big left fullheight">
+        <a href="#">
+          <img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
+          <span class="screen-reader-text">Enjoy Mondays</span>
+        </a>
+      </div>
 
-			<!-- pages + footer -->
-			<div id="pages" class="fullwidth container clearfix">	
-				<!-- HOME PAGE -->
-				<section id="home" class="page clearfix">
-					<header>					
-						<h1>
-							<span class="s-header-one">
-								<img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
-									We code</span>
-							<span class="s-header-two">you smile</span>	
-						</h1>				
-						<div class="sub-header">
-							<hr>
-							<p>Crafting clean and fresh awesomnes for the web and beyond.</p>
-							<p>We make it funky. Want to work with us?</p>
-						</div>
-					</header>									
-				</section>
-				<!--  END HOME PAGE -->
-				<!--  WORK PAGE -->
-				<section id="work" class="page clearfix responsive_headline">
-					<header>
-						<div>
-							<h1>Works</h1>					
-							<div class="sub-header">
-								<hr>
-								<p>Some of our latest works</p>
-							</div>
-						</div>					
-					</header>
-					<div id="portfolio" class="content clearfix">
-						<div id="emb_container">
-							<ul class="emb_gallery">							
-							</ul>
-						</div> 										
-					</div>				
-				</section>
-				<!-- END WORK PAGE -->
-				<!-- ABOUT PAGE -->
-				<section id="about" class="page clearfix responsive_headline">
-					<header>
-						<div>
-							<h1>Services</h1>
-							<div class="sub-header">
-								<hr>
-								<p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and easy-to-access
-									content. The <br />finished product will be totally unique and represent <br />awesomeness.</p>
-							</div>
-						</div>					
-					</header>
-					<div class="content clearfix">
-						<article id="understand">
-							<img src="assets/images/understand.png" title="understand" alt="understand" />
-							<hr>
-							<p>Understand the business and competitive landscape. Learn how people interact with the brand and product. Identify
-							strategic opportunities and design goals.</p>
-						</article>
-						<article id="create">
-							<img src="assets/images/create.png" title="create" alt="create" />
-							<hr>
-							<p>Create the best production on the planet. Combine smart interaction, interface, and visual design into a compelling
-							product that resonates with the target audience.</p>
-						</article>
-						<article id="test">
-							<img src="assets/images/test.png" title="test" alt="test" />
-							<hr>
-							<p>Test concepts, designs, and prototypes with real users. Combine learnings with gut instinct and experience. Iterate, refine, and
-							relentlessly hone in in the persuit of perfection.</p>
-						</article>
-					</div>				
-				</section>	
-				<!-- END ABOUT PAGE -->
-				<!-- CONTACT PAGE -->
-				<section id="contact" class="page clearfix responsive_headline-2">
-					<header>
-						<h1 class="s-header-one">say hello</h1>
-						<h1 class="s-header-two">hola@enjoy-mondays.com</h1>									
-						<div class="sub-header">
-							<hr>
-							<p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access
-								content. The finished product will be totally unique and represent awesomeness.</p>
-						</div>	
-					</header>						
-				</section>	
-				<!-- END CONTACT PAGE -->
+      <!-- HEADER-NAV -->
+      <ul id="header-nav" class="right">
+        <li class="active-link"><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#notes">Notes</a></li>
+      </ul>	
 
-				<footer class="clearfix">
-					<p>2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank"> FlatG</a></p>
-					<ul id="social">
-						<li id="github"><a href="http://github.com/goliatone" target="_blank">
-							<img src="assets/images/github.png" title="github" alt="github" /></a>
-						</li>
-						<li id="fb"><a href="https://www.facebook.com/EnjoyMondays" target="_blank">
-							<img src="assets/images/facebook.png" title="facebook" alt="facebook" /></a>
-						</li>
-						<li id="twitter"><a href="http://twitter.com/EnjoyMondays" target="_blank">
-							<img src="assets/images/twitter.png" title="twitter" alt="twitter" /></a>
-						</li>
-						<li id="g+"><a href="#">
-							<img src="assets/images/google+.png" title="google+" alt="google+" /></a>
-						</li>
-						<li id="pinterest"><a href="http://www.pinterest.com/enjoyMondays/" target="_blank">
-							<img src="assets/images/pinterest.png" title="pinterest" alt="pinterest" /></a>
-						</li>
-					</ul>
-				</footer>				
-			</div><!-- end SECCIONS + footer -->	
-		</div><!-- end #page -->
+      <div id="collapsed-menu" class="hidden right centered">
+      	<img src="assets/images/menu.png" >
+      </div>
+    </header>
 
-		<!-- fullwidth #slideshow for works implemented by supersized TODO revisar -->
-		<div id="slideshow">
-			<!--  SUPERSIZED -->	
-			<!--  PROJECT NAVIGATION -->	
-			<div id="closeGallery">
-				<a href="#">Close</a>
-			</div>
+    <div id="fixed-header-aux"></div>			
+      
+    <!-- PAGES + FOOTER -->
+    <div id="pages" class="fullwidth clearfix">	
 
-			<!--Arrow Navigation-->
-			<a id="prevslide" class="load-item"></a>
-			<a id="nextslide" class="load-item"></a>
-			<!-- END PROJECT NAVIGATION -->
-		</div>
+      <!-- HOME PAGE -->
+      <section id="home" class="page wrapper light_gray_bg dark_gray_color clearfix">
+        <header class="right centered clearfix responsive_headline">	  <h1 class="">
+            <span class="s-header-one right ">
+              <img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
+              We code</span>
+            <span class="s-header-two right ">you smile</span>	
+          </h1>				
+          <div class="sub-header right ">
+            <hr class="dark_gray_bg header_hr">
+            <p>Crafting clean and fresh awesomnes for the web and beyond.</p>
+            <p>We make it funky. Want to work with us?</p>
+          </div>
+        </header>
+        <div class="clearfix"></div>									
+      </section>
+      <!--  END HOME PAGE -->
 
-		<!-- JQUERY -->
-		<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <!--  WORK PAGE -->
+      <section id="work" class="page wrapper dark_gray_bg light_gray_color clearfix ">
+        <header class="right responsive_headline">
+          <h1>Works</h1>					
+          <div class="sub-header">
+            <hr class="light_fuxsia_bg header_hr">
+            <p>Some of our latest works.</p>
+          </div>
+        </header>
+        <div id="portfolio" class="content clearfix">
+          <div id="emb_container">
+            <ul class="emb_gallery"></ul>
+          </div>
+        </div>
+      </section>
+      <!-- END WORK PAGE -->
 
-		<script type="text/javascript" src="assets/js/toucheffects.js"></script>
+      <!-- ABOUT PAGE -->
+      <section id="about" class="page wrapper dark_blue_bg light_gray_color clearfix">
+        <header class="right responsive_headline">
+          <h1>Services</h1>
+          <div class="sub-header">
+            <hr class="light_fuxsia_bg header_hr">
+            <p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and easy-to-access content. The <br />finished product will be totally unique and represent <br />awesomeness.</p>
+          </div>
+        </header>
+        <div class="content clearfix">
+          <article id="understand">
+            <div class="img-wrapper"><img src="assets/images/understand.png" title="Understand" alt="Understand" /></div>
+            <hr class="light_gray_bg">
+            <p>Understand the business and competitive landscape. Learn how people interact with the brand and product. Identify strategic opportunities and design goals.</p>
+          </article>
+          <article id="create">
+            <div class="img-wrapper"><img src="assets/images/create.png" title="Create" alt="Create" /></div>
+            <hr class="light_gray_bg">
+            <p>Create the best production on the planet. Combine smart interaction, interface, and visual design into a compelling product that resonates with the target audience.</p>
+          </article>
+          <article id="test">
+            <div class="img-wrapper"><img src="assets/images/test.png" title="Test" alt="Test" /></div>
+            <hr class="light_gray_bg">
+            <p>Test concepts, designs, and prototypes with real users. Combine learnings with gut instinct and experience. Iterate, refine, and relentlessly hone in in the persuit of perfection.</p>
+          </article>
+        </div>
+      </section>
+      <!-- END ABOUT PAGE -->
+          
+      <!-- CONTACT PAGE -->
+      <section id="contact" class="page wrapper fuxsia_bg light_gray_color clearfix">
+        <header class="right centered clearfix responsive_headline">
+          <h1 class="clearfix">
+            <span class="s-header-one dark_gray_color right">say hello</span>
+            <span class="s-header-two right">hola@enjoy-mondays.com</span>
+          </h1>
+          <div class="sub-header right">
+            <hr class="light_fuxsia_bg header_hr">
+            <p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access content. The finished product will be totally unique and represent awesomeness.</p>
+          </div>     
+        </header>
+        <div class="clearfix"></div>
+      </section>
+      <!-- END CONTACT PAGE -->
 
-		<!-- WAYPOINTS -->
-		<!-- script type="text/javascript" src="assets/js/waypoints.min.js"></script -->
-		<script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+      <footer class="wrapper dark_gray_bg light_gray_color clearfix">
+       
+        <p class="left centered">2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank" class="fuxsia_color"> FlatG</a></p>
+        
+        <ul id="social" class="right centered">
+          <li id="github">
+            <a href="http://github.com/goliatone" target="_blank">
+              <img src="assets/images/github.png" title="github" alt="github" /></a>
+          </li>
+          <li id="fb">
+            <a href="https://www.facebook.com/EnjoyMondays" target="_blank">
+              <img src="assets/images/facebook.png" title="facebook" alt="facebook" /></a>
+          </li>
+          <li id="twitter">
+            <a href="http://twitter.com/EnjoyMondays" target="_blank">
+              <img src="assets/images/twitter.png" title="twitter" alt="twitter" /></a>
+          </li>
+          <li id="g+">
+            <a href="#">
+              <img src="assets/images/google+.png" title="google+" alt="google+" /></a>
+          </li>
+          <li id="pinterest">
+            <a href="http://www.pinterest.com/enjoyMondays/" target="_blank">
+              <img src="assets/images/pinterest.png" title="pinterest" alt="pinterest" /></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <!-- END PAGES + FOOTER -->
+  </div>
+  <!-- END FRONT-PAGE (header + pages + footer) -->
+  <!--  SUPERSIZED -->
+  <!-- fullwidth SLIDESHOW for works implemented by supersized TODO revisar -->
+  <div id="slideshow">
+    <!--  PROJECT NAVIGATION -->
+    <div id="closeGallery">
+      <a href="#">Close</a>
+    </div>
+    <!--Arrow Navigation-->
+    <a id="prevslide" class="load-item"></a>
+    <a id="nextslide" class="load-item"></a>
+    <!-- END PROJECT NAVIGATION -->
+  </div>
+  <!--  END SUPERSIZED -->
+  <!-- JQUERY -->
+  <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="assets/js/toucheffects.js"></script>
+  <!-- WAYPOINTS -->
+  <!-- script type="text/javascript" src="assets/js/waypoints.min.js"></script -->
+  <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+  <!-- MAIN -->
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <!-- FIT TEXT -->	
+  <script src="assets/js/jquery.fittext.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //jQuery(".responsive_headline-2").fitText(1.5, { minFontSize: '23px', maxFontSize: '150px' });
+      jQuery('#cover').css('display', 'block').slideUp('625');
+      
+      jQuery("#home .responsive_headline").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+      
+      jQuery("#work .responsive_headline").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
+
+      jQuery("#about .responsive_headline").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
+
+      jQuery("#contact .responsive_headline").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+    });
+  </script>
+  <!-- SUPERSIZED -->
+  <script type="text/javascript" src="assets/js/supersized.3.2.5.js"></script>
+  <script type="text/javascript" src="assets/theme/supersized.shutter.js"></script>
+  <script type="text/javascript">
+  /*  $(document).ready(function () {
+      ///////////
+      var slides = [];
+      var projects = [
+        {p:'enjoy-mondays.com' ,i:3, t:"",e:true}
+        //,{p:'yourlostmemories.com' ,i:12, t:"Your Lost Memories", d:"Complete website and database implementation. Moovie uploader, admin panel. Dedicated server configuration and codification", tech: "red5,"}
+        ,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site"}
+        //,{p:'old.com' ,i:7, t:"Open Luxury Days", d:"Website for campaig with registration and admin panel. Server settup."}
+        ,{p:'goliatone.com' ,i:8, t:"Goliatone", d:"Website with portfolio and downloadable items. Hand coded."}
+        //,{p:'cristinacostales.cat' ,i:8, t:"Cristina Costales", d:"Personalized wordpress site. Integration and personalization of plugins. Domain and hosting settings."}
+        ,{p:'fat-man-collective.com' ,i:9, t:"Fat-man collective", d:"Company website. Interaction implemented with Flash. Server settup."}
+        ,{p:'darknessmap.com' ,i:6, t:"DarknessMap", d:"Mobile and web App. Server settup." }
+        //,{p:'corinnek.com' ,i:6, t:"CorinneK", d:"Personal website"}
+        ,{p:'thisismorrison.com' ,i:4, t:"This is Morrison", d:"Website update for portfolio gallery slider and portfolio item scrollable."}
+        //,{p:'jocdelamobilitat.cat' ,i:13, t:"El Joc de la Mobilitat", d:"Flash application. Game with registrations and database implementation. Admin panel."}
+        ,{p:'reigcapital.com' ,i:10, t:"ReigCapital", d:"Company website with database admin and registration + game implementation. Flash"}
+        //,{p:'25retos.com' ,i:26,t:"Chocapic: 25 retos", d:"Campaign Flash game, with registration and database admin"}
+        //,{p:'custo-tu-nos-inspiras.com' ,i:13, t:"Custo: Tú nos inspiras", d:"Facebook campaign with registration and database implementation. Flash"}
+        //,{p:'custo-xmas.com' ,i:8, t:"Custo: X-mas", d:"Facebook campaign with registration and database implementation. Flash"}
+        //,{p:'dalmau.com' ,i:8, t:"Dalmau"}
+        //,{p:'malibu.com' ,i:18, t:"Malibu: La isla de los Brothers"}
+        //,{p:'nueces-california.com' ,i:17, t:"California Nuts"}
+        //,{p:'roca-20-suites.com' ,i:8, t:"Roca: 20 suites"}
+        //,{p:'vueling-memory.com' ,i:10, t:"Vueling: 7 aniversario"}
+	  ];
 		
-		<!-- MAIN -->		
-		 <script type="text/javascript" src="assets/js/main.js"></script>  
+	  var project,
+		  pi = 0,
+		  holder, url, link;
 
-		<!-- FIT TEXT -->	
-		<script src="assets/js/jquery.fittext.js"></script>
-		<script>
-			jQuery("#home").fitText(1.1, { minFontSize: '70px', maxFontSize: '150px' });
-  			jQuery(".responsive_headline").fitText(0.98, { minFontSize: '70px', maxFontSize: '150px' });
-  			jQuery(".responsive_headline-2").fitText(1.5, { minFontSize: '23px', maxFontSize: '150px' });
-		</script>
+	  for (project in projects) {
+		pi++;
+		project = projects[project];
+		holder = {};
+		holder.slides = [];
 
-		<!-- SUPERSIZED -->		
-		<script type="text/javascript" src="assets/js/supersized.3.2.5.js"></script>
-		<script type="text/javascript" src="assets/theme/supersized.shutter.js"></script>
-		
-		<script type="text/javascript">
-		$(document).ready(function () {
-				///////////
-				var slides = [];
-				var projects = [
-					{p:'enjoy-mondays.com' ,i:3, t:"",e:true}					
-			//		,{p:'yourlostmemories.com' ,i:12, t:"Your Lost Memories", d:"Complete website and database implementation. Moovie uploader, admin panel. Dedicated server configuration and codification", tech: "red5,"}
-			//		,{p:'sanmiguel.com' ,i:11, t:"San Miguel Primavera Sound", d:"Mobile app with facebook login"}
-					,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site"}
-			//		,{p:'old.com' ,i:7, t:"Open Luxury Days", d:"Website for campaig with registration and admin panel. Server settup."}
-					,{p:'goliatone.com' ,i:8, t:"Goliatone", d:"Website with portfolio and downloadable items. Hand coded."}
-			//		,{p:'cristinacostales.cat' ,i:8, t:"Cristina Costales", d:"Personalized wordpress site. Integration and personalization of plugins. Domain and hosting settings."}
-					,{p:'fat-man-collective.com' ,i:9, t:"Fat-man collective", d:"Company website. Interaction implemented with Flash. Server settup."}
-					,{p:'darknessmap.com' ,i:6, t:"DarknessMap", d:"Mobile and web App. Server settup." }									
-			//		,{p:'corinnek.com' ,i:6, t:"CorinneK", d:"Personal website"}
-					,{p:'thisismorrison.com' ,i:4, t:"This is Morrison", d:"Website update for portfolio gallery slider and portfolio item scrollable."}
-			//		,{p:'jocdelamobilitat.cat' ,i:13, t:"El Joc de la Mobilitat", d:"Flash application. Game with registrations and database implementation. Admin panel."}
-					,{p:'reigcapital.com' ,i:10, t:"ReigCapital", d:"Company website with database admin and registration + game implementation. Flash"}
-			//		,{p:'25retos.com' ,i:26,t:"Chocapic: 25 retos", d:"Campaign Flash game, with registration and database admin"}
-			//		,{p:'custo-tu-nos-inspiras.com' ,i:13, t:"Custo: Tú nos inspiras", d:"Facebook campaign with registration and database implementation. Flash"}
-			//		,{p:'custo-xmas.com' ,i:8, t:"Custo: X-mas", d:"Facebook campaign with registration and database implementation. Flash"}
-			//		,{p:'dalmau.com' ,i:8, t:"Dalmau"}					
-			//		,{p:'malibu.com' ,i:18, t:"Malibu: La isla de los Brothers"}
-			//		,{p:'nueces-california.com' ,i:17, t:"California Nuts"}
-			//		,{p:'roca-20-suites.com' ,i:8, t:"Roca: 20 suites"}
-			//		,{p:'vueling-memory.com' ,i:10, t:"Vueling: 7 aniversario"}
-				];
-				
-				var project;
-				var pi = 0;
-				for ( project in projects)
-				{
-					pi++;
-					project = projects[project];
-					
-					var holder = {};
-					var url,link;
-					holder.slides = [];
-					for( var i = 1; i < project.i; i++){
-						ind = i < 10 ? '0'+i : i;
-						url = 'assets/projects/'+project.p+'/screenshots/image'+ind+'.jpg';
-						holder.slides.push({						
-							image : url,
-							title : project.t,
-						});						
-					}
-					
-					//attach project preview and description to page ready onload:
-					if( project.e != true) {						
-							link = '<li class="thumb"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="he-second"><h3>'+project.t+'</h3><p>'+project.d+'</p><span class=".he-link">view project</span></div></a></li>';
-						$('#emb_container ul.emb_gallery').append(link);						
-					}
-											
-					//insert into slides array.
-					slides.push(holder.slides);										
-				}
-				
-				///////////////////////////
-				//SUPERSIZED options///////
-				///////////////////////////
-				$.supersized({
+		for (var i = 1; i < project.i; i++) {
+		  ind = i < 10 ? '0'+i : i;
+		  url = 'assets/projects/'+project.p+'/screenshots/image'+ind+'.jpg';
 
-					// Functionality
-					slideshow               :   1,			// Slideshow on/off
-					autoplay				:	0,			// Slideshow starts playing automatically
-					start_slide             :   1,			// Start slide (0 is random)
-					stop_loop				:	0,			// Pauses slideshow on last slide
-					random					: 	0,			// Randomize slide order (Ignores start slide)
-					slide_interval          :   6000,		// Length between transitions
-					transition              :   6, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-					transition_speed		:	1000,		// Speed of transition
-					new_window				:	1,			// Image links open in new window/tab
-					pause_hover             :   1,			// Pause slideshow on hover
-					keyboard_nav            :   1,			// Keyboard navigation on/off
-					performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
-					image_protect			:	1,			// Disables image dragging and right click with Javascript
+		  holder.slides.push({
+		  	image : url,
+		    title : project.t,
+		  });
+		}
 
-					// Size & Position
-					min_width		        :   0,			// Min width allowed (in pixels)
-					min_height		        :   0,			// Min height allowed (in pixels)
-					vertical_center         :   1,			// Vertically center background
-					horizontal_center       :   1,			// Horizontally center background
-					fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-					fit_portrait         	:   0,			// Portrait images will not exceed browser height
-					fit_landscape			:   1,			// Landscape images will not exceed browser width
+		// attach project preview and description to page ready onload:
+		if (project.e != true) {
+		  link = '<li class="thumb"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="he-second"><h3>'+project.t+'</h3><p>'+project.d+'</p><span class=".he-link">view project</span></div></a></li>';
+		  $('#emb_container ul.emb_gallery').append(link);
+        }
+        //insert into slides array
+        slides.push(holder.slides);
+      }
 
-					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
-					thumb_links				:	0,			// Individual thumb links for each slide
-					thumbnail_navigation    :   0,			// Thumbnail navigation
-					slides 					:  	slides,		// Slideshow Images
-					// Theme Options
-					progress_bar			:	0,			// Timer for each slide
-					mouse_scrub				:	0
+      ///////////////////////////
+      //SUPERSIZED options///////
+      ///////////////////////////
+      $.supersized({
+        // Functionality
+        slideshow               :   1,			// Slideshow on/off
+        autoplay				:	0,			// Slideshow starts playing automatically
+        start_slide             :   1,			// Start slide (0 is random)
+        stop_loop				:	0,			// Pauses slideshow on last slide
+        random					: 	0,			// Randomize slide order (Ignores start slide)
+        slide_interval          :   6000,		// Length between transitions
+        transition              :   6, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+        transition_speed		:	1000,		// Speed of transition
+        new_window				:	1,			// Image links open in new window/tab
+        pause_hover             :   1,			// Pause slideshow on hover
+        keyboard_nav            :   0,			// Keyboard navigation on/off
+        performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+        image_protect			:	1,			// Disables image dragging and right click with Javascript
+        // Size & Position
+        min_width		        :   0,			// Min width allowed (in pixels)
+        min_height		        :   0,			// Min height allowed (in pixels)
+        vertical_center         :   1,			// Vertically center background
+        horizontal_center       :   1,			// Horizontally center background
+        fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
+        fit_portrait         	:   0,			// Portrait images will not exceed browser height
+        fit_landscape			:   1,			// Landscape images will not exceed browser width
+        slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+        thumb_links				:	0,			// Individual thumb links for each slide
+        thumbnail_navigation    :   0,			// Thumbnail navigation
+        slides 					:  	slides,		// Slideshow Images
+        // Theme Options
+        progress_bar			:	0,			// Timer for each slide
+        mouse_scrub				:	0
+      });
+      ///////////////////////////////////////////
+		  
+	  $thumbs = $('ul.emb_gallery').children('li');
+		  
+	  var $img, index;
+		  
+	  $thumbs.find('img').each( function(i) {
+		$img  = $(this);
+		index = $img.attr('rel');
+		  	
+		$img.next().bind('click',function(event){
+		  //show slideshow div
+		  $('#slideshow').show();
+		  api.setGallery(index - 1);
+		  $('.container').hide();
+		  //$('#emb_container').css('display','none');
+		  $('#closeGallery a').fadeTo("fast", 1).css({'display':'visible'});
+			  
+		  $.supersized.api.options.slideshow = true;
+		  $.supersized.api.playToggle();
+		  $.supersized.api.$el.bind('supersizedLaunchEvent',function(event){
+		    $('#pauseplay').trigger('click');
+		  });
+		  //checking theme working
+          theme.show();
+        });
+      });
+      ///////////////////////////////////////////
 
-				});
-					
-				///////////////////////////////////////////				
-				$thumbs	= $('ul.emb_gallery').children('li');
-				$thumbs.find('img').each( function(i) {
-					var $img  = $(this);
-					var index = $img.attr('rel');					
-					$img.next().bind('click',function(event){ 
-						//show slideshow div
-						$('#slideshow').show();
-						api.setGallery(index - 1);
-						$('.container').hide();
-					//	$('#emb_container').css('display','none');
-						$('#closeGallery a').fadeTo("fast", 1).css({'display':'visible'});
-						
-						$.supersized.api.options.slideshow = true;
-						$.supersized.api.playToggle();
-						$.supersized.api.$el.bind('supersizedLaunchEvent',function(event){
-							$('#pauseplay').trigger('click');
-						});
-						
-						//checking theme working
-						theme.show();
-					});
-				});
-				$('#closeGallery a').bind('click',function(event){
-					$('#closeGallery a').fadeTo("fast", 0).css({'display':'none'});
-					//hide slideshow div to make sure scroll-x keeps working!
-					$('#slideshow').hide();
-					api.setGallery(0);
-					$('.container').fadeIn("fast", function() {
-						$("a[href|='#work']").trigger('click');	
-					});									
-					$.supersized.api.options.slideshow = false;
-					$.supersized.api.playToggle();					
-					theme.hide();
-				});
-				
-				//checking theme working -> can't see what this is doing. TODO check
-				//theme.hide();		
-						
-				$('#closeGallery a').fadeTo(0, 0).css({'display':'none'});							
-			});
-		</script>		
-	
-		<!-- GOOGLE FONTS -->
-		<script type="text/javascript">
-			WebFontConfig = {
-		    	google: { families: [ 'Lato:400,100,700,900:latin',
-		    						   'Dosis: 600' ] }
-		  	};
-		  	(function() {
-		    	var wf = document.createElement('script');
-		    	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-		      		'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-		    	wf.type = 'text/javascript';
-		    	wf.async = 'true';
-		    	var s = document.getElementsByTagName('script')[0];
-		    	s.parentNode.insertBefore(wf, s);
-		  	})(); 
-	  	</script>
-	</body>
+	  $('#closeGallery a').bind('click',function(event){
+
+		$('#closeGallery a').fadeTo("fast", 0).css({'display':'none'});
+
+		//hide slideshow div to make sure scroll-x keeps working!
+		$('#slideshow').hide();
+		api.setGallery(0);
+
+		$('.container').fadeIn("fast", function() {
+		  $("a[href|='#work']").trigger('click');
+		});
+
+		$.supersized.api.options.slideshow = false;
+		$.supersized.api.playToggle();
+		theme.hide();
+      });
+
+      //checking theme working -> can't see what this is doing. TODO check
+  	  //theme.hide();
+	  $('#closeGallery a').fadeTo(0, 0).css({'display':'none'});
+	});*/
+  </script>		
+  <!-- GOOGLE FONTS -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 
+        'Lato:400,100,700,900:latin',
+        'Dosis: 600' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); 
+    </script>
+  </body>
 </html>
