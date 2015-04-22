@@ -1,109 +1,339 @@
+/* //////////////////////////////////////////////// MAX WIDTH 1350px //// */
+@media screen and (max-width: 1350px) {
+  /* ******************************************** */
+  /* ******************************** BASE LAYOUT */ 
+  .wrapper > *.right {
+    margin-right: 6%; 
+  }
+  .wrapper > *.left {
+    margin-left: 5%;
+  }
+  .content {
+    margin-right: 6%;
+    margin-left: 5%;
+  }
 
+  /* ******************************************** */
+  /* ******************************** MAIN HEADER */
+  #header-nav {
+    margin-top: 7%;
+  }
+  #collapsed-menu {
+    margin-top: 3.3%;
+  }
 
-/* ///////////////////////////////////////////////// MIN WIDTH 1350px //// */
-@media screen and (min-width: 1350px) {
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES HOME */
-  #home {
-    height: 100%;
-  }
   #home .responsive_headline {
-    width: 560px;
-    height: 332px;
-    margin-top: 155px;
-    margin-bottom: 144px;
-  }
-  #home .responsive_headline h1 {
-    line-height: 1.02;
-  }
-  #home .responsive_headline p {
-    font-size: .156em;
+    width: 40%;
+    height: auto;
+    margin-top: 20%;
+    margin-bottom: 0;
   }
 
   #home .centered {
-    transform: none;
+    transform: translateY(-50%);
   }
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
   #work .responsive_headline {
-    width: 390px;
-    height: 167px;
-    margin-top: 68px;
+    width: 31%;
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 8%;
   }
   #work .responsive_headline h1 {
-    line-height: .69;
-    margin-bottom: 44px;
+    margin-bottom: 8%;
   }
   #work .responsive_headline hr {
-    margin-bottom: 11px;
+    margin-bottom: 3%;
   }
-  #work .responsive_headline p {
-    font-size: .15em;
+  #portfolio {
+    margin-bottom: 11%;
+    padding-left: 8%;
+    padding-right: 8%; 
+  }
+  #portfolio .tile,
+  #portfolio .tile a,
+  #portfolio img,
+  #portfolio .details-wrapper {
+    width: 34vw;
+    height: 34vw;
+  }
+  #portfolio img {
+    height: auto;
   }
 
   /* ******************************** */
   /* ***** RESPONSIVE HEADLINES ABOUT */
   #about .responsive_headline {
-    width: 510px;
-    height: 240px;
-    margin-top: 167px;
-    margin-bottom: 184px;
+    width: 41%;
+    height: auto;
+    margin-top: 14%;
+    margin-bottom: 15%;
   }
   #about .responsive_headline h1 {
-    line-height: .69;
-    margin-bottom: 40px;
+    margin-bottom: 8%;
   }
   #about .responsive_headline hr {
-    margin-bottom: 11px;
+    margin-bottom: 2%;
   }
   #about .responsive_headline p {
-    padding: 0 12px;
-    font-size: .135em;
-    line-height: 1.4;
+    padding: 0 2%;
+  }
+  #about .content {
+    padding-left: 9%;
+    padding-right: 8%;
+    margin-bottom: 12%;
+  }
+  #about .content article {
+    width: 28%;
+  }
+  #about .content .img-wrapper {
+    width: 80%;
+    height: auto;
+    margin: 0 auto 8%;
+  }
+  #about .content hr {
+    margin: 0 auto 5%;
   }
 
   /* ******************************** */
   /* *** RESPONSIVE HEADLINES CONTACT */
-  
   #contact .responsive_headline {
-    width: 1202px;
+    width: 88%;
     height: 353px;
-    padding-top: 166px;
-    padding-bottom: 250px;
+    padding-top: 13%;
+    padding-bottom: 20%;
   }
   #contact .responsive_headline h1 {
-    display: inline-block;
-    line-height: 1;
-    margin-bottom: 19px;
+    margin-bottom: 4%;
   }
   #contact .responsive_headline .s-header-one {
-    width: 569px;
-    height: 97px;
-    margin-bottom: 33px;
+    width: 49%;
+    height: auto;
+    margin-bottom: 2.7%;
     margin-right: -8px;
-    font-size: 1.2em;
-    line-height: 0.75;
-    letter-spacing: 4px;
   }
   #contact .responsive_headline .s-header-two {
-    width: 1202px;
-    height: 90px;
-    font-size: .98em;
-    line-height: 0.75;
-    letter-spacing: 1.2px;
+    width: 100%;
+    height: auto;
+    font-size: .96em;
   }
   #contact .responsive_headline .sub-header {
-    width: 486px;
-    margin-top: -23px;
+    width: 44%;
+    margin-top: -2%;
+    margin-right: 4%;
   }
   #contact .responsive_headline hr {
-    margin-bottom: 17px;
+    margin-bottom: 3%;
   }
   #contact .responsive_headline p {
-    height: 97px;
-    font-size: .165em;
-    line-height: 1.5;
-    letter-spacing: .17px;
+    height: auto;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////// MAX WIDTH 480px //// */
+@media screen and (max-width: 480px) {
+  /* ******************************************** */
+  /* ******************************** BASE LAYOUT */
+  body {
+    font-size: 17px;
+  }
+  h1 {
+    font-size: 0.88em;
+  }
+  .header_hr {
+    width: 15%;
+    margin-top: 2%;
+  }
+  .wrapper > *.left {
+    margin-left: 2%;
+  }
+  .wrapper > *.right {
+    margin-right: 2%;
+  }
+  .page {
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  #pages .responsive_headline {
+    float: none;
+    width: 95%;
+    margin: 12% auto 0;
+    padding: 0;
+    text-align: center;
+  }
+  #pages .responsive_headline h1 {
+    margin-bottom: 4%;
+    text-align: center;
+  } 
+
+  /* ******************************************** */
+  /* ******************************** MAIN HEADER */
+  
+  /* center logo (smaller) and menu */
+  
+  #main-header {
+    text-align: center;
+  }
+  /* ******************************** */
+  /* *************************** LOGO */
+  #logo.big {
+    display: block;
+    float: none;
+    width: 25%;
+    margin: 2.5% auto;
+  }
+
+  #logo.small {
+    margin: 4%;
+  }
+
+  /* ******************************** */
+  /* *********************** MENU NAV */
+  #header-nav {
+    display: inline-block;
+    float: none;
+    margin: auto;
+    font-size: 0.76em;
+  }
+  #header-nav li:first-child {
+    margin-left: 0;
+  }
+
+  /* ******************************** */
+  /* ***************** MENU COLLAPSED */
+  #collapsed-menu {
+    margin-top: 10%;
+    margin-right: 10%;
+  }
+
+  /* ******************************** */
+  /* ****************** MENU EXPANDED */
+  #header-nav.expanded {
+    display: block;
+    margin: 10% 0;
+  }
+
+  /* ******************************** */
+  /* *************************** HOME */
+  #home .responsive_headline {
+    top: 25vh;
+  }
+  #home .responsive_headline span {
+    float: none;
+  }
+  #home .sub-header {
+    float: none;
+    width: 100%;
+    margin: auto;
+    font-size: 1.2em;
+  }
+  #smile {
+    left: 2vw;
+    top: 1vh;
+  }
+  /* ******************************** */
+  /* *************************** WORK */
+  #work .responsive_headline h1 { 
+    font-size: .78em;
+  }
+  #portfolio {
+    margin: 0 2px 11%;
+    padding-top: 8%;
+  }
+  #portfolio .tile, 
+  #portfolio .tile a, 
+  #portfolio img, 
+  #portfolio .details-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  #portfolio .thumb {
+    width: 85%;
+    transition: transform 0.4s;
+    margin: auto;
+  }
+  #portfolio .tile:hover img,
+  .no-touch #portfolio .tile:hover img, 
+  #portfolio .tile.cs-hover img {
+    transform: translate(0, -50px) scale(0.7); 
+  }
+  #portfolio .details {
+    width: 100%;
+    text-align: center;
+  }
+  #portfolio .details-wrapper h3 {
+    font-size: ;
+    text-align: center;
+  }
+  #portfolio .details-wrapper p {
+    margin-top: 1%;
+    font-size: .5em;
+    line-height: .9;
+  }
+  #portfolio .details-wrapper span {
+    font-size: .55em;
+  }
+  
+  /* ******************************** */
+  /* ************************** ABOUT */
+  #about .content {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #about .content article {
+    width: 70%; 
+    margin: 36px auto;
+  }
+  #about .content article:first-child,
+  #about .content article:last-child {
+    float: none;
+  }
+  
+  /* ******************************** */
+  /* ************************ CONTACT */
+  #contact {
+    /* = total - header - footer */
+    min-height: calc(100vh - 139px - 100px);
+  }
+  #contact .responsive_headline .sub-header {
+    width: 76%;
+  }
+  #contact .responsive_headline .s-header-one {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    font-size: 2em;
+  }
+  #contact .responsive_headline .s-header-two {
+    display: inline-block;
+    float: none;
+    text-align: right;
+    font-size: 1.05em;
+  }
+
+  #contact .responsive_headline hr {
+    margin-top: 0;
+  }
+  #contact .responsive_headline p {
+    font-size: .3em;
+  }
+
+  /* ******************************************** */
+  /* ************************************* FOOTER */
+  footer p {
+    padding: 0;
+    font-size: .65em;
+  }
+  #social {
+    padding: 0;
   }
 }

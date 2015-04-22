@@ -309,22 +309,25 @@ p {
 /* ******************************** */
 /* *************************** LOGO */
 #logo {
-  height: 100%;
+ /* width: 149px;*/
+  margin-top: 40px;
 }
 #logo .img-wrapper {
   display: block;
   height: auto;
 }
-#logo.big .img-wrapper {
+/*#logo.big .img-wrapper {*/
+#logo.big {
   width: 149px;	
-  margin-top: 40px;
 }
-#logo.small .img-wrapper {
+/*#logo.small .img-wrapper {*/
+#logo.small {
   width: 111px;
   margin-top: 40px; 
 }
 #logo img {
-	width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 /* ******************************** */
@@ -431,6 +434,7 @@ p {
 }
 /* img hover animation */
 #portfolio img {
+  width: 100%;
   transition: transform 0.4s;
 }
 .no-touch #portfolio .tile:hover img, 

@@ -36,6 +36,11 @@ $(function() {
   	doWaypoints();
   });
 
+  $(window).resize(function() {  
+    Waypoint.refreshAll();
+    scrollToPosition($('.active-link a').attr('href'));	
+  });
+
   function doWaypoints() {  
 
 	var $pages = $('.page');
@@ -70,7 +75,7 @@ $(function() {
 	  	  // if scrolling to or from home
 	  	  if (isActiveSection('home')) { animateHeader(direction); }
 	  	},
-	    offset: '10%',
+	    offset: '20%',
 	    group: 'pages'
 	  });
     });
@@ -104,6 +109,7 @@ $(function() {
   function isActiveSection(id) {
   	return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
+
   // HEADER ANIMATION
   // on scroll up, menu collapses, icon at right,
   // logo animates to small,
@@ -111,19 +117,30 @@ $(function() {
   // on scroll to home, menu expands
   // logo animates to big,
   // header height animates to big height = 139px
-  function animateHeader(direction) { 
+  function animateHeader(direction) { console.log('animate header');
+    
+    var window_w = $(window).width();
+    var mark1 = 480;
 
   	if (direction === 'down') {
-    
+      
+      // switch menus
       $('#header-nav').hide(function() {
         $('#collapsed-menu').show();
       }).addClass('expanded');
-  		  
+      
+     /* // default, width > 1350px 
 	  $('#logo a').animate({
-	  	'margin-top': '19px',
-		'width': '111px'
+	  	  'margin-top': '19px',
+		  'width': '111px'
       }, 'fast');
-
+      
+      // case under 480px TODO refactor when all cases done
+      if (window_w < mark1) {
+        $('#logo').slideUp();
+      }*/
+      
+      // switch header heights
 	  $('#main-header, #fixed-header-aux').animate({
 		'height': '111px'
 	  }, 'fast');
@@ -132,23 +149,33 @@ $(function() {
 
   	} else {
 
+      // switch menus
   	  $('#collapsed-menu').hide(function() {
-  	  	$('#header-nav').show().removeClass('expanded');
+  	  	$('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	  });	
-
+      
+      // switch header heights
   	  $('#main-header, #fixed-header-aux').animate({
 	    'height': '139px'
 	  }, 'fast');
 		
+	 /* // default	
 	  $('#logo a').animate({
 	  	'margin-top': '40px',
 	    'width': '146px'
 	  }, 'fast');
+
+	  // case under 480px TODO refactor when all cases done
+      if (window_w < mark1) {
+        $('#logo').slideDown();
+
+        $('#logo.big .img-wrapper').width('100%')
+      }*/
 	    
 	  $('#logo.small').removeClass('small').addClass('big');
   	}
 
-  	$('#logo a').clearQueue();
+  	//$('#logo a').clearQueue();
   }
  	
   //////////////////////////////////////// END HELPER FUNCTIONS
