@@ -204,7 +204,7 @@
 				base.launch();
 				theme.introImage();
 				if( typeof theme != 'undefined' && typeof theme._init == "function" ) theme._init();	// Load Theme
-				//if( typeof theme != 'undefined' && typeof theme._init == "function" ) base.$el.trigger();	// Cant' do it, we dont have api defined on creationg.
+				//if( typeof theme != 'undefined' && typeof theme._init == "function" ) base.$el.trigger();	// Cant' do it, we dont have api defined on creation.
 			});
 			
 			if (base.totalSlides() > 1){

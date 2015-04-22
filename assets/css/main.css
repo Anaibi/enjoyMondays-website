@@ -409,22 +409,22 @@ p {
   padding-right: 115px;
   font-size: 30px;
 }
-#portfolio .thumb {
+#portfolio .tile {
   display: inline-block;
   width: 465px;
   height: 385px;
   margin-bottom: 34px;
 }
-#portfolio .thumb:nth-child(odd) {
+#portfolio .tile:nth-child(odd) {
   float: left;
 }
-#portfolio .thumb:nth-child(even) {
+#portfolio .tile:nth-child(even) {
   float: right;
 }
-#portfolio .thumb:hover {
+#portfolio .tile:hover {
   cursor: pointer;
 }
-#portfolio .thumb a {
+#portfolio .tile a {
   display: block;
   position: relative;
   height: 100%;	
@@ -433,12 +433,12 @@ p {
 #portfolio img {
   transition: transform 0.4s;
 }
-.no-touch #portfolio .thumb:hover img, 
-#portfolio .thumb.cs-hover img {
+.no-touch #portfolio .tile:hover img, 
+#portfolio .tile.cs-hover img {
   transform:  translate(-70px, -56px) scale(0.7);
 }
 /* details */
-#portfolio .he-second {
+#portfolio .details-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -449,22 +449,22 @@ p {
   opacity: 0;
   transition: opacity 1s;
 }
-#portfolio .he-second:hover {
+#portfolio .details-wrapper:hover {
   opacity: 1;
 }
-#portfolio .he-second h3 {
+#portfolio .details-wrapper h3 {
   font-size: 1em;
   /* override h3 */
   text-align: left;
 }
-#portfolio .he-second > div {
+#portfolio .details-wrapper .details {
   position: absolute;
   bottom: 0;
 }
-#portfolio .he-second p {
+#portfolio .details-wrapper p {
   font-size: 0.5em;
 }
-#portfolio .he-second span {
+#portfolio .details-wrapper span {
   font-size: .75em;
 }
 
