@@ -37,26 +37,34 @@ $(function() {
   });
 
   $(window).resize(function() {  
-    Waypoint.refreshAll();
-    scrollToPosition($('.active-link a').attr('href'));	
+   Waypoint.refreshAll();
+   doWaypoints();
+   animateHeader('up');
+   scrollToPosition('#home');	
   });
 
   function doWaypoints() {  
 
 	var $pages = $('.page');
+
+	var offset = {}, w = $(window).width();
+
+	// needs different offsets for updating home link
+	if (w<350) { offset.down = '100%'; offset.up = 'bottom-in-view'; } else
+	if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view' } else
+	           { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
     
-    // on scroll offset 98%
+    // scroll down 
 	$pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) { 
-	  	  // only if scroll down update links
 	  	  if (direction === 'down') { 
 	  	  	$pages.removeClass('.active-link');
 	  	  	updateLinks($(this.element).attr('id')); 
 	  	  }
 	  	},
-	    offset: '98%',
+	    offset: offset.down,
 	    group: 'pages'
 	  });
     });
@@ -66,16 +74,18 @@ $(function() {
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) { 
-	  	  var previousWaypoint = this.previous();
+	  	  var previousWaypoint = this.previous(); 
+	  	  var nextWaypoint = this.next(); 
 	  	  // only if scroll up
 	  	  if ((direction === 'up') && previousWaypoint) {
 	  	    $pages.removeClass('.active-link'); 
-	  	  	updateLinks($(previousWaypoint.element).attr('id')); }
-	  	  
+	  	    updateLinks($(this.element).attr('id')); 
+	  	  }
 	  	  // if scrolling to or from home
-	  	  if (isActiveSection('home')) { animateHeader(direction); }
+	  	  if (isActiveSection('home') && direction === 'up') { animateHeader(direction); }
+	  	  if (isActiveSection('work') && direction === 'down') { animateHeader(direction); }
 	  	},
-	    offset: '20%',
+	    offset: offset.up,
 	    group: 'pages'
 	  });
     });
@@ -117,18 +127,23 @@ $(function() {
   // on scroll to home, menu expands
   // logo animates to big,
   // header height animates to big height = 139px
-  function animateHeader(direction) { console.log('animate header');
+  function animateHeader(direction) { 
     
-    var window_w = $(window).width();
+    var w = $(window).width(); console.log(w);
     var mark1 = 480;
+    var mark2 = 325;
 
   	if (direction === 'down') {
       
-      // switch menus
-      $('#header-nav').hide(function() {
-        $('#collapsed-menu').show();
-      }).addClass('expanded');
-      
+      if (w > mark1) {
+        // switch menus
+        $('#header-nav').hide(function() {
+          $('#collapsed-menu').css('display', 'inline-block');
+        }).addClass('expanded');
+        
+        // switch logos
+        $('#logo.big').removeClass('big').addClass('small');
+      }
      /* // default, width > 1350px 
 	  $('#logo a').animate({
 	  	  'margin-top': '19px',
@@ -139,20 +154,24 @@ $(function() {
       if (window_w < mark1) {
         $('#logo').slideUp();
       }*/
-      
-      // switch header heights
-	  $('#main-header, #fixed-header-aux').animate({
-		'height': '111px'
-	  }, 'fast');
+      if (w < mark2 || w > mark1) {
+      	// switch header heights
+	    $('#main-header, #fixed-header-aux').animate({
+		  'height': '111px'
+	    }, 'fast');
 
-	  $('#logo.big').removeClass('big').addClass('small');
+      }
 
   	} else {
+      if (w > mark1) { 
+        // switch menus
+  	    $('#collapsed-menu').hide(function() {
+  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
+  	    });	
 
-      // switch menus
-  	  $('#collapsed-menu').hide(function() {
-  	  	$('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	  });	
+  	    // switch logos
+  	    $('#logo.small').removeClass('small').addClass('big');
+  	  }
       
       // switch header heights
   	  $('#main-header, #fixed-header-aux').animate({
@@ -172,7 +191,7 @@ $(function() {
         $('#logo.big .img-wrapper').width('100%')
       }*/
 	    
-	  $('#logo.small').removeClass('small').addClass('big');
+	  
   	}
 
   	//$('#logo a').clearQueue();

@@ -309,21 +309,19 @@ p {
 /* ******************************** */
 /* *************************** LOGO */
 #logo {
- /* width: 149px;*/
   margin-top: 40px;
 }
 #logo .img-wrapper {
   display: block;
   height: auto;
 }
-/*#logo.big .img-wrapper {*/
 #logo.big {
+  margin-top: 40px;
   width: 149px;	
 }
-/*#logo.small .img-wrapper {*/
 #logo.small {
   width: 111px;
-  margin-top: 40px; 
+  margin-top: 18px; 
 }
 #logo img {
   width: 100%;
@@ -410,7 +408,6 @@ p {
   margin-bottom: 127px;
   padding-left: 115px;
   padding-right: 115px;
-  font-size: 30px;
 }
 #portfolio .tile {
   display: inline-block;
@@ -430,7 +427,10 @@ p {
 #portfolio .tile a {
   display: block;
   position: relative;
-  height: 100%;	
+  height: auto;
+  /* remove extra height otherwise adds to tile */
+  /* define font-size again other than a */
+  font-size: 0;
 }
 /* img hover animation */
 #portfolio img {
@@ -448,6 +448,8 @@ p {
   left: 0;
   height: 100%;
   width: 100%;
+  /* redefine font-size put to 0 on parent a */
+  font-size: 30px;
   color: white;
   text-align: left;
   opacity: 0;
