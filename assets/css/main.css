@@ -3,36 +3,85 @@
 
 /* ******************************************** */
 /* **************** BACKGROUNDS AND FONT COLORS */
-.light_gray_bg {
+/*.light_gray_bg {*/
+.bg-1 {
   background-color: #E9E8E3;
 }
-.dark_gray_bg {
+/*.dark_gray_bg {*/
+.bg-2 {
   background-color: #3A3A3A;
 }
-.dark_blue_bg {
+/*.dark_blue_bg {*/
+.bg-3 {
   background-color: #363B48;
 }
-.fuxsia_bg {
+/*.fuxsia_bg {*/
+.bg-4 {
   background-color: #DF3F54;
 }
-.light_fuxsia_bg {
+/*.light_fuxsia_bg {*/
+.bg-5 {
   background-color: #F17C71;
 }
 
-.light_gray_color {
+/*.light_gray_color {*/
+.color-1 {
   color: #E9E8E3;
 }
-.dark_gray_color {
+/*.dark_gray_color {*/
+.color-2 {
   color: #393939;
 }
-.dark_blue_color {
+/*.dark_blue_color {*/
+.color-3 {
   color: #363B48;
 }
-.fuxsia_color {
+/*.fuxsia_color {*/
+.color-4 {
   color: #DF3F54;
 }
-.light_fuxsia_color {
+/*.light_fuxsia_color {*/
+.color-5 {
   color: #F17C71;
+}
+
+/* ******************************************** */
+/* ********************************* FIX VALUES */
+/* used for main header sizes */
+.height_1 {
+  height: 139px;
+}
+.height_2 {
+  height: 111px;
+} 
+/* used in footer */
+.height_3 {
+  height: 100px;
+}
+/* where used also */
+.height_1 .fullheight {
+  /* = total - header height */
+  height: calc(100vh - 139px);
+}
+.height_2 .fullheight {
+  /* = total - header height */
+  height: calc(100vh - 111px);	
+}
+
+.height_1 .page {
+  /* = total - header height */
+  min-height: calc(100vh - 139px);
+}
+.height_2 .page {
+  min-height: calc(100vh - 111px);
+}
+
+/* used for logo sizes */
+.small {
+  width: 111px;
+}
+.big {
+  width: 149px;
 }
 /* ******************************************** */
 /* *********************************** DEFAULTS */
@@ -80,24 +129,16 @@ p {
 }
 .fixed {
   position: fixed;
+  z-index: 1000;
+}
+.hidden {
+  display: none;
 }
 .fullwidth {
   width: 100%;
   max-width: 1350px;
 }
-.screen-reader-text { 
-  position: absolute;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  font-size: 0;
-}
-.hidden {
-  display: none;
-}
 .fullheight {
-  /* = total - header height */
-  height: calc(100vh - 139px);
   min-height: 100%;
 }
 .centered {
@@ -107,6 +148,13 @@ p {
 }
 .top: {
   top: 0;
+}
+.screen-reader-text { 
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  font-size: 0;
 }
 
 /* ******************************************** */
@@ -126,29 +174,29 @@ html {
   height: 100%;
 }
 body {
-	margin: 0;
-	overflow-x: hidden;
-	overflow-y: scroll;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .fullwrapper {
   max-width: 1356px;
   margin: auto;
 }
-.wrapper > *.right {
+.wrapper > *.right,
+.content {
   margin-right: 82px; 
 }
-.wrapper > *.left {
+.wrapper > *.left,
+.content {
   margin-left: 70px;
 }
 .wrapper::after {
   clear: both;
 }
 .page {
-  /* = total - header height */
-  min-height: calc(100vh - 139px);
-  text-align: right;
   height: 100%;
-}
+  text-align: right;
+}t
 .page header {
   display: inline-block;
   max-height: 100%;
@@ -156,18 +204,16 @@ body {
 .page .sub-header {
 	text-align: center;
 }
-.content {
-  /* same as .wrapper .left */
-  margin-left: 70px;
-  /* same as .wrapper .right */
-  margin-right: 82px;
-}
-.header_hr {
+.page .header_hr {
   border: 0;
   height: 3px;
   width: 100px;
   margin: 0 auto 13px;
   clear: both;
+}
+/* override */
+#pages {
+  height: 100%;
 }
 /* ******************************************** */
 /* ************************************** COVER */
@@ -295,32 +341,17 @@ p {
 
 /* ******************************************** */
 /* ******************************** MAIN HEADER */
-#main-header {
-  overflow: visible;
-}
-#main-header.top.fixed {
-  height: 139px;
-  z-index: 1000;
-}
-#fixed-header-aux {
-	height: 139px;
-}
 
 /* ******************************** */
 /* *************************** LOGO */
-#logo {
-  margin-top: 40px;
-}
 #logo .img-wrapper {
   display: block;
   height: auto;
 }
 #logo.big {
   margin-top: 40px;
-  width: 149px;	
 }
 #logo.small {
-  width: 111px;
   margin-top: 18px; 
 }
 #logo img {

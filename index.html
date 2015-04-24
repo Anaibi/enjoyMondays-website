@@ -23,14 +23,14 @@
   <!-- MODERNIZR JS -->				
   <script src="assets/js/modernizr.custom.js"></script>								
 </head>
-<body class="light_gray_bg">
+<body class="bg-1">
   <div id="cover"></div>
   <!-- web displays either #FRONT-PAGE either works #SLIDESHOW (fullwidth) -->
   <!-- FRONT-PAGE (header + pages + footer) -->
-  <div id="front-page" class="fullwrapper light_gray_bg">
+  <div id="front-page" class="fullwrapper bg-1">
 
-    <!-- MAIN-HEADER can be fix or landscape, by default fixed -->
-    <header id="main-header" class="wrapper top fixed fullwidth light_gray_bg">
+    <!-- MAIN-HEADER -->
+    <header id="main-header" class="height_1 wrapper top fixed fullwidth bg-1">
 
       <!-- LOGO -->
       <div id="logo" class="big left">
@@ -54,21 +54,21 @@
       </div>
     </header>
 
-    <div id="fixed-header-aux"></div>			
+    <div id="fixed-header-aux" class="height_1"></div>			
       
     <!-- PAGES + FOOTER -->
-    <div id="pages" class="fullwidth clearfix">	
+    <div id="pages" class="height_1 fullwidth clearfix">	
 
       <!-- HOME PAGE -->
-      <section id="home" class="page wrapper light_gray_bg dark_gray_color clearfix">
-        <header class="right centered clearfix responsive_headline">	  <h1 class="">
+      <section id="home" class="page wrapper bg-1 color-2 clearfix">
+        <header class="right centered clearfix fittextjs">	  <h1 class="">
             <span class="s-header-one right ">
               <img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
               We code</span>
             <span class="s-header-two right ">you smile</span>	
           </h1>				
           <div class="sub-header right ">
-            <hr class="dark_gray_bg header_hr">
+            <hr class="bg-2 header_hr">
             <p>Crafting clean and fresh awesomnes for the web and beyond.</p>
             <p>We make it funky. Want to work with us?</p>
           </div>
@@ -78,11 +78,11 @@
       <!--  END HOME PAGE -->
 
       <!--  WORK PAGE -->
-      <section id="work" class="page wrapper dark_gray_bg light_gray_color clearfix ">
-        <header class="right responsive_headline">
+      <section id="work" class="page wrapper bg-2 color-1 clearfix ">
+        <header class="right fittextjs">
           <h1>Works</h1>					
           <div class="sub-header">
-            <hr class="light_fuxsia_bg header_hr">
+            <hr class="light_bg-4 header_hr">
             <p>Some of our latest works.</p>
           </div>
         </header>
@@ -95,28 +95,28 @@
       <!-- END WORK PAGE -->
 
       <!-- ABOUT PAGE -->
-      <section id="about" class="page wrapper dark_blue_bg light_gray_color clearfix">
-        <header class="right responsive_headline">
+      <section id="about" class="page wrapper bg-3 color-1 clearfix">
+        <header class="right fittextjs">
           <h1>Services</h1>
           <div class="sub-header">
-            <hr class="light_fuxsia_bg header_hr">
+            <hr class="light_bg-4 header_hr">
             <p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and easy-to-access content. The <br />finished product will be totally unique and represent <br />awesomeness.</p>
           </div>
         </header>
         <div class="content clearfix">
           <article id="understand">
             <div class="img-wrapper"><img src="assets/images/understand.png" title="Understand" alt="Understand" /></div>
-            <hr class="light_gray_bg">
+            <hr class="bg-1">
             <p>Understand the business and competitive landscape. Learn how people interact with the brand and product. Identify strategic opportunities and design goals.</p>
           </article>
           <article id="create">
             <div class="img-wrapper"><img src="assets/images/create.png" title="Create" alt="Create" /></div>
-            <hr class="light_gray_bg">
+            <hr class="bg-1">
             <p>Create the best production on the planet. Combine smart interaction, interface, and visual design into a compelling product that resonates with the target audience.</p>
           </article>
           <article id="test">
             <div class="img-wrapper"><img src="assets/images/test.png" title="Test" alt="Test" /></div>
-            <hr class="light_gray_bg">
+            <hr class="bg-1">
             <p>Test concepts, designs, and prototypes with real users. Combine learnings with gut instinct and experience. Iterate, refine, and relentlessly hone in in the persuit of perfection.</p>
           </article>
         </div>
@@ -124,14 +124,14 @@
       <!-- END ABOUT PAGE -->
           
       <!-- CONTACT PAGE -->
-      <section id="contact" class="page wrapper fuxsia_bg light_gray_color clearfix">
-        <header class="right centered clearfix responsive_headline">
+      <section id="contact" class="page wrapper bg-4 color-1 clearfix">
+        <header class="right centered clearfix fittextjs">
           <h1 class="clearfix">
-            <span class="s-header-one dark_gray_color right">say hello</span>
+            <span class="s-header-one color-2 right">say hello</span>
             <span class="s-header-two right">hola@<wbr>enjoy-mondays.<wbr>com</span>
           </h1>
           <div class="sub-header right">
-            <hr class="light_fuxsia_bg header_hr">
+            <hr class="light_bg-4 header_hr">
             <p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access content. The finished product will be totally unique and represent awesomeness.</p>
           </div>     
         </header>
@@ -139,32 +139,36 @@
       </section>
       <!-- END CONTACT PAGE -->
 
-      <footer class="wrapper dark_gray_bg light_gray_color clearfix">
+      <footer class="height_3 wrapper bg-2 color-1 clearfix">
        
-        <p class="left centered">2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank" class="fuxsia_color"> FlatG</a></p>
+        <div class="left centered">
+          <p>2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank" class="color-4"> FlatG</a></p>
+        </div>
         
-        <ul id="social" class="right centered">
-          <li id="github">
-            <a href="http://github.com/goliatone" target="_blank">
-              <img src="assets/images/github.png" title="github" alt="github" /></a>
-          </li>
-          <li id="fb">
-            <a href="https://www.facebook.com/EnjoyMondays" target="_blank">
-              <img src="assets/images/facebook.png" title="facebook" alt="facebook" /></a>
-          </li>
-          <li id="twitter">
-            <a href="http://twitter.com/EnjoyMondays" target="_blank">
-              <img src="assets/images/twitter.png" title="twitter" alt="twitter" /></a>
-          </li>
-          <li id="g+">
-            <a href="#">
-              <img src="assets/images/google+.png" title="google+" alt="google+" /></a>
-          </li>
-          <li id="pinterest">
-            <a href="http://www.pinterest.com/enjoyMondays/" target="_blank">
-              <img src="assets/images/pinterest.png" title="pinterest" alt="pinterest" /></a>
-          </li>
-        </ul>
+        <div class="right centered">
+          <ul id="social">
+            <li id="github">
+              <a href="http://github.com/goliatone" target="_blank">
+                <img src="assets/images/github.png" title="github" alt="github" /></a>
+            </li>
+            <li id="fb">
+              <a href="https://www.facebook.com/EnjoyMondays" target="_blank">
+                <img src="assets/images/facebook.png" title="facebook" alt="facebook" /></a>
+            </li>
+            <li id="twitter">
+              <a href="http://twitter.com/EnjoyMondays" target="_blank">
+                <img src="assets/images/twitter.png" title="twitter" alt="twitter" /></a>
+            </li>
+            <li id="g+">
+              <a href="#">
+                <img src="assets/images/google+.png" title="google+" alt="google+" /></a>
+            </li>
+            <li id="pinterest">
+              <a href="http://www.pinterest.com/enjoyMondays/" target="_blank">
+                <img src="assets/images/pinterest.png" title="pinterest" alt="pinterest" /></a>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
     <!-- END PAGES + FOOTER -->
@@ -188,25 +192,24 @@
   <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="assets/js/toucheffects.js"></script>
-  <!-- WAYPOINTS -->
+  <!-- WAYPOINTS http://imakewebthings.com/waypoints/ -->
   <!-- script type="text/javascript" src="assets/js/waypoints.min.js"></script -->
   <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
   <!-- MAIN -->
   <script type="text/javascript" src="assets/js/main.js"></script>
-  <!-- FIT TEXT -->	
+  <!-- FIT TEXT http://fittextjs.com/ -->	
   <script src="assets/js/jquery.fittext.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      //jQuery(".responsive_headline-2").fitText(1.5, { minFontSize: '23px', maxFontSize: '150px' });
       jQuery('#cover').css('display', 'block').slideUp('625');
       
-      jQuery("#home .responsive_headline").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+      jQuery("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
       
-      jQuery("#work .responsive_headline").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
+      jQuery("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
 
-      jQuery("#about .responsive_headline").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
+      jQuery("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
 
-      jQuery("#contact .responsive_headline").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+      jQuery("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
     });
   </script>
   <!-- SUPERSIZED -->

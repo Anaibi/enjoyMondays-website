@@ -1,7 +1,36 @@
 $(function() {
 
+  // for use in animateHeader 
+  var actual_w = $(window).width(),
+      previous_w;
+  var resizeTimer;
+
   //hide ui-loader, check why appears
   $('.ui-loader').hide();
+
+  $(window).load(function () {
+  	doWaypoints();
+  });
+
+  // Done Resizing Event
+  // https://css-tricks.com/snippets/jquery/done-resizing-event/ 
+  $(window).on('resize', function() {
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+
+      // Run code here, resizing has "stopped"
+      previous_w = actual_w; console.log(previous_w);
+      actual_w = $(window).width(); console.log(actual_w);
+      Waypoint.refreshAll();
+      doWaypoints(); // check if needed
+      animateHeader('up', actual_w, previous_w);
+      scrollToPosition('#home');
+      
+            
+    }, 250);
+
+  });
 
   //////////////////////////////////////// MENU FUNCTIONALITY
   //////////////////////////////////////// 
@@ -31,69 +60,106 @@ $(function() {
   });
 
   //////////////////////////////////////// WAYPOINT PLUGIN implementation
-  //////////////////////////////////////// http://imakewebthings.com/waypoints/
-  $(window).load(function () {
-  	doWaypoints();
-  });
-
-  $(window).resize(function() {  
-   Waypoint.refreshAll();
-   doWaypoints();
-   animateHeader('up');
-   scrollToPosition('#home');	
-  });
-
+  ////////////////////////////////// http://imakewebthings.com/waypoints/
   function doWaypoints() {  
 
 	var $pages = $('.page');
 
-	var offset = {}, w = $(window).width();
+	var offset = {};
 
 	// needs different offsets for updating home link
-	if (w<350) { offset.down = '100%'; offset.up = 'bottom-in-view'; } else
-	if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view' } else
-	           { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
+	//if (w<350) { 
+	offset.down = '100%'; 
+	offset.up = 'bottom-in-view'; 
+	//} 
+	//else if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
+	//else { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
     
-    // scroll down 
+    // update links direction down
 	$pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
-	  	handler: function(direction) { 
+	  	handler: function(direction) {  
+	  	  
 	  	  if (direction === 'down') { 
 	  	  	$pages.removeClass('.active-link');
-	  	  	updateLinks($(this.element).attr('id')); 
+	  	  	updateLinks($(this.element).attr('id'));
+	  	  	// if scrolling from home
+	  	  	if (isActiveSection('work')) { 
+	  	  	  animateHeader(direction); 
+	  	  	} 
 	  	  }
+	  	  
 	  	},
 	    offset: offset.down,
 	    group: 'pages'
 	  });
     });
     
-    // on scroll with offset 10%
+    // update links direction down
     $pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) { 
-	  	  var previousWaypoint = this.previous(); 
-	  	  var nextWaypoint = this.next(); 
-	  	  // only if scroll up
-	  	  if ((direction === 'up') && previousWaypoint) {
+	  	  
+	  	  if ((direction === 'up')) {
 	  	    $pages.removeClass('.active-link'); 
 	  	    updateLinks($(this.element).attr('id')); 
+	  	    // if scrolling from home
+	  	  	if (isActiveSection('home')) { 
+	  	  	  animateHeader(direction); 
+	  	  	} 
 	  	  }
-	  	  // if scrolling to or from home
-	  	  if (isActiveSection('home') && direction === 'up') { animateHeader(direction); }
-	  	  if (isActiveSection('work') && direction === 'down') { animateHeader(direction); }
+	  	 
 	  	},
 	    offset: offset.up,
 	    group: 'pages'
 	  });
     });
   }
-  //////////////////////////////////////// END WAYPOINT PLUGIN implementation
-  //////////////////////////////////////// END MENU FUNCTIONALITY
+  //////////////////////////////////// END WAYPOINT PLUGIN implementation
+  //////////////////////////////////////////////// END MENU FUNCTIONALITY
+
+  ///////////////////////////////////////////////////////// animateHeader
+  function animateHeader(direction, actual_w, previous_w) { 
+    var w = actual_w,
+        w2 = previous_w;
+        console.log(actual_w); console.log(previous_w);
+    var mark1 = 325,
+        mark2 = 480;
+  	
+  	// casos:
+  	// menu type collapsed/expanded only changes over mark2 width
+  	if (w > mark2) {
+     
+      // switch menus
+      if (direction === 'down') {
+        $('#header-nav').hide(function() {
+          $('#collapsed-menu').css('display', 'inline-block');
+        }).addClass('expanded');
+      } else {
+        $('#collapsed-menu').hide(function() {
+  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
+  	    });
+      }
+        
+      // switch logos
+      $('#logo').toggleClass('big small');
+
+      // switch header heights
+	  $('#main-header, #fixed-header-aux').toggleClass('height_1 height_2');
+    }
+    
+    // under mark2 width only header height varies
+    if (w < mark1) {
+      // switch header heights
+	  $('#main-header, #fixed-header-aux').toggleClass('height_1 height_2');
+    }
+  }
+  //////////////////////////////////////////////////////END animateHeader
  
-  //////////////////////////////////////// HELPER FUNCTIONS
+
+  ////////////////////////////////////////////////////// HELPER FUNCTIONS
   // scroll to pages position
   function scrollToPosition(page) { 		
 	$('body, html')
@@ -119,83 +185,5 @@ $(function() {
   function isActiveSection(id) {
   	return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
-
-  // HEADER ANIMATION
-  // on scroll up, menu collapses, icon at right,
-  // logo animates to small,
-  // header height animates to small height = 114px
-  // on scroll to home, menu expands
-  // logo animates to big,
-  // header height animates to big height = 139px
-  function animateHeader(direction) { 
-    
-    var w = $(window).width(); console.log(w);
-    var mark1 = 480;
-    var mark2 = 325;
-
-  	if (direction === 'down') {
-      
-      if (w > mark1) {
-        // switch menus
-        $('#header-nav').hide(function() {
-          $('#collapsed-menu').css('display', 'inline-block');
-        }).addClass('expanded');
-        
-        // switch logos
-        $('#logo.big').removeClass('big').addClass('small');
-      }
-     /* // default, width > 1350px 
-	  $('#logo a').animate({
-	  	  'margin-top': '19px',
-		  'width': '111px'
-      }, 'fast');
-      
-      // case under 480px TODO refactor when all cases done
-      if (window_w < mark1) {
-        $('#logo').slideUp();
-      }*/
-      if (w < mark2 || w > mark1) {
-      	// switch header heights
-	    $('#main-header, #fixed-header-aux').animate({
-		  'height': '111px'
-	    }, 'fast');
-
-      }
-
-  	} else {
-      if (w > mark1) { 
-        // switch menus
-  	    $('#collapsed-menu').hide(function() {
-  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	    });	
-
-  	    // switch logos
-  	    $('#logo.small').removeClass('small').addClass('big');
-  	  }
-      
-      // switch header heights
-  	  $('#main-header, #fixed-header-aux').animate({
-	    'height': '139px'
-	  }, 'fast');
-		
-	 /* // default	
-	  $('#logo a').animate({
-	  	'margin-top': '40px',
-	    'width': '146px'
-	  }, 'fast');
-
-	  // case under 480px TODO refactor when all cases done
-      if (window_w < mark1) {
-        $('#logo').slideDown();
-
-        $('#logo.big .img-wrapper').width('100%')
-      }*/
-	    
-	  
-  	}
-
-  	//$('#logo a').clearQueue();
-  }
- 	
-  //////////////////////////////////////// END HELPER FUNCTIONS
+  ////////////////////////////////////////////////// END HELPER FUNCTIONS
 });

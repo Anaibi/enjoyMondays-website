@@ -24,7 +24,7 @@
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES HOME */
-  #home .responsive_headline {
+  #home .fittextjs {
     width: 40%;
     height: auto;
     margin-top: 20%;
@@ -37,16 +37,16 @@
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
-  #work .responsive_headline {
+  #work .fittextjs {
     width: 31%;
     height: auto;
     margin-top: 5%;
     margin-bottom: 8%;
   }
-  #work .responsive_headline h1 {
+  #work .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #work .responsive_headline hr {
+  #work .fittextjs hr {
     margin-bottom: 3%;
   }
   #portfolio {
@@ -67,19 +67,19 @@
 
   /* ******************************** */
   /* ***** RESPONSIVE HEADLINES ABOUT */
-  #about .responsive_headline {
+  #about .fittextjs {
     width: 41%;
     height: auto;
     margin-top: 14%;
     margin-bottom: 15%;
   }
-  #about .responsive_headline h1 {
+  #about .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #about .responsive_headline hr {
+  #about .fittextjs hr {
     margin-bottom: 2%;
   }
-  #about .responsive_headline p {
+  #about .fittextjs p {
     padding: 0 2%;
   }
   #about .content {
@@ -101,35 +101,35 @@
 
   /* ******************************** */
   /* *** RESPONSIVE HEADLINES CONTACT */
-  #contact .responsive_headline {
+  #contact .fittextjs {
     width: 88%;
     height: 353px;
     padding-top: 13%;
     padding-bottom: 20%;
   }
-  #contact .responsive_headline h1 {
+  #contact .fittextjs h1 {
     margin-bottom: 4%;
   }
-  #contact .responsive_headline .s-header-one {
+  #contact .fittextjs .s-header-one {
     width: 49%;
     height: auto;
     margin-bottom: 2.7%;
     margin-right: -8px;
   }
-  #contact .responsive_headline .s-header-two {
+  #contact .fittextjs .s-header-two {
     width: 100%;
     height: auto;
     font-size: .96em;
   }
-  #contact .responsive_headline .sub-header {
+  #contact .fittextjs .sub-header {
     width: 44%;
     margin-top: -2%;
     margin-right: 4%;
   }
-  #contact .responsive_headline hr {
+  #contact .fittextjs hr {
     margin-bottom: 3%;
   }
-  #contact .responsive_headline p {
+  #contact .fittextjs p {
     height: auto;
   }
 }
@@ -160,16 +160,17 @@
     padding: 0 5px;
   }
 
-  #pages .responsive_headline {
+  #pages .fittextjs {
     float: none;
     width: 95%;
-    margin: 12% auto 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 12% 0 0;
     text-align: center;
   }
-  #pages .responsive_headline h1 {
+  #pages .fittextjs h1 {
     margin-bottom: 4%;
     text-align: center;
+    line-height: 1;
   } 
 
   /* ******************************************** */
@@ -221,10 +222,10 @@
 
   /* ******************************** */
   /* *************************** HOME */
-  #home .responsive_headline {
+  #home .fittextjs {
     top: 25vh;
   }
-  #home .responsive_headline span {
+  #home .fittextjs span {
     float: none;
   }
   #home .sub-header {
@@ -239,7 +240,7 @@
   }
   /* ******************************** */
   /* *************************** WORK */
-  #work .responsive_headline h1 { 
+  #work .fittextjs h1 { 
     font-size: .78em;
   }
   #portfolio {
@@ -303,32 +304,32 @@
     /* = total - header - footer */
     min-height: calc(100vh - 111px - 100px);
   }
-  #contact .responsive_headline .sub-header {
+  #contact .fittextjs .sub-header {
     width: 76%;
   }
-  #contact .responsive_headline .s-header-one {
+  #contact .fittextjs .s-header-one {
     display: inline-block;
     float: none;
     width: 100%;
     text-align: right;
     font-size: 2em;
   }
-  #contact .responsive_headline .s-header-two {
+  #contact .fittextjs .s-header-two {
     display: inline-block;
     float: none;
     text-align: right;
     font-size: 1.05em;
   }
-  #contact .responsive_headline .sub-header {
+  #contact .fittextjs .sub-header {
     float: none;
     width: 93%;
     margin: auto;
   }
 
-  #contact .responsive_headline hr {
+  #contact .fittextjs hr {
     margin-top: 0;
   }
-  #contact .responsive_headline p {
+  #contact .fittextjs p {
     font-size: .5em;
   }
 
@@ -343,13 +344,15 @@
     padding: 0;
     font-size: .65em;
   }
-  footer p.centered.left,
-  footer #social.centered.right {
-    position: static;
+  footer.wrapper .left,
+  footer.wrapper .right {
     display: inline-block;
     float: none;
-    margin: 4% 0;
+    margin: 4% 0 2% 0;
     padding: 0;
+  }
+  footer .centered {
+    position: static;
     transform: none;
   }
 }
@@ -381,7 +384,7 @@
   #contact .sub-header p {
     font-size: .5em;
   }
-  #contact .responsive_headline .s-header-two {
+  #contact .fittextjs .s-header-two {
     width: 92%;
     margin-right: -8%;
     font-size: 2em;
