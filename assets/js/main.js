@@ -1,8 +1,14 @@
 $(function() {
 
   // for use in animateHeader 
-  var actual_w = $(window).width(),
-      previous_w = actual_w;
+  var ww = {};
+      ww.actual = $(window).width(),
+      ww.previous = ww.actual;
+
+  var marks = [];
+      marks[0] = 325,
+      marks[1] = 480;
+    
   var resizeTimer;
 
   //hide ui-loader, check why appears
@@ -20,20 +26,18 @@ $(function() {
     resizeTimer = setTimeout(function() {
       // Run code here, resizing has "stopped"
       // get new window sizes
-      previous_w = actual_w; 
-      actual_w = $(window).width(); 
+      ww.previous = ww.actual; 
+      ww.actual = $(window).width(); 
       
       // refresch waypoints TODO
       Waypoint.refreshAll();
       doWaypoints(); // check if needed
 
-      // refresh header
-      //animateHeader('up');
-      scrollToPosition('#home');
-      // home menu is always expanded and logo big
-      $('#collapsed-menu').hide(function() {
-  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	  });
+      if (!inSameWidthGap(ww, marks)) { 
+        // refresh header
+        scrollToPosition('#home');
+        refreshHeader(); 
+      }
             
     }, 150);
 
@@ -87,16 +91,14 @@ $(function() {
 	  new Waypoint({
 	  	element: this,
 	  	handler: function(direction) {  
-	  	  
 	  	  if (direction === 'down') { 
 	  	  	$pages.removeClass('.active-link');
 	  	  	updateLinks($(this.element).attr('id'));
 	  	  	// if scrolling from home
-	  	  	if (isActiveSection('work')) { 
+	  	  	if (isActiveSection('work')) { console.log('act work');
 	  	  	  animateHeader(direction); 
 	  	  	} 
 	  	  }
-	  	  
 	  	},
 	    offset: offset.down,
 	    group: 'pages'
@@ -107,17 +109,15 @@ $(function() {
     $pages.each(function() { 
 	  new Waypoint({
 	  	element: this,
-	  	handler: function(direction) { 
-	  	  
+	  	handler: function(direction) { 	  	  
 	  	  if ((direction === 'up')) {
 	  	    $pages.removeClass('.active-link'); 
 	  	    updateLinks($(this.element).attr('id')); 
 	  	    // if scrolling from home
-	  	  	if (isActiveSection('home')) { 
+	  	  	if (isActiveSection('home')) { console.log('act home');
 	  	  	  animateHeader(direction); 
 	  	  	} 
-	  	  }
-	  	 
+	  	  }	  	 
 	  	},
 	    offset: offset.up,
 	    group: 'pages'
@@ -128,21 +128,16 @@ $(function() {
   //////////////////////////////////////////////// END MENU FUNCTIONALITY
 
   ///////////////////////////////////////////////////////// animateHeader
-  function animateHeader(direction) { 
-    var w = actual_w,
-        w2 = previous_w;
-        console.log(w); console.log(w2);
-    var mark1 = 325,
-        mark2 = 480;
+  function animateHeader(direction) { console.log('ah ' + direction);
   	
-  	// logo size only changes over mark1 width
-  	if (w > mark1) {
+  	// logo size only changes over 325px width
+  	if (ww.actual > marks[0]) { console.log('switch logo');
       // switch logos
       $('#logo').toggleClass('logo_big logo_small');
     }
 
-  	// menu collapsed/expanded only changes over mark2 width
-  	if (w > mark2) {
+  	// menu collapsed/expanded only changes over 480 width
+  	if (ww.actual > marks[1]) {
       // switch menus
       if (direction === 'down') {
         $('#header-nav').hide(function() {
@@ -155,13 +150,23 @@ $(function() {
       }
     }
     
-    if (w < mark1 || w > mark2) {
+    if (ww.actual < marks[0] || ww.actual > marks[1]) {
       // switch header heights
 	  $('.view-1').toggleClass('header_height_big header_height_small');
 	}
   }
   //////////////////////////////////////////////////////END animateHeader
  
+  ///////////////////////////////////////////////////////// refreshHeader
+  function refreshHeader() { console.log('rh');
+    // home menu is always expanded and header big
+    $('#collapsed-menu').hide(function() {
+  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
+  	});
+    $('.view-1').addClass('header_height_big').removeClass('header_height_small')
+  }
+  //////////////////////////////////////////////////////END refreshHeader
+
 
   ////////////////////////////////////////////////////// HELPER FUNCTIONS
   // scroll to pages position
@@ -192,6 +197,28 @@ $(function() {
   // check if is active section
   function isActiveSection(id) {
   	return ($('#header-nav .active-link a').attr('href') === '#' + id);
+  }
+  
+  // says if actual width and previous width are in the same interval defined by values in marks
+  function inSameWidthGap() { 
+    var a = false;
+    for (var i = 0; i < (marks.length - 1); i++) {
+      if (a) return a;
+      if (inSameInterval(ww.actual, ww.previous, marks[i], marks[i+1])) {
+        a = true;
+      }
+    }
+    return a;
+  }
+
+  // check if two values v1, v2 are in the same interval defined by [i1, i2]
+  function inSameInterval(v1, v2, i1, i2) { 
+  	var a = false;
+    if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
+    	a = true;
+    }
+    console.log('a ' + a);
+    return a;
   }
   ////////////////////////////////////////////////// END HELPER FUNCTIONS
 });
