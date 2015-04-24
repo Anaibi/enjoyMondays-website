@@ -257,15 +257,17 @@ body {
   height: 385px;
   margin-bottom: 34px;
 }
+.tiles .tile:hover {
+  cursor: pointer;
+}
+/* grid 2 col display */
 .tiles .tile:nth-child(odd) {
   float: left;
 }
 .tiles .tile:nth-child(even) {
   float: right;
 }
-.tiles .tile:hover {
-  cursor: pointer;
-}
+/* */
 .tiles .tile a {
   display: block;
   position: relative;
@@ -274,47 +276,85 @@ body {
   /* define font-size again other than a */
   font-size: 0;
 }
-/* img hover animation */
+/* *** img hover animation *** */
 .tiles img {
   transition: transform 0.4s;
 }
-.no-touch .tiles .tile:hover img, 
-.tiles .tile.cs-hover img {
+/* all-left */
+.no-touch .tiles.all-left .tile:hover img, 
+.tiles.all-left .tile.cs-hover img {
   transform:  translate(-70px, -56px) scale(0.7);
 }
-/* details */
+/* */
+/* left-right */
+.no-touch .tiles.left-right .tile:nth-child(even):hover img, 
+.tiles.left-right .tile.cs-hover:nth-child(even) img {
+  transform:  translate(70px, -56px) scale(0.7);
+}
+.no-touch .tiles.left-right .tile:nth-child(odd):hover img, 
+.tiles.left-right .tile.cs-hover:nth-child(odd) img {
+  transform:  translate(-70px, -56px) scale(0.7);
+}
+/* */
+/* *** details *** */
+/* all-left */
+.tiles.all-left .details-wrapper {
+  text-align: left;
+}
+/* */
+/* left-right */
+.tiles.left-right .tile:nth-child(even) .details-wrapper {
+  text-align: right;
+}
+.tiles.left-right .tile:nth-child(odd) .details-wrapper {
+  text-align: left;
+}
+/* */
 .tiles .details-wrapper {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
   /* redefine font-size put to 0 on parent a */
   font-size: 30px;
   color: white;
-  text-align: left;
   opacity: 0;
   transition: opacity 1s;
 }
 .tiles .details-wrapper:hover {
   opacity: 1;
 }
-.tiles .details-wrapper h3 {
-  font-size: 1em;
-  /* override h3 */
-  text-align: left;
-}
 .tiles .details-wrapper .details {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
 }
+/* *** title *** */
+.tiles .details-wrapper .title {
+  font-size: 1em;
+}
+/* all-left */
+.tiles.all-left .details-wrapper .title {
+  text-align: left;
+}
+/* */
+/* left-right */
+.tiles.left-right .tile:nth-child(even) .title {
+  text-align: right;
+}
+.tiles.left-right .tile:nth-child(odd) .title {
+  text-align: left;
+}
+/* */
 .tiles .details-wrapper p {
   font-size: 0.5em;
 }
 .tiles .details-wrapper span {
   font-size: .75em;
 }
-
 
 /* ******************************************** */
 /* **************** RESPONSIVE HEADLINES CONFIG */
