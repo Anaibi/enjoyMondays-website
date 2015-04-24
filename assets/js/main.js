@@ -2,7 +2,7 @@ $(function() {
 
   // for use in animateHeader 
   var actual_w = $(window).width(),
-      previous_w;
+      previous_w = actual_w;
   var resizeTimer;
 
   //hide ui-loader, check why appears
@@ -18,17 +18,24 @@ $(function() {
 
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-
       // Run code here, resizing has "stopped"
-      previous_w = actual_w; console.log(previous_w);
-      actual_w = $(window).width(); console.log(actual_w);
+      // get new window sizes
+      previous_w = actual_w; 
+      actual_w = $(window).width(); 
+      
+      // refresch waypoints TODO
       Waypoint.refreshAll();
       doWaypoints(); // check if needed
-      animateHeader('up', actual_w, previous_w);
+
+      // refresh header
+      //animateHeader('up');
       scrollToPosition('#home');
-      
+      // home menu is always expanded and logo big
+      $('#collapsed-menu').hide(function() {
+  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
+  	  });
             
-    }, 250);
+    }, 150);
 
   });
 
@@ -121,17 +128,21 @@ $(function() {
   //////////////////////////////////////////////// END MENU FUNCTIONALITY
 
   ///////////////////////////////////////////////////////// animateHeader
-  function animateHeader(direction, actual_w, previous_w) { 
+  function animateHeader(direction) { 
     var w = actual_w,
         w2 = previous_w;
-        console.log(actual_w); console.log(previous_w);
+        console.log(w); console.log(w2);
     var mark1 = 325,
         mark2 = 480;
   	
-  	// casos:
-  	// menu type collapsed/expanded only changes over mark2 width
+  	// logo size only changes over mark1 width
+  	if (w > mark1) {
+      // switch logos
+      $('#logo').toggleClass('logo_big logo_small');
+    }
+
+  	// menu collapsed/expanded only changes over mark2 width
   	if (w > mark2) {
-     
       // switch menus
       if (direction === 'down') {
         $('#header-nav').hide(function() {
@@ -142,33 +153,30 @@ $(function() {
   	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	    });
       }
-        
-      // switch logos
-      $('#logo').toggleClass('big small');
-
-      // switch header heights
-	  $('#main-header, #fixed-header-aux').toggleClass('height_1 height_2');
     }
     
-    // under mark2 width only header height varies
-    if (w < mark1) {
+    if (w < mark1 || w > mark2) {
       // switch header heights
-	  $('#main-header, #fixed-header-aux').toggleClass('height_1 height_2');
-    }
+	  $('.view-1').toggleClass('header_height_big header_height_small');
+	}
   }
   //////////////////////////////////////////////////////END animateHeader
  
 
   ////////////////////////////////////////////////////// HELPER FUNCTIONS
   // scroll to pages position
-  function scrollToPosition(page) { 		
-	$('body, html')
-	  .stop()
-	  .animate({
-	  	scrollTop: $(page).offset().top - $('#fixed-header-aux').height()
-	  }, 750, function(){ 
-	  $('html, body').clearQueue();
-   	});
+  function scrollToPosition(page) { 
+    if (page === "#contact") { 
+      scrollToPosition('footer');
+    } else {	
+	  $('body, html')
+	    .stop()
+	    .animate({
+	  	  scrollTop: $(page).offset().top - $('.fixed_header_aux').height()
+	    }, 750, function(){ 
+	    $('html, body').clearQueue();
+   	  });
+	}
   }
 
   // update active link on main menu nav

@@ -24,16 +24,19 @@
   <script src="assets/js/modernizr.custom.js"></script>								
 </head>
 <body class="bg-1">
-  <div id="cover"></div>
-  <!-- web displays either #FRONT-PAGE either works #SLIDESHOW (fullwidth) -->
-  <!-- FRONT-PAGE (header + pages + footer) -->
-  <div id="front-page" class="fullwrapper bg-1">
+
+  <div id="cover" class="fullheight bg-black hidden"></div>
+
+  <!-- web displays either #FRONT-PAGE (.view-1) either works #SLIDESHOW (.view-2) -->
+  
+  <!-- FRONT-PAGE = MAIN HEADER + PAGES + FOOTER -->
+  <div id="front-page" class="view-1 fullwrapper bg-1 header_height_big">
 
     <!-- MAIN-HEADER -->
-    <header id="main-header" class="height_1 wrapper top fixed fullwidth bg-1">
+    <header id="main-header" class="main_header wrapper top fixed fillwidth bg-1">
 
       <!-- LOGO -->
-      <div id="logo" class="big left">
+      <div id="logo" class="logo_big left">
         <a href="#" class="img-wrapper">
           <img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
           <span class="screen-reader-text">Enjoy Mondays</span>
@@ -54,13 +57,12 @@
       </div>
     </header>
 
-    <div id="fixed-header-aux" class="height_1"></div>			
-      
+    <div id="fixed-header-aux" class="fixed_header_aux"></div>			
     <!-- PAGES + FOOTER -->
-    <div id="pages" class="height_1 fullwidth clearfix">	
+    <div id="pages" class="pages fillwidth clearfix">	
 
       <!-- HOME PAGE -->
-      <section id="home" class="page wrapper bg-1 color-2 clearfix">
+      <section id="home" class="page fillheight wrapper bg-1 color-2 clearfix">
         <header class="right centered clearfix fittextjs">	  <h1 class="">
             <span class="s-header-one right ">
               <img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
@@ -78,28 +80,31 @@
       <!--  END HOME PAGE -->
 
       <!--  WORK PAGE -->
-      <section id="work" class="page wrapper bg-2 color-1 clearfix ">
+      <section id="work" class="page fillheight wrapper bg-2 color-1 clearfix ">
+        
         <header class="right fittextjs">
           <h1>Works</h1>					
           <div class="sub-header">
-            <hr class="light_bg-4 header_hr">
+            <hr class="bg-4 header_hr">
             <p>Some of our latest works.</p>
           </div>
         </header>
-        <div id="portfolio" class="content clearfix">
+
+        <div id="portfolio" class="tiles content clearfix">
           <div id="emb_container">
             <ul class="emb_gallery"></ul>
           </div>
         </div>
+
       </section>
       <!-- END WORK PAGE -->
 
       <!-- ABOUT PAGE -->
-      <section id="about" class="page wrapper bg-3 color-1 clearfix">
+      <section id="about" class="page fillheight wrapper bg-3 color-1 clearfix">
         <header class="right fittextjs">
           <h1>Services</h1>
           <div class="sub-header">
-            <hr class="light_bg-4 header_hr">
+            <hr class="bg-4 header_hr">
             <p>Our vision is simple. We want to create websites and applications <br /> with both high quality design and easy-to-access content. The <br />finished product will be totally unique and represent <br />awesomeness.</p>
           </div>
         </header>
@@ -124,14 +129,14 @@
       <!-- END ABOUT PAGE -->
           
       <!-- CONTACT PAGE -->
-      <section id="contact" class="page wrapper bg-4 color-1 clearfix">
+      <section id="contact" class="page fillheight wrapper bg-4 color-1 clearfix">
         <header class="right centered clearfix fittextjs">
           <h1 class="clearfix">
             <span class="s-header-one color-2 right">say hello</span>
             <span class="s-header-two right">hola@<wbr>enjoy-mondays.<wbr>com</span>
           </h1>
           <div class="sub-header right">
-            <hr class="light_bg-4 header_hr">
+            <hr class="bg-4 header_hr">
             <p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access content. The finished product will be totally unique and represent awesomeness.</p>
           </div>     
         </header>
@@ -139,7 +144,7 @@
       </section>
       <!-- END CONTACT PAGE -->
 
-      <footer class="height_3 wrapper bg-2 color-1 clearfix">
+      <footer class="footer_height wrapper fillwidth bg-2 color-1 clearfix">
        
         <div class="left centered">
           <p>2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank" class="color-4"> FlatG</a></p>
@@ -176,7 +181,7 @@
   <!-- END FRONT-PAGE (header + pages + footer) -->
   <!--  SUPERSIZED -->
   <!-- fullwidth SLIDESHOW for works implemented by supersized TODO revisar -->
-  <div id="slideshow">
+  <div id="slideshow" class="view-2">
     <!--  PROJECT NAVIGATION -->
     <div id="closeGallery">
       <a href="#">Close</a>

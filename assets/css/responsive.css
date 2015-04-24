@@ -1,3 +1,4 @@
+
 /* //////////////////////////////////////////////// MAX WIDTH 1350px //// */
 @media screen and (max-width: 1350px) {
   /* ******************************************** */
@@ -13,6 +14,22 @@
     margin-left: 5%;
   }
 
+  /* ******************************** */
+  /* *************************** GRID */
+  .tiles {
+    margin-bottom: 11%;
+    padding-left: 8%;
+    padding-right: 8%; 
+  }
+  .tiles .tile,
+  .tiles .tile a,
+  .tiles img,
+  .tiles .details-wrapper {
+    width: 34vw;
+    height: 100%;
+  }
+
+
   /* ******************************************** */
   /* ******************************** MAIN HEADER */
   #header-nav {
@@ -27,43 +44,24 @@
   #home .fittextjs {
     width: 40%;
     height: auto;
-    margin-top: 20%;
+  /*  margin-top: 20%;*/
     margin-bottom: 0;
-  }
-
-  #home .centered {
-    transform: translateY(-50%);
   }
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
-  #work .fittextjs {
+  #work.page .fittextjs {
     width: 31%;
     height: auto;
     margin-top: 5%;
     margin-bottom: 8%;
   }
-  #work .fittextjs h1 {
+  #work.page .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #work .fittextjs hr {
+  #work.page .fittextjs hr {
     margin-bottom: 3%;
-  }
-  #portfolio {
-    margin-bottom: 11%;
-    padding-left: 8%;
-    padding-right: 8%; 
-  }
-  #portfolio .tile,
-  #portfolio .tile a,
-  #portfolio img,
-  #portfolio .details-wrapper {
-    width: 34vw;
-    height: 100%;
-  }
-  #portfolio img {
-    height: auto;
-  }
+  }  
 
   /* ******************************** */
   /* ***** RESPONSIVE HEADLINES ABOUT */
@@ -73,15 +71,17 @@
     margin-top: 14%;
     margin-bottom: 15%;
   }
-  #about .fittextjs h1 {
+  #about.page .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #about .fittextjs hr {
+  #about.page .fittextjs hr {
     margin-bottom: 2%;
   }
-  #about .fittextjs p {
+  #about.page .fittextjs p {
     padding: 0 2%;
   }
+  /* ******************************** */
+  /* ************************** ABOUT */
   #about .content {
     padding-left: 9%;
     padding-right: 8%;
@@ -110,29 +110,34 @@
   #contact .fittextjs h1 {
     margin-bottom: 4%;
   }
-  #contact .fittextjs .s-header-one {
+  .pages #contact .fittextjs .s-header-one {
     width: 49%;
     height: auto;
     margin-bottom: 2.7%;
     margin-right: -8px;
   }
-  #contact .fittextjs .s-header-two {
+  .pages #contact .fittextjs .s-header-two {
     width: 100%;
     height: auto;
     font-size: .96em;
   }
-  #contact .fittextjs .sub-header {
+  .pages #contact .fittextjs .sub-header {
     width: 44%;
     margin-top: -2%;
     margin-right: 4%;
   }
-  #contact .fittextjs hr {
+  .pages #contact .fittextjs hr {
     margin-bottom: 3%;
   }
-  #contact .fittextjs p {
+  .pages #contact .fittextjs p {
     height: auto;
   }
 }
+
+
+
+
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////// MAX WIDTH 480px //// */
@@ -145,10 +150,6 @@
   h1 {
     font-size: 0.88em;
   }
-  .header_hr {
-    width: 15%;
-    margin-top: 2%;
-  }
   .wrapper > *.left {
     margin-left: 2%;
   }
@@ -159,39 +160,86 @@
     text-align: center;
     padding: 0 5px;
   }
-
-  #pages .fittextjs {
+  #pages .page .fittextjs {
     float: none;
     width: 95%;
     margin: 0 auto;
-    padding: 12% 0 0;
+    padding: 12% 0;
     text-align: center;
   }
-  #pages .fittextjs h1 {
+  #pages .page .fittextjs h1 {
     margin-bottom: 4%;
     text-align: center;
     line-height: 1;
   } 
+  #pages .page .fittextjs .header_hr {
+    width: 15%;
+    margin-top: 2%;
+  }
+
+  /* ******************************** */
+  /* *************************** GRID */
+  .tiles {
+    margin: 0 2px 11%;
+    padding-top: 8%;
+  }
+  .tiles .tile, 
+  .tiles .tile a, 
+  .tiles img, 
+  .tiles .details-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  .tiles .thumb {
+    width: 85%;
+    transition: transform 0.4s;
+    margin: auto;
+  }
+  /* modifiy hover effect to center img */
+  .tiles .tile:hover img,
+  .no-touch .tiles .tile:hover img, 
+  .tiles .tile.cs-hover img {
+    transform: translate(0, -50px) scale(0.7); 
+  }
+  .tiles .details {
+    width: 100%;
+    text-align: center;
+  }
+  .tiles .details-wrapper h3 {
+    font-size: .75em;
+    text-align: center;
+  }
+  .tiles .details-wrapper p {
+    margin-top: 1%;
+    font-size: .5em;
+    line-height: .9;
+    margin-bottom: -3%;
+  }
+  .tiles .details-wrapper span {
+    font-size: .55em;
+  }
 
   /* ******************************************** */
   /* ******************************** MAIN HEADER */
   
   /* center logo (smaller) and menu */
   
-  #main-header {
+  .main_header {
     text-align: center;
   }
   /* ******************************** */
   /* *************************** LOGO */
-  #logo.big {
+  /* needs id to override */
+  #logo.logo_big {
     display: block;
     float: none;
     width: 25%;
     margin: 2.5% auto;
   }
 
-  #logo.small {
-    margin: 4%;
+  #logo.logo_small {
+    margin: 4% auto;
+    float: none;
   }
 
   /* ******************************** */
@@ -209,8 +257,7 @@
   /* ******************************** */
   /* ***************** MENU COLLAPSED */
   #collapsed-menu {
-    margin-top: 10%;
-    margin-right: 10%;
+    display: none;
   }
 
   /* ******************************** */
@@ -223,12 +270,12 @@
   /* ******************************** */
   /* *************************** HOME */
   #home .fittextjs {
-    top: 25vh;
+  /*  top: 25vh;*/
   }
-  #home .fittextjs span {
+  .pages #home .fittextjs span {
     float: none;
   }
-  #home .sub-header {
+  .pages #home .sub-header {
     float: none;
     width: 100%;
     margin: auto;
@@ -240,96 +287,56 @@
   }
   /* ******************************** */
   /* *************************** WORK */
-  #work .fittextjs h1 { 
+  .pages #work .fittextjs h1 { 
     font-size: .78em;
   }
-  #portfolio {
-    margin: 0 2px 11%;
-    padding-top: 8%;
-  }
-  #portfolio .tile, 
-  #portfolio .tile a, 
-  #portfolio img, 
-  #portfolio .details-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-  #portfolio .thumb {
-    width: 85%;
-    transition: transform 0.4s;
-    margin: auto;
-  }
-  #portfolio .tile:hover img,
-  .no-touch #portfolio .tile:hover img, 
-  #portfolio .tile.cs-hover img {
-    transform: translate(0, -50px) scale(0.7); 
-  }
-  #portfolio .details {
-    width: 100%;
-    text-align: center;
-  }
-  #portfolio .details-wrapper h3 {
-    font-size: ;
-    text-align: center;
-  }
-  #portfolio .details-wrapper p {
-    margin-top: 1%;
-    font-size: .5em;
-    line-height: .9;
-  }
-  #portfolio .details-wrapper span {
-    font-size: .55em;
-  }
+  
   
   /* ******************************** */
   /* ************************** ABOUT */
-  #about .content {
+  .pages #about .content {
     margin-right: 0;
     margin-left: 0;
     padding-left: 0;
     padding-right: 0;
   }
-  #about .content article {
+  .pages #about .content article {
     width: 70%; 
     margin: 36px auto;
   }
-  #about .content article:first-child,
-  #about .content article:last-child {
+  .pages #about .content article:first-child,
+  .pages #about .content article:last-child {
     float: none;
   }
   
   /* ******************************** */
   /* ************************ CONTACT */
-  #contact {
-    /* = total - header - footer */
-    min-height: calc(100vh - 111px - 100px);
-  }
-  #contact .fittextjs .sub-header {
+  .pages #contact .fittextjs .sub-header {
     width: 76%;
   }
-  #contact .fittextjs .s-header-one {
+  .pages #contact .fittextjs .s-header-one {
     display: inline-block;
     float: none;
     width: 100%;
     text-align: right;
     font-size: 2em;
   }
-  #contact .fittextjs .s-header-two {
+  .pages #contact .fittextjs .s-header-two {
     display: inline-block;
     float: none;
     text-align: right;
     font-size: 1.05em;
   }
-  #contact .fittextjs .sub-header {
+  .pages #contact .fittextjs .sub-header {
     float: none;
     width: 93%;
     margin: auto;
   }
 
-  #contact .fittextjs hr {
+  .pages #contact .fittextjs hr {
     margin-top: 0;
   }
-  #contact .fittextjs p {
+  .pages #contact .fittextjs p {
     font-size: .5em;
   }
 
@@ -348,8 +355,8 @@
   footer.wrapper .right {
     display: inline-block;
     float: none;
-    margin: 4% 0 2% 0;
-    padding: 0;
+    margin: 0 0 2%;
+    padding: 4% 0 0;
   }
   footer .centered {
     position: static;
@@ -357,17 +364,16 @@
   }
 }
 
+
+
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////?///////// MAX WIDTH 350px //// */
 @media screen and (max-width: 350px) {
   /* ******************************** */
   /* *************************** LOGO */
   /* center logo and one size only */
-  #logo.big {
-    display: block;
-    float: none;
+  #logo.logo_big {
     width: 29%;
-    margin: 2.5% auto;
   }
 
   /* ******************************** */
@@ -392,8 +398,4 @@
     word-wrap: break-word;
   }
 }
-
-
-
-
 

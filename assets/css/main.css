@@ -1,88 +1,125 @@
-/* OPTIMIZADO x width 1350px = desigh */
+/* OPTIMIZADO x width 1350px = design */
 /* responsive.css x resto widths */
 
-/* ******************************************** */
+/* ********************** ENJOY MONDAYS PATTERN */
 /* **************** BACKGROUNDS AND FONT COLORS */
-/*.light_gray_bg {*/
+/* LIGHT GRAY */
 .bg-1 {
   background-color: #E9E8E3;
 }
-/*.dark_gray_bg {*/
+/* DARK GRAY */
 .bg-2 {
   background-color: #3A3A3A;
 }
-/*.dark_blue_bg {*/
+/* DARK BLUE */
 .bg-3 {
   background-color: #363B48;
 }
-/*.fuxsia_bg {*/
+/* FUXSIA */
 .bg-4 {
   background-color: #DF3F54;
 }
-/*.light_fuxsia_bg {*/
+/* LIGHT FUXSIA */
 .bg-5 {
   background-color: #F17C71;
 }
+/* BLACK */
+.bg-black {
+  background-color: #000;
+}
 
-/*.light_gray_color {*/
+/* ******************************** FONT COLORS */
+
+/* LIGHT GRAY */
 .color-1 {
   color: #E9E8E3;
 }
-/*.dark_gray_color {*/
+/* DARK GRAY */
 .color-2 {
   color: #393939;
 }
-/*.dark_blue_color {*/
+/* DARK BLUE */
 .color-3 {
   color: #363B48;
 }
-/*.fuxsia_color {*/
+/* FUXSIA */
 .color-4 {
   color: #DF3F54;
 }
-/*.light_fuxsia_color {*/
+/* LIGHT FUXSIA */
 .color-5 {
   color: #F17C71;
 }
 
+/* ***************************** FONTS FAMILIES */
+/* 
+/* lato light (100)
+/* lato regular (400)
+/* lato bold (700)
+/* lato black (900)
+/* dosis semibold (600)
+ */
+
+/* EVERYWHERE EXCEPT HEADERS AND LINKS */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 130px;
+  font-weight: 600;
+}
+
 /* ******************************************** */
-/* ********************************* FIX VALUES */
-/* used for main header sizes */
-.height_1 {
+/* ******************** SCROLL TO PAGE TEMPLATE */
+
+/* ************************** SET MEASURES HERE */
+
+/* ****************************** HEADER */
+
+/* ***************** BIG */
+.header_height_big .main_header,
+.header_height_big .fixed_header_aux {
   height: 139px;
 }
-.height_2 {
-  height: 111px;
-} 
-/* used in footer */
-.height_3 {
-  height: 100px;
-}
-/* where used also */
-.height_1 .fullheight {
-  /* = total - header height */
-  height: calc(100vh - 139px);
-}
-.height_2 .fullheight {
-  /* = total - header height */
-  height: calc(100vh - 111px);	
-}
-
-.height_1 .page {
-  /* = total - header height */
+.header_height_big .fillheight {
+  /* calc(100vh - x); x = .header_height_big .main_header height */
   min-height: calc(100vh - 139px);
 }
-.height_2 .page {
-  min-height: calc(100vh - 111px);
+.header_height_big .fillheight:nth-last-child(2) {
+  /* calc(100vh - x - y); x = .header_height_big .main_header height; y = footer height */
+  min-height: calc(100vh - 139px - 100px);
 }
-
-/* used for logo sizes */
-.small {
+/* *************** SMALL */
+.header_height_small .main_header,
+.header_height_small .fixed_header_aux {
+  height: 111px;
+} 
+.header_height_small .fillheight {
+  /* calc(100vh - x); x = .header_height_small .main_header height */
+  min-height: calc(100vh - 111px);	
+}
+.header_height_small .fillheight:nth-last-child(2) {
+  /* calc(100vh - x - y); x = .header_height_small .main_header height; y = footer height */
+  min-height: calc(100vh - 111px - 100px);
+}
+/* ******************************** LOGO */
+.logo_small {
   width: 111px;
 }
-.big {
+.logo_big {
   width: 149px;
 }
+
+/* ****************************** FOOTER */
+.footer_height {
+  height: 100px;
+}
+
+
 /* ******************************************** */
 /* *********************************** DEFAULTS */
 .ui-loader {
@@ -93,31 +130,22 @@
   padding: 0;
   -moz-box-sizing: border-box;
 }
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  color: black;
-}
 a {
   text-decoration: none;
 }
 ul, li {
   list-style: none;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dosis', sans-serif;
-  font-size: 130px;
-  font-weight: 600;
-  text-align: right;
-}
 h1 {
+  text-align: right;
   text-transform: uppercase;
 }
-p {
-  font-size: .2em;
+img {
+  width: 100%;
+  height: auto;
 }
 /* ******************************************** */
-/* ************************************ CLASSES */
+/* **************************** GENERAL CLASSES */
 .left {
   float: left;
 }
@@ -134,18 +162,26 @@ p {
 .hidden {
   display: none;
 }
-.fullwidth {
+.fillwidth {
   width: 100%;
   max-width: 1350px;
 }
-.fullheight {
+.fillheight {
   min-height: 100%;
+}
+.fullheight {
+  height: 100vh;
 }
 .centered {
   position: relative;
   top: 50%;
+  margin-top: 0 !important; /* use padding if needed */
   transform: translateY(-50%);
 }
+/* to override centered, use 
+  transform: none;
+  position: static; -optional-
+*/
 .top: {
   top: 0;
 }
@@ -156,17 +192,9 @@ p {
   opacity: 0;
   font-size: 0;
 }
-
-/* ******************************************** */
-/* ******************************** BASE STYLES */
-
-/* ************ fonts */
-/* lato light (100)
-/* lato regular (400)
-/* lato bold (700)
-/* lato black (900)
-/* dosis semibold (600)
- */
+.img-wrapper {
+  height: auto;
+}
 
 /* ******************************************** */
 /* ******************************** BASE LAYOUT */
@@ -202,7 +230,7 @@ body {
   max-height: 100%;
 }
 .page .sub-header {
-	text-align: center;
+  text-align: center;
 }
 .page .header_hr {
   border: 0;
@@ -212,19 +240,86 @@ body {
   clear: both;
 }
 /* override */
-#pages {
+.pages {
   height: 100%;
 }
-/* ******************************************** */
-/* ************************************** COVER */
-#cover {
-  display: none;
-  height: 100vh;
-  background-color: black;
+
+/* ******************************** */
+/* *************************** GRID */
+.tiles {
+  margin-bottom: 127px;
+  padding-left: 115px;
+  padding-right: 115px;
 }
+.tiles .tile {
+  display: inline-block;
+  width: 465px;
+  height: 385px;
+  margin-bottom: 34px;
+}
+.tiles .tile:nth-child(odd) {
+  float: left;
+}
+.tiles .tile:nth-child(even) {
+  float: right;
+}
+.tiles .tile:hover {
+  cursor: pointer;
+}
+.tiles .tile a {
+  display: block;
+  position: relative;
+  height: auto;
+  /* remove extra height otherwise adds to tile */
+  /* define font-size again other than a */
+  font-size: 0;
+}
+/* img hover animation */
+.tiles img {
+  transition: transform 0.4s;
+}
+.no-touch .tiles .tile:hover img, 
+.tiles .tile.cs-hover img {
+  transform:  translate(-70px, -56px) scale(0.7);
+}
+/* details */
+.tiles .details-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* redefine font-size put to 0 on parent a */
+  font-size: 30px;
+  color: white;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tiles .details-wrapper:hover {
+  opacity: 1;
+}
+.tiles .details-wrapper h3 {
+  font-size: 1em;
+  /* override h3 */
+  text-align: left;
+}
+.tiles .details-wrapper .details {
+  position: absolute;
+  bottom: 0;
+}
+.tiles .details-wrapper p {
+  font-size: 0.5em;
+}
+.tiles .details-wrapper span {
+  font-size: .75em;
+}
+
 
 /* ******************************************** */
 /* **************** RESPONSIVE HEADLINES CONFIG */
+/* ********************* for width => 1350px !! */
+
 h1 {
   line-height: 1.33;
   font-size: inherit;
@@ -238,55 +333,55 @@ p {
 #home .centered {
   transform: none;
 }
-#home .responsive_headline {
+#home .fittextjs {
   width: 560px;
   height: 332px;
   margin-top: 155px;
   margin-bottom: 144px;
 }
-#home .responsive_headline h1 {
+#home .fittextjs h1 {
   line-height: 1.02;
 }
-#home .responsive_headline p {
+#home .fittextjs p {
   font-size: .156em;
 }  
 
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES WORK */
-#work .responsive_headline {
+#work .fittextjs {
   width: 390px;
   height: 167px;
   margin-top: 68px;
   margin-bottom: 97px;
 }
-#work .responsive_headline h1 {
+#work .fittextjs h1 {
   line-height: .8;
   margin-bottom: 31px;
 }
-#work .responsive_headline hr {
+#work .fittextjs .header_hr {
   margin-bottom: 11px;
 }
-#work .responsive_headline p {
+#work .fittextjs p {
   font-size: .15em;
   line-height: .75;
 }
 
 /* ******************************** */
 /* ***** RESPONSIVE HEADLINES ABOUT */
-#about .responsive_headline {
+#about .fittextjs {
   width: 510px;
   height: 240px;
   margin-top: 167px;
   margin-bottom: 184px;
 }
-#about .responsive_headline h1 {
+#about .fittextjs h1 {
   line-height: .69;
   margin-bottom: 40px;
 }
-#about .responsive_headline hr {
+#about .fittextjs .header_hr {
   margin-bottom: 11px;
 }
-#about .responsive_headline p {
+#about .fittextjs p {
   padding: 0 12px;
   font-size: .135em;
   line-height: 1.4;
@@ -297,18 +392,18 @@ p {
 #contact .centered {
   transform: none;
 }
-#contact .responsive_headline {
+#contact .fittextjs {
   width: 1202px;
   height: 353px;
   padding-top: 166px;
   padding-bottom: 250px;
 }
-#contact .responsive_headline h1 {
+#contact .fittextjs h1 {
   display: inline-block;
   line-height: 1;
   margin-bottom: 19px;
 }
-#contact .responsive_headline .s-header-one {
+#contact .fittextjs .s-header-one {
   width: 569px;
   height: 97px;
   margin-bottom: 33px;
@@ -317,22 +412,22 @@ p {
   line-height: 0.75;
   letter-spacing: 4px;
 }
-#contact .responsive_headline .s-header-two {
+#contact .fittextjs .s-header-two {
   width: 1202px;
   height: 90px;
   font-size: .98em;
   line-height: 0.75;
   letter-spacing: 1.2px;
 }
-#contact .responsive_headline .sub-header {
+#contact .fittextjs .sub-header {
   width: 486px;
   margin-top: -23px;
   margin-right: 41px;
 }
-#contact .responsive_headline hr {
+#contact .fittextjs .header_hr {
   margin-bottom: 17px;
 }
-#contact .responsive_headline p {
+#contact .fittextjs p {
   height: 97px;
   font-size: .165em;
   line-height: 1.5;
@@ -346,17 +441,12 @@ p {
 /* *************************** LOGO */
 #logo .img-wrapper {
   display: block;
-  height: auto;
 }
-#logo.big {
+.logo_big {
   margin-top: 40px;
 }
-#logo.small {
+.logo_small {
   margin-top: 18px; 
-}
-#logo img {
-  width: 100%;
-  height: auto;
 }
 
 /* ******************************** */
@@ -430,79 +520,8 @@ p {
   position: relative;
   left: 16px;
   top: 11px;
+  width: auto;
   height: 0.456em;
-}
-
-/* ******************************** */
-/* *************** WORK - PORTFOLIO */
-#portfolio {
-  margin-bottom: 127px;
-  padding-left: 115px;
-  padding-right: 115px;
-}
-#portfolio .tile {
-  display: inline-block;
-  width: 465px;
-  height: 385px;
-  margin-bottom: 34px;
-}
-#portfolio .tile:nth-child(odd) {
-  float: left;
-}
-#portfolio .tile:nth-child(even) {
-  float: right;
-}
-#portfolio .tile:hover {
-  cursor: pointer;
-}
-#portfolio .tile a {
-  display: block;
-  position: relative;
-  height: auto;
-  /* remove extra height otherwise adds to tile */
-  /* define font-size again other than a */
-  font-size: 0;
-}
-/* img hover animation */
-#portfolio img {
-  width: 100%;
-  transition: transform 0.4s;
-}
-.no-touch #portfolio .tile:hover img, 
-#portfolio .tile.cs-hover img {
-  transform:  translate(-70px, -56px) scale(0.7);
-}
-/* details */
-#portfolio .details-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  /* redefine font-size put to 0 on parent a */
-  font-size: 30px;
-  color: white;
-  text-align: left;
-  opacity: 0;
-  transition: opacity 1s;
-}
-#portfolio .details-wrapper:hover {
-  opacity: 1;
-}
-#portfolio .details-wrapper h3 {
-  font-size: 1em;
-  /* override h3 */
-  text-align: left;
-}
-#portfolio .details-wrapper .details {
-  position: absolute;
-  bottom: 0;
-}
-#portfolio .details-wrapper p {
-  font-size: 0.5em;
-}
-#portfolio .details-wrapper span {
-  font-size: .75em;
 }
 
 /* ******************************** */
@@ -529,9 +548,6 @@ p {
   height: 248px;
   margin: 0 auto 24px;
 }
-#about .content .img-wrapper img {
-  width: 100%;
-}
 #about .content hr {
   width: 50px;
   margin: 0 auto 14px;
@@ -551,10 +567,6 @@ p {
 
 /* ******************************************** */
 /* ************************************* FOOTER */
-footer {
-  height: 100px;
-  width: 100%;
-}
 footer p {
   padding-left: 7px;
   font-weight: 700;
@@ -576,16 +588,13 @@ footer a {
   width: 32px;
   height: 32px;
 }
-#social a img {
-  width: 100%;
-}
 #social li:hover {
   cursor: pointer;
 }
 
 /* ******************************************** */
 /* **************************** PROJECT gallery */
-#slideshow {
+.view-2 {
   /* initial state */
   display: none;
 }
