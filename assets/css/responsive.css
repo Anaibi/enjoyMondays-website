@@ -23,7 +23,7 @@
   }
   .tiles .tile,
   .tiles .tile a,
-  .tiles img,
+  .tiles .tile img,
   .tiles .details-wrapper {
     width: 34vw;
     height: 100%;
@@ -53,7 +53,7 @@
   #work.page .fittextjs {
     width: 31%;
     height: auto;
-    margin-top: 5%;
+    padding-top: 5%;
     margin-bottom: 8%;
   }
   #work.page .fittextjs h1 {
@@ -68,7 +68,7 @@
   #about .fittextjs {
     width: 41%;
     height: auto;
-    margin-top: 14%;
+    padding-top: 14%;
     margin-bottom: 15%;
   }
   #about.page .fittextjs h1 {
@@ -136,8 +136,12 @@
 
 
 
+/* ////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////// MAX WIDTH 650px //// */
+@media screen and (max-width: 650px) {
 
 
+}
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////// MAX WIDTH 480px //// */
@@ -185,24 +189,25 @@
   }
   .tiles .tile, 
   .tiles .tile a, 
-  .tiles img, 
+  .tiles .tile img, 
   .tiles .details-wrapper {
     width: 100%;
     height: 100%;
   }
-  .tiles .thumb {
-    width: 85%;
-    transition: transform 0.4s;
-    margin: auto;
-  }
   /* modifiy hover effect to center img */
+ /* .tiles.all-left .tile:hover img,
   .no-touch .tiles.all-left .tile:hover img, 
   .tiles.all-left .tile.cs-hover img,
-  .no-touch .tiles.left-right .tile:nth-child(even):hover img, 
+  .tiles.all-left .tile:nth-child(even):hover img,
+  .no-touch .tiles.left-right .tile:nth-child(even):hover img:hover, 
   .tiles.left-right .tile.cs-hover:nth-child(even) img,
+  .tiles.all-left .tile:nth-child(odd):hover img,
   .no-touch .tiles.left-right .tile:nth-child(odd):hover img, 
   .tiles.left-right .tile.cs-hover:nth-child(odd) img {
-    transform: translate(0, -50px) scale(0.7);
+    transform: translate(0 , -50px) scale(0.7);
+  } */
+  #emb_container .tile:hover img {
+    transform: translate(0 , -50px) scale(0.7);
   }
   .tiles .details {
     width: 100%;
@@ -211,16 +216,19 @@
   .tiles .details-wrapper .title {
     font-size: .75em;
   }
-  .tiles.all-left .details-wrapper .title,
+  /*.tiles.all-left .details-wrapper .title,
   .tiles.left-right .tile:nth-child(even) .title,
   .tiles.left-right .tile:nth-child(odd) .title {
+    text-align: center;
+  }*/
+  #emb_container .tile .title {
     text-align: center;
   }
   .tiles .details-wrapper p {
     margin-top: 1%;
     font-size: .5em;
     line-height: 1.1;
-    margin-bottom: -3%;
+   /* margin-bottom: -3%;*/
   }
   .tiles .details-wrapper span {
     font-size: .55em;

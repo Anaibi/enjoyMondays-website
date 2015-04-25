@@ -60,15 +60,16 @@
 /* dosis semibold (600)
  */
 
-/* EVERYWHERE EXCEPT HEADERS AND LINKS */
+/* EVERYWHERE EXCEPT HEADERS */
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 100;
   color: black;
 }
-
+/* HEADERS */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Dosis', sans-serif;
+  /* default font-size, rescales with fittextjs */
   font-size: 130px;
   font-weight: 600;
 }
@@ -128,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 * {
   margin: 0;
   padding: 0;
-  -moz-box-sizing: border-box;
+ /* -moz-box-sizing: border-box; */ /* if on expanded menu doesn't show? */
 }
 a {
   text-decoration: none;
@@ -247,7 +248,7 @@ body {
 /* ******************************** */
 /* *************************** GRID */
 .tiles {
-  margin-bottom: 127px;
+  padding-bottom: 127px;
   padding-left: 115px;
   padding-right: 115px;
 }
@@ -277,22 +278,36 @@ body {
   font-size: 0;
 }
 /* *** img hover animation *** */
-.tiles img {
+.tiles .tile img {
+  display: inline-block;
+  -webkit-transition: transform .4s;
   transition: transform 0.4s;
 }
 /* all-left */
-.no-touch .tiles.all-left .tile:hover img, 
-.tiles.all-left .tile.cs-hover img {
-  transform:  translate(-70px, -56px) scale(0.7);
+.all-left .tile:hover img,
+.no-touch .all-left .tile:hover img, 
+.all-left .tile.cs-hover img {
+  -webkit-transform: translate(-70px, -56px) scale(0.7);
+  -moz-transform: translate(-70px, -56px) scale(0.7);
+  -o-transform: translate(-70px, -56px) scale(0.7);
+  transform: translate(-70px, -56px) scale(0.7);
 }
 /* */
 /* left-right */
-.no-touch .tiles.left-right .tile:nth-child(even):hover img, 
-.tiles.left-right .tile.cs-hover:nth-child(even) img {
+.left-right .tile:nth-child(even):hover img, 
+.no-touch .left-right .tile:nth-child(even):hover img, 
+.left-right .tile.cs-hover:nth-child(even) img {
+  -webkit-transform: translate(70px, -56px) scale(0.7);
+  -moz-transform: translate(70px, -56px) scale(0.7);
+  -o-transform: translate(70px, -56px) scale(0.7);
   transform:  translate(70px, -56px) scale(0.7);
 }
-.no-touch .tiles.left-right .tile:nth-child(odd):hover img, 
-.tiles.left-right .tile.cs-hover:nth-child(odd) img {
+.left-right .tile:nth-child(odd):hover img, 
+.no-touch .left-right .tile:nth-child(odd):hover img, 
+.left-right .tile.cs-hover:nth-child(odd) img {
+  -webkit-transform: translate(-70px, -56px) scale(0.7);
+  -moz-transform: translate(-70px, -56px) scale(0.7);
+  -o-transform: translate(-70px, -56px) scale(0.7);
   transform:  translate(-70px, -56px) scale(0.7);
 }
 /* */
@@ -362,7 +377,7 @@ body {
 
 h1 {
   line-height: 1.33;
-  font-size: inherit;
+  font-size: .97em; /* mozilla fix */
 }
 p {
 	font-size: .2em;
@@ -376,7 +391,7 @@ p {
 #home .fittextjs {
   width: 560px;
   height: 332px;
-  margin-top: 155px;
+  padding-top: 155px;
   margin-bottom: 144px;
 }
 #home .fittextjs h1 {
@@ -391,7 +406,7 @@ p {
 #work .fittextjs {
   width: 390px;
   height: 167px;
-  margin-top: 68px;
+  padding-top: 68px;
   margin-bottom: 97px;
 }
 #work .fittextjs h1 {
@@ -411,7 +426,7 @@ p {
 #about .fittextjs {
   width: 510px;
   height: 240px;
-  margin-top: 167px;
+  padding-top: 167px;
   margin-bottom: 184px;
 }
 #about .fittextjs h1 {
@@ -569,7 +584,7 @@ p {
 #about .content {
   padding-left: 114px;
   padding-right: 101px;
-  margin-bottom: 157px;
+  padding-bottom: 157px;
   text-align: center;
 }
 #about .content article {
