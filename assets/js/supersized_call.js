@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 		// attach project preview and description to page ready onload:
 		if (project.e != true) {
-		  link = '<li class="tile"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="details-wrapper"><div class="details"><h3 class="title">'+project.t+'</h3><p>'+project.d+'</p><span>view project</span></div></div></a></li>';
+		  link = '<li class="tile"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="details-wrapper"><div class="details"><h3 class="title">'+project.t+'</h3><p>'+project.d+'</p></div></div></a></li>';
 		  $('#emb_container ul.emb_gallery').append(link);
     }
     //insert into slides array

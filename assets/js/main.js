@@ -31,14 +31,15 @@ $(function() {
       
       // refresch waypoints TODO
       Waypoint.refreshAll();
-      doWaypoints(); // check if needed
+     // doWaypoints(); // check if needed
 
       if (!inSameWidthGap(ww, marks)) { 
         // refresh header
-        scrollToPosition('#home');
-        refreshHeader(); 
-      }
-            
+        scrollToPosition('#home'); 
+        setTimeout(function() {
+          refreshHeader();
+        }, 350); 
+      }     
     }, 150);
 
   });
@@ -95,7 +96,7 @@ $(function() {
 	  	  	$pages.removeClass('.active-link');
 	  	  	updateLinks($(this.element).attr('id'));
 	  	  	// if scrolling from home
-	  	  	if (isActiveSection('work')) { console.log('act work');
+	  	  	if (isActiveSection('work')) { 
 	  	  	  animateHeader(direction); 
 	  	  	} 
 	  	  }
@@ -114,7 +115,7 @@ $(function() {
 	  	    $pages.removeClass('.active-link'); 
 	  	    updateLinks($(this.element).attr('id')); 
 	  	    // if scrolling from home
-	  	  	if (isActiveSection('home')) { console.log('act home');
+	  	  	if (isActiveSection('home')) { 
 	  	  	  animateHeader(direction); 
 	  	  	} 
 	  	  }	  	 
@@ -128,13 +129,13 @@ $(function() {
   //////////////////////////////////////////////// END MENU FUNCTIONALITY
 
   ///////////////////////////////////////////////////////// animateHeader
-  function animateHeader(direction) { console.log('ah ' + direction);
-  	
-  	// logo size only changes over 325px width
-  	if (ww.actual > marks[0]) { console.log('switch logo');
-      // switch logos
-      $('#logo').toggleClass('logo_big logo_small');
-    }
+  function animateHeader(direction) { 
+
+    // switch logos
+    $('#logo').toggleClass('logo_big logo_small');
+
+    // switch header heights
+	$('.view-1').toggleClass('header_height_big header_height_small');
 
   	// menu collapsed/expanded only changes over 480 width
   	if (ww.actual > marks[1]) {
@@ -149,39 +150,30 @@ $(function() {
   	    });
       }
     }
-    
-    if (ww.actual < marks[0] || ww.actual > marks[1]) {
-      // switch header heights
-	  $('.view-1').toggleClass('header_height_big header_height_small');
-	}
   }
   //////////////////////////////////////////////////////END animateHeader
  
   ///////////////////////////////////////////////////////// refreshHeader
-  function refreshHeader() { console.log('rh');
+  function refreshHeader() { 
     // home menu is always expanded and header big
     $('#collapsed-menu').hide(function() {
   	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	});
-    $('.view-1').addClass('header_height_big').removeClass('header_height_small')
+    $('.view-1').addClass('header_height_big').removeClass('header_height_small');
   }
   //////////////////////////////////////////////////////END refreshHeader
 
 
   ////////////////////////////////////////////////////// HELPER FUNCTIONS
   // scroll to pages position
-  function scrollToPosition(page) { 
-    if (page === "#contact") { 
-      scrollToPosition('footer');
-    } else {	
+  function scrollToPosition(page) { 	
 	  $('body, html')
 	    .stop()
 	    .animate({
 	  	  scrollTop: $(page).offset().top - $('.fixed_header_aux').height()
-	    }, 750, function(){ 
+	    }, 250, function(){ 
 	    $('html, body').clearQueue();
    	  });
-	}
   }
 
   // update active link on main menu nav
@@ -216,8 +208,7 @@ $(function() {
   	var a = false;
     if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
     	a = true;
-    }
-    console.log('a ' + a);
+    } 
     return a;
   }
   ////////////////////////////////////////////////// END HELPER FUNCTIONS

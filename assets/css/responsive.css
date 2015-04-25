@@ -103,7 +103,7 @@
   /* *** RESPONSIVE HEADLINES CONTACT */
   #contact .fittextjs {
     width: 88%;
-    height: 353px;
+    height: auto;
     padding-top: 13%;
     padding-bottom: 20%;
   }
@@ -168,7 +168,7 @@
     text-align: center;
   }
   #pages .page .fittextjs h1 {
-    margin-bottom: 4%;
+    margin-bottom: 0;
     text-align: center;
     line-height: 1;
   } 
@@ -196,23 +196,30 @@
     margin: auto;
   }
   /* modifiy hover effect to center img */
-  .tiles .tile:hover img,
-  .no-touch .tiles .tile:hover img, 
-  .tiles .tile.cs-hover img {
-    transform: translate(0, -50px) scale(0.7); 
+  .no-touch .tiles.all-left .tile:hover img, 
+  .tiles.all-left .tile.cs-hover img,
+  .no-touch .tiles.left-right .tile:nth-child(even):hover img, 
+  .tiles.left-right .tile.cs-hover:nth-child(even) img,
+  .no-touch .tiles.left-right .tile:nth-child(odd):hover img, 
+  .tiles.left-right .tile.cs-hover:nth-child(odd) img {
+    transform: translate(0, -50px) scale(0.7);
   }
   .tiles .details {
     width: 100%;
     text-align: center;
   }
-  .tiles .details-wrapper h3 {
+  .tiles .details-wrapper .title {
     font-size: .75em;
+  }
+  .tiles.all-left .details-wrapper .title,
+  .tiles.left-right .tile:nth-child(even) .title,
+  .tiles.left-right .tile:nth-child(odd) .title {
     text-align: center;
   }
   .tiles .details-wrapper p {
     margin-top: 1%;
     font-size: .5em;
-    line-height: .9;
+    line-height: 1.1;
     margin-bottom: -3%;
   }
   .tiles .details-wrapper span {
@@ -222,24 +229,28 @@
   /* ******************************************** */
   /* ******************************** MAIN HEADER */
   
-  /* center logo (smaller) and menu */
-  
+  /* stack and center logo and menu */
   .main_header {
     text-align: center;
   }
+  .header_height_small .main_header,
+  .header_height_big .main_header {
+    height: auto;
+    padding-bottom: 3%;
+  }
+
   /* ******************************** */
   /* *************************** LOGO */
   /* needs id to override */
   #logo.logo_big {
     display: block;
     float: none;
-    width: 25%;
     margin: 2.5% auto;
   }
 
   #logo.logo_small {
-    margin: 4% auto;
     float: none;
+    margin: 4% auto;
   }
 
   /* ******************************** */
@@ -273,6 +284,7 @@
   /*  top: 25vh;*/
   }
   .pages #home .fittextjs span {
+    display: block;
     float: none;
   }
   .pages #home .sub-header {
@@ -294,6 +306,12 @@
   
   /* ******************************** */
   /* ************************** ABOUT */
+  #about.page .fittextjs p {
+    font-size: .18em;
+  }
+  #about.page .fittextjs p br {
+    display: none;
+  }
   .pages #about .content {
     margin-right: 0;
     margin-left: 0;
@@ -324,6 +342,7 @@
   .pages #contact .fittextjs .s-header-two {
     display: inline-block;
     float: none;
+    margin-right: 0;
     text-align: right;
     font-size: 1.05em;
   }
@@ -374,6 +393,9 @@
   /* center logo and one size only */
   #logo.logo_big {
     width: 29%;
+  }
+  #logo.logo_small {
+    width: 25%;
   }
 
   /* ******************************** */
