@@ -42,10 +42,11 @@
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES HOME */
   #home .fittextjs {
-    width: 40%;
+    width: 50%;
     height: auto;
-  /*  margin-top: 20%;*/
+    padding-top: 16%;
     margin-bottom: 0;
+    transform: none;
   }
 
   /* ******************************** */
@@ -85,7 +86,7 @@
   #about .content {
     padding-left: 9%;
     padding-right: 8%;
-    margin-bottom: 12%;
+    padding-bottom: 12%;
   }
   #about .content article {
     width: 28%;
@@ -139,8 +140,155 @@
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////// MAX WIDTH 650px //// */
 @media screen and (max-width: 650px) {
+  /* ******************************************** */
+  /* ******************************** BASE LAYOUT */
+  body {
+    font-size: 17px;
+  }
+  h1 {
+    /*font-size: 0.88em;*/
+  }
+  .wrapper > *.left {
+    margin-left: 2%;
+  }
+  .wrapper > *.right {
+    margin-right: 2%;
+  }
+  .page {
+    text-align: center;
+    padding: 0 5px;
+  }
+  #pages .page .fittextjs h1 {
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1;
+  } 
+  #pages .page .fittextjs .header_hr {
+    width: 15%;
+    margin-top: 2%;
+  }
+  /* ******************************************** */
+  /* ******************************** MAIN HEADER */
+  .header_height_small .main_header,
+  .header_height_big .main_header {
+    height: auto;
+    padding-bottom: 1%;
+  }
 
+  /* ******************************** */
+  /* *************************** LOGO */
+  /* needs id to override */
+  #logo.logo_big {
+    width: 25%;
+  }
 
+  #logo.logo_small {
+    width: 20%;
+  }
+
+  /* ******************************** */
+  /* *********************** MENU NAV */
+  #header-nav {
+    /*display: inline-block;*/
+    font-size: 0.8em;
+  }
+  #header-nav li:first-child {
+    margin-left: 0;
+  }
+
+  /* ******************************** */
+  /* ****** RESPONSIVE HEADLINES HOME */
+  #home .fittextjs {
+    width: 70%;
+  }
+
+  /* ******************************** */
+  /* ****** RESPONSIVE HEADLINES WORK */
+  #work.page .fittextjs {
+    width: 37%;
+    height: auto;
+    padding-top: 5%;
+    margin-bottom: 8%;
+  }
+  #work.page .fittextjs h1 {
+    margin-bottom: 8%;
+  }
+  #work.page .fittextjs hr {
+    margin-bottom: 3%;
+  }  
+ .pages #work .fittextjs p { 
+    font-size: .2em;
+  }
+
+  /* ******************************** */
+  /* *************************** GRID */
+  .tiles {
+    margin: 0 2px 11%;
+    padding: 8% 0;
+  }
+  .tiles .tile {
+    width: 47%;
+    margin-bottom: 5%;
+  }
+  .tiles .tile img {
+    width: 100%;
+  }
+  .tiles .tile a, 
+  .tiles .details-wrapper {
+    width: auto;
+  }
+  .tiles .details-wrapper {
+    font-size: 22px;
+  }
+  #emb_container .tile:hover img {
+    transform: translate(0, -33px) scale(0.55);;
+  }
+
+  /* ******************************** */
+  /* ************************** ABOUT */
+  #about .fittextjs {
+    width: 50%;
+  }
+  #about.page .fittextjs p {
+    font-size: .18em;
+  }
+  #about.page .fittextjs p br {
+    display: none;
+  }
+  .pages #about .content {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .pages #about .content article {
+    display: block;
+    float: none;
+    width: 40%; 
+    margin: 12% auto;
+  }
+
+  /* ******************************** */
+  /* ************************ CONTACT */
+  #contact .fittextjs {
+    width: auto;
+    text-align: right;
+  }
+  #contact.page .fittextjs h1 {
+    text-align: right;
+  }
+  .pages #contact .fittextjs .s-header-one {
+    width: auto;
+  }
+  .pages #contact .fittextjs .sub-header {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+  /* ******************************** */
+  /* ************************* FOOTER */
+  footer {
+    font-size: 13px;
+  }
 }
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -264,7 +412,7 @@
   /* ******************************** */
   /* *********************** MENU NAV */
   #header-nav {
-    display: inline-block;
+    /*display: inline-block;*/
     float: none;
     margin: auto;
     font-size: 0.76em;
@@ -310,7 +458,6 @@
   .pages #work .fittextjs h1 { 
     font-size: .78em;
   }
-  
   
   /* ******************************** */
   /* ************************** ABOUT */

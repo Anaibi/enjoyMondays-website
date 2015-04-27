@@ -34,7 +34,7 @@ $(function() {
      // doWaypoints(); // check if needed
 
       if (!inSameWidthGap(ww, marks)) { 
-        // refresh header:
+        // refresh header
         scrollToPosition('#home'); 
         setTimeout(function() {
           refreshHeader();
@@ -142,13 +142,11 @@ $(function() {
       // switch menus
       if (direction === 'down') {
         $('#header-nav').hide(function() {
-          //$('#collapsed-menu').css('display', 'inline-block');
-          $('#collapsed-menu').show();
+          $('#collapsed-menu').css('display', 'inline-block');
         }).addClass('expanded');
       } else {
         $('#collapsed-menu').hide(function() {
-  	  	  //$('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	  	  $('#header-nav').show().removeClass('expanded');
+  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	    });
       }
     }
