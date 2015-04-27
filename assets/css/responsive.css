@@ -17,7 +17,7 @@
   /* ******************************** */
   /* *************************** GRID */
   .tiles {
-    margin-bottom: 11%;
+    padding-bottom: 11%;
     padding-left: 8%;
     padding-right: 8%; 
   }
@@ -45,7 +45,7 @@
     width: 50%;
     height: auto;
     padding-top: 16%;
-    margin-bottom: 0;
+    padding-bottom: 14%;
     transform: none;
   }
 
@@ -55,7 +55,8 @@
     width: 31%;
     height: auto;
     padding-top: 5%;
-    margin-bottom: 8%;
+    padding-bottom: 8%;
+    margin-bottom: 0;
   }
   #work.page .fittextjs h1 {
     margin-bottom: 8%;
@@ -70,7 +71,8 @@
     width: 41%;
     height: auto;
     padding-top: 14%;
-    margin-bottom: 15%;
+    padding-bottom: 15%;
+    margin-bottom: 0;
   }
   #about.page .fittextjs h1 {
     margin-bottom: 8%;
@@ -223,8 +225,7 @@
   /* ******************************** */
   /* *************************** GRID */
   .tiles {
-    margin: 0 2px 11%;
-    padding: 8% 0;
+    padding: 8% 0 11%;
   }
   .tiles .tile {
     width: 47%;
@@ -255,7 +256,7 @@
   #about.page .fittextjs p br {
     display: none;
   }
-  .pages #about .content {
+  #about.page .content {
     margin-right: 0;
     margin-left: 0;
     padding-left: 0;
@@ -331,10 +332,6 @@
 
   /* ******************************** */
   /* *************************** GRID */
-  .tiles {
-    margin: 0 2px 11%;
-    padding: 8% 0;
-  }
   .tiles .tile {
     margin-bottom: 10%;
   }
@@ -505,7 +502,7 @@
     float: none;
     margin-right: 0;
     text-align: right;
-    font-size: 1.05em;
+    font-size: 1em;
   }
   .pages #contact .fittextjs .sub-header {
     float: none;
