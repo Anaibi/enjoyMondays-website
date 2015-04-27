@@ -8,9 +8,6 @@ $(function() {
   var marks = [];
       marks[0] = 325,
       marks[1] = 480;
-
-  // changed mod to global var from inside functions as indicated in 
-  // https://www.codepunker.com/blog/the-basics-of-variable-scope-in-javascript
     
   var resizeTimer;
 
@@ -29,8 +26,8 @@ $(function() {
     resizeTimer = setTimeout(function() {
       // Run code here, resizing has "stopped"
       // get new window sizes
-      window.ww.previous = window.ww.actual; 
-      window.ww.actual = $(window).width(); 
+      ww.previous = ww.actual; 
+      ww.actual = $(window).width(); 
       
       // refresch waypoints TODO
       Waypoint.refreshAll();
