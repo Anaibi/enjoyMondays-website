@@ -28,6 +28,11 @@ $(function() {
       // get new window sizes
       ww.previous = ww.actual; 
       ww.actual = $(window).width(); 
+
+      // if window only changes height, return
+      if (ww.previous === ww.actual) {
+      	return; 
+      }
       
       // refresch waypoints TODO
       Waypoint.refreshAll();
