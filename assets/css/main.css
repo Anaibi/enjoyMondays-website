@@ -283,6 +283,7 @@ body {
 .tiles .tile img {
   display: inline-block;
   -webkit-transition: transform .4s;
+  -ms-transition: transform .4s;
   transition: transform 0.4s;
 }
 /* all-left */
@@ -291,7 +292,6 @@ body {
 .all-left .tile.cs-hover img {
   -webkit-transform: translate(-70px, -56px) scale(0.7);
   -moz-transform: translate(-70px, -56px) scale(0.7);
-  -o-transform: translate(-70px, -56px) scale(0.7);
   transform: translate(-70px, -56px) scale(0.7);
 }
 /* */
@@ -300,16 +300,14 @@ body {
 .no-touch .left-right .tile:nth-child(even):hover img, 
 .left-right .tile.cs-hover:nth-child(even) img {
   -webkit-transform: translate(70px, -56px) scale(0.7);
-  -moz-transform: translate(70px, -56px) scale(0.7);
-  -o-transform: translate(70px, -56px) scale(0.7);
+  -mms-transform: translate(70px, -56px) scale(0.7);
   transform:  translate(70px, -56px) scale(0.7);
 }
 .left-right .tile:nth-child(odd):hover img, 
 .no-touch .left-right .tile:nth-child(odd):hover img, 
 .left-right .tile.cs-hover:nth-child(odd) img {
   -webkit-transform: translate(-70px, -56px) scale(0.7);
-  -moz-transform: translate(-70px, -56px) scale(0.7);
-  -o-transform: translate(-70px, -56px) scale(0.7);
+  -ms-transform: translate(-70px, -56px) scale(0.7);
   transform:  translate(-70px, -56px) scale(0.7);
 }
 /* */
@@ -388,6 +386,8 @@ p {
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES HOME */
 #home .centered {
+  -ms-transform: none;
+  -webkit-transform: none;
   transform: none;
 }
 #home .fittextjs {
@@ -447,6 +447,8 @@ p {
 /* ******************************** */
 /* *** RESPONSIVE HEADLINES CONTACT */
 #contact .centered {
+  -ms-transform: none;
+  -webkit-transform: none;
   transform: none;
 }
 #contact .fittextjs {
