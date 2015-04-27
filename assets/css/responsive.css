@@ -335,6 +335,9 @@
     margin: 0 2px 11%;
     padding: 8% 0;
   }
+  .tiles .tile {
+    margin-bottom: 10%;
+  }
   .tiles .tile, 
   .tiles .tile a, 
   .tiles .tile img, 
@@ -355,11 +358,14 @@
     transform: translate(0 , -50px) scale(0.7);
   } */
   #emb_container .tile:hover img {
-    transform: translate(0 , -50px) scale(0.7);
+    transform: translate(0 , -50px) scale(0.8);
   }
   .tiles .details {
     width: 100%;
     text-align: center;
+  }
+  .tiles .details-wrapper {
+    font-size: 30px;
   }
   .tiles .details-wrapper .title {
     font-size: .75em;
@@ -505,6 +511,7 @@
     float: none;
     width: 93%;
     margin: auto;
+    font-size: 1em;
   }
 
   .pages #contact .fittextjs hr {
@@ -519,6 +526,7 @@
   /* stack and center */
   /* breaks under 190px */
   footer {
+    font-size: 18px;
     text-align: center;
   }
   footer p {
@@ -529,6 +537,7 @@
   footer.wrapper .right {
     display: inline-block;
     float: none;
+    width: 100%;
     margin: 0 0 2%;
     padding: 4% 0 0;
   }
