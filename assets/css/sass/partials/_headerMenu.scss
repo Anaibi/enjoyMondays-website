@@ -1,0 +1,87 @@
+@mixin headerMenu {
+
+  #header-nav {
+    display: inline-block;
+    margin-top: 85px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 650px) {
+      font-size: 0.8em;
+    }
+
+    @media screen and (max-width: 480px) {
+      float: none;
+      margin: auto;
+      font-size: 0.76em;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: .6em;
+    }
+
+    &.expanded {
+      display: block;
+      margin-top: 40px;
+
+      @media screen and (max-width: 480px) {
+        margin: 10% 0;
+      }
+    }
+
+    li {
+      float: left;
+      margin-left: 8px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.active-link {
+        font-weight: 900;
+        /* has to override .touch class no border */
+        border-bottom: solid #DF3F54 3px !important;
+      }
+
+      &:hover {
+        font-weight: 900;
+        /* .touch has to override this */
+        border-bottom: solid #DF3F54 3px;
+      }
+    }
+    
+    a {
+      display: block;
+      padding: 30px 24px;
+      margin: -30px -20px;
+      color: inherit;
+
+      @media screen and (max-width: 350px) {
+        padding: 30px 21px; /* breaks under 226px */
+      }
+    }
+  }
+
+  #collapsed-menu {
+    margin-top: 40px;
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+   
+    img {
+      /* icon size */
+      width: 23px;
+      height: 19px;
+      /* to avoid jumps on hover */
+      padding: 30px;
+      margin: -30px;
+    }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}

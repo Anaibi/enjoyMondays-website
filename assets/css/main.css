@@ -1,36 +1,12 @@
 
 
-/* EVERYWHERE EXCEPT HEADERS */
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  color: black;
-}
-/* HEADERS */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dosis', sans-serif;
-  /* default font-size, rescales with fittextjs */
-  font-size: 130px;
-  font-weight: 600;
-}
-
-
-
-/* ****************************** FOOTER */
-.footer_height {
-  height: 100px;
-}
-
-
-/* ******************************************** */
-/* *********************************** DEFAULTS */
 .ui-loader {
   display: none;
 }
 * {
   margin: 0;
   padding: 0;
- /* -moz-box-sizing: border-box; */ /* if on expanded menu doesn't show? */
+ /* -moz-box-sizing: border-box; */ /* if 'on' expanded menu doesn't show? */
 }
 a {
   text-decoration: none;
@@ -57,10 +33,10 @@ img {
 .clearfix {
   clear: both;
 }
-.fixed {
+/*.fixed {
   position: fixed;
   z-index: 1000;
-}
+}*/
 .hidden {
   display: none;
 }
@@ -86,9 +62,9 @@ img {
   transform: none;
   position: static; -optional-
 */
-.top: {
+/*.top: {
   top: 0;
-}
+}*/
 .screen-reader-text { 
   position: absolute;
   height: 0;
@@ -98,6 +74,7 @@ img {
 }
 .img-wrapper {
   height: auto;
+  display: block;
 }
 
 /* ******************************************** */
@@ -122,13 +99,10 @@ body {
 .content {
   margin-left: 70px;
 }
-.wrapper::after {
-  clear: both;
-}
 .page {
  /* height: 100%;*/
-  text-align: right;
-}t
+ /* text-align: right;*/
+}
 .page header {
   display: inline-block;
   max-height: 100%;
@@ -150,43 +124,7 @@ body {
 
 /* ******************************** */
 /* *************************** GRID */
-.tiles {
-  padding-bottom: 127px;
-  padding-left: 115px;
-  padding-right: 115px;
-}
-.tiles .tile {
-  display: inline-block;
-  width: 465px;
-  height: 385px;
-  margin-bottom: 34px;
-}
-.tiles .tile:hover {
-  cursor: pointer;
-}
-/* grid 2 col display */
-.tiles .tile:nth-child(odd) {
-  float: left;
-}
-.tiles .tile:nth-child(even) {
-  float: right;
-}
-/* */
-.tiles .tile a {
-  display: block;
-  position: relative;
-  height: auto;
-  /* remove extra height otherwise adds to tile */
-  /* define font-size again other than a */
-  font-size: 0;
-}
-/* *** img hover animation *** */
-.tiles .tile img {
-  display: inline-block;
-  -webkit-transition: transform .4s;
-  -ms-transition: transform .4s;
-  transition: transform 0.4s;
-}
+
 /* all-left */
 .all-left .tile:hover img,
 .no-touch .all-left .tile:hover img, 
@@ -225,33 +163,7 @@ body {
 .tiles.left-right .tile:nth-child(odd) .details-wrapper {
   text-align: left;
 }
-/* */
-.tiles .details-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  /* redefine font-size put to 0 on parent a */
-  font-size: 30px;
-  color: white;
-  opacity: 0;
-  transition: opacity 1s;
-}
-.tiles .details-wrapper:hover {
-  opacity: 1;
-}
-.tiles .details-wrapper .details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-/* *** title *** */
-.tiles .details-wrapper .title {
-  font-size: 1em;
-}
+
 /* all-left */
 .tiles.all-left .details-wrapper .title {
   text-align: left;
@@ -263,13 +175,6 @@ body {
 }
 .tiles.left-right .tile:nth-child(odd) .title {
   text-align: left;
-}
-/* */
-.tiles .details-wrapper p {
-  font-size: 0.5em;
-}
-.tiles .details-wrapper span {
-  font-size: .75em;
 }
 
 /* ******************************************** */
@@ -394,76 +299,7 @@ p {
   letter-spacing: .17px;
 }
 
-/* ******************************************** */
-/* ******************************** MAIN HEADER */
 
-/* ******************************** */
-/* *************************** LOGO */
-#logo .img-wrapper {
-  display: block;
-}
-.logo_big {
-  margin-top: 40px;
-}
-.logo_small {
-  margin-top: 18px; 
-}
-
-/* ******************************** */
-/* *********************** MENU NAV */
-#header-nav {
-  display: inline-block;
-  margin-top: 85px;
-  font-weight: 700;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-#header-nav li {
-  float: left;
-  margin-left: 8px;
-}
-#header-nav a {
-  display: block;
-  /* to avoid jumps on hover */
-  /* difference is border size */
-  padding: 30px 24px;
-  margin: -30px -20px;
-  color: inherit;
-}
-#header-nav .active-link {
-  font-weight: 900;
-  /* has to override .touch class no border */
-  border-bottom: solid #DF3F54 3px !important; 
-}
-#header-nav li:hover {
-  font-weight: 900;
-  /* .touch has to override this */
-  border-bottom: solid #DF3F54 3px; 
-}
-
-/* ******************************** */
-/* ***************** MENU COLLAPSED */
-#collapsed-menu {
-  margin-top: 40px;
-}
-#collapsed-menu img {
-  /* icon size */
-  width: 23px;
-  height: 19px;
-  /* to avoid jumps on hover */
-  padding: 30px;
-  margin: -30px;
-}
-#collapsed-menu:hover {
-  cursor: pointer;
-}
-
-/* ******************************** */
-/* ****************** MENU EXPANDED */
-#header-nav.expanded {
-  display: block;
-  margin-top: 40px;
-}
 
 /* ******************************************** */
 /* *********************************** SECTIONS */
@@ -526,33 +362,7 @@ p {
   font-weight: 400;
 }
 
-/* ******************************************** */
-/* ************************************* FOOTER */
-footer p {
-  padding-left: 7px;
-  font-weight: 700;
-  /*font-size: 16px;*/
-  font-size: .95em;
-}
-footer a {
-  font-weight: 900;
-}
-#social {
-  padding-right: 7px;
-  /* otherwise webkit adds margin 1em */
-  font-size: 0;
-}
-#social li {
-  display: inline-block;
-  padding-left: 6px;
-}
-#social a {
-  width: 32px;
-  height: 32px;
-}
-#social li:hover {
-  cursor: pointer;
-}
+
 
 /* ******************************************** */
 /* **************************** PROJECT gallery */

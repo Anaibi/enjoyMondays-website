@@ -1,5 +1,8 @@
 
 @import "partials/_settings";
+@import "partials/_headerMenu";
+@import "partials/_grid";
+
 
 
 // ------------------------------ COLOR CLASSES */
@@ -18,28 +21,51 @@ $theme_color_values: map-values($theme_colors);
 }
 
 
-// ---------------------------- WITH BIG HEADER */
+// ------------------------------------- MIXINS */
 
-@mixin setHW($h, $w, $m) {
+@mixin setLayout($h) {
   
   #main-header,
   #header_placeholder {
     height: $h;
   }
 
-
-
-  #logo {
-    width: $w;
-    margin-top: $m;
-  }
-
   .fillheight {
     min-height: calc(100vh - #{$h});
 
-    &::nth-last-child(2) {
-      min-height: calc(100vh - #{$h} - #{$footer_h});
+    &.last {
+      $th: $h + $footer_h;
+      min-height: calc(100vh - #{$th});
     }
+  }
+}
+
+%hi {
+  font-family: 'Dosis', sans-serif;
+  /* default font-size, rescales with fittextjs */
+  font-size: 130px;
+  font-weight: 600;	
+}
+
+
+@mixin transition($args, $t) {
+  -ms-transition: $args $t;
+  -webkit-transition: $args $t;
+  transition: $args $t;
+}
+
+
+
+// -------------------------------------- FONTS */
+body {
+  font-family: $font_family_1;
+  font-weight: 100;
+  color: black;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend %hi;
   }
 }
 
@@ -50,7 +76,7 @@ $theme_color_values: map-values($theme_colors);
   position: fixed;
   top: 0;
   z-index: 2000;
-  transition: all 1s;
+  @include transition(all, .5s);
 
   @media screen and (max-width: 650px) {
     height: auto;
@@ -64,22 +90,134 @@ $theme_color_values: map-values($theme_colors);
 }
 
 #logo {
-  float: left;
+  width: $logo_w_big;
+  margin-top: 40px;
+  @include transition(all, .3s);
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    float: none;
+  }
 }
 
-// ---------------------------- WITH BIG HEADER */
+@include headerMenu;
+
+
+// ------------------------------------- FOOTER */
+
+footer {
+  height: $footer_h;
+
+  @media screen and (max-width: 650px) {
+    font-size: 13px;
+  }
+
+  p {
+    padding-left: 7px;
+    font-weight: 700;
+    font-size: .95em;
+  }
+
+  a {
+    font-weight: 900;
+  }
+
+  #social {
+    padding-right: 7px;
+    /* otherwise webkit adds margin 1em */
+    font-size: 0;
+   
+    li {
+      display: inline-block;
+      padding-left: 6px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+   
+    a {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* stack and center */
+  /* breaks under 190px */
+  footer {
+    font-size: 18px;
+    text-align: center;
+  
+		p {
+		  padding: 0;
+		  font-size: .65em;
+		}
+  
+    &.wrapper .left,
+    &.wrapper .right {
+	    display: inline-block;
+	    float: none;
+	    width: 100%;
+	    margin: 0 0 2%;
+	    padding: 4% 0 0;
+	  }
+  
+    .centered {
+	    position: static;
+	    transform: none;
+    }
+  }
+}
+
+
+// --------------------- LAYOUT WITH BIG HEADER */
 
 .big-header {
-  @include setHW($header_h_big, $logo_w_big, 40px);
+  @include setLayout($header_h_big);
+
+  #logo {
+    @media screen and (max-width: 650px) {
+      width: 25%;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin: 2.5% auto;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 29%;
+    }
+  }
 }
 
 
-// -------------------------- WITH SMALL HEADER */
+// ------------------- LAYOUT WITH SMALL HEADER */
 
 .small-header {
-  @include setHW($header_h_small, $logo_w_small, 18px);
+  @include setLayout($header_h_small);
+
+  #logo {
+    width: $logo_w_small;
+    margin-top: 18px;
+
+    @media screen and (max-width: 650px) {
+      width: 20%;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin: 4% auto;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 25%;
+    }
+  }
 }
 
-  
 
 
+// --------------------------------------- GRID */
+
+@include grid;

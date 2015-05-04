@@ -1,0 +1,88 @@
+@mixin details {
+  .details-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    /* redefine font-size put to 0 on parent a */
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .title {
+      font-size: 1em;
+    }
+
+    p {
+      font-size: 0.5em;
+    }
+
+    span {
+      font-size: .75em;
+    }
+  }  
+}
+
+@mixin tile {
+  .tile {
+    display: inline-block;
+    width: 465px;
+    height: 385px;
+    margin-bottom: 34px;
+  
+    &:hover {
+      cursor: pointer;
+    }
+
+    /* grid 2 col display */
+    &:nth-child(odd) {
+      float: left;
+    }
+
+    &:nth-child(even) {
+      float: right;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      height: auto;
+      /* remove extra height otherwise adds to tile */
+      /* define font-size again other than a */
+      font-size: 0;
+    }
+    
+    //  img hover animation
+    img {
+      display: inline-block;
+      @include transition(transform, .4s);
+    }
+
+    @include details;
+  }
+}
+
+@mixin grid {
+  .tiles {
+    padding: 0 115px 127px;
+
+    @include tile;
+  }
+}
+
+
+

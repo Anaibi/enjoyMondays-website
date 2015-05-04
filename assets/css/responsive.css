@@ -171,30 +171,8 @@
     width: 15%;
     margin-top: 2%;
   }
-  /* ******************************************** */
-  /* ******************************** MAIN HEADER */
 
 
-  /* ******************************** */
-  /* *************************** LOGO */
-  /* needs id to override */
-  #logo.logo_big {
-    width: 25%;
-  }
-
-  #logo.logo_small {
-    width: 20%;
-  }
-
-  /* ******************************** */
-  /* *********************** MENU NAV */
-  #header-nav {
-    /*display: inline-block;*/
-    font-size: 0.8em;
-  }
-  #header-nav li:first-child {
-    margin-left: 0;
-  }
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES HOME */
@@ -285,11 +263,7 @@
     font-size: 1.5em;
     margin-top: 0;
   }
-  /* ******************************** */
-  /* ************************* FOOTER */
-  footer {
-    font-size: 13px;
-  }
+
 }
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -387,50 +361,6 @@
     font-size: .55em;
   }
 
-  /* ******************************************** */
-  /* ******************************** MAIN HEADER */
-  
- 
-
-  /* ******************************** */
-  /* *************************** LOGO */
-  /* needs id to override */
-  #logo.logo_big {
-    display: block;
-    float: none;
-    margin: 2.5% auto;
-  }
-
-  #logo.logo_small {
-    float: none;
-    margin: 4% auto;
-  }
-
-  /* ******************************** */
-  /* *********************** MENU NAV */
-  #header-nav {
-    /*display: inline-block;*/
-    float: none;
-    margin: auto;
-    font-size: 0.76em;
-  }
-  #header-nav li:first-child {
-    margin-left: 0;
-  }
-
-  /* ******************************** */
-  /* ***************** MENU COLLAPSED */
-  #collapsed-menu {
-    display: none;
-  }
-
-  /* ******************************** */
-  /* ****************** MENU EXPANDED */
-  #header-nav.expanded {
-    display: block;
-    margin: 10% 0;
-  }
-
   /* ******************************** */
   /* *************************** HOME */
   #home .fittextjs {
@@ -512,58 +442,11 @@
     font-size: .5em;
   }
 
-  /* ******************************************** */
-  /* ************************************* FOOTER */
-  /* stack and center */
-  /* breaks under 190px */
-  footer {
-    font-size: 18px;
-    text-align: center;
-  }
-  footer p {
-    padding: 0;
-    font-size: .65em;
-  }
-  footer.wrapper .left,
-  footer.wrapper .right {
-    display: inline-block;
-    float: none;
-    width: 100%;
-    margin: 0 0 2%;
-    padding: 4% 0 0;
-  }
-  footer .centered {
-    position: static;
-    -ms-transform: none;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////?///////// MAX WIDTH 350px //// */
 @media screen and (max-width: 350px) {
-  /* ******************************** */
-  /* *************************** LOGO */
-  /* center logo and one size only */
-  #logo.logo_big {
-    width: 29%;
-  }
-  #logo.logo_small {
-    width: 25%;
-  }
-
-  /* ******************************** */
-  /* *********************** MENU NAV */
-  #header-nav {
-    font-size: .6em;
-  }
-  #header-nav a {
-    padding: 30px 21px; /* breaks under 226px */
-  }
-
   /* ******************************** */
   /* ************************ CONTACT */
   #contact .sub-header p {

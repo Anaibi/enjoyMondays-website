@@ -54,7 +54,7 @@ $(function() {
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
-	scrollToPosition($(this).attr('href'));
+	  scrollToPosition($(this).attr('href'));
   });			
 
   // notes link off	
@@ -80,54 +80,54 @@ $(function() {
   ////////////////////////////////// http://imakewebthings.com/waypoints/
   function doWaypoints() {  
 
-	var $pages = $('.page');
+	  var $pages = $('.page');
 
-	var offset = {};
+	  var offset = {};
 
-	// needs different offsets for updating home link
-	//if (w<350) { 
-	offset.down = '100%'; 
-	offset.up = 'bottom-in-view'; 
-	//} 
-	//else if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
-	//else { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
+	  // needs different offsets for updating home link
+	  //if (w<350) { 
+	  offset.down = '100%'; 
+	  offset.up = 'bottom-in-view'; 
+	  //} 
+	  //else if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
+	  //else { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
     
     // update links direction down
-	$pages.each(function() { 
-	  new Waypoint({
-	  	element: this,
-	  	handler: function(direction) {  
-	  	  if (direction === 'down') { 
-	  	  	$pages.removeClass('.active-link');
-	  	  	updateLinks($(this.element).attr('id'));
-	  	  	// if scrolling from home
-	  	  	if (isActiveSection('work')) { 
-	  	  	  animateHeader(direction); 
-	  	  	} 
-	  	  }
-	  	},
-	    offset: offset.down,
-	    group: 'pages'
-	  });
+	  $pages.each(function() { 
+  	  new Waypoint({
+  	  	element: this,
+  	  	handler: function(direction) {  
+  	  	  if (direction === 'down') { 
+  	  	  	$pages.removeClass('.active-link');
+  	  	  	updateLinks($(this.element).attr('id'));
+  	  	  	// if scrolling from home
+  	  	  	if (isActiveSection('work')) { 
+  	  	  	  animateHeader(direction); 
+  	  	  	} 
+  	  	  }
+  	  	},
+  	    offset: offset.down,
+  	    group: 'pages'
+  	  });
     });
     
     // update links direction down
     $pages.each(function() { 
-	  new Waypoint({
-	  	element: this,
-	  	handler: function(direction) { 	  	  
-	  	  if ((direction === 'up')) {
-	  	    $pages.removeClass('.active-link'); 
-	  	    updateLinks($(this.element).attr('id')); 
-	  	    // if scrolling from home
-	  	  	if (isActiveSection('home')) { 
-	  	  	  animateHeader(direction); 
-	  	  	} 
-	  	  }	  	 
-	  	},
-	    offset: offset.up,
-	    group: 'pages'
-	  });
+  	  new Waypoint({
+  	  	element: this,
+  	  	handler: function(direction) { 	  	  
+  	  	  if ((direction === 'up')) {
+  	  	    $pages.removeClass('.active-link'); 
+  	  	    updateLinks($(this.element).attr('id')); 
+  	  	    // if scrolling from home
+  	  	  	if (isActiveSection('home')) { 
+  	  	  	  animateHeader(direction); 
+  	  	  	} 
+  	  	  }	  	 
+  	  	},
+  	    offset: offset.up,
+  	    group: 'pages'
+  	  });
     });
   }
   //////////////////////////////////// END WAYPOINT PLUGIN implementation
@@ -136,11 +136,8 @@ $(function() {
   ///////////////////////////////////////////////////////// animateHeader
   function animateHeader(direction) { 
 
-    // switch logos
-    $('#logo').toggleClass('logo_big logo_small');
-
-    // switch header heights
-	$('.view-1').toggleClass('big-header small-header');
+    // switch headers
+	  $('.view-1').toggleClass('big-header small-header');
 
   	// menu collapsed/expanded only changes over 480 width
   	if (ww.actual > marks[1]) {
@@ -164,8 +161,7 @@ $(function() {
     $('#collapsed-menu').hide(function() {
   	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	});
-    //$('.view-1').addClass('header_height_big').removeClass('header_height_small');
-    $('.view-1').removeClass('small-header');
+    $('.view-1').removeClass('small-header').addClass('big-header');
   }
   //////////////////////////////////////////////////////END refreshHeader
 

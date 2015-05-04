@@ -28,11 +28,24 @@
 .color-5 {
   color: #F17C71; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dosis', sans-serif;
+  /* default font-size, rescales with fittextjs */
+  font-size: 130px;
+  font-weight: 600; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: black; }
+
 #main-header {
   position: fixed;
   top: 0;
   z-index: 2000;
-  transition: all 1s; }
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
   @media screen and (max-width: 650px) {
     #main-header {
       height: auto;
@@ -43,28 +56,206 @@
       text-align: center; } }
 
 #logo {
-  float: left; }
+  width: 149px;
+  margin-top: 40px;
+  -ms-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  @media screen and (max-width: 480px) {
+    #logo {
+      display: block;
+      float: none; } }
 
+#header-nav {
+  display: inline-block;
+  margin-top: 85px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase; }
+  @media screen and (max-width: 650px) {
+    #header-nav {
+      font-size: 0.8em; } }
+  @media screen and (max-width: 480px) {
+    #header-nav {
+      float: none;
+      margin: auto;
+      font-size: 0.76em; } }
+  @media screen and (max-width: 350px) {
+    #header-nav {
+      font-size: .6em; } }
+  #header-nav.expanded {
+    display: block;
+    margin-top: 40px; }
+    @media screen and (max-width: 480px) {
+      #header-nav.expanded {
+        margin: 10% 0; } }
+  #header-nav li {
+    float: left;
+    margin-left: 8px; }
+    #header-nav li:first-child {
+      margin-left: 0; }
+    #header-nav li.active-link {
+      font-weight: 900;
+      /* has to override .touch class no border */
+      border-bottom: solid #DF3F54 3px !important; }
+    #header-nav li:hover {
+      font-weight: 900;
+      /* .touch has to override this */
+      border-bottom: solid #DF3F54 3px; }
+  #header-nav a {
+    display: block;
+    padding: 30px 24px;
+    margin: -30px -20px;
+    color: inherit; }
+    @media screen and (max-width: 350px) {
+      #header-nav a {
+        padding: 30px 21px;
+        /* breaks under 226px */ } }
+
+#collapsed-menu {
+  margin-top: 40px; }
+  @media screen and (max-width: 480px) {
+    #collapsed-menu {
+      display: none; } }
+  #collapsed-menu img {
+    /* icon size */
+    width: 23px;
+    height: 19px;
+    /* to avoid jumps on hover */
+    padding: 30px;
+    margin: -30px; }
+  #collapsed-menu:hover {
+    cursor: pointer; }
+
+footer {
+  height: 100px; }
+  @media screen and (max-width: 650px) {
+    footer {
+      font-size: 13px; } }
+  footer p {
+    padding-left: 7px;
+    font-weight: 700;
+    font-size: .95em; }
+  footer a {
+    font-weight: 900; }
+  footer #social {
+    padding-right: 7px;
+    /* otherwise webkit adds margin 1em */
+    font-size: 0; }
+    footer #social li {
+      display: inline-block;
+      padding-left: 6px; }
+      footer #social li:hover {
+        cursor: pointer; }
+    footer #social a {
+      width: 32px;
+      height: 32px; }
+
+@media screen and (max-width: 480px) {
+  /* stack and center */
+  /* breaks under 190px */
+  footer {
+    font-size: 18px;
+    text-align: center; }
+    footer p {
+      padding: 0;
+      font-size: .65em; }
+    footer.wrapper .left, footer.wrapper .right {
+      display: inline-block;
+      float: none;
+      width: 100%;
+      margin: 0 0 2%;
+      padding: 4% 0 0; }
+    footer .centered {
+      position: static;
+      transform: none; } }
 .big-header #main-header,
 .big-header #header_placeholder {
   height: 139px; }
-.big-header #logo {
-  width: 149px;
-  margin-top: 40px; }
 .big-header .fillheight {
   min-height: calc(100vh - 139px); }
-  .big-header .fillheight::nth-last-child(2) {
-    min-height: calc(100vh - 139px - 100px); }
+  .big-header .fillheight.last {
+    min-height: calc(100vh - 239px); }
+@media screen and (max-width: 650px) {
+  .big-header #logo {
+    width: 25%; } }
+@media screen and (max-width: 480px) {
+  .big-header #logo {
+    margin: 2.5% auto; } }
+@media screen and (max-width: 350px) {
+  .big-header #logo {
+    width: 29%; } }
 
 .small-header #main-header,
 .small-header #header_placeholder {
   height: 111px; }
+.small-header .fillheight {
+  min-height: calc(100vh - 111px); }
+  .small-header .fillheight.last {
+    min-height: calc(100vh - 211px); }
 .small-header #logo {
   width: 111px;
   margin-top: 18px; }
-.small-header .fillheight {
-  min-height: calc(100vh - 111px); }
-  .small-header .fillheight::nth-last-child(2) {
-    min-height: calc(100vh - 111px - 100px); }
+  @media screen and (max-width: 650px) {
+    .small-header #logo {
+      width: 20%; } }
+  @media screen and (max-width: 480px) {
+    .small-header #logo {
+      margin: 4% auto; } }
+  @media screen and (max-width: 350px) {
+    .small-header #logo {
+      width: 25%; } }
+
+.tiles {
+  padding: 0 115px 127px; }
+  .tiles .tile {
+    display: inline-block;
+    width: 465px;
+    height: 385px;
+    margin-bottom: 34px;
+    /* grid 2 col display */ }
+    .tiles .tile:hover {
+      cursor: pointer; }
+    .tiles .tile:nth-child(odd) {
+      float: left; }
+    .tiles .tile:nth-child(even) {
+      float: right; }
+    .tiles .tile a {
+      display: block;
+      position: relative;
+      height: auto;
+      /* remove extra height otherwise adds to tile */
+      /* define font-size again other than a */
+      font-size: 0; }
+    .tiles .tile img {
+      display: inline-block;
+      -ms-transition: transform 0.4s;
+      -webkit-transition: transform 0.4s;
+      transition: transform 0.4s; }
+    .tiles .tile .details-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      /* redefine font-size put to 0 on parent a */
+      font-size: 30px;
+      color: white;
+      opacity: 0;
+      transition: opacity 1s; }
+      .tiles .tile .details-wrapper:hover {
+        opacity: 1; }
+      .tiles .tile .details-wrapper .details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+      .tiles .tile .details-wrapper .title {
+        font-size: 1em; }
+      .tiles .tile .details-wrapper p {
+        font-size: 0.5em; }
+      .tiles .tile .details-wrapper span {
+        font-size: .75em; }
 
 /*# sourceMappingURL=style.css.map */
