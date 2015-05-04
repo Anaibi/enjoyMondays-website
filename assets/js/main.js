@@ -140,7 +140,7 @@ $(function() {
     $('#logo').toggleClass('logo_big logo_small');
 
     // switch header heights
-	$('.view-1').toggleClass('header_height_big header_height_small');
+	$('.view-1').toggleClass('big-header small-header');
 
   	// menu collapsed/expanded only changes over 480 width
   	if (ww.actual > marks[1]) {
@@ -164,7 +164,8 @@ $(function() {
     $('#collapsed-menu').hide(function() {
   	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	});
-    $('.view-1').addClass('header_height_big').removeClass('header_height_small');
+    //$('.view-1').addClass('header_height_big').removeClass('header_height_small');
+    $('.view-1').removeClass('small-header');
   }
   //////////////////////////////////////////////////////END refreshHeader
 
@@ -175,7 +176,7 @@ $(function() {
 	  $('body, html')
 	    .stop()
 	    .animate({
-	  	  scrollTop: $(page).offset().top - $('.fixed_header_aux').height()
+	  	  scrollTop: $(page).offset().top - $('#header_placeholder').height()
 	    }, 250, function(){ 
 	    $('html, body').clearQueue();
    	  });

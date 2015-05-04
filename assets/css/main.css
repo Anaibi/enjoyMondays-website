@@ -1,64 +1,4 @@
-/* OPTIMIZADO x width 1350px = design */
-/* responsive.css x resto widths */
 
-/* ********************** ENJOY MONDAYS PATTERN */
-/* **************** BACKGROUNDS AND FONT COLORS */
-/* LIGHT GRAY */
-.bg-1 {
-  background-color: #E9E8E3;
-}
-/* DARK GRAY */
-.bg-2 {
-  background-color: #3A3A3A;
-}
-/* DARK BLUE */
-.bg-3 {
-  background-color: #363B48;
-}
-/* FUXSIA */
-.bg-4 {
-  background-color: #DF3F54;
-}
-/* LIGHT FUXSIA */
-.bg-5 {
-  background-color: #F17C71;
-}
-/* BLACK */
-.bg-black {
-  background-color: #000;
-}
-
-/* ******************************** FONT COLORS */
-
-/* LIGHT GRAY */
-.color-1 {
-  color: #E9E8E3;
-}
-/* DARK GRAY */
-.color-2 {
-  color: #393939;
-}
-/* DARK BLUE */
-.color-3 {
-  color: #363B48;
-}
-/* FUXSIA */
-.color-4 {
-  color: #DF3F54;
-}
-/* LIGHT FUXSIA */
-.color-5 {
-  color: #F17C71;
-}
-
-/* ***************************** FONTS FAMILIES */
-/* 
-/* lato light (100)
-/* lato regular (400)
-/* lato bold (700)
-/* lato black (900)
-/* dosis semibold (600)
- */
 
 /* EVERYWHERE EXCEPT HEADERS */
 body {
@@ -74,46 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* ******************************************** */
-/* ******************** SCROLL TO PAGE TEMPLATE */
 
-/* ************************** SET MEASURES HERE */
-
-/* ****************************** HEADER */
-
-/* ***************** BIG */
-.header_height_big .main_header,
-.header_height_big .fixed_header_aux {
-  height: 139px;
-}
-.header_height_big .fillheight {
-  /* calc(100vh - x); x = .header_height_big .main_header height */
-  min-height: calc(100vh - 139px);
-}
-.header_height_big .fillheight:nth-last-child(2) {
-  /* calc(100vh - x - y); x = .header_height_big .main_header height; y = footer height */
-  min-height: calc(100vh - 139px - 100px);
-}
-/* *************** SMALL */
-.header_height_small .main_header,
-.header_height_small .fixed_header_aux {
-  height: 111px;
-} 
-.header_height_small .fillheight {
-  /* calc(100vh - x); x = .header_height_small .main_header height */
-  min-height: calc(100vh - 111px);	
-}
-.header_height_small .fillheight:nth-last-child(2) {
-  /* calc(100vh - x - y); x = .header_height_small .main_header height; y = footer height */
-  min-height: calc(100vh - 111px - 100px);
-}
-/* ******************************** LOGO */
-.logo_small {
-  width: 111px;
-}
-.logo_big {
-  width: 149px;
-}
 
 /* ****************************** FOOTER */
 .footer_height {

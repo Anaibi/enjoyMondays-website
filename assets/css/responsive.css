@@ -173,11 +173,7 @@
   }
   /* ******************************************** */
   /* ******************************** MAIN HEADER */
-  .header_height_small .main_header,
-  .header_height_big .main_header {
-    height: auto;
-    padding-bottom: 1%;
-  }
+
 
   /* ******************************** */
   /* *************************** LOGO */
@@ -394,15 +390,7 @@
   /* ******************************************** */
   /* ******************************** MAIN HEADER */
   
-  /* stack and center logo and menu */
-  .main_header {
-    text-align: center;
-  }
-  .header_height_small .main_header,
-  .header_height_big .main_header {
-    height: auto;
-    padding-bottom: 3%;
-  }
+ 
 
   /* ******************************** */
   /* *************************** LOGO */

@@ -9,33 +9,30 @@
   <meta name="keywords" content="" />
   <meta name="author" content="Enjoy-Mondays" />
   <link rel="shortcut icon" href="favicon.ico"> 
-		
-  <!-- MAIN CSS -->
+    
+  <!-- THEME CSS -->
   <link media="screen" rel="stylesheet" type="text/css" href="assets/css/main.css" />
+  <link media="screen" rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
   <!-- RESPONSIVE CSS -->
   <link media="screen" rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
-		
+    
   <!-- SUPERSIZED CSS -->
   <link rel="stylesheet" href="assets/css/supersized.min.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="assets/theme/supersized.shutter.css" type="text/css" media="screen" />
-		
-  <!-- MODERNIZR JS -->				
-  <script src="assets/js/modernizr.custom.js"></script>								
+    
+  <!-- MODERNIZR JS -->       
+  <script src="assets/js/modernizr.custom.js"></script>               
 </head>
+
 <body class="bg-1">
 
   <div id="cover" class="fullheight bg-black hidden"></div>
 
-  <!-- web displays either #FRONT-PAGE (.view-1) either works #SLIDESHOW (.view-2) -->
-  
-  <!-- FRONT-PAGE = MAIN HEADER + PAGES + FOOTER -->
-  <div id="front-page" class="view-1 fullwrapper bg-1 header_height_big">
+  <div class="view-1 fullwrapper bg-1 big-header">
 
-    <!-- MAIN-HEADER -->
-    <header id="main-header" class="main_header wrapper top fixed fillwidth bg-1">
+    <header id="main-header" class="wrapper fillwidth bg-1">
 
-      <!-- LOGO -->
       <div id="logo" class="logo_big left">
         <a href="#" class="img-wrapper">
           <img src="assets/images/logo.png" alt="Enjoy-Mondays" title="Home" />
@@ -43,39 +40,40 @@
         </a>
       </div>
 
-      <!-- HEADER-NAV -->
       <ul id="header-nav" class="right">
         <li class="active-link"><a href="#home">Home</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#notes">Notes</a></li>
-      </ul>	
+      </ul> 
 
       <div id="collapsed-menu" class="hidden right">
-      	<img src="assets/images/menu.png" >
+        <img src="assets/images/menu.png" >
       </div>
     </header>
 
-    <div id="fixed-header-aux" class="fixed_header_aux"></div>			
+    <div id="header_placeholder"></div> 
+
+
     <!-- PAGES + FOOTER -->
-    <div id="pages" class="pages fillwidth clearfix">	
+    <div id="pages" class="pages fillwidth clearfix"> 
 
       <!-- HOME PAGE -->
       <section id="home" class="page fillheight wrapper bg-1 color-2 clearfix">
-        <header class="right centered clearfix fittextjs">	  <h1 class="">
+        <header class="right centered clearfix fittextjs">    <h1 class="">
             <span class="s-header-one right ">
               <img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
               We code</span>
-            <span class="s-header-two right ">you smile</span>	
-          </h1>				
+            <span class="s-header-two right ">you smile</span>  
+          </h1>       
           <div class="sub-header right ">
             <hr class="bg-2 header_hr">
             <p>Crafting clean and fresh awesomnes for the web and beyond.</p>
             <p>We make it funky. Want to work with us?</p>
           </div>
         </header>
-        <div class="clearfix"></div>									
+        <div class="clearfix"></div>                  
       </section>
       <!--  END HOME PAGE -->
 
@@ -83,7 +81,7 @@
       <section id="work" class="page fillheight wrapper bg-2 color-1 clearfix ">
         
         <header class="right fittextjs">
-          <h1>Works</h1>					
+          <h1>Works</h1>          
           <div class="sub-header">
             <hr class="bg-4 header_hr">
             <p>Some of our latest works.</p>
@@ -202,7 +200,7 @@
   <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
   <!-- MAIN -->
   <script type="text/javascript" src="assets/js/main.js"></script>
-  <!-- FIT TEXT http://fittextjs.com/ -->	
+  <!-- FIT TEXT http://fittextjs.com/ --> 
   <script src="assets/js/jquery.fittext.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
@@ -222,7 +220,7 @@
   <script type="text/javascript" src="assets/theme/supersized.shutter.js"></script>
   <script type="text/javascript" src="assets/js/supersized_call.js">
 
-  </script>		
+  </script>   
   <!-- GOOGLE FONTS -->
   <script type="text/javascript">
     WebFontConfig = {
