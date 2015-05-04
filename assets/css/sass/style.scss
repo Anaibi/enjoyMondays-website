@@ -30,18 +30,28 @@ $theme_color_values: map-values($theme_colors);
     height: $h;
   }
 
-  .fillheight {
-    min-height: calc(100vh - #{$h});
+  #content {
+    &::before {
+      content: " ";
+      display: block;
+      height: $h;
+      width: 100%;
+    }
 
-    &.last {
-      $th: $h + $footer_h;
-      min-height: calc(100vh - #{$th});
+    .section {
+      height: 100%;
+      min-height: calc(100vh - #{$h});
+
+      &.last {
+        $th: $h + $footer_h;
+        min-height: calc(100vh - #{$th});
+      }
     }
   }
 }
 
 %hi {
-  font-family: 'Dosis', sans-serif;
+  font-family: $font_family_2;
   /* default font-size, rescales with fittextjs */
   font-size: 130px;
   font-weight: 600;	
@@ -221,3 +231,14 @@ footer {
 // --------------------------------------- GRID */
 
 @include grid;
+
+
+// -------------------------------------- COVER */
+
+#cover {
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	display: hidden;
+	z-index: 6000;
+}

@@ -107,7 +107,7 @@ $(document).ready(function () {
       $('#supersized').show();
      
       // hide content
-      $('#front-page').hide();
+      $('#site').hide();
 		  
       // supersized config
       api.setGallery(index - 1);
@@ -126,7 +126,7 @@ $(document).ready(function () {
     $('#supersized').hide();
 
     // show content set to works section
-	  $('#front-page').fadeIn("fast", function() {
+	  $('#site').fadeIn("fast", function() {
 	    $("#header-nav a[href|='#work']").trigger('click');
 	  });
     

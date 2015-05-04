@@ -15,31 +15,6 @@
   }
 
   /* ******************************** */
-  /* *************************** GRID */
-  .tiles {
-    padding-bottom: 11%;
-    padding-left: 8%;
-    padding-right: 8%; 
-  }
-  .tiles .tile,
-  .tiles .tile a,
-  .tiles .tile img,
-  .tiles .details-wrapper {
-    width: 34vw;
-    height: 100%;
-  }
-
-
-  /* ******************************************** */
-  /* ******************************** MAIN HEADER */
-  #header-nav {
-  /*  margin-top: 7%;*/
-  }
-  #collapsed-menu {
-    /*margin-top: 3.3%;*/
-  }
-
-  /* ******************************** */
   /* ****** RESPONSIVE HEADLINES HOME */
   #home .fittextjs {
     width: 50%;
@@ -53,17 +28,17 @@
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
-  #work.page .fittextjs {
+  #work.section .fittextjs {
     width: 31%;
     height: auto;
     padding-top: 5%;
     padding-bottom: 8%;
     margin-bottom: 0;
   }
-  #work.page .fittextjs h1 {
+  #work.section .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #work.page .fittextjs hr {
+  #work.section .fittextjs hr {
     margin-bottom: 3%;
   }  
 
@@ -76,13 +51,13 @@
     padding-bottom: 15%;
     margin-bottom: 0;
   }
-  #about.page .fittextjs h1 {
+  #about.section .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #about.page .fittextjs hr {
+  #about.section .fittextjs hr {
     margin-bottom: 2%;
   }
-  #about.page .fittextjs p {
+  #about.section .fittextjs p {
     padding: 0 2%;
   }
   /* ******************************** */
@@ -115,26 +90,26 @@
   #contact .fittextjs h1 {
     margin-bottom: 4%;
   }
-  .pages #contact .fittextjs .s-header-one {
+  #content #contact .fittextjs .s-header-one {
     width: 49%;
     height: auto;
     margin-bottom: 2.7%;
     margin-right: -8px;
   }
-  .pages #contact .fittextjs .s-header-two {
+  #content #contact .fittextjs .s-header-two {
     width: 100%;
     height: auto;
     font-size: .9em;
   }
-  .pages #contact .fittextjs .sub-header {
+  #content #contact .fittextjs .sub-header {
     width: 44%;
     margin-top: -2%;
     margin-right: 4%;
   }
-  .pages #contact .fittextjs hr {
+  #content #contact .fittextjs hr {
     margin-bottom: 3%;
   }
-  .pages #contact .fittextjs p {
+  #content #contact .fittextjs p {
     height: auto;
   }
 }
@@ -149,25 +124,23 @@
   body {
     font-size: 17px;
   }
-  h1 {
-    /*font-size: 0.88em;*/
-  }
+
   .wrapper > *.left {
     margin-left: 2%;
   }
   .wrapper > *.right {
     margin-right: 2%;
   }
-  .page {
+  .section {
     text-align: center;
     padding: 0 5px;
   }
-  #pages .page .fittextjs h1 {
+  #content .section .fittextjs h1 {
     margin-bottom: 0;
     text-align: center;
     line-height: 1;
   } 
-  #pages .page .fittextjs .header_hr {
+  #content .section .fittextjs .header_hr {
     width: 15%;
     margin-top: 2%;
   }
@@ -182,41 +155,26 @@
 
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
-  #work.page .fittextjs {
+  #work.section .fittextjs {
     width: 37%;
     height: auto;
     padding-top: 5%;
     margin-bottom: 8%;
   }
-  #work.page .fittextjs h1 {
+  #work.section .fittextjs h1 {
     margin-bottom: 8%;
   }
-  #work.page .fittextjs hr {
+  #work.section .fittextjs hr {
     margin-bottom: 3%;
   }  
- .pages #work .fittextjs p { 
+ #content #work .fittextjs p { 
     font-size: .2em;
   }
 
   /* ******************************** */
   /* *************************** GRID */
-  .tiles {
-    padding: 8% 0 11%;
-  }
-  .tiles .tile {
-    width: 47%;
-    margin-bottom: 5%;
-  }
-  .tiles .tile img {
-    width: 100%;
-  }
-  .tiles .tile a, 
-  .tiles .details-wrapper {
-    width: auto;
-  }
-  .tiles .details-wrapper {
-    font-size: 22px;
-  }
+ 
+
   #emb_container .tile:hover img {
     -webkit-transform: translateY(0, -33px) scale(0.55);
     -ms-transform: translateY(0, -33px) scale(0.55);
@@ -228,19 +186,19 @@
   #about .fittextjs {
     width: 50%;
   }
-  #about.page .fittextjs p {
+  #about.section .fittextjs p {
     font-size: .18em;
   }
-  #about.page .fittextjs p br {
+  #about.section .fittextjs p br {
     display: none;
   }
-  #about.page .content {
+  #about.section .content {
     margin-right: 0;
     margin-left: 0;
     padding-left: 0;
     padding-right: 0;
   }
-  .pages #about .content article {
+  #content #about .content article {
     display: block;
     float: none;
     width: 40%; 
@@ -253,13 +211,13 @@
     width: auto;
     text-align: right;
   }
-  #contact.page .fittextjs h1 {
+  #contact.section .fittextjs h1 {
     text-align: right;
   }
-  .pages #contact .fittextjs .s-header-one {
+  #content #contact .fittextjs .s-header-one {
     width: auto;
   }
-  .pages #contact .fittextjs .sub-header {
+  #content #contact .fittextjs .sub-header {
     font-size: 1.5em;
     margin-top: 0;
   }
@@ -283,39 +241,30 @@
   .wrapper > *.right {
     margin-right: 2%;
   }
-  .page {
+  .section {
     text-align: center;
     padding: 0 5px;
   }
-  #pages .page .fittextjs {
+  #content .section .fittextjs {
     float: none;
     width: 95%;
     margin: 0 auto;
     padding: 12% 0;
     text-align: center;
   }
-  #pages .page .fittextjs h1 {
+  #content .section .fittextjs h1 {
     margin-bottom: 0;
     text-align: center;
     line-height: 1;
   } 
-  #pages .page .fittextjs .header_hr {
+  #content .section .fittextjs .header_hr {
     width: 15%;
     margin-top: 2%;
   }
 
   /* ******************************** */
   /* *************************** GRID */
-  .tiles .tile {
-    margin-bottom: 10%;
-  }
-  .tiles .tile, 
-  .tiles .tile a, 
-  .tiles .tile img, 
-  .tiles .details-wrapper {
-    width: 100%;
-    height: 100%;
-  }
+
   /* modifiy hover effect to center img */
  /* .tiles.all-left .tile:hover img,
   .no-touch .tiles.all-left .tile:hover img, 
@@ -333,44 +282,18 @@
     -ms-transform: translate(0 , -50px) scale(0.8);
     transform: translate(0 , -50px) scale(0.8);
   }
-  .tiles .details {
-    width: 100%;
-    text-align: center;
-  }
-  .tiles .details-wrapper {
-    font-size: 30px;
-  }
-  .tiles .details-wrapper .title {
-    font-size: .75em;
-  }
-  /*.tiles.all-left .details-wrapper .title,
-  .tiles.left-right .tile:nth-child(even) .title,
-  .tiles.left-right .tile:nth-child(odd) .title {
-    text-align: center;
-  }*/
-  #emb_container .tile .title {
-    text-align: center;
-  }
-  .tiles .details-wrapper p {
-    margin-top: 1%;
-    font-size: .5em;
-    line-height: 1.1;
-   /* margin-bottom: -3%;*/
-  }
-  .tiles .details-wrapper span {
-    font-size: .55em;
-  }
+
 
   /* ******************************** */
   /* *************************** HOME */
   #home .fittextjs {
   /*  top: 25vh;*/
   }
-  .pages #home .fittextjs span {
+  #content #home .fittextjs span {
     display: block;
     float: none;
   }
-  .pages #home .sub-header {
+  #content #home .sub-header {
     float: none;
     width: 100%;
     margin: auto;
@@ -382,63 +305,63 @@
   }
   /* ******************************** */
   /* *************************** WORK */
-  .pages #work .fittextjs h1 { 
+  #content #work .fittextjs h1 { 
     font-size: .78em;
   }
   
   /* ******************************** */
   /* ************************** ABOUT */
-  #about.page .fittextjs p {
+  #about.section .fittextjs p {
     font-size: .18em;
   }
-  #about.page .fittextjs p br {
+  #about.section .fittextjs p br {
     display: none;
   }
-  .pages #about .content {
+  #content #about .content {
     margin-right: 0;
     margin-left: 0;
     padding-left: 0;
     padding-right: 0;
   }
-  .pages #about .content article {
+  #content #about .content article {
     width: 70%; 
     margin: 36px auto;
   }
-  .pages #about .content article:first-child,
-  .pages #about .content article:last-child {
+  #content #about .content article:first-child,
+  #content #about .content article:last-child {
     float: none;
   }
   
   /* ******************************** */
   /* ************************ CONTACT */
-  .pages #contact .fittextjs .sub-header {
+  #contenet #contact .fittextjs .sub-header {
     width: 76%;
   }
-  .pages #contact .fittextjs .s-header-one {
+  #content #contact .fittextjs .s-header-one {
     display: inline-block;
     float: none;
     width: 100%;
     text-align: right;
     font-size: 2em;
   }
-  .pages #contact .fittextjs .s-header-two {
+  #content #contact .fittextjs .s-header-two {
     display: inline-block;
     float: none;
     margin-right: 0;
     text-align: right;
     font-size: 1em;
   }
-  .pages #contact .fittextjs .sub-header {
+  #content #contact .fittextjs .sub-header {
     float: none;
     width: 93%;
     margin: auto;
     font-size: 1em;
   }
 
-  .pages #contact .fittextjs hr {
+  #content #contact .fittextjs hr {
     margin-top: 0;
   }
-  .pages #contact .fittextjs p {
+  #content #contact .fittextjs p {
     font-size: .5em;
   }
 

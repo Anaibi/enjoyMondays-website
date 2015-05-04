@@ -80,7 +80,7 @@ $(function() {
   ////////////////////////////////// http://imakewebthings.com/waypoints/
   function doWaypoints() {  
 
-	  var $pages = $('.page');
+	  var $sections = $('.section');
 
 	  var offset = {};
 
@@ -93,12 +93,12 @@ $(function() {
 	  //else { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
     
     // update links direction down
-	  $pages.each(function() { 
+	  $sections.each(function() { 
   	  new Waypoint({
   	  	element: this,
   	  	handler: function(direction) {  
   	  	  if (direction === 'down') { 
-  	  	  	$pages.removeClass('.active-link');
+  	  	  	$sections.removeClass('.active-link');
   	  	  	updateLinks($(this.element).attr('id'));
   	  	  	// if scrolling from home
   	  	  	if (isActiveSection('work')) { 
@@ -107,17 +107,17 @@ $(function() {
   	  	  }
   	  	},
   	    offset: offset.down,
-  	    group: 'pages'
+  	    group: 'sections'
   	  });
     });
     
     // update links direction down
-    $pages.each(function() { 
+    $sections.each(function() { 
   	  new Waypoint({
   	  	element: this,
   	  	handler: function(direction) { 	  	  
   	  	  if ((direction === 'up')) {
-  	  	    $pages.removeClass('.active-link'); 
+  	  	    $sections.removeClass('.active-link'); 
   	  	    updateLinks($(this.element).attr('id')); 
   	  	    // if scrolling from home
   	  	  	if (isActiveSection('home')) { 
@@ -126,7 +126,7 @@ $(function() {
   	  	  }	  	 
   	  	},
   	    offset: offset.up,
-  	    group: 'pages'
+  	    group: 'sections'
   	  });
     });
   }
@@ -137,7 +137,7 @@ $(function() {
   function animateHeader(direction) { 
 
     // switch headers
-	  $('.view-1').toggleClass('big-header small-header');
+	  $('#site').toggleClass('big-header small-header');
 
   	// menu collapsed/expanded only changes over 480 width
   	if (ww.actual > marks[1]) {
@@ -161,7 +161,7 @@ $(function() {
     $('#collapsed-menu').hide(function() {
   	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
   	});
-    $('.view-1').removeClass('small-header').addClass('big-header');
+    $('#site').removeClass('small-header').addClass('big-header');
   }
   //////////////////////////////////////////////////////END refreshHeader
 
@@ -172,7 +172,7 @@ $(function() {
 	  $('body, html')
 	    .stop()
 	    .animate({
-	  	  scrollTop: $(page).offset().top - $('#header_placeholder').height()
+	  	  scrollTop: $(page).offset().top - $('#main-header').height()
 	    }, 250, function(){ 
 	    $('html, body').clearQueue();
    	  });

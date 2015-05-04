@@ -29,7 +29,7 @@
   color: #F17C71; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   /* default font-size, rescales with fittextjs */
   font-size: 130px;
   font-weight: 600; }
@@ -172,9 +172,15 @@ footer {
 .big-header #main-header,
 .big-header #header_placeholder {
   height: 139px; }
-.big-header .fillheight {
+.big-header #content::before {
+  content: " ";
+  display: block;
+  height: 139px;
+  width: 100%; }
+.big-header #content .section {
+  height: 100%;
   min-height: calc(100vh - 139px); }
-  .big-header .fillheight.last {
+  .big-header #content .section.last {
     min-height: calc(100vh - 239px); }
 @media screen and (max-width: 650px) {
   .big-header #logo {
@@ -189,9 +195,15 @@ footer {
 .small-header #main-header,
 .small-header #header_placeholder {
   height: 111px; }
-.small-header .fillheight {
+.small-header #content::before {
+  content: " ";
+  display: block;
+  height: 111px;
+  width: 100%; }
+.small-header #content .section {
+  height: 100%;
   min-height: calc(100vh - 111px); }
-  .small-header .fillheight.last {
+  .small-header #content .section.last {
     min-height: calc(100vh - 211px); }
 .small-header #logo {
   width: 111px;
@@ -208,12 +220,31 @@ footer {
 
 .tiles {
   padding: 0 115px 127px; }
+  @media screen and (max-width: 1350px) {
+    .tiles {
+      padding: 0 8% 11%; } }
+  @media screen and (max-width: 650px) {
+    .tiles {
+      padding: 8% 0 11%; } }
   .tiles .tile {
     display: inline-block;
     width: 465px;
     height: 385px;
     margin-bottom: 34px;
     /* grid 2 col display */ }
+    @media screen and (max-width: 1350px) {
+      .tiles .tile {
+        width: 34vw;
+        height: 100%; } }
+    @media screen and (max-width: 650px) {
+      .tiles .tile {
+        width: 47%;
+        margin-bottom: 5%; } }
+    @media screen and (max-width: 480px) {
+      .tiles .tile {
+        margin-bottom: 10%;
+        width: 100%;
+        height: 100%; } }
     .tiles .tile:hover {
       cursor: pointer; }
     .tiles .tile:nth-child(odd) {
@@ -239,11 +270,18 @@ footer {
       right: 0;
       height: 100%;
       width: 100%;
-      /* redefine font-size put to 0 on parent a */
-      font-size: 30px;
+      text-align: center;
       color: white;
       opacity: 0;
-      transition: opacity 1s; }
+      transition: opacity 1s;
+      /* redefine font-size put to 0 on parent a */
+      font-size: 30px; }
+      @media screen and (max-width: 650px) {
+        .tiles .tile .details-wrapper {
+          font-size: 22px; } }
+      @media screen and (max-width: 480px) {
+        .tiles .tile .details-wrapper {
+          font-size: 30px; } }
       .tiles .tile .details-wrapper:hover {
         opacity: 1; }
       .tiles .tile .details-wrapper .details {
@@ -253,9 +291,24 @@ footer {
         right: 0; }
       .tiles .tile .details-wrapper .title {
         font-size: 1em; }
+        @media screen and (max-width: 480px) {
+          .tiles .tile .details-wrapper .title {
+            font-size: .75em; } }
       .tiles .tile .details-wrapper p {
         font-size: 0.5em; }
+        @media screen and (max-width: 480px) {
+          .tiles .tile .details-wrapper p {
+            margin-top: 1%;
+            font-size: .5em;
+            line-height: 1.1; } }
       .tiles .tile .details-wrapper span {
         font-size: .75em; }
+
+#cover {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: hidden;
+  z-index: 6000; }
 
 /*# sourceMappingURL=style.css.map */

@@ -103,14 +103,14 @@ body {
  /* height: 100%;*/
  /* text-align: right;*/
 }
-.page header {
+.section header {
   display: inline-block;
   max-height: 100%;
 }
-.page .sub-header {
+.section .sub-header {
   text-align: center;
 }
-.page .header_hr {
+.section .header_hr {
   border: 0;
   height: 3px;
   width: 100px;
@@ -118,7 +118,7 @@ body {
   clear: both;
 }
 /* override */
-.pages {
+#content {
   height: 100%;
 }
 
