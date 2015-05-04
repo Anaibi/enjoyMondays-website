@@ -13,24 +13,22 @@
   <!-- THEME CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- RESPONSIVE CSS -->
   <link rel="stylesheet" href="assets/css/responsive.css" />
     
   <!-- SUPERSIZED CSS -->
   <link rel="stylesheet" href="assets/css/supersized.min.css" />
   <link rel="stylesheet" href="assets/theme/supersized.shutter.css" />
-    
-  <!-- MODERNIZR JS -->       
-  <script src="assets/js/modernizr.custom.js"></script> 
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis: 600|Lato:400,100,700,900:latin">
 </head>
 
 
 <body class="bg-1">
 
-  <div id="cover" class="fullheight bg-black hidden"></div>
+  <div id="cover"></div>
 
-  <div class="view-1 fullwrapper bg-1 big-header">
+  <div id="site" class="fullwrapper bg-1 big-header">
 
     <header id="main-header" class="wrapper fillwidth bg-1">
 
@@ -54,14 +52,9 @@
       </div>
     </header>
 
-    <div id="header_placeholder"></div> 
-
-
-    <!-- PAGES + FOOTER -->
-    <div id="pages" class="pages fillwidth "> 
-
-      <!-- HOME PAGE -->
-      <section id="home" class="page fillheight wrapper bg-1 color-2">
+    <div id="content" class="fillwidth "> 
+      <!-- HOME -->
+      <section id="home" class="page section wrapper bg-1 color-2">
         <header class="right centered clearfix fittextjs">    <h1 class="">
             <span class="s-header-one right ">
               <img id="smile" src="assets/images/smile.png" alt="we code you smile" title="smile" />
@@ -79,7 +72,7 @@
       <!--  END HOME PAGE -->
 
       <!--  WORK PAGE -->
-      <section id="work" class="page fillheight wrapper bg-2 color-1 ">
+      <section id="work" class="section wrapper bg-2 color-1 ">
         
         <header class="right fittextjs">
           <h1>Works</h1>          
@@ -99,7 +92,7 @@
       <!-- END WORK PAGE -->
 
       <!-- ABOUT PAGE -->
-      <section id="about" class="page fillheight wrapper bg-3 color-1">
+      <section id="about" class="section wrapper bg-3 color-1">
         <header class="right fittextjs">
           <h1>Services</h1>
           <div class="sub-header">
@@ -128,7 +121,7 @@
       <!-- END ABOUT PAGE -->
           
       <!-- CONTACT PAGE -->
-      <section id="contact" class="page fillheight last wrapper bg-4 color-1">
+      <section id="contact" class="section last wrapper bg-4 color-1">
         <header class="right centered clearfix fittextjs">
           <h1 class="clearfix">
             <span class="s-header-one color-2 right">say hello</span>
@@ -153,54 +146,51 @@
           <ul id="social">
             <li id="github">
               <a href="http://github.com/goliatone" target="_blank">
-                <img src="assets/images/github.png" title="github" alt="github" /></a>
+                <img src="assets/images/github.png" title="GitHub" alt="GitHub" /></a>
             </li>
-            <li id="fb">
+            <li id="facebook">
               <a href="https://www.facebook.com/EnjoyMondays" target="_blank">
-                <img src="assets/images/facebook.png" title="facebook" alt="facebook" /></a>
+                <img src="assets/images/facebook.png" title="Facebook" alt="Facebook" /></a>
             </li>
             <li id="twitter">
               <a href="http://twitter.com/EnjoyMondays" target="_blank">
-                <img src="assets/images/twitter.png" title="twitter" alt="twitter" /></a>
+                <img src="assets/images/twitter.png" title="Twitter" alt="Twitter" /></a>
             </li>
-            <li id="g+">
+            <li id="google">
               <a href="#">
-                <img src="assets/images/google+.png" title="google+" alt="google+" /></a>
+                <img src="assets/images/google+.png" title="Google+" alt="Google+" /></a>
             </li>
             <li id="pinterest">
               <a href="http://www.pinterest.com/enjoyMondays/" target="_blank">
-                <img src="assets/images/pinterest.png" title="pinterest" alt="pinterest" /></a>
+                <img src="assets/images/pinterest.png" title="Pinterest" alt="Pinterest" /></a>
             </li>
           </ul>
         </div>
       </footer>
     </div>
-    <!-- END PAGES + FOOTER -->
   </div>
-  <!-- END FRONT-PAGE (header + pages + footer) -->
+
   <!--  SUPERSIZED -->
-  <!-- fullwidth SLIDESHOW for works implemented by supersized TODO revisar -->
-  <div id="slideshow" class="view-2">
-    <!--  PROJECT NAVIGATION -->
+  <div id="slideshow">
     <div id="closeGallery">
       <a href="#">Close</a>
     </div>
-    <!--Arrow Navigation-->
     <a id="prevslide" class="load-item"></a>
     <a id="nextslide" class="load-item"></a>
-    <!-- END PROJECT NAVIGATION -->
   </div>
   <!--  END SUPERSIZED -->
+
   <!-- JQUERY -->
-  <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script type="text/javascript" src="assets/js/toucheffects.js"></script>
+  <script src="assets/js/jquery-2.1.3.min.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+
+
   <!-- WAYPOINTS http://imakewebthings.com/waypoints/ -->
-  <!-- script type="text/javascript" src="assets/js/waypoints.min.js"></script -->
-  <script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+  <script src="assets/js/jquery.waypoints.js"></script>
+  
   <!-- MAIN -->
-  <script type="text/javascript" src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
+
   <!-- FIT TEXT http://fittextjs.com/ --> 
   <script src="assets/js/jquery.fittext.js"></script>
   <script type="text/javascript">
@@ -217,26 +207,10 @@
     });
   </script>
   <!-- SUPERSIZED -->
-  <script type="text/javascript" src="assets/js/supersized.3.2.5.js"></script>
-  <script type="text/javascript" src="assets/theme/supersized.shutter.js"></script>
-  <script type="text/javascript" src="assets/js/supersized_call.js">
+  <script src="assets/js/supersized.3.2.5.js"></script>
+  <script src="assets/theme/supersized.shutter.js"></script>
+  <script src="assets/js/supersized_call.js"></script> 
 
-  </script>   
-  <!-- GOOGLE FONTS -->
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: { families: [ 
-        'Lato:400,100,700,900:latin',
-        'Dosis: 600' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        //wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })(); 
-    </script>
+  
   </body>
 </html>
