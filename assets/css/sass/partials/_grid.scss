@@ -9,7 +9,8 @@
     text-align: center;
     color: white;
     opacity: 0;
-    transition: opacity 1s;
+    @include transition(opacity, 1s);
+
     /* redefine font-size put to 0 on parent a */
     font-size: 30px;
 
@@ -81,6 +82,14 @@
   
     &:hover {
       cursor: pointer;
+
+      img {
+        @include transform(translate(0, -33px), scale(0.55));
+
+        @media screen and (max-width: 480px) {
+          @include transform(translate(0 , -50px), scale(0.8));
+        }
+      }
     }
 
     /* grid 2 col display */

@@ -1,0 +1,33 @@
+@import "_headerMenu";
+
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  @include transition(all, .5s);
+
+  @media screen and (max-width: 650px) {
+    height: auto;
+    padding-bottom: 1%;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 3%;
+    text-align: center;
+  }
+}
+
+#logo {
+  width: $logo_w_big;
+  margin-top: 40px;
+  @include transition(all, .3s);
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    float: none;
+  }
+}
+
+@include headerMenu;

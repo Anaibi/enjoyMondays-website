@@ -1,0 +1,11 @@
+body {
+  font-family: $font_family_1;
+  font-weight: 100;
+  color: black;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend %hi;
+  }
+}

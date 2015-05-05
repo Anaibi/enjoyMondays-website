@@ -1,31 +1,6 @@
 
 /* //////////////////////////////////////////////// MAX WIDTH 1350px //// */
 @media screen and (max-width: 1350px) {
-  /* ******************************************** */
-  /* ******************************** BASE LAYOUT */ 
-  .wrapper > *.right {
-    margin-right: 6%; 
-  }
-  .wrapper > *.left {
-    margin-left: 5%;
-  }
-  .content {
-    margin-right: 6%;
-    margin-left: 5%;
-  }
-
-  /* ******************************** */
-  /* ****** RESPONSIVE HEADLINES HOME */
-  #home .fittextjs {
-    width: 50%;
-    height: auto;
-    padding-top: 16%;
-    padding-bottom: 14%;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-
   /* ******************************** */
   /* ****** RESPONSIVE HEADLINES WORK */
   #work.section .fittextjs {
@@ -124,13 +99,6 @@
   body {
     font-size: 17px;
   }
-
-  .wrapper > *.left {
-    margin-left: 2%;
-  }
-  .wrapper > *.right {
-    margin-right: 2%;
-  }
   .section {
     text-align: center;
     padding: 0 5px;
@@ -143,14 +111,6 @@
   #content .section .fittextjs .header_hr {
     width: 15%;
     margin-top: 2%;
-  }
-
-
-
-  /* ******************************** */
-  /* ****** RESPONSIVE HEADLINES HOME */
-  #home .fittextjs {
-    width: 70%;
   }
 
   /* ******************************** */
@@ -171,15 +131,7 @@
     font-size: .2em;
   }
 
-  /* ******************************** */
-  /* *************************** GRID */
- 
 
-  #emb_container .tile:hover img {
-    -webkit-transform: translateY(0, -33px) scale(0.55);
-    -ms-transform: translateY(0, -33px) scale(0.55);
-    transform: translate(0, -33px) scale(0.55);
-  }
 
   /* ******************************** */
   /* ************************** ABOUT */
@@ -235,12 +187,7 @@
   h1 {
     font-size: 0.88em;
   }
-  .wrapper > *.left {
-    margin-left: 2%;
-  }
-  .wrapper > *.right {
-    margin-right: 2%;
-  }
+
   .section {
     text-align: center;
     padding: 0 5px;
@@ -262,47 +209,7 @@
     margin-top: 2%;
   }
 
-  /* ******************************** */
-  /* *************************** GRID */
 
-  /* modifiy hover effect to center img */
- /* .tiles.all-left .tile:hover img,
-  .no-touch .tiles.all-left .tile:hover img, 
-  .tiles.all-left .tile.cs-hover img,
-  .tiles.all-left .tile:nth-child(even):hover img,
-  .no-touch .tiles.left-right .tile:nth-child(even):hover img:hover, 
-  .tiles.left-right .tile.cs-hover:nth-child(even) img,
-  .tiles.all-left .tile:nth-child(odd):hover img,
-  .no-touch .tiles.left-right .tile:nth-child(odd):hover img, 
-  .tiles.left-right .tile.cs-hover:nth-child(odd) img {
-    transform: translate(0 , -50px) scale(0.7);
-  } */
-  #emb_container .tile:hover img {
-    -webkit-transform: translate(0 , -50px) scale(0.8);
-    -ms-transform: translate(0 , -50px) scale(0.8);
-    transform: translate(0 , -50px) scale(0.8);
-  }
-
-
-  /* ******************************** */
-  /* *************************** HOME */
-  #home .fittextjs {
-  /*  top: 25vh;*/
-  }
-  #content #home .fittextjs span {
-    display: block;
-    float: none;
-  }
-  #content #home .sub-header {
-    float: none;
-    width: 100%;
-    margin: auto;
-    font-size: 1.2em;
-  }
-  #smile {
-    left: 2vw;
-    top: 1vh;
-  }
   /* ******************************** */
   /* *************************** WORK */
   #content #work .fittextjs h1 { 

@@ -1,13 +1,7 @@
-
-
 .ui-loader {
   display: none;
 }
-* {
-  margin: 0;
-  padding: 0;
- /* -moz-box-sizing: border-box; */ /* if 'on' expanded menu doesn't show? */
-}
+
 a {
   text-decoration: none;
 }
@@ -33,16 +27,8 @@ img {
 .clearfix {
   clear: both;
 }
-/*.fixed {
-  position: fixed;
-  z-index: 1000;
-}*/
 .hidden {
   display: none;
-}
-.fillwidth {
-  width: 100%;
-  max-width: 1350px;
 }
 .fillheight {
   height: 100%;
@@ -62,9 +48,6 @@ img {
   transform: none;
   position: static; -optional-
 */
-/*.top: {
-  top: 0;
-}*/
 .screen-reader-text { 
   position: absolute;
   height: 0;
@@ -91,18 +74,8 @@ body {
   max-width: 1356px;
   margin: auto;
 }
-.wrapper > *.right,
-.content {
-  margin-right: 82px; 
-}
-.wrapper > *.left,
-.content {
-  margin-left: 70px;
-}
-.page {
- /* height: 100%;*/
- /* text-align: right;*/
-}
+
+
 .section header {
   display: inline-block;
   max-height: 100%;
@@ -122,60 +95,7 @@ body {
   height: 100%;
 }
 
-/* ******************************** */
-/* *************************** GRID */
 
-/* all-left */
-.all-left .tile:hover img,
-.no-touch .all-left .tile:hover img, 
-.all-left .tile.cs-hover img {
-  -webkit-transform: translate(-70px, -56px) scale(0.7);
-  -moz-transform: translate(-70px, -56px) scale(0.7);
-  transform: translate(-70px, -56px) scale(0.7);
-}
-/* */
-/* left-right */
-.left-right .tile:nth-child(even):hover img, 
-.no-touch .left-right .tile:nth-child(even):hover img, 
-.left-right .tile.cs-hover:nth-child(even) img {
-  -webkit-transform: translate(70px, -56px) scale(0.7);
-  -mms-transform: translate(70px, -56px) scale(0.7);
-  transform:  translate(70px, -56px) scale(0.7);
-}
-.left-right .tile:nth-child(odd):hover img, 
-.no-touch .left-right .tile:nth-child(odd):hover img, 
-.left-right .tile.cs-hover:nth-child(odd) img {
-  -webkit-transform: translate(-70px, -56px) scale(0.7);
-  -ms-transform: translate(-70px, -56px) scale(0.7);
-  transform:  translate(-70px, -56px) scale(0.7);
-}
-/* */
-/* *** details *** */
-/* all-left */
-.tiles.all-left .details-wrapper {
-  text-align: left;
-}
-/* */
-/* left-right */
-.tiles.left-right .tile:nth-child(even) .details-wrapper {
-  text-align: right;
-}
-.tiles.left-right .tile:nth-child(odd) .details-wrapper {
-  text-align: left;
-}
-
-/* all-left */
-.tiles.all-left .details-wrapper .title {
-  text-align: left;
-}
-/* */
-/* left-right */
-.tiles.left-right .tile:nth-child(even) .title {
-  text-align: right;
-}
-.tiles.left-right .tile:nth-child(odd) .title {
-  text-align: left;
-}
 
 /* ******************************************** */
 /* **************** RESPONSIVE HEADLINES CONFIG */
@@ -189,25 +109,7 @@ p {
 	font-size: .2em;
 }
 
-/* ******************************** */
-/* ****** RESPONSIVE HEADLINES HOME */
-#home .centered {
-  -ms-transform: none;
-  -webkit-transform: none;
-  transform: none;
-}
-#home .fittextjs {
-  width: 560px;
-  height: 332px;
-  padding-top: 155px;
-  margin-bottom: 144px; 
-}
-#home .fittextjs h1 {
-  line-height: 1.02;
-}
-#home .fittextjs p {
-  font-size: .156em;
-}  
+ 
 
 /* ******************************** */
 /* ****** RESPONSIVE HEADLINES WORK */
@@ -304,22 +206,7 @@ p {
 /* ******************************************** */
 /* *********************************** SECTIONS */
 
-/* ******************************** */
-/* *************************** HOME */
-#home {
-  padding-top: 10px; 
-}
-#home header {
-  padding-right: 4px;
-}
 
-#smile {	
-  position: relative;
-  left: 16px;
-  top: 11px;
-  width: auto;
-  height: 0.456em;
-}
 
 /* ******************************** */
 /* ************************** ABOUT */
@@ -366,7 +253,7 @@ p {
 
 /* ******************************************** */
 /* **************************** PROJECT gallery */
-.view-2 {
+#slideshow {
   /* initial state */
   display: none;
 }

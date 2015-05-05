@@ -4,16 +4,16 @@ $(document).ready(function () {
   var projects = [
     {p:'enjoy-mondays.com' ,i:3, t:"",e:true}
     //,{p:'yourlostmemories.com' ,i:12, t:"Your Lost Memories", d:"Complete website and database implementation. Moovie uploader, admin panel. Dedicated server configuration and codification", tech: "red5,"}
-    ,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site"}
+    ,{p:'promotionpictures.com' ,i:4, t:"Promotion Pictures", d:"Personalized wordpress site."}
     //,{p:'old.com' ,i:7, t:"Open Luxury Days", d:"Website for campaig with registration and admin panel. Server settup."}
-    ,{p:'goliatone.com' ,i:8, t:"Goliatone", d:"Website with portfolio and downloadable items. Hand coded."}
+    ,{p:'goliatone.com' ,i:8, t:"Goliatone", d:"Website with portfolio and downloadable items. With Ember."}
     //,{p:'cristinacostales.cat' ,i:8, t:"Cristina Costales", d:"Personalized wordpress site. Integration and personalization of plugins. Domain and hosting settings."}
     ,{p:'fat-man-collective.com' ,i:9, t:"Fat-man collective", d:"Company website. Interaction implemented with Flash. Server settup."}
     ,{p:'darknessmap.com' ,i:6, t:"DarknessMap", d:"Mobile and web App. Server settup." }
     //,{p:'corinnek.com' ,i:6, t:"CorinneK", d:"Personal website"}
     ,{p:'thisismorrison.com' ,i:4, t:"This is Morrison", d:"Website update for portfolio gallery slider and portfolio item scrollable."}
     //,{p:'jocdelamobilitat.cat' ,i:13, t:"El Joc de la Mobilitat", d:"Flash application. Game with registrations and database implementation. Admin panel."}
-    ,{p:'reigcapital.com' ,i:10, t:"ReigCapital", d:"Company website with database admin and registration + game implementation. Flash"}
+    ,{p:'reigcapital.com' ,i:10, t:"ReigCapital", d:"Company website with database admin and registration + game implementation. Flash."}
     //,{p:'25retos.com' ,i:26,t:"Chocapic: 25 retos", d:"Campaign Flash game, with registration and database admin"}
     //,{p:'custo-tu-nos-inspiras.com' ,i:13, t:"Custo: Tú nos inspiras", d:"Facebook campaign with registration and database implementation. Flash"}
     //,{p:'custo-xmas.com' ,i:8, t:"Custo: X-mas", d:"Facebook campaign with registration and database implementation. Flash"}
@@ -46,13 +46,13 @@ $(document).ready(function () {
 		// attach project preview and description to page ready onload:
 		if (project.e != true) {
 		  link = '<li class="tile"><a href="#"><img src="assets/projects/'+project.p+'/preview/preview.jpg" alt="'+project.t+'" rel="'+pi+'"/><div class="details-wrapper"><div class="details"><h3 class="title">'+project.t+'</h3><p>'+project.d+'</p></div></div></a></li>';
-		  $('#emb_container ul.emb_gallery').append(link);
+		  $('#gallery').append(link);
     }
     //insert into slides array
     slides.push(holder.slides);
   }
 
-  $('#emb_container ul.emb_gallery').append('<div class="clearfix"></div>');
+  $('#gallery').append('<div class="clearfix"></div>');
 
   ///////////////////////////
   //SUPERSIZED options///////
@@ -92,7 +92,7 @@ $(document).ready(function () {
   });
   ///////////////////////////////////////////
 		  
-	$tiles = $('ul.emb_gallery').find('.tile');
+	$tiles = $('#gallery').find('.tile');
 		  
 	$tiles.find('img').each( function(i) {
 	  

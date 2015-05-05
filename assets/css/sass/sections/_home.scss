@@ -1,0 +1,56 @@
+#home {
+
+	padding-top: 10px;
+
+	header {
+    padding-right: 4px;
+	}
+
+  .fittextjs {
+	  width: 560px;
+	  height: 332px;
+	  padding-top: 155px;
+	  margin-bottom: 144px; 
+
+	  @media screen and (max-width: 1350px) {
+	    width: 50%;
+      height: auto;
+      padding: 16% 0 14%;
+	  }
+
+	  @media screen and (max-width: 650px) {
+      width: 70%;
+	  }
+   
+    h1 {
+      line-height: 1.02;
+    }
+
+    p {
+      font-size: .156em;
+    } 
+  }
+  
+  .sub-header {
+    @media screen and (max-width: 480px) {
+      float: none;
+      width: 100%;
+      margin: auto;
+      font-size: 1.2em;
+    }
+	}
+}
+
+
+#smile {	
+  position: relative;
+  left: 16px;
+  top: 11px;
+  width: auto;
+  height: 0.456em;
+
+  @media screen and (max-width: 480px) {
+    left: 2vw;
+    top: 1vh;
+  }
+}

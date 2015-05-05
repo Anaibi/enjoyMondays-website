@@ -1,0 +1,46 @@
+@mixin setLayout($h) {
+  
+  #main-header,
+  #header_placeholder {
+    height: $h;
+  }
+
+  #content {
+    &::before {
+      content: " ";
+      display: block;
+      height: $h;
+      width: 100%;
+    }
+
+    .section {
+      height: 100%;
+      min-height: calc(100vh - #{$h});
+
+      &.last {
+        $th: $h + $footer_h;
+        min-height: calc(100vh - #{$th});
+      }
+    }
+  }
+}
+
+%hi {
+  font-family: $font_family_2;
+  /* default font-size, rescales with fittextjs */
+  font-size: 130px;
+  font-weight: 600;	
+}
+
+
+@mixin transition($args, $t) {
+  -webkit-transition: $args $t;
+  -ms-transition: $args $t;
+  transition: $args $t;
+}
+
+@mixin transform($args, $t) {
+  -webkit-transform: $args $t;
+  -ms-transform: $args $t;
+  transform: $args $t;
+}
