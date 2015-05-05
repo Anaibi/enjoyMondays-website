@@ -38,6 +38,10 @@
         margin-left: 0;
       }
 
+      &:last-child {
+        margin-right: -4px;
+      }
+
       &.active-link {
         font-weight: 900;
         /* has to override .touch class no border */

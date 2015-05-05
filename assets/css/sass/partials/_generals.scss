@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.vCentered {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.screen-reader-text { 
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  font-size: 0;
+}
+.img-wrapper {
+  height: auto;
+  display: block;
+}
+

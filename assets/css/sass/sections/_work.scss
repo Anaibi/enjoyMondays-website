@@ -1,0 +1,16 @@
+.work {
+  .fittextjs {
+    width: cp(390px, $max_layout_width);
+    padding: 68px 0 97px;
+
+    @media screen and (max-width: 1350px) {
+      //width: 50%;
+      //height: auto;
+      padding: 5% 0 8%;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  }
+}

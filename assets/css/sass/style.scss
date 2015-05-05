@@ -3,6 +3,7 @@
 
 @import "partials/_mixins";
 
+@import "partials/_generals";
 @import "partials/_grid";
 
 @import "partials/_colors";
@@ -12,27 +13,110 @@
 @import "partials/_footer";
 
 @import "sections/_home";
+@import "sections/_work";
+@import "sections/_about";
 
 
 .container {
 	max-width: $max_layout_width;
+	height: 100%;
 	margin: 0 auto;
-	padding: 0 82px 0 70px;
-
-	@media screen and (max-width: 1350px) {
-      padding: 0 6%;
-    }
-
-    @media screen and (max-width: 650px) {
-      padding: 0 2%;
-    }
+	padding: 0 cp($layout_padding, $max_layout_width);
 }
 
 
-// -------------------------------- BACKGROUNDS */
+// ------------------------------------- COLORS */
 body,
 #site {
 	@extend .bg-1;
+}
+
+#home {
+	@extend .bg-1;
+	@extend .color-2;
+
+	hr {
+	  @extend .bg-2;
+	}
+}
+
+#work {
+	@extend .bg-2;
+	@extend .color-1;
+
+	hr {
+	  @extend .bg-4;
+	}
+}
+
+#about {
+	@extend .bg-3;
+	@extend .color-1;
+
+	hr {
+	  @extend .bg-4;
+	}
+}
+
+#contact {
+	@extend .bg-4;
+	@extend .color-1;
+
+	hr {
+	  @extend .bg-5;
+	}
+}
+
+
+// -------------------------------------------- */
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section {
+	@extend %clearfix;
+	text-align: right;
+
+	@media screen and (max-width: 650px) {
+	  text-align: center;
+	}
+
+	.fittextjs {
+    display: inline-block;
+
+    h1 {
+		  line-height: 1;
+		  text-align: right;
+		  text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 650px) {
+      width: 70%;
+	  }
+  }
+
+  .sub-header {
+    text-align: center;
+
+    hr {
+      border: 0;
+	    height: 3px;
+	    width: 100px;
+	    margin: 2% auto 4%;
+	    clear: both;
+
+      @media screen and (max-width: 650px) {
+        width: 15%;
+      }
+    }
+  }
 }
 
 // --------------------- LAYOUT WITH BIG HEADER */

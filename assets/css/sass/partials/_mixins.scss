@@ -1,7 +1,6 @@
 @mixin setLayout($h) {
   
-  #main-header,
-  #header_placeholder {
+  #main-header {
     height: $h;
   }
 
@@ -25,14 +24,6 @@
   }
 }
 
-%hi {
-  font-family: $font_family_2;
-  /* default font-size, rescales with fittextjs */
-  font-size: 130px;
-  font-weight: 600;	
-}
-
-
 @mixin transition($args, $t) {
   -webkit-transition: $args $t;
   -ms-transition: $args $t;
@@ -43,4 +34,30 @@
   -webkit-transform: $args $t;
   -ms-transform: $args $t;
   transform: $args $t;
+}
+
+@mixin transformNone {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;  
+}
+
+@function cp($target, $container) {
+  @return ($target/$container) * 100%;
+}
+
+%clearfix {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }  
+  &:after {
+    clear:both;
+  }  
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
 }

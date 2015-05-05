@@ -1,56 +1,31 @@
-#home {
-
-	padding-top: 10px;
-
-	header {
-    padding-right: 4px;
-	}
-
+.home {
   .fittextjs {
-	  width: 560px;
-	  height: 332px;
-	  padding-top: 155px;
-	  margin-bottom: 144px; 
+	  width: cp(560px, $max_layout_width);
+	  padding: 155px 0 144px;
 
 	  @media screen and (max-width: 1350px) {
-	    width: 50%;
-      height: auto;
       padding: 16% 0 14%;
-	  }
-
-	  @media screen and (max-width: 650px) {
-      width: 70%;
 	  }
    
     h1 {
-      line-height: 1.02;
+      &::before {
+      	content: " ";
+      	width: .55em;
+      	height: .5em;
+      	display: inline-block;
+      	background: url('../images/smile.png') no-repeat 2.5% 34%;
+      	background-size: contain;
+      	position: relative;
+      	top: .1em;
+      }
     }
-
-    p {
-      font-size: .156em;
-    } 
   }
   
   .sub-header {
+  	float: right;
+
     @media screen and (max-width: 480px) {
       float: none;
-      width: 100%;
-      margin: auto;
-      font-size: 1.2em;
     }
 	}
-}
-
-
-#smile {	
-  position: relative;
-  left: 16px;
-  top: 11px;
-  width: auto;
-  height: 0.456em;
-
-  @media screen and (max-width: 480px) {
-    left: 2vw;
-    top: 1vh;
-  }
 }

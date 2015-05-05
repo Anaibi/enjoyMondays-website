@@ -2,40 +2,6 @@
 /* //////////////////////////////////////////////// MAX WIDTH 1350px //// */
 @media screen and (max-width: 1350px) {
   /* ******************************** */
-  /* ****** RESPONSIVE HEADLINES WORK */
-  #work.section .fittextjs {
-    width: 31%;
-    height: auto;
-    padding-top: 5%;
-    padding-bottom: 8%;
-    margin-bottom: 0;
-  }
-  #work.section .fittextjs h1 {
-    margin-bottom: 8%;
-  }
-  #work.section .fittextjs hr {
-    margin-bottom: 3%;
-  }  
-
-  /* ******************************** */
-  /* ***** RESPONSIVE HEADLINES ABOUT */
-  #about .fittextjs {
-    width: 41%;
-    height: auto;
-    padding-top: 14%;
-    padding-bottom: 15%;
-    margin-bottom: 0;
-  }
-  #about.section .fittextjs h1 {
-    margin-bottom: 8%;
-  }
-  #about.section .fittextjs hr {
-    margin-bottom: 2%;
-  }
-  #about.section .fittextjs p {
-    padding: 0 2%;
-  }
-  /* ******************************** */
   /* ************************** ABOUT */
   #about .content {
     padding-left: 9%;
@@ -81,9 +47,7 @@
     margin-top: -2%;
     margin-right: 4%;
   }
-  #content #contact .fittextjs hr {
-    margin-bottom: 3%;
-  }
+
   #content #contact .fittextjs p {
     height: auto;
   }
@@ -94,53 +58,7 @@
 /* ////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////// MAX WIDTH 650px //// */
 @media screen and (max-width: 650px) {
-  /* ******************************************** */
-  /* ******************************** BASE LAYOUT */
-  body {
-    font-size: 17px;
-  }
-  .section {
-    text-align: center;
-    padding: 0 5px;
-  }
-  #content .section .fittextjs h1 {
-    margin-bottom: 0;
-    text-align: center;
-    line-height: 1;
-  } 
-  #content .section .fittextjs .header_hr {
-    width: 15%;
-    margin-top: 2%;
-  }
 
-  /* ******************************** */
-  /* ****** RESPONSIVE HEADLINES WORK */
-  #work.section .fittextjs {
-    width: 37%;
-    height: auto;
-    padding-top: 5%;
-    margin-bottom: 8%;
-  }
-  #work.section .fittextjs h1 {
-    margin-bottom: 8%;
-  }
-  #work.section .fittextjs hr {
-    margin-bottom: 3%;
-  }  
- #content #work .fittextjs p { 
-    font-size: .2em;
-  }
-
-
-
-  /* ******************************** */
-  /* ************************** ABOUT */
-  #about .fittextjs {
-    width: 50%;
-  }
-  #about.section .fittextjs p {
-    font-size: .18em;
-  }
   #about.section .fittextjs p br {
     display: none;
   }
@@ -188,10 +106,6 @@
     font-size: 0.88em;
   }
 
-  .section {
-    text-align: center;
-    padding: 0 5px;
-  }
   #content .section .fittextjs {
     float: none;
     width: 95%;
@@ -204,10 +118,7 @@
     text-align: center;
     line-height: 1;
   } 
-  #content .section .fittextjs .header_hr {
-    width: 15%;
-    margin-top: 2%;
-  }
+ 
 
 
   /* ******************************** */
