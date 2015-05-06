@@ -11,9 +11,6 @@ $(function() {
     
   var resizeTimer;
 
-  //hide ui-loader, check why appears
-  $('.ui-loader').hide();
-
   $(window).load(function () {
   	doWaypoints();
   });
@@ -34,9 +31,8 @@ $(function() {
       	return; 
       }
       
-      // refresch waypoints TODO
+      // refresh waypoints TODO
       Waypoint.refreshAll();
-     // doWaypoints(); // check if needed
 
       if (!inSameWidthGap(ww, marks)) { 
         // refresh header
@@ -111,7 +107,7 @@ $(function() {
   	  });
     });
     
-    // update links direction down
+    // update links direction up
     $sections.each(function() { 
   	  new Waypoint({
   	  	element: this,

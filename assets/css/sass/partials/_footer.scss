@@ -1,23 +1,35 @@
 
-footer {
+footer.container {
   height: $footer_h;
 
   @media screen and (max-width: 650px) {
     font-size: 13px;
   }
 
-  p {
-    padding-left: 7px;
+  & > div {
+    @include vCentered;
+
+    @media screen and (max-width: 650px) {
+      display: block;
+      width: 100%;
+      margin: 3% auto 1%;
+      transform: none;
+      top: 0;
+    }
+  }
+  
+  .site-info {
+    float: left;
     font-weight: 700;
     font-size: .95em;
+
+    a {
+      font-weight: 900;
+    }
   }
 
-  a {
-    font-weight: 900;
-  }
-
-  #social {
-    padding-right: 7px;
+  .social-links {
+    float: right;
     /* otherwise webkit adds margin 1em */
     font-size: 0;
    
@@ -28,39 +40,15 @@ footer {
       &:hover {
         cursor: pointer;
       }
-    }
-   
-    a {
-      width: 32px;
-      height: 32px;
-    }
-  }
-}
 
-@media screen and (max-width: 480px) {
-  /* stack and center */
-  /* breaks under 190px */
-  footer {
-    font-size: 18px;
-    text-align: center;
-  
-		p {
-		  padding: 0;
-		  font-size: .65em;
-		}
-  
-    &.wrapper .left,
-    &.wrapper .right {
-	    display: inline-block;
-	    float: none;
-	    width: 100%;
-	    margin: 0 0 2%;
-	    padding: 4% 0 0;
-	  }
-  
-    .centered {
-	    position: static;
-	    transform: none;
+      &:first-child {
+        padding-left: 0;
+      }
+   
+      a {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }

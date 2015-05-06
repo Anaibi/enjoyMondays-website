@@ -52,43 +52,8 @@ $(document).ready(function () {
     slides.push(holder.slides);
   }
 
-  ///////////////////////////
-  //SUPERSIZED options///////
-  ///////////////////////////
-  $.supersized({
-    // Functionality
-    slideshow               : 1,        // Slideshow on/off
-    autoplay                : 0,        // Slideshow starts playing automatically
-    start_slide             : 1,        // Start slide (0 is random)
-    stop_loop               : 0,        // Pauses slideshow on last slide
-    random                  : 0,        // Randomize slide order (Ignores start slide)
-    slide_interval          : 6000,     // Length between transitions
-    transition              : 6,        // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-    transition_speed        : 1000,     // Speed of transition
-    new_window              : 1,        // Image links open in new window/tab
-    pause_hover             : 1,        // Pause slideshow on hover
-    keyboard_nav            : 0,        // Keyboard navigation on/off
-    performance             : 1,        // 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
-    image_protect           : 1,        // Disables image dragging and right click with Javascript
-    
-    // Size & Position
-    min_width               : 0,        // Min width allowed (in pixels)
-    min_height              : 0,        // Min height allowed (in pixels)
-    vertical_center         : 1,        // Vertically center background
-    horizontal_center       : 1,        // Horizontally center background
-    fit_always              : 0,        // Image will never exceed browser width or height (Ignores min. dimensions)
-    fit_portrait            : 0,        // Portrait images will not exceed browser height
-    fit_landscape           : 1,        // Landscape images will not exceed browser width
-    slide_links             : 'blank',  // Individual links for each slide (Options: false, 'num', 'name', 'blank')
-    thumb_links             : 0,        // Individual thumb links for each slide
-    thumbnail_navigation    : 0,        // Thumbnail navigation
-    slides                  : slides,		// Slideshow Images
-    
-    // Theme Options
-    progress_bar            : 0,        // Timer for each slide
-    mouse_scrub             : 0
-  });
-  ///////////////////////////////////////////
+  $('#gallery').append('<div class="clearfix"></div>');
+
 		  
 	$tiles = $('#gallery').find('.tile');
 		  
@@ -102,17 +67,17 @@ $(document).ready(function () {
 		  
       //show slideshow navigation
 		  $('#slideshow').show();
-      $('#supersized').show();
+     // $('#supersized').show();
      
       // hide content
       $('#site').hide();
 		  
       // supersized config
-      api.setGallery(index - 1);
+     /* api.setGallery(index - 1);
 		  $.supersized.api.options.slideshow = true;
 		  $.supersized.api.playToggle();
       
-      theme.show();
+      theme.show();*/
     });
   });
   ///////////////////////////////////////////
@@ -121,7 +86,7 @@ $(document).ready(function () {
 
 	  //hide slideshow navigation
 	  $('#slideshow').hide();
-    $('#supersized').hide();
+   // $('#supersized').hide();
 
     // show content set to works section
 	  $('#site').fadeIn("fast", function() {
@@ -129,14 +94,14 @@ $(document).ready(function () {
 	  });
     
     // supersized config
-    api.setGallery(0);
+ /*   api.setGallery(0);
 	  $.supersized.api.options.slideshow = false;
 	  $.supersized.api.playToggle();
 
-	  theme.hide();
+	  theme.hide();*/
   });
 
   //checking theme working -> can't see what this is doing. TODO check
-  theme.hide();
-  $('#supersized').hide();
+  /*theme.hide();
+  $('#supersized').hide();*/
 });

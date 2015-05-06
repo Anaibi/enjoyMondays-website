@@ -1,31 +1,43 @@
-.home {
-  .fittextjs {
+.home.section {
+	.container {
+		min-height: 350px;
+		height: 70vh;
+	}
+	
+	.header {
+    @include vCentered(40%);
+
 	  width: cp(560px, $max_layout_width);
 	  padding: 155px 0 144px;
 
 	  @media screen and (max-width: 1350px) {
       padding: 16% 0 14%;
 	  }
+
+	  @media screen and (max-width: 650px) {
+	  	width: 100%;
+	  }
    
     h1 {
-      &::before {
-      	content: " ";
-      	width: .55em;
-      	height: .5em;
-      	display: inline-block;
-      	background: url('../images/smile.png') no-repeat 2.5% 34%;
-      	background-size: contain;
-      	position: relative;
-      	top: .1em;
-      }
+	    &:first-child::before {
+	      content: " ";
+	      width: .55em;
+	      height: .5em;
+	      display: inline-block;
+	      background: url('../images/smile.png') no-repeat 2.5% 34%;
+	      background-size: contain;
+	      position: relative;
+	      top: .1em;
+	     }
     }
-  }
   
-  .sub-header {
-  	float: right;
+		.sub-header {
+		  float: right;
 
-    @media screen and (max-width: 480px) {
-      float: none;
-    }
+		  @media screen and (max-width: 480px) {
+		    float: none;
+		    font-size: .2em;
+		  }
+		}
 	}
 }

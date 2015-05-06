@@ -2,12 +2,10 @@
 @import "partials/_settings";
 
 @import "partials/_mixins";
-
 @import "partials/_generals";
 @import "partials/_grid";
 
 @import "partials/_colors";
-@import "partials/_fonts";
 
 @import "partials/_header";
 @import "partials/_footer";
@@ -15,23 +13,17 @@
 @import "sections/_home";
 @import "sections/_work";
 @import "sections/_about";
-
-
-.container {
-	max-width: $max_layout_width;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0 cp($layout_padding, $max_layout_width);
-}
+@import "sections/_contact";
 
 
 // ------------------------------------- COLORS */
 body,
-#site {
+#site,
+#main-header {
 	@extend .bg-1;
 }
 
-#home {
+.home {
 	@extend .bg-1;
 	@extend .color-2;
 
@@ -40,7 +32,7 @@ body,
 	}
 }
 
-#work {
+.work {
 	@extend .bg-2;
 	@extend .color-1;
 
@@ -49,7 +41,7 @@ body,
 	}
 }
 
-#about {
+.about {
 	@extend .bg-3;
 	@extend .color-1;
 
@@ -58,13 +50,42 @@ body,
 	}
 }
 
-#contact {
+.contact {
 	@extend .bg-4;
 	@extend .color-1;
 
 	hr {
 	  @extend .bg-5;
 	}
+}
+
+footer {
+	@extend .bg-2;
+	@extend .color-1;
+}
+
+
+// ----------------------------------------- FONTS
+
+body {
+  font-family: $font_family_1;
+  font-weight: 100;
+  color: black;
+}
+
+h1 {
+  font-family: $font_family_2;
+  font-weight: 600;
+	font-size: 1em;
+}
+
+p {
+  line-height: 1.5;
+  letter-spacing: .17px;
+}
+
+.sub-header {
+  font-size: .158em;
 }
 
 
@@ -78,6 +99,17 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media screen and (max-width: 650px) {
+    text-align: center;
+  }
+}
+
+.container {
+	max-width: $max_layout_width;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 cp($layout_padding, $max_layout_width);
 }
 
 .section {
@@ -88,17 +120,20 @@ body {
 	  text-align: center;
 	}
 
-	.fittextjs {
+	.header {
     display: inline-block;
 
     h1 {
 		  line-height: 1;
-		  text-align: right;
 		  text-transform: uppercase;
 		}
 
 		@media screen and (max-width: 650px) {
       width: 70%;
+	  }
+
+	  @media screen and (max-width: 480px) {
+      width: 100%;
 	  }
   }
 
@@ -108,7 +143,7 @@ body {
     hr {
       border: 0;
 	    height: 3px;
-	    width: 100px;
+	    width: 20%;
 	    margin: 2% auto 4%;
 	    clear: both;
 
@@ -118,6 +153,16 @@ body {
     }
   }
 }
+
+.content {
+	padding: 0 8% 12%;
+	text-align: center;
+  
+  @media screen and (max-width: 650px) {
+    padding: 0 0 12%;
+  }
+}
+
 
 // --------------------- LAYOUT WITH BIG HEADER */
 
@@ -154,7 +199,7 @@ body {
     }
 
     @media screen and (max-width: 480px) {
-      margin: 4% auto;
+      margin: 3% auto 2%;
     }
 
     @media screen and (max-width: 350px) {

@@ -61,3 +61,11 @@
     zoom:1;
   }
 }
+
+@mixin vCentered($y:50%) {
+  position: relative;
+  top: $y;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

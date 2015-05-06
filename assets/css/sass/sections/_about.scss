@@ -1,10 +1,14 @@
-.about {
-	.fittextjs {
+.about.section	{
+	.header {
 	  width: cp(530px, $max_layout_width);
 		padding: 167px 0 184px;
 
 		@media screen and (max-width: 1350px) {
 	    padding: 6% 0 12%;
+		}
+
+		@media screen and (max-width: 650px) {
+		  width: 80%;
 		}
 	  
 	  .sub-header {
@@ -13,4 +17,23 @@
 	    }
 	  }
 	}
+
+  .content {
+    .img-wrapper {
+      width: 70%;
+      margin: 0 auto 8%;
+    }
+
+    hr {
+      width: 15%;
+      margin: 0 auto 5%;
+      @extend .bg-1;
+    }
+
+    p {
+      width: 80%;
+      margin: auto;
+      word-spacing: -1px;
+    }
+  }
 }

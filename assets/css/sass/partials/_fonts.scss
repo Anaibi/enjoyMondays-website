@@ -4,18 +4,17 @@ body {
   color: black;
 }
 
-.section {
-  h1 {
-    font-family: $font_family_2;
-    font-weight: 600;
-		font-size: 1em;
-	}
+h1 {
+  font-family: $font_family_2;
+  font-weight: 600;
+	font-size: 1em;
+}
 
-	.sub-header {
-    font-size: .158em;
+p {
+  line-height: 1.5;
+  letter-spacing: .17px;
+}
 
-    @media screen and (max-width: 650px) {
-        font-size: .2em;
-    }
-  }
+.sub-header {
+  font-size: .158em;
 }
