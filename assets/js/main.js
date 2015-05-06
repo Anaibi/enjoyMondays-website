@@ -5,9 +5,9 @@ $(function() {
       ww.actual = $(window).width(),
       ww.previous = ww.actual;
 
-  var marks = [];
-      marks[0] = 325,
-      marks[1] = 480;
+  var smallHeaderH = 111;
+  
+  var marks = [325, 480];
     
   var resizeTimer;
 
@@ -45,8 +45,7 @@ $(function() {
 
   });
 
-  //////////////////////////////////////// MENU FUNCTIONALITY
-  //////////////////////////////////////// 
+  //-------------------------------------- MENU FUNCTIONALITY
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
@@ -72,21 +71,11 @@ $(function() {
       }   
   });
 
-  //////////////////////////////////////// WAYPOINT PLUGIN implementation
-  ////////////////////////////////// http://imakewebthings.com/waypoints/
+  //----------------------------------------- WAYPOINTS
+  //-------------- http://imakewebthings.com/waypoints/
   function doWaypoints() {  
 
-	  var $sections = $('.section');
-
-	  var offset = {};
-
-	  // needs different offsets for updating home link
-	  //if (w<350) { 
-	  offset.down = '100%'; 
-	  offset.up = 'bottom-in-view'; 
-	  //} 
-	  //else if (w<480) { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
-	  //else { offset.down = '100%'; offset.up = 'bottom-in-view'; } 
+	  var $sections = $('.section'); 
     
     // update links direction down
 	  $sections.each(function() { 
@@ -102,7 +91,7 @@ $(function() {
   	  	  	} 
   	  	  }
   	  	},
-  	    offset: offset.down,
+  	    offset: '100%',
   	    group: 'sections'
   	  });
     });
@@ -121,15 +110,13 @@ $(function() {
   	  	  	} 
   	  	  }	  	 
   	  	},
-  	    offset: offset.up,
+  	    offset: 'bottom-in-view',
   	    group: 'sections'
   	  });
     });
   }
-  //////////////////////////////////// END WAYPOINT PLUGIN implementation
-  //////////////////////////////////////////////// END MENU FUNCTIONALITY
 
-  ///////////////////////////////////////////////////////// animateHeader
+  //------------------------------------------- animateHeader
   function animateHeader(direction) { 
 
     // switch headers
@@ -149,9 +136,8 @@ $(function() {
       }
     }
   }
-  //////////////////////////////////////////////////////END animateHeader
- 
-  ///////////////////////////////////////////////////////// refreshHeader
+
+  //------------------------------------------- refreshHeader
   function refreshHeader() { 
     // home menu is always expanded and header big
     $('#collapsed-menu').hide(function() {
@@ -159,16 +145,16 @@ $(function() {
   	});
     $('#site').removeClass('small-header').addClass('big-header');
   }
-  //////////////////////////////////////////////////////END refreshHeader
 
+  //---------------------------------------- scrollToPosition
+  function scrollToPosition(section) { 
+    // clicking from home, get small header height
+    var h = (isActiveSection('home')) ? smallHeaderH : $('#main-header').height();
 
-  ////////////////////////////////////////////////////// HELPER FUNCTIONS
-  // scroll to pages position
-  function scrollToPosition(page) { 	
 	  $('body, html')
 	    .stop()
 	    .animate({
-	  	  scrollTop: $(page).offset().top - $('#main-header').height()
+	  	  scrollTop: $(section).offset().top - h
 	    }, 250, function(){ 
 	    $('html, body').clearQueue();
    	  });
@@ -184,12 +170,14 @@ $(function() {
     }
   }
 
-  // check if is active section
+  //----------------------------------------- isActiveSection
   function isActiveSection(id) {
   	return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
   
-  // says if actual width and previous width are in the same interval defined by values in marks
+  //------------------------------------------ inSameWidthGap
+  // says if actual width and previous width
+  // are in the same interval defined by values in marks
   function inSameWidthGap() { 
     var a = false;
     for (var i = 0; i < (marks.length - 1); i++) {
@@ -201,7 +189,9 @@ $(function() {
     return a;
   }
 
-  // check if two values v1, v2 are in the same interval defined by [i1, i2]
+  //------------------------------------------ inSameInterval
+  // check if two values v1, v2 
+  // are in the same interval defined by [i1, i2]
   function inSameInterval(v1, v2, i1, i2) { 
   	var a = false;
     if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
@@ -209,5 +199,4 @@ $(function() {
     } 
     return a;
   }
-  ////////////////////////////////////////////////// END HELPER FUNCTIONS
 });

@@ -1,6 +1,6 @@
 .contact.section {
 	.container {
-		min-height: 650px;
+		min-height: 350px;
 		height: 70vh;
 
 		@media screen and (max-width: 650px) {
@@ -12,11 +12,6 @@
     @include vCentered(40%);
 
     width: 100%;
-	  padding: 165px 0 250px;
-
-	  @media screen and (max-width: 1350px) {
-      padding: 13% 0 20%;
-	  }
 
 	  @media screen and (max-width: 650px) {
       text-align: right;
