@@ -38,7 +38,7 @@ Thumbs.db
 
 # SASS               #
 ######################
-*.scssc
+.sass-cache
 *.css.map
 
 # IMAGES             #
@@ -46,7 +46,3 @@ Thumbs.db
 *.png
 *.jpg
 *.gif
-
-# OTHER              #
-######################
-*.sublime-workspace
