@@ -74,13 +74,15 @@
       display: none;
     }
    
-    img {
+    a {
+      display: block;
       /* icon size */
       width: 23px;
       height: 19px;
       /* to avoid jumps on hover */
       padding: 30px;
       margin: -30px;
+      background: url('../images/menu.png') no-repeat 30px;
     }
     
     &:hover {
