@@ -331,5 +331,10 @@ $(function() {
 
       theme.hide();
     });
+
+    //checking theme working -> can't see what this is doing. TODO check
+    theme.hide();
+    $('#supersized').hide();
+
   });
 });

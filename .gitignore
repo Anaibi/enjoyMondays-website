@@ -40,3 +40,9 @@ Thumbs.db
 ######################
 *.scssc
 *.css.map
+
+# IMAGES             #
+######################
+*.png
+*.jpg
+*.gif
