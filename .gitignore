@@ -46,3 +46,7 @@ Thumbs.db
 *.png
 *.jpg
 *.gif
+
+# OTHER              #
+######################
+*.sublime-workspace
