@@ -1,0 +1,89 @@
+@import "_colors-constants";
+@import "_colors-defaultSettings";
+
+
+body {
+  
+  background-color: $color1;
+  color: $color2;
+  
+  // ---------------- MAIN HEADER 
+
+  #main-header { 
+    background-color: $color1;
+
+    li {
+      &.active-link {
+        // has to override .touch class no border
+        border-bottom: solid $FUXSIA 3px !important;
+      }
+
+      &:hover {
+        // .touch has to override this
+        border-bottom: solid $FUXSIA 3px;
+      }
+
+      a {
+        color: $color2;
+      }
+    }
+  }
+
+  // ------------------ SECTION 1 
+
+  .section-1 {
+    background-color: $color1;
+    color: $color2;
+
+    hr {
+      background-color: $color2;
+    }
+  }
+
+  // ------------------ SECTION 2 
+
+  .section-2 {
+    background-color: $color2;
+    color: $color1;
+
+    hr {
+      background-color: $color4;
+    }
+  }
+
+  // ------------------ SECTION 3
+
+    .section-3 {
+      background-color: $color3;
+      color: $color1;
+
+      hr {
+        background-color: $color4;
+      }
+
+      .content hr {
+        background-color: $color1;
+      }
+    }
+
+
+  // ------------------ SECTION 4
+
+  .section-4 {
+    background-color: $color4;
+    color: $color1;
+
+    hr {
+      background-color: $color5;
+    }
+  }
+
+
+  // --------------------- FOOTER
+
+  footer {
+    background-color: $color2;
+    color: $color1;
+  }
+}
+

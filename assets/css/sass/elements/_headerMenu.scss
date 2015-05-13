@@ -44,14 +44,10 @@
 
       &.active-link {
         font-weight: 900;
-        /* has to override .touch class no border */
-        border-bottom: solid #DF3F54 3px !important;
       }
 
       &:hover {
         font-weight: 900;
-        /* .touch has to override this */
-        border-bottom: solid #DF3F54 3px;
       }
     }
     
@@ -59,7 +55,6 @@
       display: block;
       padding: 30px 24px;
       margin: -30px -20px;
-      color: inherit;
 
       @media screen and (max-width: 350px) {
         padding: 30px 21px; /* breaks under 226px */

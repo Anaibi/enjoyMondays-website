@@ -39,37 +39,42 @@ img {
   height: auto;
   display: block; }
 
-.bg-1, .about.section .content hr, body,
-#site,
-#main-header, .home {
-  background-color: #E9E8E3; }
-
-.color-1, .contact.section .header h1 a, .work, .about, .contact, footer {
-  color: #E9E8E3; }
-
-.bg-2, .home hr, .work, footer {
-  background-color: #3A3A3A; }
-
-.color-2, .contact.section .header h1:first-child, .home {
+body {
+  background-color: #E9E8E3;
   color: #3A3A3A; }
-
-.bg-3, .about {
-  background-color: #363B48; }
-
-.color-3 {
-  color: #363B48; }
-
-.bg-4, .work hr, .about hr, .contact {
-  background-color: #DF3F54; }
-
-.color-4 {
-  color: #DF3F54; }
-
-.bg-5, .contact hr {
-  background-color: #F17C71; }
-
-.color-5 {
-  color: #F17C71; }
+  body #main-header {
+    background-color: #E9E8E3; }
+    body #main-header li.active-link {
+      border-bottom: solid #DF3F54 3px !important; }
+    body #main-header li:hover {
+      border-bottom: solid #DF3F54 3px; }
+    body #main-header li a {
+      color: #3A3A3A; }
+  body .section-1 {
+    background-color: #E9E8E3;
+    color: #3A3A3A; }
+    body .section-1 hr {
+      background-color: #3A3A3A; }
+  body .section-2 {
+    background-color: #3A3A3A;
+    color: #E9E8E3; }
+    body .section-2 hr {
+      background-color: #DF3F54; }
+  body .section-3 {
+    background-color: #363B48;
+    color: #E9E8E3; }
+    body .section-3 hr {
+      background-color: #DF3F54; }
+    body .section-3 .content hr {
+      background-color: #E9E8E3; }
+  body .section-4 {
+    background-color: #DF3F54;
+    color: #E9E8E3; }
+    body .section-4 hr {
+      background-color: #F17C71; }
+  body footer {
+    background-color: #3A3A3A;
+    color: #E9E8E3; }
 
 #main-header {
   position: fixed;
@@ -123,18 +128,13 @@ img {
     #header-nav li:last-child {
       margin-right: -4px; }
     #header-nav li.active-link {
-      font-weight: 900;
-      /* has to override .touch class no border */
-      border-bottom: solid #DF3F54 3px !important; }
+      font-weight: 900; }
     #header-nav li:hover {
-      font-weight: 900;
-      /* .touch has to override this */
-      border-bottom: solid #DF3F54 3px; }
+      font-weight: 900; }
   #header-nav a {
     display: block;
     padding: 30px 24px;
-    margin: -30px -20px;
-    color: inherit; }
+    margin: -30px -20px; }
     @media screen and (max-width: 350px) {
       #header-nav a {
         padding: 30px 21px;
@@ -354,7 +354,10 @@ footer.container {
     .contact.section .header {
       text-align: right; } }
   .contact.section .header h1:first-child {
+    color: #3A3A3A;
     font-size: 1.2em; }
+  .contact.section .header h1 a {
+    color: #E9E8E3; }
   .contact.section .header .sub-header {
     float: right;
     font-weight: 400; }
@@ -373,8 +376,7 @@ footer.container {
 
 body {
   font-family: "Lato", sans-serif;
-  font-weight: 100;
-  color: black; }
+  font-weight: 100; }
 
 h1 {
   font-family: "Dosis", sans-serif;
@@ -442,6 +444,10 @@ body {
 
 .big-header #main-header {
   height: 139px; }
+  @media screen and (max-width: 480px) {
+    .big-header #main-header {
+      height: auto;
+      padding-bottom: 5px; } }
 .big-header #content::before {
   content: " ";
   display: block;
@@ -464,6 +470,10 @@ body {
 
 .small-header #main-header {
   height: 111px; }
+  @media screen and (max-width: 480px) {
+    .small-header #main-header {
+      height: auto;
+      padding-bottom: 5px; } }
 .small-header #content::before {
   content: " ";
   display: block;

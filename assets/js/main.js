@@ -90,7 +90,8 @@ $(function() {
   	  	  	} 
   	  	  }
   	  	},
-  	    offset: '100%',
+  	    //offset: '100%',
+        offset: '70%',
   	    group: 'sections'
   	  });
     });
@@ -103,13 +104,18 @@ $(function() {
   	  	  if ((direction === 'up')) {
   	  	    $sections.removeClass('.active-link'); 
   	  	    updateLinks($(this.element).attr('id')); 
-  	  	    // if scrolling from home
+  	  	    // if scrolling to home
   	  	  	if (isActiveSection('home')) { 
   	  	  	  animateHeader(direction); 
   	  	  	} 
   	  	  }	  	 
   	  	},
-  	    offset: 'bottom-in-view',
+  	   // offset: 'bottom-in-view',
+        //offset: '-70%',
+        offset: function() { console.log($(this.element).attr('id') + ' h ' + -this.element.clientHeight);
+          return -this.element.clientHeight;
+        },
+
   	    group: 'sections'
   	  });
     });

@@ -1,14 +1,14 @@
 
-@import "partials/_settings";
+@import "_settings";
 
 @import "partials/_mixins";
 @import "partials/_generals";
-@import "partials/_grid";
 
-@import "partials/_colors";
+@import "colors/_colors-css";
 
-@import "partials/_header";
-@import "partials/_footer";
+@import "elements/_grid";
+@import "elements/_header";
+@import "elements/_footer";
 
 @import "sections/_home";
 @import "sections/_work";
@@ -16,53 +16,7 @@
 @import "sections/_contact";
 
 
-// ------------------------------------- COLORS */
-body,
-#site,
-#main-header {
-	@extend .bg-1;
-}
 
-.home {
-	@extend .bg-1;
-	@extend .color-2;
-
-	hr {
-	  @extend .bg-2;
-	}
-}
-
-.work {
-	@extend .bg-2;
-	@extend .color-1;
-
-	hr {
-	  @extend .bg-4;
-	}
-}
-
-.about {
-	@extend .bg-3;
-	@extend .color-1;
-
-	hr {
-	  @extend .bg-4;
-	}
-}
-
-.contact {
-	@extend .bg-4;
-	@extend .color-1;
-
-	hr {
-	  @extend .bg-5;
-	}
-}
-
-footer {
-	@extend .bg-2;
-	@extend .color-1;
-}
 
 
 // ----------------------------------------- FONTS
@@ -70,7 +24,6 @@ footer {
 body {
   font-family: $font_family_1;
   font-weight: 100;
-  color: black;
 }
 
 h1 {
