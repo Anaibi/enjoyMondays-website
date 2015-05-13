@@ -48,6 +48,8 @@ body {
       border-bottom: solid #DF3F54 3px !important; }
     body #main-header li:hover {
       border-bottom: solid #DF3F54 3px; }
+    body #main-header li.no-touch {
+      border-bottom: none; }
     body #main-header li a {
       color: #3A3A3A; }
   body .home.section {

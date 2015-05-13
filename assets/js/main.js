@@ -172,13 +172,18 @@ $(function() {
    	  });
   }
 
-  // update active link on main menu nav
+  //--------------------------------------------- updateLinks
   function updateLinks(id) { 
-    $('#header-nav .active-link').removeClass('active-link'); 
+    $('#header-nav li').removeClass('active-link no-touch'); 
+    
     if (id.charAt(0) === '#') {
       $("#header-nav a[href='"+id+"']").parent().addClass('active-link');
     } else {
       $("#header-nav a[href='#"+id+"']").parent().addClass('active-link');
+    }
+
+    if ($('#header-nav a.active-link').attr('href') !== $('#header-nav a:hover').attr('href')) {
+      $('#header-nav a:hover').parent().addClass('no-touch');
     }
   }
 

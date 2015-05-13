@@ -23,6 +23,10 @@ body {
         border-bottom: solid $FUXSIA 3px;
       }
 
+      &.no-touch {
+        border-bottom: none;
+      }
+
       a {
         color: $color2;
       }
