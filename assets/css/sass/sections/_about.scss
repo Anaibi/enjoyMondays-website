@@ -10,6 +10,10 @@
 		@media screen and (max-width: 650px) {
 		  width: 80%;
 		}
+
+		@media screen and (max-width: 480px) {
+		  width: 100%;
+		}
 	  
 	  .sub-header {
 	    @media screen and (min-width: 650px) {

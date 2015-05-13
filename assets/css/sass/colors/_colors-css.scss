@@ -31,7 +31,7 @@ body {
 
   // ------------------ SECTION 1 
 
-  .section-1 {
+  .home.section {
     background-color: $color1;
     color: $color2;
 
@@ -42,7 +42,7 @@ body {
 
   // ------------------ SECTION 2 
 
-  .section-2 {
+  .work.section {
     background-color: $color2;
     color: $color1;
 
@@ -53,23 +53,23 @@ body {
 
   // ------------------ SECTION 3
 
-    .section-3 {
-      background-color: $color3;
-      color: $color1;
+  .about.section {
+    background-color: $color3;
+    color: $color1;
 
-      hr {
-        background-color: $color4;
-      }
-
-      .content hr {
-        background-color: $color1;
-      }
+    hr {
+      background-color: $color4;
     }
+
+    .content hr {
+      background-color: $color1;
+    }
+  }
 
 
   // ------------------ SECTION 4
 
-  .section-4 {
+  .contact.section {
     background-color: $color4;
     color: $color1;
 
@@ -84,6 +84,10 @@ body {
   footer {
     background-color: $color2;
     color: $color1;
+
+    a {
+      color: $color4;
+    }
   }
 }
 

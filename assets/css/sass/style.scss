@@ -6,8 +6,8 @@
 
 @import "colors/_colors-css";
 
+@import "elements/_headerMenu";
 @import "elements/_grid";
-@import "elements/_header";
 @import "elements/_footer";
 
 @import "sections/_home";
@@ -116,40 +116,74 @@ body {
   }
 }
 
+// ------------------------------------  HEADER
 
-// --------------------- LAYOUT WITH BIG HEADER */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  @include transition(all, .5s);
+}
+
+#logo {
+  width: $logo_w_big;
+  margin-top: 40px;
+  @include transition(all, .3s);
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    float: none;
+  }
+}
+
+
+@include headerMenu;
+
+// --------------------- LAYOUT WITH BIG HEADER
 
 .big-header {
+  
   @include setLayout($header_h_big);
+
+  @media screen and (max-width: 480px) {
+    @include setLayout(100px);
+  }
+
+  @media screen and (max-width: 350px) {
+    @include setLayout(80px);
+  }
 
   #logo {
     @media screen and (max-width: 650px) {
       width: 25%;
     }
-  }
 
-  @media screen and (max-width: 480px) {
-    @include setLayout(100px);
-
-    #logo {
+    @media screen and (max-width: 480px) {
       margin: 2.5% auto;
     }
-  }
 
-  @media screen and (max-width: 350px) {
-    @include setLayout(80px);
-
-    #logo {
+    @media screen and (max-width: 350px) {
       width: 29%;
     }
   }
 }
 
 
-// ------------------- LAYOUT WITH SMALL HEADER */
+// ------------------- LAYOUT WITH SMALL HEADER
 
 .small-header {
+  
   @include setLayout($header_h_small);
+
+  @media screen and (max-width: 480px) {
+    @include setLayout(100px);
+  }
+
+  @media screen and (max-width: 350px) {
+    @include setLayout(80px);
+  }
 
   #logo {
     width: $logo_w_small;
@@ -158,20 +192,12 @@ body {
     @media screen and (max-width: 650px) {
       width: 20%;
     }
-  }
 
-  @media screen and (max-width: 480px) {
-    @include setLayout(100px);
-
-    #logo {
+    @media screen and (max-width: 480px) {
       margin: 3% auto 2%;
     }
-  }
 
-  @media screen and (max-width: 350px) {
-    @include setLayout(80px);
-
-    #logo {
+    @media screen and (max-width: 350px) {
       width: 25%;
     }
   }
@@ -179,7 +205,7 @@ body {
 
 
 
-// --------------------------------------- GRID */
+// --------------------------------------- GRID
 
 @include grid;
 
