@@ -198,8 +198,14 @@ footer.container {
 
 .home.section .container {
   min-height: 350px;
-  height: calc(98vh - 139px);
+  height: calc(100vh - 139px);
   /* otherwise waypoint home doesn't get calculated? */ }
+  @media screen and (max-width: 480px) {
+    .home.section .container {
+      height: calc(100vh - 100px); } }
+  @media screen and (max-width: 350px) {
+    .home.section .container {
+      height: calc(100vh - 80px); } }
 .home.section .header {
   position: relative;
   top: 40%;

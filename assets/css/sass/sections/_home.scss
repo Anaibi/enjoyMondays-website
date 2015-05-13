@@ -2,7 +2,16 @@
 	.container {
 		min-height: 350px;
 		//height: 100vh;
-		height: calc(98vh - #{$header_h_big});
+		height: calc(100vh - #{$header_h_big});
+
+		@media screen and (max-width: 480px) {
+	  	height: calc(100vh - 100px);
+	  }
+
+	  @media screen and (max-width: 350px) {
+	  	height: calc(100vh - 80px);
+	  }
+
 		/* otherwise waypoint home doesn't get calculated? */
 		//padding-bottom: 73px;
 	}
