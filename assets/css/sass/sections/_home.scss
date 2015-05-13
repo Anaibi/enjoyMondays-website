@@ -1,7 +1,6 @@
 .home.section {
 	.container {
 		min-height: 350px;
-		//height: 100vh;
 		height: calc(100vh - #{$header_h_big});
 
 		@media screen and (max-width: 480px) {
@@ -12,21 +11,30 @@
 	  	height: calc(100vh - 80px);
 	  }
 
-		/* otherwise waypoint home doesn't get calculated? */
-		//padding-bottom: 73px;
+	  @media screen and (max-height: 550px) {
+	  	min-height: 100px;
+    	height: calc(100vh - 60px);
+    }
 	}
 	
 	.header {
-    @include vCentered(40%);
+		@media screen and (min-width: 350px) and (min-height: 500px) {
+	  	@include vCentered(40%);
+	  }
 
+	  position: relative;
 	  width: cp(560px, $max_layout_width);
 
-	  @media screen and (max-width: 750px) {
+	  @media screen and (max-width: 750px) and (min-height: 500px) {
 	  	width: 60%;
 	  }
 
 	  @media screen and (max-width: 650px) {
 	  	width: 100%;
+	  }
+
+	  @media screen and (max-width: 350px) {
+	  	margin-top: 5%;
 	  }
    
     h1 {
@@ -39,7 +47,11 @@
 	      background-size: contain;
 	      position: relative;
 	      top: .1em;
-	     }
+	    }
+
+	    @media screen and (max-height: 550px) {
+    		font-size: .5em;
+    	}
     }
   
 		.sub-header {
@@ -49,6 +61,11 @@
 		    float: none;
 		    font-size: .2em;
 		  }
+
+		  @media screen and (max-height: 550px) {
+		  	float: none;
+    		font-size: .12em;
+    	}
 		}
 	}
 }

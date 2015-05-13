@@ -4,6 +4,8 @@ $(function() {
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
+  var wh = $(window).height();
+
   var smallHeaderH = 111;
 
   var marks = [325, 480];
@@ -152,6 +154,17 @@ $(function() {
     $('#site').removeClass('small-header').addClass('big-header');
   }
 
+  //----------------------------------------- centerContainer
+  function centerContents(section) {
+    var $section = $(section),
+        $header = $section.find('.header'),
+        h = ($section.height() - $header.height())/2;
+console.log($section.height());
+console.log($header.height());
+
+      $header.animate({'top': h}, 'slow');
+  };
+
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
     // clicking from home, get small header height
@@ -221,11 +234,11 @@ $(function() {
   $(document).ready(function () {
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+    centerContents('#home');
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
     $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
-  
-    
+    centerContents('#contact');    
     //---------------------------------------------- supersized
     var slides = [];
     var projects = [

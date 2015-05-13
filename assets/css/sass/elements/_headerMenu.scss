@@ -21,12 +21,20 @@
       font-size: .6em;
     }
 
+    @media screen and (max-height: 550px) {
+      margin-top: 5%;
+    }
+
     &.expanded {
       display: block;
       margin-top: 40px;
 
       @media screen and (max-width: 480px) {
         margin: 10% 0;
+      }
+
+      @media screen and (max-height: 550px) {
+        margin-top: 20px;
       }
     }
 
@@ -69,6 +77,14 @@
     @media screen and (max-width: 480px) {
       display: none;
     }
+
+    @media screen and (max-height: 550px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-height: 550px) {
+        margin-top: 40px;
+      }
    
     a {
       display: block;
