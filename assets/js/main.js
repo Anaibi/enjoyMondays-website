@@ -20,6 +20,10 @@ $(function() {
 
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
+
+      // refresh waypoints
+      Waypoint.refreshAll();
+
       // Run code here, resizing has "stopped"
       // get new window sizes
       ww.previous = ww.actual; 
@@ -29,9 +33,6 @@ $(function() {
       if (ww.previous === ww.actual) {
       	return; 
       }
-      
-      // refresh waypoints TODO
-      Waypoint.refreshAll();
 
       if (!inSameWidthGap(ww, marks)) { 
         // refresh header
@@ -112,7 +113,7 @@ $(function() {
   	  	},
   	   // offset: 'bottom-in-view',
         //offset: '-70%',
-        offset: function() { console.log($(this.element).attr('id') + ' h ' + -this.element.clientHeight);
+        offset: function() { 
           return -this.element.clientHeight;
         },
 
@@ -155,6 +156,12 @@ $(function() {
   function scrollToPosition(section) { 
     // clicking from home, get small header height
     var h = (isActiveSection('home')) ? smallHeaderH : $('#main-header').height();
+
+    // if under 480px, header height is 100px always
+    if (ww.actual < marks[1]) { h = 100; }
+
+    // if under 350px, header height is 80px always
+    if (ww.actual < marks[0]) { h = 80; }
 
 	  $('body, html')
 	    .stop()

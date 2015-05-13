@@ -126,12 +126,20 @@ body {
     @media screen and (max-width: 650px) {
       width: 25%;
     }
+  }
 
-    @media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
+    @include setLayout(100px);
+
+    #logo {
       margin: 2.5% auto;
     }
+  }
 
-    @media screen and (max-width: 350px) {
+  @media screen and (max-width: 350px) {
+    @include setLayout(80px);
+
+    #logo {
       width: 29%;
     }
   }
@@ -150,12 +158,20 @@ body {
     @media screen and (max-width: 650px) {
       width: 20%;
     }
+  }
 
-    @media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
+    @include setLayout(100px);
+
+    #logo {
       margin: 3% auto 2%;
     }
+  }
 
-    @media screen and (max-width: 350px) {
+  @media screen and (max-width: 350px) {
+    @include setLayout(80px);
+
+    #logo {
       width: 25%;
     }
   }

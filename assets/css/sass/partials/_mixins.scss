@@ -2,11 +2,6 @@
   
   #main-header {
     height: $h;
-    
-    @media screen and (max-width: 480px) {
-      height: auto;
-      padding-bottom: 5px;
-    }
   }
 
   #content {

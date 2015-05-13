@@ -444,10 +444,6 @@ body {
 
 .big-header #main-header {
   height: 139px; }
-  @media screen and (max-width: 480px) {
-    .big-header #main-header {
-      height: auto;
-      padding-bottom: 5px; } }
 .big-header #content::before {
   content: " ";
   display: block;
@@ -462,18 +458,38 @@ body {
   .big-header #logo {
     width: 25%; } }
 @media screen and (max-width: 480px) {
+  .big-header #main-header {
+    height: 100px; }
+  .big-header #content::before {
+    content: " ";
+    display: block;
+    height: 100px;
+    width: 100%; }
+  .big-header #content .section {
+    height: 100%;
+    min-height: calc(100vh - 100px); }
+    .big-header #content .section.last {
+      min-height: calc(100vh - 200px); }
   .big-header #logo {
     margin: 2.5% auto; } }
 @media screen and (max-width: 350px) {
+  .big-header #main-header {
+    height: 80px; }
+  .big-header #content::before {
+    content: " ";
+    display: block;
+    height: 80px;
+    width: 100%; }
+  .big-header #content .section {
+    height: 100%;
+    min-height: calc(100vh - 80px); }
+    .big-header #content .section.last {
+      min-height: calc(100vh - 180px); }
   .big-header #logo {
     width: 29%; } }
 
 .small-header #main-header {
   height: 111px; }
-  @media screen and (max-width: 480px) {
-    .small-header #main-header {
-      height: auto;
-      padding-bottom: 5px; } }
 .small-header #content::before {
   content: " ";
   display: block;
@@ -490,12 +506,36 @@ body {
   @media screen and (max-width: 650px) {
     .small-header #logo {
       width: 20%; } }
-  @media screen and (max-width: 480px) {
-    .small-header #logo {
-      margin: 3% auto 2%; } }
-  @media screen and (max-width: 350px) {
-    .small-header #logo {
-      width: 25%; } }
+@media screen and (max-width: 480px) {
+  .small-header #main-header {
+    height: 100px; }
+  .small-header #content::before {
+    content: " ";
+    display: block;
+    height: 100px;
+    width: 100%; }
+  .small-header #content .section {
+    height: 100%;
+    min-height: calc(100vh - 100px); }
+    .small-header #content .section.last {
+      min-height: calc(100vh - 200px); }
+  .small-header #logo {
+    margin: 3% auto 2%; } }
+@media screen and (max-width: 350px) {
+  .small-header #main-header {
+    height: 80px; }
+  .small-header #content::before {
+    content: " ";
+    display: block;
+    height: 80px;
+    width: 100%; }
+  .small-header #content .section {
+    height: 100%;
+    min-height: calc(100vh - 80px); }
+    .small-header #content .section.last {
+      min-height: calc(100vh - 180px); }
+  .small-header #logo {
+    width: 25%; } }
 
 @media screen and (max-width: 650px) {
   .tiles {
