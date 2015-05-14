@@ -354,9 +354,12 @@ body {
       text-align: center; } }
   .section .header {
     display: inline-block; }
+    .section .header > div {
+      float: right; }
     .section .header h1 {
       line-height: 1;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      white-space: nowrap; }
       @media screen and (max-width: 350px) {
         .section .header h1 {
           font-size: .7em; } }
@@ -655,8 +658,6 @@ body {
   .small-header #content .section.last {
     min-height: calc(100vh - 100px); }
 
-  #content .header h1 {
-    font-size: .5em; }
   #content .sub-header {
     float: none;
     font-size: .12em; }
@@ -674,6 +675,7 @@ body {
     #content .contact.section .container .header h1 {
       font-size: .85em; }
     #content .contact.section .container .sub-header {
+      float: right;
       font-size: .25em; } }
 
 /*# sourceMappingURL=style.css.map */

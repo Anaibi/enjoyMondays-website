@@ -76,9 +76,14 @@ body {
 	.header {
     display: inline-block;
 
+    > div {
+      float: right;
+    }
+
     h1 {
 		  line-height: 1;
 		  text-transform: uppercase;
+      white-space: nowrap;
 
       @media screen and (max-width: 350px) {
         font-size: .7em;
