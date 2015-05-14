@@ -579,7 +579,7 @@ body {
       width: 80%;
       margin: 10% auto; } }
 
-@media screen and (max-height: 550px) {
+@media screen and (max-height: 550px) and (orientation: landscape) {
   #main-header #logo {
     width: 18%;
     margin: 2% 0; }
@@ -655,6 +655,22 @@ body {
     font-size: .12em; }
   #content .home.section .container {
     min-height: 100px;
-    height: calc(100vh - 60px); } }
+    height: calc(100vh - 60px); }
+  #content .about.section .header {
+    padding-bottom: 5%; }
+  #content .about.section .tiles.three .tile {
+    width: 32%;
+    margin: auto;
+    font-size: .91em; }
+  #content .contact.section .container {
+    min-height: 150px; }
+    #content .contact.section .container .header {
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
+      #content .contact.section .container .header h1 {
+        font-size: .85em; }
+      #content .contact.section .container .header .sub-header {
+        font-size: .25em; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 @mixin landscape($h, $w) {
-  @media screen and (max-height: 550px) {
+  @media screen and (max-height: 550px) and (orientation: landscape) {
     #main-header {
 
       #logo {
@@ -43,13 +43,6 @@
 
     .big-header {
       @include setLayout($h);
-
-      #main-header {
-
-        #logo {
-         // width: 85%;
-        }
-      }
     }
 
     .small-header {
@@ -79,10 +72,8 @@
 
     #content {
 
-      .header {
-        h1 {
+      .header h1 {
           font-size: .5em;
-        }
       }
 
       .sub-header {
@@ -96,8 +87,37 @@
           height: calc(100vh - #{$h});
         }
       }
+
+      .about.section {
+        .header {
+          padding-bottom: 5%;
+        }
+
+        .tiles.three .tile {
+          width: 32%;
+          margin: auto;
+          font-size: .91em;
+        }
+      }
+
+      .contact.section {
+
+        .container {
+          min-height: 150px;
+        
+          .header {
+            @include transformNone;
+
+            h1 {
+              font-size: .85em;
+            }
+
+              .sub-header {
+              font-size: .25em;
+            }
+          }
+        }
+      }
     }
-
   }
-
 }
