@@ -11,10 +11,6 @@
 	  	height: calc(100vh - 80px);
 	  }
 
-	  @media screen and (max-height: 550px) {
-	  	min-height: 100px;
-    	height: calc(100vh - 60px);
-    }
 	}
 	
 	.header {
@@ -48,10 +44,6 @@
 	      position: relative;
 	      top: .1em;
 	    }
-
-	    @media screen and (max-height: 550px) {
-    		font-size: .5em;
-    	}
     }
   
 		.sub-header {
@@ -61,11 +53,6 @@
 		    float: none;
 		    font-size: .2em;
 		  }
-
-		  @media screen and (max-height: 550px) {
-		  	float: none;
-    		font-size: .12em;
-    	}
 		}
 	}
 }

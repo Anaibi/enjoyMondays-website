@@ -21,11 +21,6 @@
         min-height: calc(100vh - #{$th});
       }
     }
-
-    @media screen and (max-height: 550px) {
-      width: calc(100vw - #{$h});
-      margin-left: $h;
-    }
   }
 }
 

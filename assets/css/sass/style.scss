@@ -1,14 +1,14 @@
+@import "colors/_colors-css";
 
 @import "_settings";
 
 @import "partials/_mixins";
 @import "partials/_generals";
 
-@import "colors/_colors-css";
-
 @import "elements/_headerMenu";
 @import "elements/_grid";
 @import "elements/_footer";
+@import "elements/_landscape";
 
 @import "sections/_home";
 @import "sections/_work";
@@ -155,10 +155,6 @@ body {
     @include setLayout(80px);
   }
 
-  @media screen and (max-height: 550px) {
-    @include setLayout(60px);
-  }
-
   #logo {
     @media screen and (max-width: 650px) {
       width: 25%;
@@ -170,11 +166,6 @@ body {
 
     @media screen and (max-width: 350px) {
       width: 20%;
-    }
-
-    @media screen and (max-height: 550px) {
-      width: 15%;
-      margin: 2% 0 0 2%;
     }
   }
 }
@@ -194,18 +185,6 @@ body {
     @include setLayout(80px);
   }
 
-  @media screen and (max-height: 550px) {
-    #main-header {
-      width: 30px;
-      height: 100vh;
-      position: fixed;
-      margin: 0;
-      padding: 10px;
-      left: 0;
-      bottom: 0;
-    }
-  }
-
   #logo {
     width: $logo_w_small;
     margin-top: 18px;
@@ -221,14 +200,6 @@ body {
     @media screen and (max-width: 350px) {
       width: 25%;
     }
-
-    @media screen and (max-height: 550px) {
-      width: 40px;
-      margin: 2% 0 0 2%;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-    }
   }
 }
 
@@ -238,4 +209,8 @@ body {
 
 @include grid;
 
+
+// ---------------------------------- LANDSCAPE
+
+@include landscape($header_h_smallest, $header_vertical_w);
 
