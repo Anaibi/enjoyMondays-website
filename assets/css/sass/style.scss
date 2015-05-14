@@ -79,6 +79,10 @@ body {
     h1 {
 		  line-height: 1;
 		  text-transform: uppercase;
+
+      @media screen and (max-width: 350px) {
+        font-size: .7em;
+      }
 		}
 
 		@media screen and (max-width: 650px) {
@@ -194,11 +198,8 @@ body {
     }
 
     @media screen and (max-width: 480px) {
-      margin: 3% auto 2%;
-    }
-
-    @media screen and (max-width: 350px) {
-      width: 25%;
+      //margin: 3% auto 2%;
+      margin: 2.5% auto;
     }
   }
 }

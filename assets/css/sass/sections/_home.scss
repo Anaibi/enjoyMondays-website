@@ -44,7 +44,11 @@
 	      position: relative;
 	      top: .1em;
 	    }
-    }
+
+	    @media screen and (max-width: 350px) {
+	    	font-size: .9em;
+	    }
+     }
   
 		.sub-header {
 		  float: right;

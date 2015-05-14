@@ -5,6 +5,7 @@
       #logo {
         width: 18%;
         margin: 2% 0;
+        float: left;
       }
 
       #header-nav {
@@ -56,6 +57,7 @@
         height: 100vh;
         padding: 3px;
         margin: 0;
+        text-align: center;
 
         #logo {
           float: none;
@@ -67,6 +69,10 @@
       #content {
         width: calc(100vw - #{$w});
         padding-left: $w;
+
+        .section.last {
+          min-height: calc(100vh - #{$footer_h});
+        }
       }
     }
 
@@ -103,18 +109,15 @@
       .contact.section {
 
         .container {
+          
           min-height: 150px;
         
-          .header {
-            @include transformNone;
-
-            h1 {
+          .header h1 {
               font-size: .85em;
-            }
+          }
 
-              .sub-header {
-              font-size: .25em;
-            }
+          .sub-header {
+            font-size: .25em;
           }
         }
       }

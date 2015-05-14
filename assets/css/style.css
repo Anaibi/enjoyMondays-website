@@ -156,6 +156,9 @@ footer.container {
     background-size: contain;
     position: relative;
     top: .1em; }
+  @media screen and (max-width: 350px) {
+    .home.section .header h1 {
+      font-size: .9em; } }
   .home.section .header .sub-header {
     float: right; }
     @media screen and (max-width: 480px) {
@@ -354,6 +357,9 @@ body {
     .section .header h1 {
       line-height: 1;
       text-transform: uppercase; }
+      @media screen and (max-width: 350px) {
+        .section .header h1 {
+          font-size: .7em; } }
     @media screen and (max-width: 650px) {
       .section .header {
         width: 70%; } }
@@ -555,10 +561,7 @@ body {
       width: 20%; } }
   @media screen and (max-width: 480px) {
     .small-header #logo {
-      margin: 3% auto 2%; } }
-  @media screen and (max-width: 350px) {
-    .small-header #logo {
-      width: 25%; } }
+      margin: 2.5% auto; } }
 
 @media screen and (max-width: 650px) {
   .tiles {
@@ -582,7 +585,8 @@ body {
 @media screen and (max-height: 550px) and (orientation: landscape) {
   #main-header #logo {
     width: 18%;
-    margin: 2% 0; }
+    margin: 2% 0;
+    float: left; }
   #main-header #header-nav {
     margin-top: 5%; }
     #main-header #header-nav.expanded {
@@ -639,7 +643,8 @@ body {
     width: 44px;
     height: 100vh;
     padding: 3px;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
     .small-header #main-header #logo {
       float: none;
       margin: 2% auto;
@@ -647,6 +652,8 @@ body {
   .small-header #content {
     width: calc(100vw - 50px);
     padding-left: 50px; }
+    .small-header #content .section.last {
+      min-height: calc(100vh - 100px); }
 
   #content .header h1 {
     font-size: .5em; }
@@ -664,13 +671,9 @@ body {
     font-size: .91em; }
   #content .contact.section .container {
     min-height: 150px; }
-    #content .contact.section .container .header {
-      -webkit-transform: none;
-      -ms-transform: none;
-      transform: none; }
-      #content .contact.section .container .header h1 {
-        font-size: .85em; }
-      #content .contact.section .container .header .sub-header {
-        font-size: .25em; } }
+    #content .contact.section .container .header h1 {
+      font-size: .85em; }
+    #content .contact.section .container .sub-header {
+      font-size: .25em; } }
 
 /*# sourceMappingURL=style.css.map */

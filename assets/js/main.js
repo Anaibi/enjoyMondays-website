@@ -4,7 +4,8 @@ $(function() {
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
-  var wh = $(window).height();
+  var wh = {'actual' : $(window).height()};
+      wh.previous = wh.actual;
 
   var smallHeaderH = 111;
 
@@ -30,6 +31,9 @@ $(function() {
       // get new window sizes
       ww.previous = ww.actual; 
       ww.actual = $(window).width(); 
+
+      wh.previous = wh.actual;
+      wh.actual = $(window).height();
 
       // if window only changes height, return
       if (ww.previous === ww.actual) {
@@ -130,8 +134,9 @@ $(function() {
     // switch headers
 	  $('#site').toggleClass('big-header small-header');
 
-  	// menu collapsed/expanded only changes over 480 width
-  	if (ww.actual > marks[1]) {
+  	// menu collapsed/expanded changes over 480 width
+    // or in landscape mode
+  	if (ww.actual > marks[1] || wh.actual < ww.actual) {
       // switch menus
       if (direction === 'down') {
         $('#header-nav').hide(function() {
@@ -159,8 +164,8 @@ $(function() {
     var $section = $(section),
         $header = $section.find('.header'),
         h = ($section.height() - $header.height())/2;
-console.log($section.height());
-console.log($header.height());
+
+        $header.css('transform', 'none');
 
       $header.animate({'top': h}, 'slow');
   };
