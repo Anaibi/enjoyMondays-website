@@ -636,6 +636,9 @@ body {
     min-height: calc(100vh - 60px); }
     .small-header #content .section.last {
       min-height: calc(100vh - 160px); }
+  .small-header#site {
+    width: calc(100vw - 50px);
+    padding-left: 50px; }
   .small-header #main-header {
     position: fixed;
     left: 0;
@@ -649,11 +652,8 @@ body {
       float: none;
       margin: 2% auto;
       width: 100%; }
-  .small-header #content {
-    width: calc(100vw - 50px);
-    padding-left: 50px; }
-    .small-header #content .section.last {
-      min-height: calc(100vh - 100px); }
+  .small-header #content .section.last {
+    min-height: calc(100vh - 100px); }
 
   #content .header h1 {
     font-size: .5em; }
