@@ -1,7 +1,7 @@
-@mixin transition($args, $t) {
-  -webkit-transition: $args $t;
-  -ms-transition: $args $t;
-  transition: $args $t;
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -ms-transition: $args;
+  transition: $args;
 }
 
 @mixin transform($args, $t) {
@@ -14,6 +14,21 @@
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;  
+}
+
+@mixin hide {
+  visibility: hidden;
+  opacity: 0;
+  @include transition(visibility 0s linear 0.5s);
+  @include transition(opacity 0.2s linear);
+ // transition: all 0s;
+}
+
+@mixin show {
+  visibility: visible;
+  opacity: 1;
+  @include transition(visibility 0s linear 0.5s);
+  @include transition(opacity 0.5s linear);
 }
 
 @function cp($target, $container) {

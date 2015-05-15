@@ -54,25 +54,21 @@ body {
   left: 0;
   right: 0;
   z-index: 2000;
-  @include transition(all, .5s);
+  @include transition(all .5s);
 
   #header-nav {
-  	@include transition(all, .5s);
+  	@include transition(all .5s);
 
   	@media screen and (max-width: 480px) {
       float: none;
       margin: auto;
     }
   }
-
-  #collapsed-menu {
-  	@include transition(all, .5s);
-  }
 }
 
 #logo {
 
-  @include transition(all, .3s);
+  @include transition(all .3s);
 
   @media screen and (max-width: 480px) {
     display: block;
@@ -98,12 +94,14 @@ body {
     margin-top: 85px;
 
     &.expanded {
-      display: block;
+   //   display: block;
+      @include show;
     }
  	}
 
  	#collapsed-menu {
- 		display: none;
+ //		display: none;
+ 		@include hide;
  	}
 
 
@@ -160,24 +158,26 @@ body {
 
   #header-nav {
   	display: none;
+  	@include hide;
 
   	&.expanded {
    		display: block;
       margin-top: 40px;
+      @include show;
     }
   }
 
   #collapsed-menu {
- 		display: inline-block;
+ 		@include show;
  		margin-top: 40px;
 
  		&:hover {
- 			display: none;
+ 			@include hide;
  		}
  	}
 
  	.expanded + #collapsed-menu {
- 		display: none;
+ 		@include hide;
  	}
 
 	@media screen and (max-width: 650px) {
