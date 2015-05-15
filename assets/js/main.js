@@ -6,7 +6,6 @@ $(function() {
   var wh = {'actual' : $(window).height()};
       wh.previous = wh.actual;
 
-  var smallHeaderH = 111;
   var header_h = [139, 111, 100, 80, 60];
 
   var marks = [325, 480];
@@ -76,45 +75,26 @@ $(function() {
   function doWaypoints() {  
 
 	  var $sections = $('.section'); 
-    
-    // update links direction down
-	  $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) {  
-  	  	  if (direction === 'down') { 
-  	  	  	$sections.removeClass('.active-link');
-  	  	  	updateLinks($(this.element).attr('id'));
-  	  	  	// if scrolling from home
-  	  	  	if (isActiveSection('work')) { 
-  	  	  	  updateState(direction, '#home'); 
-  	  	  	} 
-  	  	  }
-  	  	},
-  	    //offset: '100%',
-        offset: '70%',
-  	    group: 'sections'
-  	  });
-    });
-    
+
     // update links direction up
     $sections.each(function() { 
   	  new Waypoint({
   	  	element: this,
-  	  	handler: function(direction) { 	  	  
-  	  	  if ((direction === 'up')) {
-  	  	    $sections.removeClass('.active-link'); 
-  	  	    updateLinks($(this.element).attr('id')); 
-  	  	    // if scrolling to home
-  	  	  	if (isActiveSection('home')) { 
-  	  	  	  updateState(direction, '#home'); 
-  	  	  	} 
-  	  	  }	  	 
+  	  	handler: function(direction) { 	
+ 
+          var next = this.next(); 
+          var section;
+    	  	    
+          $sections.removeClass('.active-link'); 
+    	  	    
+          var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
+          
+          updateState(direction, section); 
+          updateLinks(section);   	 
   	  	},
-  	   // offset: 'bottom-in-view',
-        //offset: '-70%',
+
         offset: function() { 
-          return -this.element.clientHeight;
+          return -(this.element.clientHeight - header_h[0]);
         },
 
   	    group: 'sections'
@@ -124,10 +104,11 @@ $(function() {
 
 
   //--------------------------------------------- updateState
-  function updateState(direction, section) { 
-    if (direction === 'up') {
+  function updateState(direction, section) {
+
+    if (direction === 'up' && section === 'home') {
       $('#site').addClass('state1').removeClass('state2');
-    } else {
+    } else if (direction === 'down' && section === 'work') {
       $('#site').addClass('state2').removeClass('state1');
     }
   }
