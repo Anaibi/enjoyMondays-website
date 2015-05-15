@@ -4,9 +4,7 @@ body {
 
 #main-header {
   background-color: #E9E8E3; }
-  #main-header li.active-link {
-    border-bottom: solid #DF3F54 3px !important; }
-  #main-header li:hover {
+  #main-header li:hover, #main-header li.active-link {
     border-bottom: solid #DF3F54 3px; }
   #main-header li.no-touch {
     border-bottom: none; }
@@ -229,7 +227,7 @@ footer.container {
   @media screen and (max-width: 750px) and (min-height: 500px) {
     .home.section .header {
       width: 60%; } }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 650px) and (min-height: 500px) {
     .home.section .header {
       width: 100%; } }
   @media screen and (max-width: 350px) {
@@ -675,7 +673,10 @@ body {
       width: 80%;
       margin: 10% auto; } }
 
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
+@media screen and (max-device-height: 600px) and (orientation: landscape) {
+  html {
+    content: "isLandscape"; }
+
   #main-header #logo {
     width: 18%;
     margin: 2% 0;
@@ -706,31 +707,37 @@ body {
           margin: 0; }
   #main-header #collapsed-menu {
     margin: 20px auto;
-    float: none; }
+    float: none;
+    text-align: center; }
+    #main-header #collapsed-menu a {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      background-position: 0; }
 
-  .big-header #main-header {
+  .state1 #main-header {
     height: 100px; }
-  .big-header #sections::before {
+  .state1 #sections::before {
     height: 100px; }
-  .big-header #sections .section {
+  .state1 #sections .section {
     height: 100%;
     min-height: calc(100vh - 100px); }
-    .big-header #sections .section.last {
+    .state1 #sections .section.last {
       min-height: calc(100vh - 200px); }
 
-  .small-header #main-header {
+  .state2 #main-header {
     height: 100px; }
-  .small-header #sections::before {
+  .state2 #sections::before {
     height: 100px; }
-  .small-header #sections .section {
+  .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 100px); }
-    .small-header #sections .section.last {
+    .state2 #sections .section.last {
       min-height: calc(100vh - 200px); }
-  .small-header#site {
+  .state2#site {
     width: calc(100vw - 50px);
     padding-left: 50px; }
-  .small-header #main-header {
+  .state2 #main-header {
     position: fixed;
     left: 0;
     top: 0;
@@ -738,22 +745,27 @@ body {
     height: 100vh;
     padding: 3px;
     margin: 0; }
-    .small-header #main-header #logo {
+    .state2 #main-header #logo {
       float: none;
       margin: 2% auto;
       width: 100%; }
-  .small-header #content .section.last {
+  .state2 #content .section.last {
     min-height: calc(100vh - 100px); } }
-@media screen and (max-device-height: 550px) and (orientation: landscape) and (max-width: 650px) {
+@media screen and (max-device-height: 600px) and (orientation: landscape) and (max-width: 650px) {
   #content .header {
-    width: initial; } }
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
+    width: initial;
+    width: 70%; } }
+@media screen and (max-device-height: 600px) and (orientation: landscape) {
   #content .sub-header {
     float: none; }
   #content .home.section .container {
     min-height: calc(100vh - 100px); }
     #content .home.section .container .header {
       float: right; }
+  #content .home.section header {
+    width: 80%; }
+  #content .home.section > div {
+    float: none; }
   #content .about.section .header {
     width: 80%;
     padding-bottom: 5%; }

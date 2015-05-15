@@ -8,7 +8,7 @@ $(function() {
 
   var header_h = [139, 111, 100, 80, 60];
 
-  var marks = [325, 480];
+  var marks = [325, 480, 600];
     
   var resizeTimer;
 
@@ -51,7 +51,7 @@ $(function() {
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
-	  scrollToPosition($(this).attr('href'));
+    scrollToPosition($(this).attr('href'));
   });			
 
   // notes link off	
@@ -64,7 +64,7 @@ $(function() {
 
   // expanded menu
   $('#header-nav').hover(
-  	function() {}, 
+    function() {},
     function() {
       if ($(this).hasClass('expanded')) {
         $(this).removeClass('expanded');
@@ -72,33 +72,31 @@ $(function() {
   });
 
   //----------------------------------------- WAYPOINTS
-  function doWaypoints() {  
+  function doWaypoints() {
 
-	  var $sections = $('.section'); 
+    var $sections = $('.section'); 
 
-    // update links direction up
-    $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) { 	
- 
-          var next = this.next(); 
+    $sections.each(function() {
+
+      new Waypoint({
+        element: this,
+        handler: function(direction) {
+
+          var next = this.next();
           var section;
-    	  	    
-          $sections.removeClass('.active-link'); 
-    	  	    
-          var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
-          
-          updateState(direction, section); 
-          updateLinks(section);   	 
-  	  	},
 
-        offset: function() { 
+          $sections.removeClass('.active-link');
+
+          var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
+
+          updateState(direction, section);
+          updateLinks(section);
+        },
+        offset: function() {
           return -(this.element.clientHeight - header_h[0]);
         },
-
-  	    group: 'sections'
-  	  });
+        group: 'sections'
+      });
     });
   }
 
@@ -141,13 +139,16 @@ $(function() {
     // if under 350px, header height is 80px always
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
-	  $('body, html')
-	    .stop()
-	    .animate({
-	  	  scrollTop: $(section).offset().top - h
-	    }, 250, function(){ 
-	    $('html, body').clearQueue();
-   	  });
+    // landscape has side menu
+    if ($('html').css('content') === 'isLandscape' && section !== 'home') { h = 0; }
+
+    $('body, html')
+      .stop()
+      .animate({
+        scrollTop: $(section).offset().top - h
+      }, 250, function(){
+        $('html, body').clearQueue();
+      });
   }
 
   //--------------------------------------------- updateLinks
@@ -167,7 +168,7 @@ $(function() {
 
   //----------------------------------------- isActiveSection
   function isActiveSection(id) {
-  	return ($('#header-nav .active-link a').attr('href') === '#' + id);
+    return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
   
 

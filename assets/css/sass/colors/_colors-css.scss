@@ -16,10 +16,11 @@ body {
   li {
     &.active-link {
       // has to override .touch class no border
-      border-bottom: solid $FUXSIA 3px !important;
+      //border-bottom: solid $FUXSIA 3px !important;
     }
 
-    &:hover {
+    &:hover,
+    &.active-link {
       // .touch has to override this
       border-bottom: solid $FUXSIA 3px;
     }

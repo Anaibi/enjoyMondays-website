@@ -1,6 +1,9 @@
 @mixin landscape($h, $w) {
-  @media screen and (max-device-height: 550px) and (orientation: landscape) {
+  @media screen and (max-device-height: 600px) and (orientation: landscape) {
     
+    html {
+      content: "isLandscape";
+    }
     #main-header {
 
       #logo {
@@ -39,14 +42,22 @@
       #collapsed-menu {
         margin: 20px auto;
         float: none;
+        text-align: center;
+
+        a {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          background-position: 0;
+        }
       }
     }
 
-    .big-header {
+    .state1 {
       @include setLayoutHeights($h);
     }
 
-    .small-header {
+    .state2 {
       @include setLayoutHeights($h);
 
       &#site {
@@ -80,6 +91,7 @@
       .header { 
         @media screen and (max-width: 650px) {
           width: initial;
+          width: 70%;
         }
       }
 
@@ -89,12 +101,22 @@
 
       .home.section {
         .container {
-         // min-height: 100px;
+          
           min-height: calc(100vh - #{$h});
 
           .header {
             float: right;
           }
+        }
+      }
+
+      .home.section {
+        header {
+          width: 80%;
+        }
+
+        > div {
+          float: none;
         }
       }
 
