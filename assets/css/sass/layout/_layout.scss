@@ -35,11 +35,6 @@ body {
   overflow-y: scroll;
 }
 
-#sections::before {
-	content: " ";
-	display: block;
-	width: 100%;
-}
 
 // --------------------------------- CONTAINER CLASS
 
@@ -51,7 +46,7 @@ body {
 }
 
 
-// -----------------------------------------  HEADER
+// ------------------------------------- MAIN HEADER
 
 #main-header {
   position: fixed;
@@ -60,11 +55,23 @@ body {
   right: 0;
   z-index: 2000;
   @include transition(all, .5s);
+
+  #header-nav {
+  	@include transition(all, .5s);
+
+  	@media screen and (max-width: 480px) {
+      float: none;
+      margin: auto;
+    }
+  }
+
+  #collapsed-menu {
+  	@include transition(all, .5s);
+  }
 }
 
 #logo {
-  width: $logo_w_big;
-  margin-top: 40px;
+
   @include transition(all, .3s);
 
   @media screen and (max-width: 480px) {
@@ -76,73 +83,144 @@ body {
 @include headerMenu;
 
 
-// --------------------- LAYOUT WITH BIG HEADER
+// ----------------------------- LAYOUT STATE 1
+.state1 {
 
-.big-header {
+	@include setLayoutHeights($header_h_1);
+
+	#logo {
+  	width: $logo_w_big;
+  	margin-top: 40px;
+  }
   
-  @include setLayoutHeights($header_h_1);
+  #header-nav {
+    display: inline-block;
+    margin-top: 85px;
+
+    &.expanded {
+      display: block;
+    }
+ 	}
+
+ 	#collapsed-menu {
+ 		display: none;
+ 	}
+
+
+  @media screen and (max-width: 650px) {
+    
+    #logo {
+    	width: 25%;
+    }
+  }
+
 
   @media screen and (max-width: 480px) {
-    @include setLayoutHeights(100px);
+    
+    @include setLayoutHeights($header_h_3);
+
+    #logo {
+    	margin: 2.5% auto;
+    }
+
+    #header-nav {
+    	margin: 0 auto;
+ 		
+      &.expanded {
+      	margin: 10% 0;
+      }
+    }
+
+    #collapsed-menu {
+    	display: none;
+    }
   }
+
 
   @media screen and (max-width: 350px) {
-    @include setLayoutHeights(80px);
-  }
+    
+    @include setLayoutHeights($header_h_4);
 
-  #logo {
-    @media screen and (max-width: 650px) {
-      width: 25%;
-    }
-
-    @media screen and (max-width: 480px) {
-      margin: 2.5% auto;
-    }
-
-    @media screen and (max-width: 350px) {
-      width: 20%;
+    #logo {
+    	width: 20%;
     }
   }
 }
 
 
-// ------------------- LAYOUT WITH SMALL HEADER
-
-.small-header {
+// ----------------------------- LAYOUT STATE 2
+.state2 {
   
   @include setLayoutHeights($header_h_2);
-
-  @media screen and (max-width: 480px) {
-    @include setLayoutHeights($header_h_3);
-  }
-
-  @media screen and (max-width: 350px) {
-    @include setLayoutHeights($header_h_4);
-  }
 
   #logo {
     width: $logo_w_small;
     margin-top: 18px;
+  }
 
-    @media screen and (max-width: 650px) {
-      width: 20%;
-    }
+  #header-nav {
+  	display: none;
 
-    @media screen and (max-width: 480px) {
-      //margin: 3% auto 2%;
-      margin: 2.5% auto;
+  	&.expanded {
+   		display: block;
+      margin-top: 40px;
     }
+  }
+
+  #collapsed-menu {
+ 		display: inline-block;
+ 		margin-top: 40px;
+
+ 		&:hover {
+ 			display: none;
+ 		}
+ 	}
+
+ 	.expanded + #collapsed-menu {
+ 		display: none;
+ 	}
+
+	@media screen and (max-width: 650px) {
+    #logo {
+    	width: 20%;
+	  }
+  }
+
+  @media screen and (max-width: 480px) {
+    
+    @include setLayoutHeights($header_h_3);
+
+    #logo {
+    	margin: 2.5% auto;
+	  }
+
+	  #collapsed-menu {
+ 			display: none;
+ 		}
+
+ 		#header-nav {
+  		display: inline-block;
+  	}
+
+  }
+
+  @media screen and (max-width: 350px) {
+    
+    @include setLayoutHeights($header_h_4);
   }
 }
 
 
-// ----------------------------------------- SECTION
+// ---------------------------------------- SECTIONS
+
+#sections::before {
+	content: " ";
+	display: block;
+	width: 100%;
+}
+
 .section {
 	@extend %clearfix;
-
-	@media screen and (max-width: 650px) {
- //   width: 70%;
-	}
 
 	@media screen and (max-width: 480px) {
     width: 100%;

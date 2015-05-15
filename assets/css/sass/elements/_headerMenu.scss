@@ -1,22 +1,6 @@
 @mixin headerMenu {
 
   #header-nav {
-    display: inline-block;
-    margin-top: 85px;
-
-    @media screen and (max-width: 480px) {
-      float: none;
-      margin: auto;
-    }
-
-    &.expanded {
-      display: block;
-      margin-top: 40px;
-
-      @media screen and (max-width: 480px) {
-        margin: 10% 0;
-      }
-    }
 
     li {
       float: left;
@@ -44,11 +28,6 @@
   }
 
   #collapsed-menu {
-    margin-top: 40px;
-
-    @media screen and (max-width: 480px) {
-      display: none;
-    }
    
     a {
       display: block;
@@ -65,5 +44,4 @@
       cursor: pointer;
     }
   }
-
 }

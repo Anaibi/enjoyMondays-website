@@ -1,6 +1,5 @@
 $(function() {
 
-  // for use in animateHeader 
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
@@ -8,6 +7,7 @@ $(function() {
       wh.previous = wh.actual;
 
   var smallHeaderH = 111;
+  var header_h = [139, 111, 100, 80, 60];
 
   var marks = [325, 480];
     
@@ -18,16 +18,13 @@ $(function() {
   });
 
   // Done Resizing Event
-  // https://css-tricks.com/snippets/jquery/done-resizing-event/ 
   $(window).on('resize', function() {
+
+    var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
 
-      // refresh waypoints
-      Waypoint.refreshAll();
-
-      // Run code here, resizing has "stopped"
       // get new window sizes
       ww.previous = ww.actual; 
       ww.actual = $(window).width(); 
@@ -35,25 +32,18 @@ $(function() {
       wh.previous = wh.actual;
       wh.actual = $(window).height();
 
+
       // center contents again
       centerContents('#home');
       centerContents('#contact');
 
 
-      // if window only changes height, return
-      if (ww.previous === ww.actual) {
-      	return; 
-      }
-
-      if (!inSameWidthGap(ww, marks)) { 
-        // refresh header
-        refreshHeader();
-        setTimeout(function() {
-          scrollToPosition('#home');
-        }, 150); 
-
-        
-      }     
+      setTimeout(function() {
+        refreshHeader(actualSection);
+        Waypoint.refreshAll();
+        scrollToPosition(actualSection);
+      }, 150);      
+    
     }, 150);
 
   });
@@ -70,8 +60,7 @@ $(function() {
 
   // collapsed menu
   $('#collapsed-menu').hover(function() {
-    $(this).hide();
-    $('#header-nav').addClass('expanded').show();
+    $('#header-nav').addClass('expanded');
   });
 
   // expanded menu
@@ -79,13 +68,11 @@ $(function() {
   	function() {}, 
     function() {
       if ($(this).hasClass('expanded')) {
-      	$(this).hide().removeClass('expanded');
-        $('#collapsed-menu').show();
-      }   
+        $(this).removeClass('expanded');
+     }   
   });
 
   //----------------------------------------- WAYPOINTS
-  //-------------- http://imakewebthings.com/waypoints/
   function doWaypoints() {  
 
 	  var $sections = $('.section'); 
@@ -100,7 +87,7 @@ $(function() {
   	  	  	updateLinks($(this.element).attr('id'));
   	  	  	// if scrolling from home
   	  	  	if (isActiveSection('work')) { 
-  	  	  	  animateHeader(direction); 
+  	  	  	  updateState(direction, '#home'); 
   	  	  	} 
   	  	  }
   	  	},
@@ -120,7 +107,7 @@ $(function() {
   	  	    updateLinks($(this.element).attr('id')); 
   	  	    // if scrolling to home
   	  	  	if (isActiveSection('home')) { 
-  	  	  	  animateHeader(direction); 
+  	  	  	  updateState(direction, '#home'); 
   	  	  	} 
   	  	  }	  	 
   	  	},
@@ -135,35 +122,21 @@ $(function() {
     });
   }
 
-  //------------------------------------------- animateHeader
-  function animateHeader(direction) { 
 
-    // switch headers
-	  $('#site').toggleClass('big-header small-header');
-
-  	// menu collapsed/expanded changes over 480 width
-    // or in landscape mode
-  	if (ww.actual > marks[1] || wh.actual < ww.actual) {
-      // switch menus
-      if (direction === 'down') {
-        $('#header-nav').hide(function() {
-          $('#collapsed-menu').css('display', 'inline-block');
-        }).addClass('expanded');
-      } else {
-        $('#collapsed-menu').hide(function() {
-  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	    });
-      }
+  //--------------------------------------------- updateState
+  function updateState(direction, section) { 
+    if (direction === 'up') {
+      $('#site').addClass('state1').removeClass('state2');
+    } else {
+      $('#site').addClass('state2').removeClass('state1');
     }
   }
 
   //------------------------------------------- refreshHeader
-  function refreshHeader() { 
-    // home menu is always expanded and header big
-    $('#collapsed-menu').hide(function() {
-  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	});
-    $('#site').removeClass('small-header').addClass('big-header');
+  function refreshHeader(section) { 
+    if (section === '#home') { 
+      updateState('up', '#home');
+    } 
   }
 
   //----------------------------------------- centerContainer
@@ -179,13 +152,13 @@ $(function() {
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
     // clicking from home, get small header height (unless section is home)
-    var h = (isActiveSection('home') && section !== '#home') ? smallHeaderH : $('#main-header').height();
+    var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
     // if under 480px, header height is 100px always
-    if (ww.actual < marks[1]) { h = 100; }
+    if (ww.actual < marks[1]) { h = header_h[2]; }
 
     // if under 350px, header height is 80px always
-    if (ww.actual < marks[0]) { h = 80; }
+    if (ww.actual < marks[0]) { h = header_h[3]; }
 
 	  $('body, html')
 	    .stop()
@@ -216,31 +189,6 @@ $(function() {
   	return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
   
-  //------------------------------------------ inSameWidthGap
-  // says if actual width and previous width
-  // are in the same interval defined by values in marks
-  function inSameWidthGap() { 
-    var a = false;
-    for (var i = 0; i < (marks.length - 1); i++) {
-      if (a) return a;
-      if (inSameInterval(ww.actual, ww.previous, marks[i], marks[i+1])) {
-        a = true;
-      }
-    }
-    return a;
-  }
-
-  //------------------------------------------ inSameInterval
-  // check if two values v1, v2 
-  // are in the same interval defined by [i1, i2]
-  function inSameInterval(v1, v2, i1, i2) { 
-  	var a = false;
-    if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
-    	a = true;
-    } 
-    return a;
-  }
-
 
   $(document).ready(function () {
     //------------------------------------------------- fitText
