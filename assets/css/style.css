@@ -599,7 +599,15 @@ body {
   .state2 #collapsed-menu {
     display: none; }
   .state2 #header-nav {
-    display: inline-block; } }
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.5s;
+    -ms-transition: visibility 0s linear 0.5s;
+    transition: visibility 0s linear 0.5s;
+    -webkit-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear; } }
 @media screen and (max-width: 350px) {
   .state2 #main-header {
     height: 80px; }

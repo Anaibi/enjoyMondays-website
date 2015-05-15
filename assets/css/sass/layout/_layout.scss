@@ -200,6 +200,7 @@ body {
 
  		#header-nav {
   		display: inline-block;
+  		@include show;
   	}
 
   }
