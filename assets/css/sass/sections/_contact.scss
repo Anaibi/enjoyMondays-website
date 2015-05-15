@@ -12,25 +12,9 @@
     @include vCentered(40%);
 
     width: 100%;
-
-	  @media screen and (max-width: 650px) {
-      text-align: right;
-	  }
-
-	  h1 {
-	  	&:first-child {
-	  		color: $color2;
-	  		font-size: 1.2em;
-	  	}
-
-	  	a {
-		  	color: $color1;
-		  }
-		}
   
 		.sub-header {
 		  float: right;
-		  font-weight: 400;
 
 		  @media screen and (max-width: 1350px) {
 		  	width: 44%;
@@ -40,7 +24,6 @@
 		  @media screen and (max-width: 650px) {
 		  	width: 100%;
 		  	margin: 0;
-		    font-size: .4em;
 		  }
 
 		  @media screen and (max-width: 480px) {

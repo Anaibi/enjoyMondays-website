@@ -3,24 +3,11 @@
   #header-nav {
     display: inline-block;
     margin-top: 85px;
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: uppercase;
-
-    @media screen and (max-width: 650px) {
-      font-size: 0.8em;
-    }
 
     @media screen and (max-width: 480px) {
       float: none;
       margin: auto;
-      font-size: 0.76em;
     }
-
-    @media screen and (max-width: 350px) {
-      font-size: .6em;
-    }
-
 
     &.expanded {
       display: block;
@@ -42,14 +29,6 @@
 
       &:last-child {
         margin-right: -4px;
-      }
-
-      &.active-link {
-        font-weight: 900;
-      }
-
-      &:hover {
-        font-weight: 900;
       }
     }
     

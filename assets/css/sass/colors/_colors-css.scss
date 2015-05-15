@@ -3,95 +3,106 @@
 
 
 body {
-  
   background-color: $color1;
   color: $color2;
+}
+
   
-  // ---------------- MAIN HEADER 
+// ---------------- MAIN HEADER 
 
-  #main-header { 
-    background-color: $color1;
+#main-header { 
+  background-color: $color1;
 
-    li {
-      &.active-link {
-        // has to override .touch class no border
-        border-bottom: solid $FUXSIA 3px !important;
-      }
-
-      &:hover {
-        // .touch has to override this
-        border-bottom: solid $FUXSIA 3px;
-      }
-
-      &.no-touch {
-        border-bottom: none;
-      }
-
-      a {
-        color: $color2;
-      }
-    }
-  }
-
-  // ------------------ SECTION 1 
-
-  .home.section {
-    background-color: $color1;
-    color: $color2;
-
-    hr {
-      background-color: $color2;
-    }
-  }
-
-  // ------------------ SECTION 2 
-
-  .work.section {
-    background-color: $color2;
-    color: $color1;
-
-    hr {
-      background-color: $color4;
-    }
-  }
-
-  // ------------------ SECTION 3
-
-  .about.section {
-    background-color: $color3;
-    color: $color1;
-
-    hr {
-      background-color: $color4;
+  li {
+    &.active-link {
+      // has to override .touch class no border
+      border-bottom: solid $FUXSIA 3px !important;
     }
 
-    .content hr {
-      background-color: $color1;
+    &:hover {
+      // .touch has to override this
+      border-bottom: solid $FUXSIA 3px;
     }
-  }
 
-
-  // ------------------ SECTION 4
-
-  .contact.section {
-    background-color: $color4;
-    color: $color1;
-
-    hr {
-      background-color: $color5;
+    &.no-touch {
+      border-bottom: none;
     }
-  }
-
-
-  // --------------------- FOOTER
-
-  footer {
-    background-color: $color2;
-    color: $color1;
 
     a {
-      color: $color4;
+      color: $color2;
     }
   }
 }
+
+
+// ------------------ SECTION 1 
+.home.section {
+  background-color: $color1;
+  color: $color2;
+
+  hr {
+    background-color: $color2;
+  }
+}
+
+
+// ------------------ SECTION 2 
+.work.section {
+  background-color: $color2;
+  color: $color1;
+
+  hr {
+    background-color: $color4;
+  }
+}
+
+
+// ------------------ SECTION 3
+.about.section {
+  background-color: $color3;
+  color: $color1;
+
+  hr {
+    background-color: $color4;
+  }
+
+  .content hr {
+    background-color: $color1;
+  }
+}
+
+
+// ------------------ SECTION 4
+.contact.section {
+  background-color: $color4;
+  color: $color1;
+
+  .header {
+    h1 {
+      &:first-child {
+        color: $color2;
+      }
+    }
+
+    a {
+      color: $color1;
+    }
+  }
+
+  hr {
+    background-color: $color5;
+  }
+}
+
+
+// --------------------- FOOTER
+footer {
+  background-color: $color2;
+  color: $color1;
+
+  a {
+    color: $color4;
+  }
+}
+
 

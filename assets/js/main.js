@@ -35,6 +35,11 @@ $(function() {
       wh.previous = wh.actual;
       wh.actual = $(window).height();
 
+      // center contents again
+      centerContents('#home');
+      centerContents('#contact');
+
+
       // if window only changes height, return
       if (ww.previous === ww.actual) {
       	return; 
@@ -42,10 +47,12 @@ $(function() {
 
       if (!inSameWidthGap(ww, marks)) { 
         // refresh header
-        scrollToPosition('#home'); 
+        refreshHeader();
         setTimeout(function() {
-          refreshHeader();
-        }, 350); 
+          scrollToPosition('#home');
+        }, 150); 
+
+        
       }     
     }, 150);
 
@@ -165,15 +172,14 @@ $(function() {
         $header = $section.find('.header'),
         h = ($section.height() - $header.height())/2;
 
-        $header.css('transform', 'none');
-
-      $header.animate({'top': h}, 'slow');
+    $header.css('transform', 'none');
+    $header.animate({'top': h}, 'slow');
   };
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
-    // clicking from home, get small header height
-    var h = (isActiveSection('home')) ? smallHeaderH : $('#main-header').height();
+    // clicking from home, get small header height (unless section is home)
+    var h = (isActiveSection('home') && section !== '#home') ? smallHeaderH : $('#main-header').height();
 
     // if under 480px, header height is 100px always
     if (ww.actual < marks[1]) { h = 100; }

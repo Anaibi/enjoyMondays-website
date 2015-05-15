@@ -1,5 +1,6 @@
 @mixin landscape($h, $w) {
-  @media screen and (max-height: 550px) and (orientation: landscape) {
+  @media screen and (max-device-height: 550px) and (orientation: landscape) {
+    
     #main-header {
 
       #logo {
@@ -16,7 +17,6 @@
           width: 100%;
           height: 100vh;
           margin: 60px auto;
-          font-size: .06em;
           @include transition(display, .2s);
 
           li {
@@ -43,11 +43,11 @@
     }
 
     .big-header {
-      @include setLayout($h);
+      @include setLayoutHeights($h);
     }
 
     .small-header {
-      @include setLayout($h);
+      @include setLayoutHeights($h);
 
       &#site {
         width: calc(100vw - #{$w});
@@ -62,7 +62,6 @@
         height: 100vh;
         padding: 3px;
         margin: 0;
-        text-align: center;
 
         #logo {
           float: none;
@@ -72,7 +71,7 @@
       }
 
       #content .section.last {
-          min-height: calc(100vh - #{$footer_h});
+          min-height: calc(100vh - #{$footer_h_1});
       }
     }
 
@@ -86,13 +85,12 @@
 
       .sub-header {
         float: none;
-        font-size: .12em;
       }
 
       .home.section {
         .container {
-          min-height: 100px;
-          height: calc(100vh - #{$h});
+         // min-height: 100px;
+          min-height: calc(100vh - #{$h});
 
           .header {
             float: right;
@@ -113,7 +111,6 @@
         .tiles.three .tile {
           width: 32%;
           margin: auto;
-          font-size: .91em;
         }
       }
 
@@ -122,14 +119,9 @@
         .container {
           
           min-height: 150px;
-        
-          .header h1 {
-              font-size: .85em;
-          }
 
           .sub-header {
             float: right;
-            font-size: .25em;
           }
         }
       }

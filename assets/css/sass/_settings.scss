@@ -17,16 +17,19 @@ $font_family_2: 'Dosis', sans-serif;
 
 // ------------------------------- FIX MEASURES
 
-$header_h_big: 139px;
-$header_h_small: 111px;
+$header_h_1: 139px;
+$header_h_2: 111px;
+$header_h_3: 100px;
+$header_h_4: 80px;
+$header_h_5: 60px;
 
-$header_h_smallest: 60px;
 $header_vertical_w: 50px;
 
 $logo_w_big: 149px;
-$logo_w_small: $header_h_small;
+$logo_w_small: 111px;
 
-$footer_h: 100px;
+$footer_h_1: 100px;
+$footer_h_2: 70px;
 
 $max_layout_width: 1200px;
 

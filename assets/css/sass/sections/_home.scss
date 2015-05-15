@@ -1,22 +1,6 @@
 .home.section {
-	.container {
-		min-height: 350px;
-		height: calc(100vh - #{$header_h_big});
-
-		@media screen and (max-width: 480px) {
-	  	height: calc(100vh - 100px);
-	  }
-
-	  @media screen and (max-width: 350px) {
-	  	height: calc(100vh - 80px);
-	  }
-
-	}
 	
 	.header {
-		@media screen and (min-width: 350px) and (min-height: 500px) {
-	  	@include vCentered(40%);
-	  }
 
 	  position: relative;
 	  width: cp(560px, $max_layout_width);
@@ -44,10 +28,6 @@
 	      position: relative;
 	      top: .1em;
 	    }
-
-	    @media screen and (max-width: 350px) {
-	    	font-size: .9em;
-	    }
      }
   
 		.sub-header {
@@ -55,7 +35,6 @@
 
 		  @media screen and (max-width: 480px) {
 		    float: none;
-		    font-size: .2em;
 		  }
 		}
 	}
