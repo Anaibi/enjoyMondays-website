@@ -140,7 +140,13 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu
-    if ($('html').css('content') === 'isLandscape' && section !== 'home') { h = 0; }
+    if ($('html').css('content') === 'isLandscape') {
+      if (section === '#home') { h = header_h[2]; }
+      else { h = 0; }
+    }
+console.log(h);
+console.log(section);
+console.log($(section).offset().top);
 
     $('body, html')
       .stop()
@@ -153,17 +159,13 @@ $(function() {
 
   //--------------------------------------------- updateLinks
   function updateLinks(id) { 
-    $('#header-nav li').removeClass('active-link no-touch'); 
-    
-    if (id.charAt(0) === '#') {
-      $("#header-nav a[href='"+id+"']").parent().addClass('active-link');
-    } else {
-      $("#header-nav a[href='#"+id+"']").parent().addClass('active-link');
-    }
+    var $header_nav = $('#header-nav');
 
-    if ($('#header-nav a.active-link').attr('href') !== $('#header-nav a:hover').attr('href')) {
-      $('#header-nav a:hover').parent().addClass('no-touch');
-    }
+    $header_nav.find('li').removeClass('active-link').addClass('no-touch'); 
+    
+    if (id.charAt(0) !== '#') { id = '#' + id; }
+
+    $header_nav.find('a[href="'+id+'"]').parent().addClass('active-link').removeClass('no-touch');
   }
 
   //----------------------------------------- isActiveSection

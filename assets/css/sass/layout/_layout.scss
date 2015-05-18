@@ -1,4 +1,4 @@
-@mixin setLayoutHeights($h) {
+@mixin setLayoutHeights($h, $f) {
   
   #main-header {
     height: $h;
@@ -15,7 +15,7 @@
 	    min-height: calc(100vh - #{$h});
 
 	    &.last {
-	    	$th: $h + $footer_h_1;
+	    	$th: $h + $f;
 	    	min-height: calc(100vh - #{$th});
 	    }
 	  }
@@ -63,6 +63,17 @@ body {
       float: none;
       margin: auto;
     }
+
+    li {
+    	&.active-link,
+    	li:hover {
+    		border-bottom-style: solid;
+    	}
+
+    	&.no-touch {
+      	border: none;
+    	}
+    }
   }
 }
 
@@ -82,7 +93,7 @@ body {
 // ----------------------------- LAYOUT STATE 1
 .state1 {
 
-	@include setLayoutHeights($header_h_1);
+	@include setLayoutHeights($header_h_1, $footer_h_1);
 
 	#logo {
   	width: $logo_w_big;
@@ -94,7 +105,6 @@ body {
     margin-top: 85px;
 
     &.expanded {
-   //   display: block;
       @include show;
     }
  	}
@@ -115,7 +125,7 @@ body {
 
   @media screen and (max-width: 480px) {
     
-    @include setLayoutHeights($header_h_3);
+    @include setLayoutHeights($header_h_3, $footer_h_1);
 
     #logo {
     	margin: 2.5% auto;
@@ -137,7 +147,7 @@ body {
 
   @media screen and (max-width: 350px) {
     
-    @include setLayoutHeights($header_h_4);
+    @include setLayoutHeights($header_h_4, $footer_h_1);
 
     #logo {
     	width: 20%;
@@ -149,7 +159,7 @@ body {
 // ----------------------------- LAYOUT STATE 2
 .state2 {
   
-  @include setLayoutHeights($header_h_2);
+  @include setLayoutHeights($header_h_2, $footer_h_1);
 
   #logo {
     width: $logo_w_small;
@@ -188,7 +198,7 @@ body {
 
   @media screen and (max-width: 480px) {
     
-    @include setLayoutHeights($header_h_3);
+    @include setLayoutHeights($header_h_3, $footer_h_1);
 
     #logo {
     	margin: 2.5% auto;
@@ -207,7 +217,7 @@ body {
 
   @media screen and (max-width: 350px) {
     
-    @include setLayoutHeights($header_h_4);
+    @include setLayoutHeights($header_h_4, $footer_h_2);
   }
 }
 
@@ -241,7 +251,7 @@ body {
 	  }
 
     > div {
-      float: right;
+     // float: right;
       @extend %clearfix;
 
       @media screen and (max-width: 650px) {
@@ -285,4 +295,4 @@ body {
 
 // ---------------------------------- LANDSCAPE
 
-@include landscape($header_h_3, $header_vertical_w);
+@include landscape($header_h_5, $header_vertical_w);

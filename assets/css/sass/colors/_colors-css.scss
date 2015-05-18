@@ -14,19 +14,11 @@ body {
   background-color: $color1;
 
   li {
-    &.active-link {
-      // has to override .touch class no border
-      //border-bottom: solid $FUXSIA 3px !important;
-    }
-
+    &.active-link,
     &:hover,
-    &.active-link {
-      // .touch has to override this
-      border-bottom: solid $FUXSIA 3px;
-    }
-
-    &.no-touch {
-      border-bottom: none;
+     {
+      border: 3px solid $FUXSIA;
+      border-style: hidden;
     }
 
     a {

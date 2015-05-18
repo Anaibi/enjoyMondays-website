@@ -21,7 +21,6 @@
   opacity: 0;
   @include transition(visibility 0s linear 0.5s);
   @include transition(opacity 0.2s linear);
- // transition: all 0s;
 }
 
 @mixin show {

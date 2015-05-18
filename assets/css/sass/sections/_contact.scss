@@ -1,15 +1,21 @@
 .contact.section {
 	.container {
-		min-height: 350px;
-		height: 70vh;
+		//min-height: 350px;
+		//height: 70vh;
 
 		@media screen and (max-width: 650px) {
-			min-height: 350px;
+	//		min-height: 350px;
+		}
+
+		@media screen and (max-width: 350px) {
+			min-height: 150px;
 		}
 	}
 	
 	.header {
-    @include vCentered(40%);
+   // @include vCentered(40%);
+   	position: relative;
+   	margin: 5% 0;
 
     width: 100%;
   

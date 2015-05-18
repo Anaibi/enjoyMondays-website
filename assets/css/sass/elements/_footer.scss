@@ -2,13 +2,17 @@
 footer.container {
   height: $footer_h_1;
 
+  @media screen and (max-width: 480px) {
+    height: $footer_h_2;
+  }  
+
   & > div {
     @include vCentered;
 
     @media screen and (max-width: 650px) {
       display: block;
       width: 100%;
-      margin: 3% auto 1%;
+      margin: 3% auto 0;
       transform: none;
       top: 0;
     }
