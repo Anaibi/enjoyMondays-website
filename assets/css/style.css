@@ -223,6 +223,8 @@ footer.container {
         width: 32px;
         height: 32px; }
 
+.home.section .container {
+  padding-bottom: 10%; }
 .home.section .header {
   position: relative;
   width: 46.66667%; }
@@ -246,8 +248,7 @@ footer.container {
     position: relative;
     top: .1em; }
   .home.section .header .sub-header {
-    float: right;
-    margin-bottom: 10%; }
+    float: right; }
     @media screen and (max-width: 480px) {
       .home.section .header .sub-header {
         float: none; } }
@@ -366,7 +367,6 @@ footer.container {
     min-height: 150px; } }
 .contact.section .header {
   position: relative;
-  margin: 5% 0;
   width: 100%; }
   .contact.section .header .sub-header {
     float: right; }
@@ -413,11 +413,11 @@ body {
       #main-header #header-nav {
         float: none;
         margin: auto; } }
-    #main-header #header-nav li.active-link,
-    #main-header #header-nav li li:hover {
-      border-bottom-style: solid; }
     #main-header #header-nav li.no-touch {
       border: none; }
+    #main-header #header-nav li.active-link, #main-header #header-nav li:hover {
+      border-bottom-style: solid;
+      border-color: #DF3F54; }
 
 #logo {
   -webkit-transition: all 0.3s;
@@ -712,10 +712,10 @@ body {
   #main-header #collapsed-menu {
     display: none; }
 
-  footer .container {
+  footer.container {
     height: 80px; }
-  footer .container > div {
-    margin: 3% 0; }
+    footer.container > div {
+      margin: 1.5% 0 0; }
 
   .state1 #main-header {
     height: 60px; }
@@ -766,9 +766,9 @@ body {
       -ms-transition: opacity 0.5s linear;
       transition: opacity 0.5s linear;
       font-size: .65em;
-      text-align: center; }
+      text-align: right; }
       .state2 #main-header #header-nav li {
-        width: 100%;
+        width: 85%;
         height: 15%;
         display: block;
         margin: 0;
@@ -819,4 +819,3 @@ body {
     #sections .section.contact .container .sub-header {
       float: right; } }
 
-/*# sourceMappingURL=style.css.map */

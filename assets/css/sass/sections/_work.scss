@@ -9,6 +9,7 @@
   }
 
   .content {
+    // ------------------------------------ GRID
     @include details;
     @include imgAnimation;
     @include tileLink;

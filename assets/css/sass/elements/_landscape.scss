@@ -45,13 +45,11 @@
       }
     }
 
-    footer {
-      .container {
-        height: $footer_h_2;
-      }
-
-      .container > div {
-        margin : 3% 0;
+    footer.container {
+      height: $footer_h_2;
+      
+      > div {
+        margin : 1.5% 0 0;
       }
     }
 
@@ -90,10 +88,10 @@
           height: 100%; 
           @include show;
           font-size: .65em;
-          text-align: center;
+          text-align: right;
 
           li {
-            width: 100%;
+            width: 85%;
             height: 15%;
             display: block;
             margin: 0;

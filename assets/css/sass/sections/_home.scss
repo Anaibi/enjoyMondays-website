@@ -1,9 +1,13 @@
 .home.section {
+
+	.container {
+		padding-bottom: 10%;
+	}
 	
 	.header {
-
 	  position: relative;
 	  width: cp(560px, $max_layout_width);
+	 // @extend %clearfix;
 
 	  @media screen and (max-width: 750px) and (min-height: 500px) {
 	  	width: 60%;
@@ -33,7 +37,6 @@
   
 		.sub-header {
 		  float: right;
-		  margin-bottom: 10%;
 
 		  @media screen and (max-width: 480px) {
 		    float: none;

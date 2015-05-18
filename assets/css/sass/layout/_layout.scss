@@ -65,13 +65,14 @@ body {
     }
 
     li {
-    	&.active-link,
-    	li:hover {
-    		border-bottom-style: solid;
-    	}
-
     	&.no-touch {
       	border: none;
+    	}
+
+    	&.active-link,
+    	&:hover {
+    		border-bottom-style: solid;
+    		border-color: $FUXSIA;
     	}
     }
   }

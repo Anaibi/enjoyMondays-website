@@ -32,14 +32,12 @@ $(function() {
       wh.actual = $(window).height();
 
 
-      // center contents again
-      centerContents('#home');
-      centerContents('#contact');
-
-
       setTimeout(function() {
         refreshHeader(actualSection);
         Waypoint.refreshAll();
+        // center contents again
+        centerContents('#home');
+        centerContents('#contact'); 
         scrollToPosition(actualSection);
       }, 150);      
     
@@ -120,11 +118,24 @@ $(function() {
 
   //----------------------------------------- centerContainer
   function centerContents(section) {
-    var $section = $(section),
-        $header = $section.find('.header'),
-        h = ($section.height() - $header.height())/2;
+    var $section = $(section).find('.container'),
+        $header = $section.find('.header');
 
-    $header.css('transform', 'none');
+    if (section === '#home') {
+      h = (wh.actual -$('#main-header').height() - $header.height())/2;
+    } else {
+      if ($('html').css('content') === 'isLandscape') { 
+        h = (wh.actual - $header.height() - $('footer').height())/2;
+      } else {
+        h = (wh.actual - $header.height() - $('footer').height() - $('#main-header').height())/2;
+      }
+    }
+    
+    if (h < 0) { 
+      $header.css({'width': '-=45%'});
+      $(window).trigger('resize');
+    }
+
     $header.animate({'top': h}, 'slow');
   };
 
@@ -141,12 +152,9 @@ $(function() {
 
     // landscape has side menu
     if ($('html').css('content') === 'isLandscape') {
-      if (section === '#home') { h = header_h[2]; }
+      if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
-console.log(h);
-console.log(section);
-console.log($(section).offset().top);
 
     $('body, html')
       .stop()
@@ -177,11 +185,16 @@ console.log($(section).offset().top);
   $(document).ready(function () {
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
-    centerContents('#home');
+    
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
     $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
-    centerContents('#contact');    
+    setTimeout(function() {
+      centerContents('#home');
+      centerContents('#contact'); 
+    }, 150);
+
+       
     //---------------------------------------------- supersized
     var slides = [];
     var projects = [
