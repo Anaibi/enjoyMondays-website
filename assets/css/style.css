@@ -40,10 +40,10 @@ body {
   .contact.section hr {
     background-color: #F17C71; }
 
-footer {
+.footer {
   background-color: #3A3A3A;
   color: #E9E8E3; }
-  footer a {
+  .footer a {
     color: #DF3F54; }
 
 body {
