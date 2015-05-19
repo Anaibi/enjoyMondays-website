@@ -56,8 +56,22 @@ $(function() {
   $('#header-nav a[href="#notes"]').off('click');
 
   // collapsed menu
-  $('#collapsed-menu').hover(function() {
+  $('#collapsed-menu').hover(function() { 
     $('#header-nav').addClass('expanded');
+  });
+
+  // collapsed menu mobile
+  var menuExpanded = false;
+  $('#collapsed-menu a').on('click touchstart', function (e) {
+      e.preventDefault(); 
+      $('#collapsed-menu').trigger('mouseenter'); 
+      menuExpanded = true;
+  });
+  $("#sections").on('mouseenter touchmove', function(event) {
+    if (menuExpanded) {
+      $('#header-nav').trigger('mouseleave');
+      menuExpanded = false;
+    }
   });
 
   // expanded menu
@@ -66,7 +80,7 @@ $(function() {
     function() {
       if ($(this).hasClass('expanded')) {
         $(this).removeClass('expanded');
-     }   
+      }   
   });
 
   //----------------------------------------- WAYPOINTS
@@ -89,9 +103,11 @@ $(function() {
 
           updateState(direction, section);
           updateLinks(section);
+
         },
         offset: function() {
-          return -(this.element.clientHeight - header_h[0]);
+          var h = isLandscapeLayout ? 300 : header_h[0];
+          return -(this.element.clientHeight - h);
         },
         group: 'sections'
       });
@@ -124,7 +140,8 @@ $(function() {
     if (section === '#home') {
       h = (wh.actual -$('#main-header').height() - $header.height())/2;
     } else {
-      if ($('html').css('content') === 'isLandscape') { 
+   //   if ($('html').css('content') === 'isLandscape') { 
+      if (isLandscapeLayout) {
         h = (wh.actual - $header.height() - $('footer').height())/2;
       } else {
         h = (wh.actual - $header.height() - $('footer').height() - $('#main-header').height())/2;
@@ -151,7 +168,8 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu
-    if ($('html').css('content') === 'isLandscape') {
+    //if ($('html').css('content') === 'isLandscape') {
+    if (isLandscapeLayout) {
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
@@ -180,6 +198,9 @@ $(function() {
   function isActiveSection(id) {
     return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
+
+  //--------------------------------------- isLandscapeLayout
+  var isLandscapeLayout = ($('html').css('content') === 'isLandscape') ? true : false;
   
 
   $(document).ready(function () {
