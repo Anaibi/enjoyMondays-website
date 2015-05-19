@@ -56,8 +56,22 @@ $(function() {
   $('#header-nav a[href="#notes"]').off('click');
 
   // collapsed menu
-  $('#collapsed-menu').hover(function() {
+  $('#collapsed-menu').hover(function() { 
     $('#header-nav').addClass('expanded');
+  });
+
+  // collapsed menu mobile
+  var menuExpanded = false;
+  $('#collapsed-menu a').on('click touchstart', function (e) {
+      e.preventDefault(); 
+      $('#collapsed-menu').trigger('mouseenter'); 
+      menuExpanded = true;
+  });
+  $("#sections").on('mouseenter touchmove', function(event) {
+    if (menuExpanded) {
+      $('#header-nav').trigger('mouseleave');
+      menuExpanded = false;
+    }
   });
 
   // expanded menu
@@ -66,7 +80,7 @@ $(function() {
     function() {
       if ($(this).hasClass('expanded')) {
         $(this).removeClass('expanded');
-     }   
+      }   
   });
 
   //----------------------------------------- WAYPOINTS
