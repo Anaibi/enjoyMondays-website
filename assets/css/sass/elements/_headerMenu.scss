@@ -22,13 +22,13 @@
         margin-right: -4px;
       }
 
-      &.no-touch {
-        border: none;
-      }
-
       &.active-link,
       &:hover {
-        border-bottom: 3px solid $FUXSIA;
+        border-bottom: 3px solid $link_color2;
+      }
+
+      &.no-touch {
+        border: none;
       }
     
       a {
@@ -37,7 +37,7 @@
         margin: -30px -20px;
 
         @media screen and (max-width: 350px) {
-          padding: 30px 21px; /* breaks under 226px */
+          padding: 30px 21px; // breaks under 226px
         }
       }
     }
@@ -122,18 +122,16 @@
           height: 15%;
           display: block;
           margin: 0;
-          border-width: 6px;
-          border-style: hidden;
-          border-left-style: solid;
-          border-left-color: $LIGHT_GRAY;
+          border: none;
+          border-left: 6px solid $color1;
 
           &.active-link,
           &:hover {
-            border-left-color: $FUXSIA;
+            border-left-color: $link_color2;
           }
 
           &.no-touch {
-            border-left-color: $LIGHT_GRAY;
+            border-left-color: $color1;
           }
 
           a { 
