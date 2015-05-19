@@ -476,10 +476,6 @@ body {
   margin: 0 auto;
   padding: 0 6.66667%; }
 
-@media screen and (max-device-height: 600px) and (orientation: landscape) {
-  .state2 .container {
-    padding-left: 0; } }
-
 #main-header {
   position: fixed;
   top: 0;
