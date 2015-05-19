@@ -9,7 +9,8 @@
 
       #logo {
         width: 18%;
-        margin: 2% 0;
+        margin: 0;
+        padding: 2% 0;
         float: left;
       }
 
@@ -63,21 +64,25 @@
       &#site {
         width: calc(100vw - #{$w});
         padding-left: $w;
+        overflow: hidden;
       }
 
       #main-header {
         position: fixed;
         left: 0;
         top: 0;
-        width: $w - 6;
+        width: $w;
         height: 100vh;
-        padding: 3px;
-        margin: 0;
+
+        .container {
+          padding-left: 0;
+        }
 
         #logo {
-          float: none;
-          margin: 2% auto;
-          width: 100%;
+          float: right;
+          margin: 0 auto;
+          padding: 4% 0;
+          width: 95%;
         }
 
         #header-nav {
@@ -91,11 +96,11 @@
           text-align: right;
 
           li {
-            width: 85%;
+            width: 90%;
             height: 15%;
             display: block;
             margin: 0;
-            border-width: 7px;
+            border-width: 6px;
             border-style: hidden;
             border-left-style: solid;
             border-left-color: $LIGHT_GRAY;
@@ -119,7 +124,6 @@
       }
 
       #sections .contact.section.last {
-      //  min-height: 150px;
         height: calc(100vh - #{$footer_h_2});
       }
     }
@@ -151,7 +155,6 @@
             }
           }
           .container {
-            
             min-height: calc(100vh - #{$h});
 
             .header {
@@ -169,7 +172,6 @@
               float: none;
             }
           }
-
           .content {
             .tiles.three .tile {
               width: 32%;
@@ -179,7 +181,6 @@
         }
 
         &.contact {
-
           .container {
             min-height: initial;
             height: 100%;
