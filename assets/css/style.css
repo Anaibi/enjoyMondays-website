@@ -336,30 +336,24 @@ footer.container {
   right: 10px;
   font-size: 0; }
 
-.about.section .header {
+.about .header {
   width: 44.16667%;
-  padding: 167px 0 184px; }
+  padding: 68px 0 97px; }
   @media screen and (max-width: 1350px) {
-    .about.section .header {
-      padding: 6% 0 12%; } }
-  @media screen and (max-width: 650px) {
-    .about.section .header {
-      width: 80%; } }
-  @media screen and (max-width: 480px) {
-    .about.section .header {
-      width: 100%; } }
-.about.section .content .img-wrapper {
+    .about .header {
+      padding: 5% 0 8%; } }
+.about .content .img-wrapper {
   width: 70%;
   margin: 0 auto 8%; }
-.about.section .content hr {
+.about .content hr {
   width: 15%;
   margin: 0 auto 5%; }
-.about.section .content p {
+.about .content p {
   width: 80%;
   margin: auto;
   word-spacing: -1px; }
   @media screen and (max-width: 350px) {
-    .about.section .content p {
+    .about .content p {
       width: 100%; } }
 
 @media screen and (max-width: 350px) {

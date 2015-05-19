@@ -1,18 +1,10 @@
-.about.section	{
+.about	{
 	.header {
 	  width: cp(530px, $max_layout_width);
-		padding: 167px 0 184px;
+		padding: 68px 0 97px;
 
 		@media screen and (max-width: 1350px) {
-	    padding: 6% 0 12%;
-		}
-
-		@media screen and (max-width: 650px) {
-		  width: 80%;
-		}
-
-		@media screen and (max-width: 480px) {
-		  width: 100%;
+	    padding: 5% 0 8%;
 		}
 	}
 
