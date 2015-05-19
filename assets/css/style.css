@@ -70,7 +70,7 @@ body {
   text-transform: uppercase; }
   @media screen and (max-width: 650px) {
     #header-nav {
-      font-size: 0.8em; } }
+      font-size: 0.85em; } }
   @media screen and (max-width: 300px) {
     #header-nav {
       font-size: .7em; } }
@@ -95,6 +95,9 @@ body {
 
 .home.section .header .sub-header {
   word-spacing: 2px; }
+  @media screen and (min-width: 480px) and (max-width: 650px) {
+    .home.section .header .sub-header {
+      font-size: 1.2em; } }
 
 .work.section .header h1 {
   text-align: center; }
@@ -116,7 +119,7 @@ body {
   color: #E9E8E3; }
 .contact.section .header .sub-header {
   font-weight: 400; }
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 480px) {
     .contact.section .header .sub-header {
       font-weight: 100; } }
 
@@ -312,6 +315,7 @@ img {
     margin: auto; } }
 .about .content .img-wrapper {
   width: 70%;
+  max-width: 200px;
   margin: 0 auto 8%; }
 .about .content hr {
   width: 15%;
@@ -320,7 +324,7 @@ img {
   width: 80%;
   margin: auto;
   word-spacing: -1px; }
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 480px) {
     .about .content p {
       width: 100%; } }
 
@@ -741,6 +745,9 @@ p {
       width: 70%; } }
   @media screen and (max-width: 480px) {
     .section .header {
+      width: 80%; } }
+  @media screen and (max-width: 350px) {
+    .section .header {
       width: 100%; } }
 @media screen and (max-device-height: 600px) and (orientation: landscape) and (max-width: 650px) {
   .section .header {
@@ -790,6 +797,9 @@ p {
     .tiles.three .tile {
       width: 100%;
       margin: 10% auto; } }
+  @media screen and (max-width: 350px) {
+    .tiles.three .tile {
+      width: 100%; } }
 
 footer.container {
   height: 100px; }

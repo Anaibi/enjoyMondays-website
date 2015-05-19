@@ -132,6 +132,10 @@ p {
 	  }
 
 	  @media screen and (max-width: 480px) {
+      width: 80%;
+	  }
+
+	  @media screen and (max-width: 350px) {
       width: 100%;
 	  }
 

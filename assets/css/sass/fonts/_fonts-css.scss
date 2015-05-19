@@ -44,7 +44,7 @@ body {
   text-transform: uppercase;
 
   @media screen and (max-width: 650px) {
-    font-size: 0.8em;
+    font-size: 0.85em;
   }
 
   @media screen and (max-width: 480px) {
@@ -118,8 +118,9 @@ body {
     .sub-header {
 
       word-spacing: 2px;
-      @media screen and (max-width: 480px) {
- //       font-size: .2em;
+
+      @media screen and (min-width: 480px) and (max-width: 650px) {
+        font-size: 1.2em;
       }
     }
   }
@@ -199,7 +200,7 @@ body {
  //       font-size: .25em;
       }
 
-      @media screen and (max-width: 350px) {
+      @media screen and (max-width: 480px) {
         font-weight: 100;
       }
     }

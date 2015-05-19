@@ -30,6 +30,7 @@
 
     .img-wrapper {
       width: 70%;
+      max-width: 200px;
       margin: 0 auto 8%;
     }
 
@@ -43,7 +44,7 @@
       margin: auto;
       word-spacing: -1px;
 
-      @media screen and (max-width: 350px) {
+      @media screen and (max-width: 480px) {
 		  	width: 100%;
 			}	
     }

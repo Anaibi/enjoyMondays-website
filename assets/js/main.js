@@ -146,10 +146,10 @@ $(function() {
       }
     }
     
-    if (h < 0) { 
+   /* if (h < 0) { 
       $header.css({'width': '-=45%'});
       $(window).trigger('resize');
-    }
+    }*/
 
     $header.animate({'top': h}, 'slow');
   };
@@ -170,7 +170,7 @@ $(function() {
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
-console.log(h); console.log(isLandscapeLayout);
+
     $('body, html')
       .stop()
       .animate({
