@@ -99,7 +99,7 @@ body {
 
 	#logo {
   	width: $logo_w_big;
-  	margin-top: 40px;
+  	padding-top: 40px;
   }
   
   #header-nav {
@@ -112,7 +112,6 @@ body {
  	}
 
  	#collapsed-menu {
- //		display: none;
  		@include hide;
  	}
 
@@ -130,7 +129,8 @@ body {
     @include setLayoutHeights($header_h_3, $footer_h_1);
 
     #logo {
-    	margin: 2.5% auto;
+    	margin: 0 auto;
+    	padding: 2.5% 0;
     }
 
     #header-nav {
@@ -165,7 +165,7 @@ body {
 
   #logo {
     width: $logo_w_small;
-    margin-top: 18px;
+    padding-top: 18px;
   }
 
   #header-nav {
@@ -174,7 +174,7 @@ body {
 
   	&.expanded {
    		display: block;
-      margin-top: 40px;
+      padding-top: 40px;
       @include show;
     }
   }
@@ -203,7 +203,8 @@ body {
     @include setLayoutHeights($header_h_3, $footer_h_1);
 
     #logo {
-    	margin: 2.5% auto;
+    	margin: 0 auto;
+    	padding: 2.5% 0;
 	  }
 
 	  #collapsed-menu {
