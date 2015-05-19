@@ -51,9 +51,10 @@
   
 		.sub-header {
 		  float: right;
+		  width: 95%;
 
 		  @media screen and (max-width: 480px) {
-		    float: none;
+		//    float: none;
 		  }
 		}
 	}

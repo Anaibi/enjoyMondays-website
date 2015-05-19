@@ -40,6 +40,12 @@
 		  	float: right;
 		  }
 		}
+
+		h1:first-child {
+			@media screen and (max-width: 350px) {
+				width: 100%;
+			}
+		}
 	}
 }
 

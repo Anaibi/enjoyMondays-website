@@ -6,9 +6,9 @@ $(function() {
   var wh = {'actual' : $(window).height()};
       wh.previous = wh.actual;
 
-  var header_h = [139, 111, 100, 80, 60];
+  var header_h = [139, 111, 100, 85, 60];
 
-  var marks = [325, 480, 600];
+  var marks = [350, 480, 600];
     
   var resizeTimer;
 
@@ -159,10 +159,10 @@ $(function() {
     // clicking from home, get small header height (unless section is home)
     var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
-    // if under 480px, header height is 100px always
+    // if under 480px, header height is header_h[2] always
     if (ww.actual < marks[1]) { h = header_h[2]; }
 
-    // if under 350px, header height is 80px always
+    // if under 350px, header height is header_h[3] always
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu
@@ -170,7 +170,7 @@ $(function() {
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
-
+console.log(h); console.log(isLandscapeLayout);
     $('body, html')
       .stop()
       .animate({
@@ -202,11 +202,13 @@ $(function() {
 
   $(document).ready(function () {
     //------------------------------------------------- fitText
-    $("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+    $("#home .fittextjs").fitText(.43, { minFontSize: '60px', maxFontSize: '150px' });
     
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+    $("#contact .fittextjs h1:first-child").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
+    $("#contact .fittextjs h1:last-child").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+
     setTimeout(function() {
       centerContents('#home');
       centerContents('#contact'); 

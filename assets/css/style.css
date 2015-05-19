@@ -45,37 +45,35 @@ body {
 
 body {
   font-family: "Lato", sans-serif;
-  font-weight: 100; }
+  font-weight: 100;
+  font-size: 16px; }
   @media screen and (max-width: 650px) {
     body {
       text-align: center; } }
   body h1 {
     font-family: "Dosis", sans-serif;
     font-weight: 600;
-    font-size: 1em; }
+    font-size: 2em; }
   body p {
-    line-height: 1.5;
-    letter-spacing: .17px; }
-
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
-  .small-header #main-header {
-    text-align: center; }
-  .small-header #content .sub-header {
-    font-size: .12em; } }
+    line-height: 1.2;
+    letter-spacing: .17px;
+    word-spacing: .12em;
+    font-size: 1em; }
+  body a {
+    font-size: 1em; }
+  body .fittextjs > * {
+    font-size: 1em; }
 
 #header-nav {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.1em;
   text-transform: uppercase; }
   @media screen and (max-width: 650px) {
     #header-nav {
       font-size: 0.8em; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 300px) {
     #header-nav {
-      font-size: 0.76em; } }
-  @media screen and (max-width: 350px) {
-    #header-nav {
-      font-size: .6em; } }
+      font-size: .7em; } }
   #header-nav li.active-link {
     font-weight: 900; }
   #header-nav li:hover {
@@ -90,50 +88,37 @@ body {
     line-height: 1;
     text-transform: uppercase;
     white-space: nowrap; }
-    @media screen and (max-width: 350px) {
-      .section .header h1 {
-        font-size: .7em; } }
   .section .header .sub-header {
-    font-size: .158em;
     text-align: center; }
   .section .content {
     text-align: center; }
 
-@media screen and (max-width: 350px) {
-  .home.section .header h1 {
-    font-size: .9em; } }
-@media screen and (max-width: 480px) {
-  .home.section .header .sub-header {
-    font-size: .2em; } }
+.home.section .header .sub-header {
+  word-spacing: 2px; }
 
 .work.section .header h1 {
   text-align: center; }
 
-@media screen and (min-width: 650px) {
-  .about.section .sub-header {
-    font-size: .13em; } }
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
-  .about.section .tiles.three .tile {
-    font-size: .7em; } }
+.about.section {
+  font-size: .9em; }
+  .about.section .content p {
+    word-spacing: .1em; }
 
 @media screen and (max-width: 650px) {
   .contact.section .header {
     text-align: right; } }
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
-  .contact.section .header h1 {
-    font-size: .85em; } }
+@media screen and (max-width: 350px) {
+  .contact.section .header {
+    text-align: center; } }
 .contact.section .header h1:first-child {
-  font-size: 1.2em; }
+  font-size: 1.5em; }
 .contact.section .header h1 a {
   color: #E9E8E3; }
 .contact.section .header .sub-header {
   font-weight: 400; }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 350px) {
     .contact.section .header .sub-header {
-      font-size: .4em; } }
-  @media screen and (max-device-height: 550px) and (orientation: landscape) {
-    .contact.section .header .sub-header {
-      font-size: .25em; } }
+      font-weight: 100; } }
 
 @media screen and (max-width: 650px) {
   footer.container {
@@ -222,10 +207,8 @@ img {
     position: relative;
     top: .1em; }
   .home.section .header .sub-header {
-    float: right; }
-    @media screen and (max-width: 480px) {
-      .home.section .header .sub-header {
-        float: none; } }
+    float: right;
+    width: 95%; }
 
 .work .header {
   width: 32.5%;
@@ -370,6 +353,9 @@ img {
     @media screen and (max-device-height: 600px) and (orientation: landscape) {
       .contact.section .header .sub-header {
         float: right; } }
+  @media screen and (max-width: 350px) {
+    .contact.section .header h1:first-child {
+      width: 100%; } }
 
 @media screen and (max-device-height: 600px) and (orientation: landscape) {
   .state2 #sections .contact.section.last {
@@ -385,6 +371,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll; }
+
+p {
+  padding-bottom: .3em; }
 
 .state1 #main-header {
   height: 139px; }
@@ -407,14 +396,14 @@ body {
       min-height: calc(100vh - 200px); } }
 @media screen and (max-width: 350px) {
   .state1 #main-header {
-    height: 80px; }
+    height: 85px; }
   .state1 #sections::before {
-    height: 80px; }
+    height: 85px; }
   .state1 #sections .section {
     height: 100%;
-    min-height: calc(100vh - 80px); }
+    min-height: calc(100vh - 85px); }
     .state1 #sections .section.last {
-      min-height: calc(100vh - 180px); } }
+      min-height: calc(100vh - 185px); } }
 @media screen and (max-device-height: 600px) and (orientation: landscape) {
   .state1 #main-header {
     height: 60px; }
@@ -447,14 +436,14 @@ body {
       min-height: calc(100vh - 180px); } }
 @media screen and (max-width: 350px) {
   .state2 #main-header {
-    height: 80px; }
+    height: 85px; }
   .state2 #sections::before {
-    height: 80px; }
+    height: 85px; }
   .state2 #sections .section {
     height: 100%;
-    min-height: calc(100vh - 80px); }
+    min-height: calc(100vh - 85px); }
     .state2 #sections .section.last {
-      min-height: calc(100vh - 160px); } }
+      min-height: calc(100vh - 165px); } }
 @media screen and (max-device-height: 600px) and (orientation: landscape) {
   .state2 #main-header {
     height: 60px; }
@@ -799,7 +788,7 @@ body {
   width: 33%; }
   @media screen and (max-width: 650px) {
     .tiles.three .tile {
-      width: 80%;
+      width: 100%;
       margin: 10% auto; } }
 
 footer.container {
