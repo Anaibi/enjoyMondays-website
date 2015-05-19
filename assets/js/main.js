@@ -94,10 +94,7 @@ $(function() {
         element: this,
         handler: function(direction) {
 
-          var next = this.next();
-          var section;
-
-          $sections.removeClass('.active-link');
+          var next = this.next() ? this.next() : this;
 
           var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
 
@@ -105,10 +102,12 @@ $(function() {
           updateLinks(section);
 
         },
+
         offset: function() {
-          var h = isLandscapeLayout ? 300 : header_h[0];
+          var h = isLandscapeLayout ? 300 : header_h[0]; 
           return -(this.element.clientHeight - h);
         },
+
         group: 'sections'
       });
     });
@@ -140,7 +139,6 @@ $(function() {
     if (section === '#home') {
       h = (wh.actual -$('#main-header').height() - $header.height())/2;
     } else {
-   //   if ($('html').css('content') === 'isLandscape') { 
       if (isLandscapeLayout) {
         h = (wh.actual - $header.height() - $('footer').height())/2;
       } else {
@@ -168,7 +166,6 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu
-    //if ($('html').css('content') === 'isLandscape') {
     if (isLandscapeLayout) {
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }

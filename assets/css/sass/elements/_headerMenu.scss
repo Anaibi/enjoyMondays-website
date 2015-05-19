@@ -2,6 +2,13 @@
 
   #header-nav {
 
+    @include transition(all .5s);
+
+    @media screen and (max-width: 480px) {
+      float: none;
+      margin: auto;
+    }
+
     li {
       float: left;
       margin-left: 8px;
@@ -14,34 +21,134 @@
       &:last-child {
         margin-right: -4px;
       }
-    }
-    
-    a {
-      display: block;
-      padding: 30px 24px;
-      margin: -30px -20px;
 
-      @media screen and (max-width: 350px) {
-        padding: 30px 21px; /* breaks under 226px */
+      &.no-touch {
+        border: none;
+      }
+
+      &.active-link,
+      &:hover {
+        border-bottom: 3px solid $FUXSIA;
+      }
+    
+      a {
+        display: block;
+        padding: 30px 24px;
+        margin: -30px -20px;
+
+        @media screen and (max-width: 350px) {
+          padding: 30px 21px; /* breaks under 226px */
+        }
+      }
+    }
+
+    &.expanded {
+      
+      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+
+        float: none;  
+        width: 100%;
+        height: 100vh;
+        margin: 60px auto;
+        @include show;
+
+        li {
+          width: 100%;
+          float: none;
+          margin: 0 0 17%; 
+
+          &:first-child {
+            margin-top: 20px;
+          } 
+
+          a {
+            padding: 0;
+            margin: 0;
+          } 
+        }
       }
     }
   }
 
-  #collapsed-menu {
-   
-    a {
-      display: block;
-      /* icon size */
-      width: 23px;
-      height: 19px;
-      /* to avoid jumps on hover */
-      padding: 30px;
-      margin: -30px;
-      background: url('../images/menu.png') no-repeat 30px;
+// ----------------------------- STATE 1
+  .state1 {
+    #header-nav {
+      display: inline-block;
+      margin-top: 85px;
+
+      @media screen and (max-width: 480px) {
+        margin: 0 auto;
+      }
+
+      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+        margin-top: 5%;
+      }
+
+      &.expanded {
+        @include show;
+
+        @media screen and (max-width: 480px) {
+          margin: 10% 0;
+        }
+      }
     }
-    
-    &:hover {
-      cursor: pointer;
+  }
+
+// ----------------------------- STATE 2
+  .state2 {
+    #header-nav {
+      display: none;
+      @include hide;
+
+      @media screen and (max-width: 480px) {
+        display: inline-block;
+        @include show;
+      }
+
+      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+        display: block;
+        @include show;
+        position: relative;
+        top: 3%;
+        width: 100%;
+        height: 100%; 
+        font-size: .65em;
+        text-align: right;
+      }
+
+      li {
+        @media screen and (max-device-height: 600px) and (orientation: landscape) {
+          width: 90%;
+          height: 15%;
+          display: block;
+          margin: 0;
+          border-width: 6px;
+          border-style: hidden;
+          border-left-style: solid;
+          border-left-color: $LIGHT_GRAY;
+
+          &.active-link,
+          &:hover {
+            border-left-color: $FUXSIA;
+          }
+
+          &.no-touch {
+            border-left-color: $LIGHT_GRAY;
+          }
+
+          a { 
+            margin: 50% 0 0;
+            padding: 0;
+            line-height: 0;
+          }
+        }
+      }
+
+      &.expanded {
+        display: block;
+        padding-top: 40px;
+        @include show;
+      }
     }
   }
 }

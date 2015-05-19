@@ -23,10 +23,14 @@
 }
 
 
-// -------------------------------------------- BODY
+// ----------------------------------- HTML and BODY
 
 html {
   height: 100%;
+
+  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  	content: "isLandscape";
+ 	}
 }
 
 body {
@@ -36,8 +40,50 @@ body {
 }
 
 
-// --------------------------------- CONTAINER CLASS
+// ------------------------------------ STATE 1
 
+.state1 {
+  @include setLayoutHeights($header_h_1, $footer_h_1);
+
+  @media screen and (max-width: 480px) {
+  	@include setLayoutHeights($header_h_3, $footer_h_1);
+  }
+
+  @media screen and (max-width: 350px) {
+  	@include setLayoutHeights($header_h_4, $footer_h_1);
+  }
+
+  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  	@include setLayoutHeights($header_h_5, $footer_h_2);
+  }
+}
+
+
+// ------------------------------------ STATE 2
+.state2 {
+  @include setLayoutHeights($header_h_2, $footer_h_1);
+
+  @media screen and (max-width: 480px) {
+    @include setLayoutHeights($header_h_3, $footer_h_2);
+  }
+
+  @media screen and (max-width: 350px) {
+    @include setLayoutHeights($header_h_4, $footer_h_2);
+  }
+
+  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  	@include setLayoutHeights($header_h_5, $footer_h_2);
+
+	  &#site {
+	    width: calc(100vw - #{$layout_verticalSidebar_padding});
+	    padding-left: $layout_verticalSidebar_padding;
+	    overflow: hidden;
+	  }
+	}
+}
+
+
+// --------------------------------- CONTAINER CLASS
 .container {
 	max-width: $max_layout_width;
 	height: 100%;
@@ -45,184 +91,16 @@ body {
 	padding: 0 cp($layout_padding, $max_layout_width);
 }
 
+.state2 .container {
+	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		padding-left: 0;
+	}
+}
+
 
 // ------------------------------------- MAIN HEADER
 
-#main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2000;
-  @include transition(all .5s);
-
-  #header-nav {
-  	@include transition(all .5s);
-
-  	@media screen and (max-width: 480px) {
-      float: none;
-      margin: auto;
-    }
-
-    li {
-    	&.no-touch {
-      	border: none;
-      	border-color: $LIGHT_GRAY !important;
-    	}
-
-    	&.active-link,
-    	&:hover {
-    		border-bottom-style: solid;
-    		border-color: $FUXSIA;
-    	}
-    }
-  }
-}
-
-#logo {
-
-  @include transition(all .3s);
-
-  @media screen and (max-width: 480px) {
-    display: block;
-    float: none;
-  }
-}
-
-@include headerMenu;
-
-
-// ----------------------------- LAYOUT STATE 1
-.state1 {
-
-	@include setLayoutHeights($header_h_1, $footer_h_1);
-
-	#logo {
-  	width: $logo_w_big;
-  	padding-top: 40px;
-  }
-  
-  #header-nav {
-    display: inline-block;
-    margin-top: 85px;
-
-    &.expanded {
-      @include show;
-    }
- 	}
-
- 	#collapsed-menu {
- 		@include hide;
- 	}
-
-
-  @media screen and (max-width: 650px) {
-    
-    #logo {
-    	width: 25%;
-    }
-  }
-
-
-  @media screen and (max-width: 480px) {
-    
-    @include setLayoutHeights($header_h_3, $footer_h_1);
-
-    #logo {
-    	margin: 0 auto;
-    	padding: 2.5% 0;
-    }
-
-    #header-nav {
-    	margin: 0 auto;
- 		
-      &.expanded {
-      	margin: 10% 0;
-      }
-    }
-
-    #collapsed-menu {
-    	display: none;
-    }
-  }
-
-
-  @media screen and (max-width: 350px) {
-    
-    @include setLayoutHeights($header_h_4, $footer_h_1);
-
-    #logo {
-    	width: 20%;
-    }
-  }
-}
-
-
-// ----------------------------- LAYOUT STATE 2
-.state2 {
-  
-  @include setLayoutHeights($header_h_2, $footer_h_1);
-
-  #logo {
-    width: $logo_w_small;
-    padding-top: 18px;
-  }
-
-  #header-nav {
-  	display: none;
-  	@include hide;
-
-  	&.expanded {
-   		display: block;
-      padding-top: 40px;
-      @include show;
-    }
-  }
-
-  #collapsed-menu {
- 		@include show;
- 		margin-top: 40px;
-
- 		&:hover {
- 			@include hide;
- 		}
- 	}
-
- 	.expanded + #collapsed-menu {
- 		@include hide;
- 	}
-
-	@media screen and (max-width: 650px) {
-    #logo {
-    	width: 20%;
-	  }
-  }
-
-  @media screen and (max-width: 480px) {
-    
-    @include setLayoutHeights($header_h_3, $footer_h_2);
-
-    #logo {
-    	margin: 0 auto;
-    	padding: 2.5% 0;
-	  }
-
-	  #collapsed-menu {
- 			display: none;
- 		}
-
- 		#header-nav {
-  		display: inline-block;
-  		@include show;
-  	}
-
-  }
-
-  @media screen and (max-width: 350px) {
-    
-    @include setLayoutHeights($header_h_4, $footer_h_2);
-  }
-}
+@include mainHeader;
 
 
 // ---------------------------------------- SECTIONS
@@ -253,6 +131,13 @@ body {
       width: 100%;
 	  }
 
+		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+			@media screen and (max-width: 650px) {
+        width: initial;
+        width: 70%;
+      }
+		}
+
     > div {
      // float: right;
       @extend %clearfix;
@@ -264,6 +149,10 @@ body {
 		
 		// --------------- SECTION SUB-HEADER
 		.sub-header {
+
+			@media screen and (max-device-height: 600px) and (orientation: landscape) {
+				float: none;
+			}
 
 	    hr {
 	      border: 0;
@@ -288,14 +177,21 @@ body {
 	  @media screen and (max-width: 650px) {
 	    padding: 0 0 12%;
 	  }
+
+	  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+	  	padding: 0 0 12%;
+	  }
 	}
 }
 
-// --------------------------------------- GRID
+
+
+// -------------------------------------------- GRID
 
 @include grid;
 
 
-// ---------------------------------- LANDSCAPE
+// ------------------------------------------ FOOTER
 
-@include landscape($header_h_5, $header_vertical_w);
+@include footer;
+

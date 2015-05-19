@@ -2,12 +2,15 @@
 
 	.container {
 		padding-bottom: 10%;
+
+		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+			min-height: calc(100vh - #{$header_h_5});
+		}
 	}
 	
 	.header {
 	  position: relative;
 	  width: cp(560px, $max_layout_width);
-	 // @extend %clearfix;
 
 	  @media screen and (max-width: 750px) and (min-height: 500px) {
 	  	width: 60%;
@@ -20,6 +23,17 @@
 	  @media screen and (max-width: 350px) {
 	  	margin-top: 5%;
 	  	width: 100%;
+	  }
+
+	  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+	  	width: 80%;
+	  	float: right;
+	  }
+
+	  > div {
+	  	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		  	float: none;
+		  }
 	  }
    
     h1 {

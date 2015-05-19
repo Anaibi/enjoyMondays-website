@@ -13,17 +13,8 @@ body {
 #main-header { 
   background-color: $color1;
 
-  li {
-    &.active-link,
-    &:hover,
-     {
-      border: 3px solid $FUXSIA;
-      border-style: hidden;
-    }
-
-    a {
-      color: $color2;
-    }
+  a {
+    color: $color2;
   }
 }
 

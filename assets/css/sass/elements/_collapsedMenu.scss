@@ -1,0 +1,56 @@
+@mixin collapsedMenu {
+  #collapsed-menu {
+
+    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      display: none;
+    }
+     
+    a {
+      display: block;
+      // icon size
+      width: 23px;
+      height: 19px;
+      // to avoid jumps on hover
+      padding: 30px;
+      margin: -30px;
+      background: url('../images/menu.png') no-repeat 30px;
+    }
+      
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+
+  // ----------------------------- STATE 1
+  .state1 {
+    #collapsed-menu {
+      @include hide;
+
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+
+
+  // ----------------------------- STATE 2
+  .state2 {
+    #collapsed-menu {
+      @include show;
+      margin-top: 40px;
+
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
+
+      &:hover {
+        @include hide;
+      }
+    }
+
+    .expanded + #collapsed-menu {
+      @include hide;
+    }
+  }
+}

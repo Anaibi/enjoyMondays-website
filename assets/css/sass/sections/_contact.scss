@@ -3,14 +3,21 @@
 		@media screen and (max-width: 350px) {
 			min-height: 150px;
 		}
+
+		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+			min-height: initial;
+      height: 100%;
+		}
 	}
 	
 	.header {
    	position: relative;
-   //	height: 100%;
-   	//padding: 5% 0;
 
     width: 100%;
+
+    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+    	width: 100%;
+    }
   
 		.sub-header {
 		  float: right;
@@ -28,6 +35,18 @@
 		  @media screen and (max-width: 480px) {
 		    float: none;
 		  }
+
+		  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+		  	float: right;
+		  }
 		}
+	}
+}
+
+.state2 {
+	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		#sections .contact.section.last {
+      height: calc(100vh - #{$footer_h_2});
+    }
 	}
 }

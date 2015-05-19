@@ -1,0 +1,28 @@
+@import "_logo";
+@import "_headerMenu";
+@import "_collapsedMenu";
+
+@mixin mainHeader {
+	#main-header {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  z-index: 2000;
+	  @include transition(all .5s);
+	}
+
+	@include logo;
+	@include headerMenu;
+	@include collapsedMenu;
+
+	.state2 #main-header {
+		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		  position: fixed;
+		  left: 0;
+		  top: 0;
+		  width: $header_vertical_w;
+		  height: 100vh;
+		}
+	}
+}
