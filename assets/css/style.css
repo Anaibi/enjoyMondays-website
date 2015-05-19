@@ -116,8 +116,9 @@ body {
 @media screen and (max-width: 350px) {
   .contact.section .header {
     text-align: center; } }
-.contact.section .header h1:first-child {
-  font-size: 1.5em; }
+@media screen and (max-device-height: 550px) and (orientation: landscape) {
+  .contact.section .header h1:last-child {
+    font-size: .85em; } }
 .contact.section .header h1 a {
   color: #E9E8E3; }
 .contact.section .header .sub-header {
@@ -311,23 +312,26 @@ img {
   @media screen and (max-device-height: 600px) and (orientation: landscape) {
     .about .header > div {
       float: none; } }
+@media screen and (max-width: 1350px) and (min-width: 650px) {
+  .about.section .content {
+    padding: 0 0 12%; } }
 @media screen and (max-device-height: 600px) and (orientation: landscape) {
-  .about .content.tiles.three .tile {
+  .about.section .content.tiles.three .tile {
     width: 32%;
     margin: auto; } }
-.about .content .img-wrapper {
+.about.section .content .img-wrapper {
   width: 70%;
   max-width: 200px;
   margin: 0 auto 8%; }
-.about .content hr {
+.about.section .content hr {
   width: 15%;
   margin: 0 auto 5%; }
-.about .content p {
+.about.section .content p {
   width: 80%;
   margin: auto;
   word-spacing: -1px; }
   @media screen and (max-width: 480px) {
-    .about .content p {
+    .about.section .content p {
       width: 100%; } }
 
 @media screen and (max-width: 350px) {
@@ -339,10 +343,21 @@ img {
     height: 100%; } }
 .contact.section .header {
   position: relative;
+  padding: 7% 0;
   width: 100%; }
+  @media screen and (max-width: 1350px) and (min-width: 650px) {
+    .contact.section .header {
+      text-align: right; } }
   @media screen and (max-device-height: 600px) and (orientation: landscape) {
     .contact.section .header {
       width: 100%; } }
+  @media screen and (max-width: 350px) {
+    .contact.section .header h1:first-child {
+      width: 100%; } }
+  @media screen and (max-width: 1350px) and (min-width: 650px) {
+    .contact.section .header h1:first-child {
+      width: 50%;
+      display: inline-block; } }
   .contact.section .header .sub-header {
     float: right; }
     @media screen and (max-width: 1350px) {
@@ -359,9 +374,6 @@ img {
     @media screen and (max-device-height: 600px) and (orientation: landscape) {
       .contact.section .header .sub-header {
         float: right; } }
-  @media screen and (max-width: 350px) {
-    .contact.section .header h1:first-child {
-      width: 100%; } }
 
 @media screen and (max-device-height: 600px) and (orientation: landscape) {
   .state2 #sections .contact.section.last {

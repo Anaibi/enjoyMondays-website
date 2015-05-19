@@ -1,5 +1,6 @@
 .contact.section {
 	.container {
+
 		@media screen and (max-width: 350px) {
 			min-height: 150px;
 		}
@@ -12,12 +13,27 @@
 	
 	.header {
    	position: relative;
-
+   	padding: 7% 0;
     width: 100%;
+
+    @media screen and (max-width: 1350px) and (min-width: 650px) {
+			text-align: right;
+		}
 
     @media screen and (max-device-height: 600px) and (orientation: landscape) {
     	width: 100%;
     }
+
+    h1:first-child {
+			@media screen and (max-width: 350px) {
+				width: 100%;
+			}
+
+			@media screen and (max-width: 1350px) and (min-width: 650px) {
+				width: 50%;
+				display: inline-block;
+			}
+		}
   
 		.sub-header {
 		  float: right;
@@ -39,12 +55,6 @@
 		  @media screen and (max-device-height: 600px) and (orientation: landscape) {
 		  	float: right;
 		  }
-		}
-
-		h1:first-child {
-			@media screen and (max-width: 350px) {
-				width: 100%;
-			}
 		}
 	}
 }

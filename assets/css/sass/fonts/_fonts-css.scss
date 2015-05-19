@@ -19,7 +19,6 @@ body {
   }
 
   p {
-//    line-height: 1.5;
     line-height: 1.2;
     letter-spacing: .17px;
     word-spacing: .12em;
@@ -49,14 +48,6 @@ body {
 
   @media screen and (max-width: 650px) {
     font-size: 0.8em;
-  }
-
-  @media screen and (max-width: 480px) {
- //   font-size: 0.76em;
-  }
-
-  @media screen and (max-width: 350px) {
-  //  font-size: .6em;
   }
 
   @media screen and (max-width: 300px) {
@@ -89,15 +80,10 @@ body {
       line-height: 1;
       text-transform: uppercase;
       white-space: nowrap;
-
-      @media screen and (max-width: 350px) {
-    //    font-size: .7em;
-      }
     }
 
     // ---------- SECTION SUB-HEADER
     .sub-header {
-  //    font-size: .158em;
       text-align: center;
     }
   }
@@ -113,11 +99,6 @@ body {
 // ----------------------- HOME
 .home.section {
   .header {
-    h1 {
-      @media screen and (max-width: 350px) {
-   //     font-size: .9em;
-      }
-    }
 
     .sub-header {
 
@@ -144,20 +125,6 @@ body {
 .about.section  {
 
   font-size: .9em;
-  
-  .sub-header {
-
-   
-    @media screen and (min-width: 650px) {
- //     font-size: .13em;
-    }
-  }
-
-  @media screen and (max-device-height: 550px) and (orientation: landscape) {
-    .tiles.three .tile {
-//      font-size: .7em;
-    }
-  }
 
   .content {
     p {
@@ -180,12 +147,11 @@ body {
     }
 
     h1 {
-      @media screen and (max-device-height: 550px) and (orientation: landscape) {
-  //      font-size: .85em;
-      }
 
-      &:first-child {
-        font-size: 1.5em;
+      &:last-child {
+        @media screen and (max-device-height: 550px) and (orientation: landscape) {
+          font-size: .85em;
+        }
       }
 
       a {
@@ -195,14 +161,6 @@ body {
 
     .sub-header {
       font-weight: 400;
-
-      @media screen and (max-width: 650px) {
-//        font-size: .4em;
-      }
-
-      @media screen and (max-device-height: 550px) and (orientation: landscape) {
- //       font-size: .25em;
-      }
 
       @media screen and (max-width: 480px) {
         font-weight: 100;

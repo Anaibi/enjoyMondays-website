@@ -17,12 +17,12 @@ $(function() {
   });
 
   // Done Resizing Event
-  $(window).on('resize', function() {
+  $(window).on('resize', function() { 
 
     var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
+    resizeTimer = setTimeout(function() { 
 
       // get new window sizes
       ww.previous = ww.actual; 
@@ -31,16 +31,15 @@ $(function() {
       wh.previous = wh.actual;
       wh.actual = $(window).height();
 
-
       setTimeout(function() {
         refreshHeader(actualSection);
         Waypoint.refreshAll();
         // center contents again
-        centerContents('#home');
-        centerContents('#contact'); 
+        centerContents('#home'); 
+        centerContents('#contact');
+
         scrollToPosition(actualSection);
       }, 150);      
-    
     }, 150);
 
   });
@@ -137,30 +136,25 @@ $(function() {
   }
 
   //----------------------------------------- centerContainer
-  function centerContents(section) {
+  function centerContents(section) { 
     var $section = $(section).find('.container'),
         $header = $section.find('.header');
 
     if (section === '#home') {
-      h = (wh.actual -$('#main-header').height() - $header.height())/2;
+      h = (wh.actual -$('#main-header').outerHeight() - $header.height())/2;
     } else {
-      if (isLandscapeLayout) {
-        h = (wh.actual - $header.height() - $('footer').height())/2;
+      if (isLandscapeLayout()) { 
+        h = (wh.actual - $header.outerHeight() - $('footer').height())/2;
       } else {
-        h = (wh.actual - $header.height() - $('footer').height() - $('#main-header').height())/2;
+        h = (wh.actual - $header.outerHeight() - $('footer').height() - $('#main-header').height())/2;
       }
     }
-    
-   /* if (h < 0) { 
-      $header.css({'width': '-=45%'});
-      $(window).trigger('resize');
-    }*/
 
     $header.animate({'top': h}, 'slow');
   };
 
   //---------------------------------------- scrollToPosition
-  function scrollToPosition(section) { 
+  function scrollToPosition(section) {
     // clicking from home, get small header height (unless section is home)
     var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
@@ -171,7 +165,7 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu
-    if (isLandscapeLayout) {
+    if (isLandscapeLayout()) { 
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
@@ -182,7 +176,7 @@ $(function() {
         scrollTop: $(section).offset().top - h
       }, 250, function(){
         $('html, body').clearQueue();
-      });
+    });
   }
 
   //--------------------------------------------- updateLinks
@@ -202,7 +196,9 @@ $(function() {
   }
 
   //--------------------------------------- isLandscapeLayout
-  var isLandscapeLayout = ($('html').css('content') === 'isLandscape') ? true : false;
+  function isLandscapeLayout() {
+    return ($('html').css('content') === 'isLandscape');
+  };
   
 
   $(document).ready(function () {
@@ -213,6 +209,7 @@ $(function() {
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
     $("#contact .fittextjs h1:first-child").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
     $("#contact .fittextjs h1:last-child").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+  //  $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
 
     setTimeout(function() {
       centerContents('#home');

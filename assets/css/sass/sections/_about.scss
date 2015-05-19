@@ -19,7 +19,11 @@
 		}
 	}
 
-  .content {
+  &.section .content {
+
+  	@media screen and (max-width: 1350px) and (min-width: 650px) {
+		  	padding: 0 0 12%;
+		}
 
   	&.tiles.three .tile {
   		@media screen and (max-device-height: 600px) and (orientation: landscape) {
