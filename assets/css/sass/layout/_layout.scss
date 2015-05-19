@@ -67,6 +67,7 @@ body {
     li {
     	&.no-touch {
       	border: none;
+      	border-color: $LIGHT_GRAY !important;
     	}
 
     	&.active-link,
