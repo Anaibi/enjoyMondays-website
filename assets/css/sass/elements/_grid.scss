@@ -3,7 +3,7 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     opacity: 0;
-    @include transition(opacity, 1s);
+    @include transition(opacity 1s);
 
     /* redefine font-size put to 0 on parent a */
     font-size: 30px;
@@ -58,7 +58,7 @@
     }
       
     img {
-      @include transition(transform, .4s);
+      @include transition(transform .4s);
     }
   }
 }

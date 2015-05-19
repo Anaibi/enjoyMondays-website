@@ -1,36 +1,19 @@
 .contact.section {
 	.container {
-		min-height: 350px;
-		height: 70vh;
-
-		@media screen and (max-width: 650px) {
-			min-height: 350px;
+		@media screen and (max-width: 350px) {
+			min-height: 150px;
 		}
 	}
 	
 	.header {
-    @include vCentered(40%);
+   	position: relative;
+   //	height: 100%;
+   	//padding: 5% 0;
 
     width: 100%;
-
-	  @media screen and (max-width: 650px) {
-      text-align: right;
-	  }
-
-	  h1 {
-	  	&:first-child {
-	  		@extend .color-2;
-	  		font-size: 1.2em;
-	  	}
-
-	  	a {
-		  	@extend .color-1;
-		  }
-		}
   
 		.sub-header {
 		  float: right;
-		  font-weight: 400;
 
 		  @media screen and (max-width: 1350px) {
 		  	width: 44%;
@@ -40,7 +23,6 @@
 		  @media screen and (max-width: 650px) {
 		  	width: 100%;
 		  	margin: 0;
-		    font-size: .4em;
 		  }
 
 		  @media screen and (max-width: 480px) {

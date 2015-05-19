@@ -1,12 +1,14 @@
 $(function() {
 
-  // for use in animateHeader 
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
-  var smallHeaderH = 111;
+  var wh = {'actual' : $(window).height()};
+      wh.previous = wh.actual;
 
-  var marks = [325, 480];
+  var header_h = [139, 111, 100, 80, 60];
+
+  var marks = [325, 480, 600];
     
   var resizeTimer;
 
@@ -15,31 +17,30 @@ $(function() {
   });
 
   // Done Resizing Event
-  // https://css-tricks.com/snippets/jquery/done-resizing-event/ 
   $(window).on('resize', function() {
+
+    var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      // Run code here, resizing has "stopped"
+
       // get new window sizes
       ww.previous = ww.actual; 
       ww.actual = $(window).width(); 
 
-      // if window only changes height, return
-      if (ww.previous === ww.actual) {
-      	return; 
-      }
-      
-      // refresh waypoints TODO
-      Waypoint.refreshAll();
+      wh.previous = wh.actual;
+      wh.actual = $(window).height();
 
-      if (!inSameWidthGap(ww, marks)) { 
-        // refresh header
-        scrollToPosition('#home'); 
-        setTimeout(function() {
-          refreshHeader();
-        }, 350); 
-      }     
+
+      setTimeout(function() {
+        refreshHeader(actualSection);
+        Waypoint.refreshAll();
+        // center contents again
+        centerContents('#home');
+        centerContents('#contact'); 
+        scrollToPosition(actualSection);
+      }, 150);      
+    
     }, 150);
 
   });
@@ -48,7 +49,7 @@ $(function() {
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
-	  scrollToPosition($(this).attr('href'));
+    scrollToPosition($(this).attr('href'));
   });			
 
   // notes link off	
@@ -56,158 +57,144 @@ $(function() {
 
   // collapsed menu
   $('#collapsed-menu').hover(function() {
-    $(this).hide();
-    $('#header-nav').addClass('expanded').show();
+    $('#header-nav').addClass('expanded');
   });
 
   // expanded menu
   $('#header-nav').hover(
-  	function() {}, 
+    function() {},
     function() {
       if ($(this).hasClass('expanded')) {
-      	$(this).hide().removeClass('expanded');
-        $('#collapsed-menu').show();
-      }   
+        $(this).removeClass('expanded');
+     }   
   });
 
   //----------------------------------------- WAYPOINTS
-  //-------------- http://imakewebthings.com/waypoints/
-  function doWaypoints() {  
+  function doWaypoints() {
 
-	  var $sections = $('.section'); 
-    
-    // update links direction down
-	  $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) {  
-  	  	  if (direction === 'down') { 
-  	  	  	$sections.removeClass('.active-link');
-  	  	  	updateLinks($(this.element).attr('id'));
-  	  	  	// if scrolling from home
-  	  	  	if (isActiveSection('work')) { 
-  	  	  	  animateHeader(direction); 
-  	  	  	} 
-  	  	  }
-  	  	},
-  	    offset: '100%',
-  	    group: 'sections'
-  	  });
-    });
-    
-    // update links direction up
-    $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) { 	  	  
-  	  	  if ((direction === 'up')) {
-  	  	    $sections.removeClass('.active-link'); 
-  	  	    updateLinks($(this.element).attr('id')); 
-  	  	    // if scrolling from home
-  	  	  	if (isActiveSection('home')) { 
-  	  	  	  animateHeader(direction); 
-  	  	  	} 
-  	  	  }	  	 
-  	  	},
-  	    offset: 'bottom-in-view',
-  	    group: 'sections'
-  	  });
+    var $sections = $('.section'); 
+
+    $sections.each(function() {
+
+      new Waypoint({
+        element: this,
+        handler: function(direction) {
+
+          var next = this.next();
+          var section;
+
+          $sections.removeClass('.active-link');
+
+          var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
+
+          updateState(direction, section);
+          updateLinks(section);
+        },
+        offset: function() {
+          return -(this.element.clientHeight - header_h[0]);
+        },
+        group: 'sections'
+      });
     });
   }
 
-  //------------------------------------------- animateHeader
-  function animateHeader(direction) { 
 
-    // switch headers
-	  $('#site').toggleClass('big-header small-header');
+  //--------------------------------------------- updateState
+  function updateState(direction, section) {
 
-  	// menu collapsed/expanded only changes over 480 width
-  	if (ww.actual > marks[1]) {
-      // switch menus
-      if (direction === 'down') {
-        $('#header-nav').hide(function() {
-          $('#collapsed-menu').css('display', 'inline-block');
-        }).addClass('expanded');
-      } else {
-        $('#collapsed-menu').hide(function() {
-  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	    });
-      }
+    if (direction === 'up' && section === 'home') {
+      $('#site').addClass('state1').removeClass('state2');
+    } else if (direction === 'down' && section === 'work') {
+      $('#site').addClass('state2').removeClass('state1');
     }
   }
 
   //------------------------------------------- refreshHeader
-  function refreshHeader() { 
-    // home menu is always expanded and header big
-    $('#collapsed-menu').hide(function() {
-  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	});
-    $('#site').removeClass('small-header').addClass('big-header');
+  function refreshHeader(section) { 
+    if (section === '#home') { 
+      updateState('up', '#home');
+    } 
   }
+
+  //----------------------------------------- centerContainer
+  function centerContents(section) {
+    var $section = $(section).find('.container'),
+        $header = $section.find('.header');
+
+    if (section === '#home') {
+      h = (wh.actual -$('#main-header').height() - $header.height())/2;
+    } else {
+      if ($('html').css('content') === 'isLandscape') { 
+        h = (wh.actual - $header.height() - $('footer').height())/2;
+      } else {
+        h = (wh.actual - $header.height() - $('footer').height() - $('#main-header').height())/2;
+      }
+    }
+    
+    if (h < 0) { 
+      $header.css({'width': '-=45%'});
+      $(window).trigger('resize');
+    }
+
+    $header.animate({'top': h}, 'slow');
+  };
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
-    // clicking from home, get small header height
-    var h = (isActiveSection('home')) ? smallHeaderH : $('#main-header').height();
+    // clicking from home, get small header height (unless section is home)
+    var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
-	  $('body, html')
-	    .stop()
-	    .animate({
-	  	  scrollTop: $(section).offset().top - h
-	    }, 250, function(){ 
-	    $('html, body').clearQueue();
-   	  });
+    // if under 480px, header height is 100px always
+    if (ww.actual < marks[1]) { h = header_h[2]; }
+
+    // if under 350px, header height is 80px always
+    if (ww.actual < marks[0]) { h = header_h[3]; }
+
+    // landscape has side menu
+    if ($('html').css('content') === 'isLandscape') {
+      if (section === '#home') { h = header_h[4]; }
+      else { h = 0; }
+    }
+
+    $('body, html')
+      .stop()
+      .animate({
+        scrollTop: $(section).offset().top - h
+      }, 250, function(){
+        $('html, body').clearQueue();
+      });
   }
 
-  // update active link on main menu nav
+  //--------------------------------------------- updateLinks
   function updateLinks(id) { 
-    $('#header-nav .active-link').removeClass('active-link'); 
-    if (id.charAt(0) === '#') {
-      $("#header-nav a[href='"+id+"']").parent().addClass('active-link');
-    } else {
-      $("#header-nav a[href='#"+id+"']").parent().addClass('active-link');
-    }
+    var $header_nav = $('#header-nav');
+
+    $header_nav.find('li').removeClass('active-link').addClass('no-touch'); 
+    
+    if (id.charAt(0) !== '#') { id = '#' + id; }
+
+    $header_nav.find('a[href="'+id+'"]').parent().addClass('active-link').removeClass('no-touch');
   }
 
   //----------------------------------------- isActiveSection
   function isActiveSection(id) {
-  	return ($('#header-nav .active-link a').attr('href') === '#' + id);
+    return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
   
-  //------------------------------------------ inSameWidthGap
-  // says if actual width and previous width
-  // are in the same interval defined by values in marks
-  function inSameWidthGap() { 
-    var a = false;
-    for (var i = 0; i < (marks.length - 1); i++) {
-      if (a) return a;
-      if (inSameInterval(ww.actual, ww.previous, marks[i], marks[i+1])) {
-        a = true;
-      }
-    }
-    return a;
-  }
-
-  //------------------------------------------ inSameInterval
-  // check if two values v1, v2 
-  // are in the same interval defined by [i1, i2]
-  function inSameInterval(v1, v2, i1, i2) { 
-  	var a = false;
-    if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
-    	a = true;
-    } 
-    return a;
-  }
-
 
   $(document).ready(function () {
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+    
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
     $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
-  
-    
+    setTimeout(function() {
+      centerContents('#home');
+      centerContents('#contact'); 
+    }, 150);
+
+       
     //---------------------------------------------- supersized
     var slides = [];
     var projects = [

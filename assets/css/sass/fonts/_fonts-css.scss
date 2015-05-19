@@ -1,0 +1,208 @@
+$font_family_1: 'Lato', sans-serif !default;
+$font_family_2: 'Dosis', sans-serif !default;
+
+
+body {
+  font-family: $font_family_1;
+  font-weight: 100;
+
+  @media screen and (max-width: 650px) {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: $font_family_2;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  p {
+    line-height: 1.5;
+    letter-spacing: .17px;
+  }
+}
+
+
+// ---------------------------------- LAYOUT
+.small-header {
+  @media screen and (max-device-height: 550px) and (orientation: landscape) {
+
+    #main-header {
+      text-align: center;
+    }
+
+    #content {
+      .sub-header {
+        font-size: .12em;
+      }
+    }
+  }
+}
+
+
+// ---------------------------------- HEADER
+#header-nav {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 650px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.76em;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: .6em;
+  }
+
+  li {
+    &.active-link {
+      font-weight: 900;
+    }
+
+    &:hover {
+      font-weight: 900;
+    }
+  }
+}
+
+// --------------------------------- SECTION
+.section {
+
+  text-align: right;
+
+  @media screen and (max-width: 650px) {
+    text-align: center;
+  }
+
+  // ----------------- SECTION HEADER
+  .header {
+    h1 {
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @media screen and (max-width: 350px) {
+        font-size: .7em;
+      }
+    }
+
+    // ---------- SECTION SUB-HEADER
+    .sub-header {
+      font-size: .158em;
+      text-align: center;
+    }
+  }
+
+  // ---------------- SECTION CONTENT
+  .content {
+    text-align: center;
+  }
+}
+
+// -------------------------------- SECTIONS
+// ------------------ SECTION 1 
+// ----------------------- HOME
+.home.section {
+  .header {
+    h1 {
+      @media screen and (max-width: 350px) {
+        font-size: .9em;
+      }
+    }
+
+    .sub-header {
+      @media screen and (max-width: 480px) {
+        font-size: .2em;
+      }
+    }
+  }
+}
+
+// ------------------ SECTION 2 
+// ----------------------- WORK
+.work.section {
+
+  .header h1 {
+      text-align: center;
+  }
+}
+
+// ------------------ SECTION 3 
+// ---------------------- ABOUT
+.about.section  {
+  .sub-header {
+    @media screen and (min-width: 650px) {
+      font-size: .13em;
+    }
+  }
+
+  @media screen and (max-device-height: 550px) and (orientation: landscape) {
+    .tiles.three .tile {
+      font-size: .91em;
+    }
+  }
+}
+
+// ------------------ SECTION 4 
+// -------------------- CONTACT
+.contact.section {
+  .header {
+
+    @media screen and (max-width: 650px) {
+      text-align: right;
+    }
+
+    h1 {
+      @media screen and (max-device-height: 550px) and (orientation: landscape) {
+        font-size: .85em;
+      }
+
+      &:first-child {
+        font-size: 1.2em;
+      }
+
+      a {
+        color: $color1;
+      }
+    }
+
+    .sub-header {
+      font-weight: 400;
+
+      @media screen and (max-width: 650px) {
+        font-size: .4em;
+      }
+
+      @media screen and (max-device-height: 550px) and (orientation: landscape) {
+        font-size: .25em;
+      }
+    }
+  }
+}
+
+
+// ---------------------------------- FOOTER
+
+footer.container {
+  @media screen and (max-width: 650px) {
+    font-size: 13px;
+  }
+
+  .site-info {
+    font-weight: 700;
+    font-size: .95em;
+
+    a {
+      font-weight: 900;
+    }
+  }
+
+  .social-links {
+    // otherwise webkit adds margin 1em 
+    font-size: 0;
+  }
+}

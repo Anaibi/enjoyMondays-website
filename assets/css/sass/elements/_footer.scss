@@ -1,10 +1,10 @@
 
 footer.container {
-  height: $footer_h;
+  height: $footer_h_1;
 
-  @media screen and (max-width: 650px) {
-    font-size: 13px;
-  }
+  @media screen and (max-width: 480px) {
+    height: $footer_h_2;
+  }  
 
   & > div {
     @include vCentered;
@@ -12,7 +12,7 @@ footer.container {
     @media screen and (max-width: 650px) {
       display: block;
       width: 100%;
-      margin: 3% auto 1%;
+      margin: 3% auto 0;
       transform: none;
       top: 0;
     }
@@ -20,18 +20,10 @@ footer.container {
   
   .site-info {
     float: left;
-    font-weight: 700;
-    font-size: .95em;
-
-    a {
-      font-weight: 900;
-    }
   }
 
   .social-links {
     float: right;
-    /* otherwise webkit adds margin 1em */
-    font-size: 0;
    
     li {
       display: inline-block;

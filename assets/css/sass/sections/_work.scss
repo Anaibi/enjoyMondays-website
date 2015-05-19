@@ -6,13 +6,10 @@
     @media screen and (max-width: 1350px) {
       padding: 5% 0 8%;
     }
-
-    h1 {
-      text-align: center;
-    }
   }
 
   .content {
+    // ------------------------------------ GRID
     @include details;
     @include imgAnimation;
     @include tileLink;

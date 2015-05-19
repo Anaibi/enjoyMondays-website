@@ -10,12 +10,10 @@
 		@media screen and (max-width: 650px) {
 		  width: 80%;
 		}
-	  
-	  .sub-header {
-	    @media screen and (min-width: 650px) {
-	      font-size: .13em;
-	    }
-	  }
+
+		@media screen and (max-width: 480px) {
+		  width: 100%;
+		}
 	}
 
   .content {
@@ -27,13 +25,16 @@
     hr {
       width: 15%;
       margin: 0 auto 5%;
-      @extend .bg-1;
     }
 
     p {
       width: 80%;
       margin: auto;
       word-spacing: -1px;
+
+      @media screen and (max-width: 350px) {
+		  	width: 100%;
+			}	
     }
   }
 }

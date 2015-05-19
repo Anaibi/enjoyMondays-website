@@ -1,0 +1,47 @@
+@mixin headerMenu {
+
+  #header-nav {
+
+    li {
+      float: left;
+      margin-left: 8px;
+      border-bottom: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: -4px;
+      }
+    }
+    
+    a {
+      display: block;
+      padding: 30px 24px;
+      margin: -30px -20px;
+
+      @media screen and (max-width: 350px) {
+        padding: 30px 21px; /* breaks under 226px */
+      }
+    }
+  }
+
+  #collapsed-menu {
+   
+    a {
+      display: block;
+      /* icon size */
+      width: 23px;
+      height: 19px;
+      /* to avoid jumps on hover */
+      padding: 30px;
+      margin: -30px;
+      background: url('../images/menu.png') no-repeat 30px;
+    }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
