@@ -67,11 +67,16 @@ $(function() {
       $('#collapsed-menu').trigger('mouseenter'); 
       menuExpanded = true;
   });
-  $("#sections").on('mouseenter touchmove', function(event) {
+  $("#sections").on('mouseenter touchmove', function() {
     if (menuExpanded) {
       $('#header-nav').trigger('mouseleave');
       menuExpanded = false;
     }
+  });
+
+  // mobile detection ?
+  $('html').on('touchstart', function() {
+    $(this).addClass('mobile');
   });
 
   // expanded menu

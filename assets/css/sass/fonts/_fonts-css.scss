@@ -24,6 +24,10 @@ body {
     letter-spacing: .17px;
     word-spacing: .12em;
     font-size: 1em;
+
+    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      font-size: .9em;
+    }
   }
 
   a {
@@ -44,7 +48,7 @@ body {
   text-transform: uppercase;
 
   @media screen and (max-width: 650px) {
-    font-size: 0.85em;
+    font-size: 0.8em;
   }
 
   @media screen and (max-width: 480px) {
@@ -119,7 +123,7 @@ body {
 
       word-spacing: 2px;
 
-      @media screen and (min-width: 480px) and (max-width: 650px) {
+      @media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
         font-size: 1.2em;
       }
     }

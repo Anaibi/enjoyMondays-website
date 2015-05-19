@@ -27,7 +27,7 @@
         border-bottom: 3px solid $link_color2;
       }
 
-      &.no-touch {
+      @at-root .mobile #header-nav .no-touch {
         border: none;
       }
     
@@ -127,11 +127,13 @@
 
           &.active-link,
           &:hover {
-            border-left-color: $link_color2;
+            border-left: 6px solid $link_color2;
           }
 
-          &.no-touch {
-            border-left-color: $color1;
+          @at-root .mobile .state2 #header-nav .no-touch {
+            @media screen and (max-device-height: 600px) and (orientation: landscape) {
+              border-left: 6px solid $color1;
+            }
           }
 
           a { 
