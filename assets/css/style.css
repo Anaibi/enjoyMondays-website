@@ -200,10 +200,12 @@ img {
   @media screen and (max-height: 600px) and (orientation: landscape) {
     .home.section .header {
       width: 70%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .home.section .header > div {
-      float: none; } }
-  .home.section .header h1:first-child::before {
+  .home.section .header .fittextjs {
+    display: block; }
+    @media screen and (max-height: 600px) and (orientation: landscape) {
+      .home.section .header .fittextjs {
+        float: none; } }
+  .home.section .header .smile::before {
     content: " ";
     width: .55em;
     height: .5em;
@@ -343,7 +345,6 @@ img {
     height: 100%; } }
 .contact.section .header {
   position: relative;
-  padding: 5% 0;
   width: 100%; }
   @media screen and (max-width: 1350px) and (min-width: 650px) {
     .contact.section .header {
@@ -358,10 +359,12 @@ img {
       font-size: .9em;
       font-weight: 100; } }
 
-  @media screen and (max-width: 1350px) and (min-width: 650px) {
-    .contact.section .header .fittextjs.hello {
-      width: 50%;
-      display: inline-block; } }
+  .contact.section .header .fittextjs {
+    display: block; }
+    @media screen and (max-width: 1350px) and (min-width: 650px) {
+      .contact.section .header .fittextjs.hello {
+        width: 50%;
+        display: inline-block; } }
   .contact.section .header .sub-header {
     float: right; }
     @media screen and (max-width: 1350px) {
@@ -602,7 +605,12 @@ p {
       margin: 0 auto; } }
   @media screen and (max-height: 600px) and (orientation: landscape) {
     .state1 #header-nav {
-      margin-top: 5%; } }
+      margin-top: 0;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); } }
   .state1 #header-nav.expanded {
     visibility: visible;
     opacity: 1;
@@ -842,9 +850,6 @@ footer.container {
         margin: 3% auto 0;
         transform: none;
         top: 0; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      footer.container > div {
-        margin: 1.5% 0 0; } }
   footer.container .site-info {
     float: left; }
   footer.container .social-links {
