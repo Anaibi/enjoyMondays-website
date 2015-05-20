@@ -17,7 +17,7 @@
 	@include collapsedMenu;
 
 	.state2 #main-header {
-		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		@media #{$LANDSCAPE} {
 		  position: fixed;
 		  left: 0;
 		  top: 0;

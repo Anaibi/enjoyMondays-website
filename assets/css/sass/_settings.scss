@@ -1,5 +1,3 @@
-// ---------------------- ENJOY MONDAYS PATTERN
-
 // ------------------------------------- COLORS
 
 $color1: $LIGHT_GRAY;
@@ -17,6 +15,12 @@ $font_family_1: 'Lato', sans-serif;
 $font_family_2: 'Dosis', sans-serif;
 
 $base_font_size: 16px;
+
+$font_weight_light: 100;
+$font_weight_middle: 400;
+$font_weight_bold: 600;
+$font_weight_bolder: 700;
+$font_weight_boldest: 900;
 
 
 // ------------------------------- FIX MEASURES
@@ -39,3 +43,8 @@ $max_layout_width: 1200px;
 
 $layout_padding: 80px;
 $layout_verticalSidebar_padding: $header_vertical_w;
+
+
+// ------------------------------ MEDIA QUERIES
+$LANDSCAPE: "screen and (max-height: 600px) and (orientation: landscape)";
+

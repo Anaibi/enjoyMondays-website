@@ -138,17 +138,38 @@ $(function() {
   //----------------------------------------- centerContainer
   function centerContents(section) { 
     var $section = $(section).find('.container'),
-        $header = $section.find('.header');
+        $header = $section.find('.header'),
+        h_content = $header.outerHeight(),
+        h_container = wh.actual;
 
     if (section === '#home') {
-      h = (wh.actual -$('#main-header').outerHeight() - $header.height())/2;
-    } else {
-      if (isLandscapeLayout()) { 
-        h = (wh.actual - $header.outerHeight() - $('footer').height())/2;
-      } else {
-        h = (wh.actual - $header.outerHeight() - $('footer').height() - $('#main-header').height())/2;
+      h_container = wh.actual - $('#main-header').outerHeight();
+      // TODO h < 0
+    } 
+
+    // contact section
+    else { 
+      var h_footer = $('footer').height();
+
+      h_container = wh.actual - $('footer').height();
+
+      if (!isLandscapeLayout()) { 
+        // there is also header at top
+        h_container = h_container - $('#main-header').height();
+      } 
+
+      if (h_container < h_content) { console.log(h_content);
+        // make contact sub-header full-width
+        $header
+        .css({'padding': '1%'})
+        .find('.sub-header')
+          .css({'width': 'auto'});
+
+        h_content = $header.outerHeight();  console.log(h_content);
       }
     }
+   
+    var h = (h_container - h_content)/2;
 
     $header.animate({'top': h}, 'slow');
   };
@@ -197,7 +218,7 @@ $(function() {
 
   //--------------------------------------- isLandscapeLayout
   function isLandscapeLayout() {
-    return ($('html').css('content') === 'isLandscape');
+    return ($('html').css('content') === 'isLandscape' || wh.actual < ww.actual/3);
   };
   
 
@@ -207,9 +228,10 @@ $(function() {
     
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#contact .fittextjs h1:first-child").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
-    $("#contact .fittextjs h1:last-child").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
-  //  $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+   // $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
+   // $("#contact .fittextjs.mail").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
+    $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
+    $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '23px', maxFontSize: '150px' });
 
     setTimeout(function() {
       centerContents('#home');

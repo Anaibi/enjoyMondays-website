@@ -28,7 +28,7 @@
 html {
   height: 100%;
 
-  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  @media #{$LANDSCAPE} {
   	content: "isLandscape";
  	}
 }
@@ -57,7 +57,7 @@ p {
   	@include setLayoutHeights($header_h_4, $footer_h_1);
   }
 
-  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  @media #{$LANDSCAPE} {
   	@include setLayoutHeights($header_h_5, $footer_h_2);
   }
 }
@@ -75,7 +75,7 @@ p {
     @include setLayoutHeights($header_h_4, $footer_h_2);
   }
 
-  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+  @media #{$LANDSCAPE} {
   	@include setLayoutHeights($header_h_5, $footer_h_2);
 
 	  &#site {
@@ -96,7 +96,7 @@ p {
 }
 
 .state2 .container {
-	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+	@media #{$LANDSCAPE} {
 	//	padding-left: 0;
 	}
 }
@@ -139,7 +139,7 @@ p {
       width: 100%;
 	  }
 
-		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		@media #{$LANDSCAPE} {
 			@media screen and (max-width: 650px) {
         width: initial;
         width: 70%;
@@ -158,7 +158,7 @@ p {
 		// --------------- SECTION SUB-HEADER
 		.sub-header {
 
-			@media screen and (max-device-height: 600px) and (orientation: landscape) {
+			@media #{$LANDSCAPE} {
 				float: none;
 			}
 
@@ -186,7 +186,7 @@ p {
 	    padding: 0 0 12%;
 	  }
 
-	  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+	  @media #{$LANDSCAPE} {
 	  	padding: 0 0 12%;
 	  }
 	}

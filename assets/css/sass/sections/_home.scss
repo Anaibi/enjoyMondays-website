@@ -3,7 +3,7 @@
 	.container {
 		padding-bottom: 10%;
 
-		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		@media #{$LANDSCAPE} {
 			min-height: calc(100vh - #{$header_h_5});
 		}
 	}
@@ -25,14 +25,14 @@
 	  	width: 100%;
 	  }
 
-	  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+	  @media #{$LANDSCAPE} {
 	  //	width: 80%;
 	  	width: 70%;
 	  //	float: right;
 	  }
 
 	  > div {
-	  	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+	  	@media #{$LANDSCAPE} {
 		  	float: none;
 		  }
 	  }

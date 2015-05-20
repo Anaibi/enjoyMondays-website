@@ -5,7 +5,7 @@
 			min-height: 150px;
 		}
 
-		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		@media #{$LANDSCAPE} {
 			min-height: initial;
       height: 100%;
 		}
@@ -13,20 +13,33 @@
 	
 	.header {
    	position: relative;
-   	padding: 7% 0;
+   	padding: 5% 0;
     width: 100%;
 
     @media screen and (max-width: 1350px) and (min-width: 650px) {
 			text-align: right;
 		}
 
-    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+    @media #{$LANDSCAPE} {
     	width: 100%;
+
+    	@media screen and (min-width:480px) and (max-width: 650px) {
+    		//width: 70%;
+
+    		h1 {
+    			width: 75%;
+    		}
+
+    		.sub-header {
+    			font-size: .9em;
+    			font-weight: $font_weight_light;
+    		}
+    	}
     }
 
-    h1:first-child {
+    .fittextjs.hello {
 			@media screen and (max-width: 350px) {
-				width: 100%;
+			//	width: 100%;
 			}
 
 			@media screen and (max-width: 1350px) and (min-width: 650px) {
@@ -52,7 +65,7 @@
 		    float: none;
 		  }
 
-		  @media screen and (max-device-height: 600px) and (orientation: landscape) {
+		  @media #{$LANDSCAPE} {
 		  	float: right;
 		  }
 		}
@@ -60,7 +73,7 @@
 }
 
 .state2 {
-	@media screen and (max-device-height: 600px) and (orientation: landscape) {
+	@media #{$LANDSCAPE} {
 		#sections .contact.section.last {
       height: calc(100vh - #{$footer_h_2});
     }

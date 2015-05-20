@@ -1,7 +1,7 @@
 @mixin collapsedMenu {
   #collapsed-menu {
 
-    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+    @media #{$LANDSCAPE} {
       display: none;
     }
      

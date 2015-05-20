@@ -44,7 +44,7 @@
 
     &.expanded {
       
-      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      @media #{$LANDSCAPE} {
 
         float: none;  
         width: 100%;
@@ -80,7 +80,7 @@
         margin: 0 auto;
       }
 
-      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      @media #{$LANDSCAPE} {
         margin-top: 5%;
       }
 
@@ -105,7 +105,7 @@
         @include show;
       }
 
-      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      @media #{$LANDSCAPE} {
         display: block;
         @include show;
         position: relative;
@@ -117,7 +117,7 @@
       }
 
       li {
-        @media screen and (max-device-height: 600px) and (orientation: landscape) {
+        @media #{$LANDSCAPE} {
           width: 90%;
           height: 15%;
           display: block;

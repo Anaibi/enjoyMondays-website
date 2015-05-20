@@ -6,7 +6,7 @@
       height: $footer_h_2;
     } 
 
-    @media screen and (max-device-height: 600px) and (orientation: landscape) {
+    @media #{$LANDSCAPE} {
       height: $footer_h_2;
     } 
 
@@ -21,7 +21,7 @@
         top: 0;
       }
 
-      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+      @media #{$LANDSCAPE} {
         margin : 1.5% 0 0;
       }
     }

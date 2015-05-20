@@ -7,13 +7,13 @@
 	    padding: 5% 0 8%;
 		}
 
-		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+		@media #{$LANDSCAPE} {
 			width: 80%;
       padding-bottom: 5%;
 		}
 
 		> div {
-			@media screen and (max-device-height: 600px) and (orientation: landscape) {
+			@media #{$LANDSCAPE} {
 				float: none;
 			}
 		}
