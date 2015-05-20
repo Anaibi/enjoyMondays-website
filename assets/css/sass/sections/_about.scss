@@ -1,20 +1,25 @@
 .about	{
 	.header {
-	  width: cp(530px, $max_layout_width);
+	 // width: cp(530px, $max_layout_width);
 		padding: 68px 0 97px;
+
+		display: flex;
+		flex-wrap: wrap;
+		float: right;
 
 		@media screen and (max-width: 1350px) {
 	    padding: 5% 0 8%;
 		}
 
 		@media #{$LANDSCAPE} {
-			width: 80%;
+		//	width: 80%;
       padding-bottom: 5%;
 		}
 
-		> div {
+		.fittextjs {
 			@media #{$LANDSCAPE} {
-				float: none;
+	//			float: none;
+				width: cp(530px, $max_layout_width);
 			}
 		}
 	}
