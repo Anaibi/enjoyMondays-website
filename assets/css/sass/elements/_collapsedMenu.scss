@@ -7,10 +7,10 @@
      
     a {
       display: block;
-      // icon size
+      // -------- icon size
       width: 23px;
       height: 19px;
-      // to avoid jumps on hover
+      // -------- to avoid jumps on hover
       padding: 30px;
       margin: -30px;
       background: url('../images/menu.png') no-repeat 30px;
@@ -20,7 +20,7 @@
       cursor: pointer;
     }
   }
-  
+
 
   // ----------------------------- STATE 1
   .state1 {

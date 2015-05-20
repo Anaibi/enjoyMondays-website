@@ -13,7 +13,6 @@
 	
 	.header {
    	position: relative;
-   	padding: 5% 0;
     width: 100%;
 
     @media screen and (max-width: 1350px) and (min-width: 650px) {
@@ -24,8 +23,6 @@
     	width: 100%;
 
     	@media screen and (min-width:480px) and (max-width: 650px) {
-    		//width: 70%;
-
     		h1 {
     			width: 75%;
     		}
@@ -37,14 +34,14 @@
     	}
     }
 
-    .fittextjs.hello {
-			@media screen and (max-width: 350px) {
-			//	width: 100%;
-			}
+    .fittextjs {
+    	display: block;
 
-			@media screen and (max-width: 1350px) and (min-width: 650px) {
+    	&.hello {
+				@media screen and (max-width: 1350px) and (min-width: 650px) {
 				width: 50%;
-				display: inline-block;
+					display: inline-block;
+				}
 			}
 		}
   

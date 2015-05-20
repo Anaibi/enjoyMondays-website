@@ -161,7 +161,7 @@ $(function() {
       if (h_container < h_content) { console.log(h_content);
         // make contact sub-header full-width
         $header
-        .css({'padding': '1%'})
+       // .css({'padding': '1%'})
         .find('.sub-header')
           .css({'width': 'auto'});
 
