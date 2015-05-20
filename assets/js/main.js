@@ -145,6 +145,9 @@ $(function() {
     if (section === '#home') {
       h_container = wh.actual - $('#main-header').outerHeight();
       // TODO h < 0
+      if (isLandscapeLayout) {
+        h_container = wh.actual - header_h[4];
+      }
     } 
 
     // contact section
@@ -158,14 +161,11 @@ $(function() {
         h_container = h_container - $('#main-header').height();
       } 
 
-      if (h_container < h_content) { console.log(h_content);
+      if (h_container < h_content) { 
         // make contact sub-header full-width
-        $header
-       // .css({'padding': '1%'})
-        .find('.sub-header')
-          .css({'width': 'auto'});
+        $header.find('.sub-header').css({'width': 'auto'});
 
-        h_content = $header.outerHeight();  console.log(h_content);
+        h_content = $header.outerHeight();  
       }
     }
    
