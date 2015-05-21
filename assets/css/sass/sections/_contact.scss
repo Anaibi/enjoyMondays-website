@@ -1,5 +1,9 @@
 .contact.section {
 
+	.header a {
+		float: right;
+	}
+
 	.sub-header {
 		  
 		float: right;
@@ -19,7 +23,7 @@
 		}
 
 		@media #{$LANDSCAPE} {
-			float: right;
+//			float: right;
 		}
 	}
 }

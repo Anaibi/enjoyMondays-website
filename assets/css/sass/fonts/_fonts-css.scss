@@ -11,23 +11,12 @@ body {
   @media screen and (max-width: 250px) {
     font-size: $base_font_size - 4;
   }
- 
-
-  h1 {
-    font-family: $font_family_2;
-    font-weight: $font_weight_bold;
-    font-size: 2em;
-  }
 
   p {
     line-height: 1.2;
     letter-spacing: .17px;
     word-spacing: .12em;
     font-size: 1em;
-
-    @media #{$LANDSCAPE} {
-    //  font-size: .9em;
-    }
   }
 
   a {
@@ -66,17 +55,17 @@ body {
   }
 }
 
-// --------------------------------- SECTION
-.section {
+// --------------------------------- FITTEXTJS
+.fittextjs > div {
+  font-family: $font_family_2;
+  font-weight: $font_weight_bold;
+  font-size: 1em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
 
-  // ------------------------- HEADER
-  .header {
-    h1 {
-      line-height: 1;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-  }
+  float: right;
+  height: 100%;
 }
 
 // -------------------------------- SECTIONS
