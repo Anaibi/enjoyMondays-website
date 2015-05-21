@@ -133,6 +133,14 @@ p {
     text-align: center;
   }
 
+  .header {
+  	width: auto;
+  //	display: inline-block;
+  	a {
+  		float: right;
+  	}
+  }
+
 	// ----------- HEADER WRAPPER
 	  
 	@include headerWrapper;

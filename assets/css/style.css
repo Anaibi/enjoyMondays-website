@@ -687,6 +687,10 @@ p {
   @media screen and (max-width: 650px) {
     .section {
       text-align: center; } }
+  .section .header {
+    width: auto; }
+    .section .header a {
+      float: right; }
   .home .header-wrapper {
     width: 46.66667%; }
 
