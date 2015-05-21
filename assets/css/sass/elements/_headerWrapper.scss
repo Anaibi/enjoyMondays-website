@@ -1,0 +1,22 @@
+.about {
+	.header-wrapper {
+		width: cp(530px, $max_layout_width);
+		float: right;
+
+		.header {
+			width: 100%;
+			float: none;
+			display: inline-block;
+
+			.fittextjs {
+				@media #{$LANDSCAPE} {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.content {
+		clear: both;
+	}
+}
