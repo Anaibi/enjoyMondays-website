@@ -230,7 +230,8 @@ $(function() {
     $("#home .fittextjs").fitText(.43, { minFontSize: '60px', maxFontSize: '150px' });
     
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
+    $("#about .fittextjs").fitText(.45, { minFontSize: '60px', maxFontSize: '150px' });
+    $("#about .fittextjs").fitText(.39, { minFontSize: '60px', maxFontSize: '150px' });
     $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
     $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '23px', maxFontSize: '150px' });
 

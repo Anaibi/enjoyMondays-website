@@ -123,12 +123,12 @@ p {
 	}
 
 	// -------------------------- SECTION HEADER
-	.header {
+	.header-wrapper {
     
     display: inline-block;
 
     @media screen and (max-width: 650px) {
-      width: 70%;
+    //  width: 70%;
 	  }
 
 	  @media screen and (max-width: 480px) {
@@ -141,19 +141,10 @@ p {
 
 		@media #{$LANDSCAPE} {
 			@media screen and (max-width: 650px) {
-        width: initial;
-        width: 70%;
+    //    width: initial;
+    //    width: 70%;
       }
 		}
-
-    > div {
-     // float: right;
-      @extend %clearfix;
-
-      @media screen and (max-width: 650px) {
-      	float: none;
-	  	}
-    }
 		
 		// --------------- SECTION SUB-HEADER
 		.sub-header {

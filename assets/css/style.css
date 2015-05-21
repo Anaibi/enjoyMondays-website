@@ -138,12 +138,12 @@ footer.container .site-info {
 footer.container .social-links {
   font-size: 0; }
 
-.section:before, .section .header > div:before, .section:after, .section .header > div:after {
+.section:before, .section:after {
   content: "";
   display: table; }
-.section:after, .section .header > div:after {
+.section:after {
   clear: both; }
-.section, .section .header > div {
+.section {
   zoom: 1; }
 
 a {
@@ -335,6 +335,22 @@ img {
   @media screen and (max-width: 480px) {
     .about.section .content p {
       width: 100%; } }
+
+.about .header-wrapper {
+  width: 44.16667%;
+  float: right; }
+  @media screen and (max-width: 650px) {
+    .about .header-wrapper {
+      width: 100%; } }
+  .about .header-wrapper .header {
+    width: 100%;
+    float: none;
+    display: inline-block; }
+    @media screen and (max-height: 600px) and (orientation: landscape) {
+      .about .header-wrapper .header .fittextjs {
+        width: auto; } }
+.about .content {
+  clear: both; }
 
 @media screen and (max-width: 350px) {
   .contact.section .container {
@@ -766,36 +782,25 @@ p {
 @media screen and (max-width: 480px) {
   .section {
     width: 100%; } }
-.section .header {
+.section .header-wrapper {
   display: inline-block; }
-  @media screen and (max-width: 650px) {
-    .section .header {
-      width: 70%; } }
   @media screen and (max-width: 480px) {
-    .section .header {
+    .section .header-wrapper {
       width: 80%; } }
   @media screen and (max-width: 350px) {
-    .section .header {
+    .section .header-wrapper {
       width: 100%; } }
-@media screen and (max-height: 600px) and (orientation: landscape) and (max-width: 650px) {
-  .section .header {
-    width: initial;
-    width: 70%; } }
-
-  @media screen and (max-width: 650px) {
-    .section .header > div {
-      float: none; } }
   @media screen and (max-height: 600px) and (orientation: landscape) {
-    .section .header .sub-header {
+    .section .header-wrapper .sub-header {
       float: none; } }
-  .section .header .sub-header hr {
+  .section .header-wrapper .sub-header hr {
     border: 0;
     height: 3px;
     width: 20%;
     margin: 2% auto 4%;
     clear: both; }
     @media screen and (max-width: 650px) {
-      .section .header .sub-header hr {
+      .section .header-wrapper .sub-header hr {
         width: 15%; } }
 .section .content {
   padding: 0 8% 12%;
