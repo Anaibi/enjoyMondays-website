@@ -34,6 +34,7 @@ $(function() {
       setTimeout(function() {
         refreshHeader(actualSection);
         Waypoint.refreshAll();
+        
         // center contents again
         centerContents('#home'); 
         centerContents('#contact');
@@ -166,6 +167,8 @@ $(function() {
         $header.find('.sub-header').css({'width': 'auto'});
 
         h_content = $header.outerHeight();  
+
+        // TODO on mobile still not enough
       }
     }
    
@@ -185,7 +188,7 @@ $(function() {
     // if under 350px, header height is header_h[3] always
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
-    // landscape has side menu
+    // landscape has side menu except at home section
     if (isLandscapeLayout()) { 
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
@@ -228,15 +231,13 @@ $(function() {
     
     $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
-   // $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
-   // $("#contact .fittextjs.mail").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
     $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
     $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '23px', maxFontSize: '150px' });
 
-    setTimeout(function() {
+   // setTimeout(function() { not needed as centercontents works with window dims instead of container height -which varied 
       centerContents('#home');
       centerContents('#contact'); 
-    }, 150);
+   // }, 150);
 
        
     //---------------------------------------------- supersized
