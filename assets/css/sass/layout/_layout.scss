@@ -28,6 +28,7 @@
 html {
   height: 100%;
 
+  // add some kind of js detectable mark :/
   @media #{$LANDSCAPE} {
   	content: "isLandscape";
  	}
@@ -37,6 +38,10 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media screen and (max-width: 650px) {
+  	text-align: center;
+  }
 }
 
 p {
@@ -47,6 +52,7 @@ p {
 // ------------------------------------ STATE 1
 
 .state1 {
+
   @include setLayoutHeights($header_h_1, $footer_h_1);
 
   @media screen and (max-width: 480px) {
@@ -65,6 +71,7 @@ p {
 
 // ------------------------------------ STATE 2
 .state2 {
+
   @include setLayoutHeights($header_h_2, $footer_h_1);
 
   @media screen and (max-width: 480px) {
@@ -93,14 +100,13 @@ p {
 	height: 100%;
 	margin: 0 auto;
 	padding: 0 cp($layout_padding, $max_layout_width);
+	@extend %clearfix;
 }
 
-.state2 .container {
-	@media #{$LANDSCAPE} {
-	//	padding-left: 0;
-	}
+// ----------------------------------- CONTENT CLASS
+.content {
+	clear: both;
 }
-
 
 // ------------------------------------- MAIN HEADER
 
@@ -109,80 +115,61 @@ p {
 
 // ---------------------------------------- SECTIONS
 
-#sections::before {
-	content: " ";
-	display: block;
-	width: 100%;
+#sections {
+	&::before {
+		content: " ";
+		display: block;
+		width: 100%;
+	}
 }
 
+
+// ----------------------------------------- SECTION
 .section {
-	@extend %clearfix;
+	
+	text-align: right;
 
-	@media screen and (max-width: 480px) {
-    width: 100%;
-	}
+  @media screen and (max-width: 650px) {
+    text-align: center;
+  }
 
-	// -------------------------- SECTION HEADER
-	.header-wrapper {
-    
-    display: inline-block;
+	// ----------- HEADER WRAPPER
+	  
+	@include headerWrapper;
 
-    @media screen and (max-width: 650px) {
-    //  width: 70%;
-	  }
+			
+	// --------------- SUB-HEADER
+	.sub-header {
 
-	  @media screen and (max-width: 480px) {
-      width: 80%;
-	  }
-
-	  @media screen and (max-width: 350px) {
-      width: 100%;
-	  }
-
-		@media #{$LANDSCAPE} {
-			@media screen and (max-width: 650px) {
-    //    width: initial;
-    //    width: 70%;
-      }
-		}
+		text-align: center;
 		
-		// --------------- SECTION SUB-HEADER
-		.sub-header {
+		hr {
+			border: 0;
+			height: 3px;
+			width: 20%;
+			margin: 2% auto 4%;
+			clear: both;
 
-			@media #{$LANDSCAPE} {
-				float: none;
-			}
-
-	    hr {
-	      border: 0;
-		    height: 3px;
-		    width: 20%;
-		    margin: 2% auto 4%;
-		    clear: both;
-
-	      @media screen and (max-width: 650px) {
-	        width: 15%;
-	      }
-	    }
-	  }
+		  @media screen and (max-width: 650px) {
+		  	width: 15%;
+		  }
+		}
 	}
-
-	// -------------------------- SECTION CONTENT
+	
+	// ------------------ CONTENT
 	.content {
-
 		padding: 0 8% 12%;
 		text-align: center;
-	  
-	  @media screen and (max-width: 650px) {
-	    padding: 0 0 12%;
-	  }
+		  
+		@media screen and (max-width: 650px) {
+			padding: 0 0 12%;
+		}
 
-	  @media #{$LANDSCAPE} {
-	  	padding: 0 0 12%;
-	  }
+		@media #{$LANDSCAPE} {
+			padding: 0 0 12%;
+		}
 	}
 }
-
 
 
 // -------------------------------------------- GRID

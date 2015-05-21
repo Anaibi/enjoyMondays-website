@@ -1,42 +1,9 @@
 .home.section {
-
-	.container {
-		padding-bottom: 10%;
-
-		@media #{$LANDSCAPE} {
-			min-height: calc(100vh - #{$header_h_5});
-		}
-	}
 	
 	.header {
-	  position: relative;
-	  width: cp(560px, $max_layout_width);
-
-	  @media screen and (max-width: 750px) and (min-height: 500px) {
-	  	width: 60%;
-	  }
-
-	  @media screen and (max-width: 650px) and (min-height: 500px) {
-	  	width: 100%;
-	  }
-
-	  @media screen and (max-width: 350px) {
-	  	margin-top: 5%;
-	  	width: 100%;
-	  }
-
-	  @media #{$LANDSCAPE} {
-	  	width: 70%;
-	  }
-
-	  .fittextjs {
-	  	display: block;
-
-	  	@media #{$LANDSCAPE} {
-		  	float: none;
-		  }
-	  }
-   
+		
+		@extend %clearfix;
+    
     .smile::before {
 	    content: " ";
 	    width: .55em;
@@ -47,10 +14,10 @@
 	    position: relative;
 	    top: .1em;
      }
+  }
   
-		.sub-header {
-		  float: right;
-		  width: 95%;
-		}
+	.sub-header {
+		width: 95%;
+		float: right;
 	}
 }

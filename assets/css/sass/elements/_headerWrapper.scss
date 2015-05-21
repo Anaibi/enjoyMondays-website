@@ -1,26 +1,46 @@
-.about {
+@mixin headerWrapper {	
+
+	@at-root {
+
+		// -------------- SECTION HOME
+		.home .header-wrapper {	
+			width: cp(560px, $max_layout_width);
+		}
+
+		// -------------- SECTION WORK
+		.work .header-wrapper {
+			width: cp(390px, $max_layout_width);
+		}
+
+		// ------------- SECTION ABOUT
+		.about .header-wrapper {
+			width: cp(530px, $max_layout_width);
+		}
+
+		// ----------- SECTION CONTACT
+		.contact .header-wrapper {
+			width: 100%;
+		}
+	}
+
 	.header-wrapper {
-		width: cp(530px, $max_layout_width);
-		float: right;
+
+		display: inline-block;
+		padding: 10% 0;
 
 		@media screen and (max-width: 650px) {
-			width: 100%;
+			width: 70%;
 		}
 
-		.header {
-			width: 100%;
-			float: none;
-			display: inline-block;
-
-			.fittextjs {
-				@media #{$LANDSCAPE} {
-					width: auto;
-				}
-			}
+		@media screen and (max-width: 480px) {
+	    width: 80%;
 		}
-	}
 
-	.content {
-		clear: both;
+		@media screen and (max-width: 350px) {
+	    width: 100%;
+		}
 	}
 }
+
+
+

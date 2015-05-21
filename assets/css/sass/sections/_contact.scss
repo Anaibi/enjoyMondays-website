@@ -1,70 +1,25 @@
 .contact.section {
-	.container {
 
-		@media screen and (max-width: 350px) {
-			min-height: 150px;
+	.sub-header {
+		  
+		float: right;
+
+		@media screen and (max-width: 1350px) {
+			width: 44%;
+		  margin-right: 4%;
+		}
+
+		@media screen and (max-width: 650px) {
+			width: 100%;
+		  margin: 0;
+		}
+
+		@media screen and (max-width: 480px) {
+			float: none;
 		}
 
 		@media #{$LANDSCAPE} {
-			min-height: initial;
-      height: 100%;
-		}
-	}
-	
-	.header {
-   	position: relative;
-    width: 100%;
-
-    @media screen and (max-width: 1350px) and (min-width: 650px) {
-			text-align: right;
-		}
-
-    @media #{$LANDSCAPE} {
-    	width: 100%;
-
-    	@media screen and (min-width:480px) and (max-width: 650px) {
-    		h1 {
-    			width: 75%;
-    		}
-
-    		.sub-header {
-    			font-size: .9em;
-    			font-weight: $font_weight_light;
-    		}
-    	}
-    }
-
-    .fittextjs {
-    	display: block;
-
-    	&.hello {
-				@media screen and (max-width: 1350px) and (min-width: 650px) {
-				width: 50%;
-					display: inline-block;
-				}
-			}
-		}
-  
-		.sub-header {
-		  float: right;
-
-		  @media screen and (max-width: 1350px) {
-		  	width: 44%;
-		    margin-right: 4%;
-		  }
-
-		  @media screen and (max-width: 650px) {
-		  	width: 100%;
-		  	margin: 0;
-		  }
-
-		  @media screen and (max-width: 480px) {
-		    float: none;
-		  }
-
-		  @media #{$LANDSCAPE} {
-		  	float: right;
-		  }
+			float: right;
 		}
 	}
 }

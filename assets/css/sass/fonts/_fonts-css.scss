@@ -8,9 +8,10 @@ body {
   font-weight: $font_weight_light;
   font-size: $base_font_size;
 
-  @media screen and (max-width: 650px) {
-    text-align: center;
+  @media screen and (max-width: 250px) {
+    font-size: $base_font_size - 4;
   }
+ 
 
   h1 {
     font-family: $font_family_2;
@@ -25,7 +26,7 @@ body {
     font-size: 1em;
 
     @media #{$LANDSCAPE} {
-      font-size: .9em;
+    //  font-size: .9em;
     }
   }
 
@@ -33,7 +34,7 @@ body {
     font-size: 1em;
   }
 
-  .fittextjs > * {
+  .fittextjs {
     font-size: 1em;
   }
 }
@@ -68,29 +69,13 @@ body {
 // --------------------------------- SECTION
 .section {
 
-  text-align: right;
-
-  @media screen and (max-width: 650px) {
-    text-align: center;
-  }
-
-  // ----------------- SECTION HEADER
+  // ------------------------- HEADER
   .header {
     h1 {
       line-height: 1;
       text-transform: uppercase;
       white-space: nowrap;
     }
-
-    // ---------- SECTION SUB-HEADER
-    .sub-header {
-      text-align: center;
-    }
-  }
-
-  // ---------------- SECTION CONTENT
-  .content {
-    text-align: center;
   }
 }
 
@@ -98,15 +83,11 @@ body {
 // ------------------ SECTION 1 
 // ----------------------- HOME
 .home.section {
-  .header {
 
-    .sub-header {
+  .sub-header {
 
-      word-spacing: 2px;
-
-      @media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
-        font-size: 1.2em;
-      }
+    @media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
+      font-size: 1.2em;
     }
   }
 }
@@ -160,7 +141,9 @@ body {
     }
 
     .sub-header {
-      font-weight: $font_weight_middle;
+    //  font-weight: $font_weight_middle;
+      font-size: .9em;
+      font-weight: $font_weight_light;
 
       @media screen and (max-width: 480px) {
         font-weight: $font_weight_light;

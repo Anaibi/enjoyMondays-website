@@ -1,23 +1,4 @@
 .about	{
-	.header {
-	  width: cp(530px, $max_layout_width);
-		padding: 68px 0 97px;
-
-		@media screen and (max-width: 1350px) {
-	    padding: 5% 0 8%;
-		}
-
-		@media #{$LANDSCAPE} {
-			width: 80%;
-      padding-bottom: 5%;
-		}
-
-		> div {
-			@media #{$LANDSCAPE} {
-				float: none;
-			}
-		}
-	}
 
   &.section .content {
 
@@ -26,7 +7,7 @@
 		}
 
   	&.tiles.three .tile {
-  		@media screen and (max-device-height: 600px) and (orientation: landscape) {
+  		@media #{$LANDSCAPE} {
   			width: 32%;
         margin: auto;
   		}
@@ -54,4 +35,3 @@
     }
   }
 }
-@import "../elements/_headerWrapper";

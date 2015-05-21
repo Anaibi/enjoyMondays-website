@@ -47,9 +47,9 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 100;
   font-size: 16px; }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 250px) {
     body {
-      text-align: center; } }
+      font-size: 12px; } }
   body h1 {
     font-family: "Dosis", sans-serif;
     font-weight: 600;
@@ -59,12 +59,9 @@ body {
     letter-spacing: .17px;
     word-spacing: .12em;
     font-size: 1em; }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      body p {
-        font-size: .9em; } }
   body a {
     font-size: 1em; }
-  body .fittextjs > * {
+  body .fittextjs {
     font-size: 1em; }
 
 #header-nav {
@@ -82,25 +79,14 @@ body {
   #header-nav li:hover {
     font-weight: 900; }
 
-.section {
-  text-align: right; }
-  @media screen and (max-width: 650px) {
-    .section {
-      text-align: center; } }
-  .section .header h1 {
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap; }
-  .section .header .sub-header {
-    text-align: center; }
-  .section .content {
-    text-align: center; }
+.section .header h1 {
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap; }
 
-.home.section .header .sub-header {
-  word-spacing: 2px; }
-  @media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
-    .home.section .header .sub-header {
-      font-size: 1.2em; } }
+@media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
+  .home.section .sub-header {
+    font-size: 1.2em; } }
 
 .work.section .header h1 {
   text-align: center; }
@@ -122,7 +108,8 @@ body {
 .contact.section .header h1 a {
   color: #E9E8E3; }
 .contact.section .header .sub-header {
-  font-weight: 400; }
+  font-size: .9em;
+  font-weight: 100; }
   @media screen and (max-width: 480px) {
     .contact.section .header .sub-header {
       font-weight: 100; } }
@@ -138,12 +125,12 @@ footer.container .site-info {
 footer.container .social-links {
   font-size: 0; }
 
-.section:before, .section:after {
+.home.section .header:before, .container:before, .home.section .header:after, .container:after {
   content: "";
   display: table; }
-.section:after {
+.home.section .header:after, .container:after {
   clear: both; }
-.section {
+.home.section .header, .container {
   zoom: 1; }
 
 a {
@@ -179,52 +166,20 @@ img {
   height: auto;
   display: block; }
 
-.home.section .container {
-  padding-bottom: 10%; }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .home.section .container {
-      min-height: calc(100vh - 60px); } }
-.home.section .header {
+.home.section .header .smile::before {
+  content: " ";
+  width: .55em;
+  height: .5em;
+  display: inline-block;
+  background: url("../images/smile.png") no-repeat 2.5% 34%;
+  background-size: contain;
   position: relative;
-  width: 46.66667%; }
-  @media screen and (max-width: 750px) and (min-height: 500px) {
-    .home.section .header {
-      width: 60%; } }
-  @media screen and (max-width: 650px) and (min-height: 500px) {
-    .home.section .header {
-      width: 100%; } }
-  @media screen and (max-width: 350px) {
-    .home.section .header {
-      margin-top: 5%;
-      width: 100%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .home.section .header {
-      width: 70%; } }
-  .home.section .header .fittextjs {
-    display: block; }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      .home.section .header .fittextjs {
-        float: none; } }
-  .home.section .header .smile::before {
-    content: " ";
-    width: .55em;
-    height: .5em;
-    display: inline-block;
-    background: url("../images/smile.png") no-repeat 2.5% 34%;
-    background-size: contain;
-    position: relative;
-    top: .1em; }
-  .home.section .header .sub-header {
-    float: right;
-    width: 95%; }
+  top: .1em; }
+.home.section .sub-header {
+  width: 95%;
+  float: right; }
 
-.work .header {
-  width: 32.5%;
-  padding: 68px 0 97px; }
-  @media screen and (max-width: 1350px) {
-    .work .header {
-      padding: 5% 0 8%; } }
-.work .content .details-wrapper {
+.work #portfolio .details-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -237,46 +192,46 @@ img {
   /* redefine font-size put to 0 on parent a */
   font-size: 30px; }
   @media screen and (max-width: 650px) {
-    .work .content .details-wrapper {
+    .work #portfolio .details-wrapper {
       font-size: 22px; } }
   @media screen and (max-width: 480px) {
-    .work .content .details-wrapper {
+    .work #portfolio .details-wrapper {
       font-size: 30px; } }
-  .work .content .details-wrapper:hover {
+  .work #portfolio .details-wrapper:hover {
     opacity: 1; }
-  .work .content .details-wrapper .details {
+  .work #portfolio .details-wrapper .details {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0; }
-  .work .content .details-wrapper .title {
+  .work #portfolio .details-wrapper .title {
     font-size: 1em; }
     @media screen and (max-width: 480px) {
-      .work .content .details-wrapper .title {
+      .work #portfolio .details-wrapper .title {
         font-size: .75em; } }
-  .work .content .details-wrapper p {
+  .work #portfolio .details-wrapper p {
     font-size: 0.5em; }
     @media screen and (max-width: 480px) {
-      .work .content .details-wrapper p {
+      .work #portfolio .details-wrapper p {
         margin-top: 1%;
         font-size: .5em;
         line-height: 1.1; } }
-.work .content .tile:hover img {
+.work #portfolio .tile:hover img {
   -webkit-transform: translate(0, -33px) scale(0.55);
   -ms-transform: translate(0, -33px) scale(0.55);
   transform: translate(0, -33px) scale(0.55); }
   @media screen and (max-width: 480px) {
-    .work .content .tile:hover img {
+    .work #portfolio .tile:hover img {
       -webkit-transform: translate(0, -50px) scale(0.8);
       -ms-transform: translate(0, -50px) scale(0.8);
       transform: translate(0, -50px) scale(0.8); } }
-.work .content .tile img {
+.work #portfolio .tile img {
   -webkit-transition: transform 0.4s;
   -ms-transition: transform 0.4s;
   transition: transform 0.4s; }
-.work .content .tile:hover {
+.work #portfolio .tile:hover {
   cursor: pointer; }
-.work .content .tile a {
+.work #portfolio .tile a {
   display: block;
   position: relative;
   width: 95%;
@@ -285,7 +240,7 @@ img {
   font-size: 0;
   color: inherit; }
   @media screen and (max-width: 480px) {
-    .work .content .tile a {
+    .work #portfolio .tile a {
       width: 100%; } }
 
 #slideshow {
@@ -301,23 +256,10 @@ img {
   right: 10px;
   font-size: 0; }
 
-.about .header {
-  width: 44.16667%;
-  padding: 68px 0 97px; }
-  @media screen and (max-width: 1350px) {
-    .about .header {
-      padding: 5% 0 8%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .about .header {
-      width: 80%;
-      padding-bottom: 5%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .about .header > div {
-      float: none; } }
 @media screen and (max-width: 1350px) and (min-width: 650px) {
   .about.section .content {
     padding: 0 0 12%; } }
-@media screen and (max-device-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 600px) and (orientation: landscape) {
   .about.section .content.tiles.three .tile {
     width: 32%;
     margin: auto; } }
@@ -336,67 +278,22 @@ img {
     .about.section .content p {
       width: 100%; } }
 
-.about .header-wrapper {
-  width: 44.16667%;
+.contact.section .sub-header {
   float: right; }
+  @media screen and (max-width: 1350px) {
+    .contact.section .sub-header {
+      width: 44%;
+      margin-right: 4%; } }
   @media screen and (max-width: 650px) {
-    .about .header-wrapper {
-      width: 100%; } }
-  .about .header-wrapper .header {
-    width: 100%;
-    float: none;
-    display: inline-block; }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      .about .header-wrapper .header .fittextjs {
-        width: auto; } }
-.about .content {
-  clear: both; }
-
-@media screen and (max-width: 350px) {
-  .contact.section .container {
-    min-height: 150px; } }
-@media screen and (max-height: 600px) and (orientation: landscape) {
-  .contact.section .container {
-    min-height: initial;
-    height: 100%; } }
-.contact.section .header {
-  position: relative;
-  width: 100%; }
-  @media screen and (max-width: 1350px) and (min-width: 650px) {
-    .contact.section .header {
-      text-align: right; } }
+    .contact.section .sub-header {
+      width: 100%;
+      margin: 0; } }
+  @media screen and (max-width: 480px) {
+    .contact.section .sub-header {
+      float: none; } }
   @media screen and (max-height: 600px) and (orientation: landscape) {
-    .contact.section .header {
-      width: 100%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) and (min-width: 480px) and (max-width: 650px) {
-    .contact.section .header h1 {
-      width: 75%; }
-    .contact.section .header .sub-header {
-      font-size: .9em;
-      font-weight: 100; } }
-
-  .contact.section .header .fittextjs {
-    display: block; }
-    @media screen and (max-width: 1350px) and (min-width: 650px) {
-      .contact.section .header .fittextjs.hello {
-        width: 50%;
-        display: inline-block; } }
-  .contact.section .header .sub-header {
-    float: right; }
-    @media screen and (max-width: 1350px) {
-      .contact.section .header .sub-header {
-        width: 44%;
-        margin-right: 4%; } }
-    @media screen and (max-width: 650px) {
-      .contact.section .header .sub-header {
-        width: 100%;
-        margin: 0; } }
-    @media screen and (max-width: 480px) {
-      .contact.section .header .sub-header {
-        float: none; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      .contact.section .header .sub-header {
-        float: right; } }
+    .contact.section .sub-header {
+      float: right; } }
 
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .state2 #sections .contact.section.last {
@@ -412,6 +309,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll; }
+  @media screen and (max-width: 650px) {
+    body {
+      text-align: center; } }
 
 p {
   padding-bottom: .3em; }
@@ -505,6 +405,9 @@ p {
   height: 100%;
   margin: 0 auto;
   padding: 0 6.66667%; }
+
+.content {
+  clear: both; }
 
 #main-header {
   position: fixed;
@@ -779,38 +682,54 @@ p {
   display: block;
   width: 100%; }
 
-@media screen and (max-width: 480px) {
-  .section {
-    width: 100%; } }
-.section .header-wrapper {
-  display: inline-block; }
-  @media screen and (max-width: 480px) {
-    .section .header-wrapper {
-      width: 80%; } }
-  @media screen and (max-width: 350px) {
-    .section .header-wrapper {
-      width: 100%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .section .header-wrapper .sub-header {
-      float: none; } }
-  .section .header-wrapper .sub-header hr {
-    border: 0;
-    height: 3px;
-    width: 20%;
-    margin: 2% auto 4%;
-    clear: both; }
-    @media screen and (max-width: 650px) {
-      .section .header-wrapper .sub-header hr {
-        width: 15%; } }
-.section .content {
-  padding: 0 8% 12%;
-  text-align: center; }
+.section {
+  text-align: right; }
   @media screen and (max-width: 650px) {
-    .section .content {
-      padding: 0 0 12%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
-    .section .content {
-      padding: 0 0 12%; } }
+    .section {
+      text-align: center; } }
+  .home .header-wrapper {
+    width: 46.66667%; }
+
+  .work .header-wrapper {
+    width: 32.5%; }
+
+  .about .header-wrapper {
+    width: 44.16667%; }
+
+  .contact .header-wrapper {
+    width: 100%; }
+  .section .header-wrapper {
+    display: inline-block;
+    padding: 10% 0; }
+    @media screen and (max-width: 650px) {
+      .section .header-wrapper {
+        width: 70%; } }
+    @media screen and (max-width: 480px) {
+      .section .header-wrapper {
+        width: 80%; } }
+    @media screen and (max-width: 350px) {
+      .section .header-wrapper {
+        width: 100%; } }
+  .section .sub-header {
+    text-align: center; }
+    .section .sub-header hr {
+      border: 0;
+      height: 3px;
+      width: 20%;
+      margin: 2% auto 4%;
+      clear: both; }
+      @media screen and (max-width: 650px) {
+        .section .sub-header hr {
+          width: 15%; } }
+  .section .content {
+    padding: 0 8% 12%;
+    text-align: center; }
+    @media screen and (max-width: 650px) {
+      .section .content {
+        padding: 0 0 12%; } }
+    @media screen and (max-height: 600px) and (orientation: landscape) {
+      .section .content {
+        padding: 0 0 12%; } }
 
 @media screen and (max-width: 650px) {
   .tiles {

@@ -139,9 +139,12 @@ $(function() {
   //----------------------------------------- centerContainer
   function centerContents(section) { 
     var $section = $(section).find('.container'),
-        $header = $section.find('.header'),
+        $header = $section.find('.header-wrapper'),
         h_content = $header.outerHeight(),
         h_container = wh.actual;
+
+    // add position relative to section
+    $section.css('position', 'relative');
 
     if (section === '#home') {
       h_container = wh.actual - $('#main-header').outerHeight();
@@ -168,14 +171,15 @@ $(function() {
 
         h_content = $header.outerHeight();  
 
-        // TODO on mobile still not enough
+        // TODO on mobile landscape still not enough
       }
     }
    
     var h = (h_container - h_content)/2;
 
-    $header.animate({'top': h}, 'slow');
+    $section.animate({'top': h}, 'slow');
   };
+
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) {
@@ -227,18 +231,16 @@ $(function() {
 
   $(document).ready(function () {
     //------------------------------------------------- fitText
-    $("#home .fittextjs").fitText(.43, { minFontSize: '60px', maxFontSize: '150px' });
+    $("#home .fittextjs").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
     
-    $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#about .fittextjs").fitText(.45, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#about .fittextjs").fitText(.39, { minFontSize: '60px', maxFontSize: '150px' });
+    $("#work .fittextjs").fitText(.29, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#about .fittextjs").fitText(.45, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#about .fittextjs").fitText(.39, { minFontSize: '40px', maxFontSize: '150px' });
     $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
     $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '23px', maxFontSize: '150px' });
 
-   // setTimeout(function() { not needed as centercontents works with window dims instead of container height -which varied 
-      centerContents('#home');
-      centerContents('#contact'); 
-   // }, 150);
+    centerContents('#home');
+    centerContents('#contact');
 
        
     //---------------------------------------------- supersized
