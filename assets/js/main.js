@@ -1,5 +1,5 @@
 $(function() {
-
+var done = false, i=1;
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
@@ -177,12 +177,13 @@ $(function() {
    
     var h = (h_container - h_content)/2;
 
-    $section.animate({'top': h}, 'slow');
+    $section.animate({'top': h}, '');
   };
 
 
   //---------------------------------------- scrollToPosition
-  function scrollToPosition(section) {
+  function scrollToPosition(section) { 
+
     // clicking from home, get small header height (unless section is home)
     var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
@@ -197,14 +198,14 @@ $(function() {
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
-
+    
     $('body, html')
       .stop()
       .animate({
         scrollTop: $(section).offset().top - h
       }, 250, function(){
         $('html, body').clearQueue();
-    });
+    }); 
   }
 
   //--------------------------------------------- updateLinks
@@ -232,14 +233,10 @@ $(function() {
   $(document).ready(function () {
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
-    
     $("#work .fittextjs").fitText(.29, { minFontSize: '40px', maxFontSize: '150px' });
-    $("#about .fittextjs").fitText(.45, { minFontSize: '40px', maxFontSize: '150px' });
     $("#about .fittextjs").fitText(.39, { minFontSize: '40px', maxFontSize: '150px' });
- //   $("#about .fittextjs").fitText(.35, { minFontSize: '40px', maxFontSize: '150px' });
-    
-    $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '23px', maxFontSize: '150px' });
-    $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '23px', maxFontSize: '150px' });
+    $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '20px', maxFontSize: '150px' });
 
     centerContents('#home');
     centerContents('#contact');
