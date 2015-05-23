@@ -10,18 +10,20 @@
   <meta name="author" content="Enjoy-Mondays" />
   <link rel="shortcut icon" href="favicon.ico"> 
     
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
     
-  <link rel="stylesheet" href="assets/css/supersized.min.css" />
-  <link rel="stylesheet" href="assets/theme/supersized.shutter.css" />
+  <link rel="stylesheet" href="assets/css/supersized.min.css">
+  <link rel="stylesheet" href="assets/theme/supersized.shutter.css">
   
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis: 600|Lato:400,100,700,900:latin">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis: 600|Lato:100,400,700,900:latin">
+
 </head>
 
 
 <body>
-  <div id="site" class="big-header">
-    <header id="main-header" class="container">
+  <div id="site" class="state1">
+    <div id="main-header">
+    <header class="container">
       <div id="logo" class="left">
         <a href="#" class="img-wrapper">
           <img src="assets/images/logo.png" alt="Enjoy-Mondays Logo" title="Home section">
@@ -37,57 +39,62 @@
         <li><a href="#notes">Notes</a></li>
       </ul> 
 
-      <div id="collapsed-menu" class="hidden right">
+      <div id="collapsed-menu" class="right">
         <a href="#"><span class="screen-reader-text">Open menu</span></a>
       </div>
     </header>
+    </div>
 
-    <div id="content"> 
+    <div id="sections"> 
 
       <section id="home" class="home section">
         <div class="container">
-          <header class="fittextjs header">
-            <div>  
-              <h1>We code</h1>
-              <h1>You smile</h1> 
-            </div>     
-            <div class="sub-header ">
+          <div class="header-wrapper">
+            <header class="header">  
+              <h1 class="fittextjs smile">We code</h1>
+              <h1 class="fittextjs">You smile</h1>
+            </header>    
+            <div class="sub-header">
               <hr>
               <p>Crafting clean and fresh awesomnes for the web and beyond.</p>
               <p>We make it funky. Want to work with us?</p>
             </div>
-          </header>
+          </div>
         </div>                 
       </section>
 
-      <section id="work" class="work section section-2">
+      <section id="work" class="work section">
         <div class="container">
-          <header class="fittextjs header">
-            <div><h1>Works</h1></div>          
+          <div class="header-wrapper">
+            <header class="header">
+              <h1 class="fittextjs">Works</h1>
+            </header>         
             <div class="sub-header">
               <hr class="header_hr">
               <p>Some of our latest works.</p>
             </div>
-          </header>
+          </div>
 
-          <div id="portfolio">
-            <div class="content">
-              <ul id="gallery" class="tiles"></ul>
+          <div class="content">
+            <div id="portfolio">
+              <ul id="gallery" class="grid"></ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" class="about section section-3">
+      <section id="about" class="about section">
         <div class="container">
-          <header class="fittextjs header">
-            <div><h1>Services</h1></div>
+          <div class="header-wrapper">
+            <header class="header">
+              <h1 class="fittextjs">Services</h1>
+            </header>
             <div class="sub-header">
               <hr class="header_hr">
               <p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access content.</p>
               <p>The finished product will be totally unique and represent awesomeness.</p>
             </div>
-          </header>
+          </div>
 
           <div class="content tiles three">
             <div class="tile">
@@ -109,23 +116,24 @@
         </div>
       </section>
           
-      <section id="contact" class="contact section section-4 last">
+      <section id="contact" class="contact section last">
         <div class="container">
-          <header class="fittextjs header">
-            <div>
-              <h1>Say hello</h1>
-              <h1><a href="mailto:hola@enjoy-mondays.com">hola@enjoy-mondays.com</a></h1>
-            </div>
+          <div class="header-wrapper">
+            <header class="header">
+              <h1 class="fittextjs hello">Say hello</h1>
+              <h1 class="fittextjs mail"><a href="mailto:hola@enjoy-mondays.com">hola@enjoy-mondays.com</a></h1>
+            </header>
             <div class="sub-header">
               <hr>
               <p>Our vision is simple. We want to create websites and applications with both high quality design and easy-to-access content.</p>
               <p>The finished product will be totally unique and represent awesomeness.</p>
             </div>     
-          </header>
+          </div>
         </div>
       </section>
     </div>
 
+    <div class="footer">
     <footer class="container">
       <div class="site-info">
         <p>2013©EnjoyMondays | Powered by <a href="https://github.com/goliatone/flatg-website" target="_blank" class="color-4"> FlatG</a></p>
@@ -156,6 +164,7 @@
         </ul>
       </div>
     </footer>
+    </div>
   </div>
 
   <div id="slideshow">
@@ -171,6 +180,9 @@
   <script src="assets/js/jquery.fittext.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/supersized.3.2.5.js"></script>
-  <script src="assets/theme/supersized.shutter.js"></script>  
+  <script src="assets/theme/supersized.shutter.js"></script> 
+  <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.7.3.js'><\/script>".replace("HOST", location.hostname));
+//]]></script> 
   </body>
 </html>

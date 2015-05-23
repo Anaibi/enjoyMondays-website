@@ -1,223 +1,32 @@
 @import "colors/_colors-css";
-@import "colors/_fonts-css";
 
 @import "_settings";
+
+@import "fonts/_fonts-css";
 
 @import "partials/_mixins";
 @import "partials/_generals";
 
-@import "elements/_headerMenu";
+@import "elements/_headerWrapper";
+@import "elements/_mainHeader";
 @import "elements/_grid";
 @import "elements/_footer";
-@import "elements/_landscape";
 
 @import "sections/_home";
 @import "sections/_work";
 @import "sections/_about";
 @import "sections/_contact";
 
+@import "layout/_layout";
 
 
 
 
-// ----------------------------------------- FONTS
-
-body {
-  font-family: $font_family_1;
-  font-weight: 100;
-}
-
-h1 {
-  font-family: $font_family_2;
-  font-weight: 600;
-	font-size: 1em;
-}
-
-p {
-  line-height: 1.5;
-  letter-spacing: .17px;
-}
-
-.sub-header {
-  font-size: .158em;
-}
-
-
-// -------------------------------------------- */
-
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  @media screen and (max-width: 650px) {
-    text-align: center;
-  }
-}
-
-.container {
-	max-width: $max_layout_width;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0 cp($layout_padding, $max_layout_width);
-}
-
-.section {
-	@extend %clearfix;
-	text-align: right;
-
-	@media screen and (max-width: 650px) {
-	  text-align: center;
-	}
-
-	.header {
-    display: inline-block;
-
-    > div {
-      float: right;
-    }
-
-    h1 {
-		  line-height: 1;
-		  text-transform: uppercase;
-      white-space: nowrap;
-
-      @media screen and (max-width: 350px) {
-        font-size: .7em;
-      }
-		}
-
-		@media screen and (max-width: 650px) {
-      width: 70%;
-	  }
-
-	  @media screen and (max-width: 480px) {
-      width: 100%;
-	  }
-  }
-
-  .sub-header {
-    text-align: center;
-
-    hr {
-      border: 0;
-	    height: 3px;
-	    width: 20%;
-	    margin: 2% auto 4%;
-	    clear: both;
-
-      @media screen and (max-width: 650px) {
-        width: 15%;
-      }
-    }
-  }
-}
-
-.content {
-	padding: 0 8% 12%;
-	text-align: center;
-  
-  @media screen and (max-width: 650px) {
-    padding: 0 0 12%;
-  }
-}
-
-// ------------------------------------  HEADER
-
-#main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2000;
-  @include transition(all, .5s);
-}
-
-#logo {
-  width: $logo_w_big;
-  margin-top: 40px;
-  @include transition(all, .3s);
-
-  @media screen and (max-width: 480px) {
-    display: block;
-    float: none;
-  }
-}
-
-
-@include headerMenu;
-
-// --------------------- LAYOUT WITH BIG HEADER
-
-.big-header {
-  
-  @include setLayout($header_h_big);
-
-  @media screen and (max-width: 480px) {
-    @include setLayout(100px);
-  }
-
-  @media screen and (max-width: 350px) {
-    @include setLayout(80px);
-  }
-
-  #logo {
-    @media screen and (max-width: 650px) {
-      width: 25%;
-    }
-
-    @media screen and (max-width: 480px) {
-      margin: 2.5% auto;
-    }
-
-    @media screen and (max-width: 350px) {
-      width: 20%;
-    }
-  }
-}
-
-
-// ------------------- LAYOUT WITH SMALL HEADER
-
-.small-header {
-  
-  @include setLayout($header_h_small);
-
-  @media screen and (max-width: 480px) {
-    @include setLayout(100px);
-  }
-
-  @media screen and (max-width: 350px) {
-    @include setLayout(80px);
-  }
-
-  #logo {
-    width: $logo_w_small;
-    margin-top: 18px;
-
-    @media screen and (max-width: 650px) {
-      width: 20%;
-    }
-
-    @media screen and (max-width: 480px) {
-      //margin: 3% auto 2%;
-      margin: 2.5% auto;
-    }
-  }
-}
 
 
 
-// --------------------------------------- GRID
-
-@include grid;
 
 
-// ---------------------------------- LANDSCAPE
 
-@include landscape($header_h_smallest, $header_vertical_w);
+
 

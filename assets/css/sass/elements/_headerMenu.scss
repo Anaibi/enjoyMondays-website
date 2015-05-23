@@ -1,34 +1,10 @@
 @mixin headerMenu {
-
   #header-nav {
-    display: inline-block;
-    margin-top: 85px;
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: uppercase;
-
-    @media screen and (max-width: 650px) {
-      font-size: 0.8em;
-    }
+    @include transition(all .5s);
 
     @media screen and (max-width: 480px) {
       float: none;
       margin: auto;
-      font-size: 0.76em;
-    }
-
-    @media screen and (max-width: 350px) {
-      font-size: .6em;
-    }
-
-
-    &.expanded {
-      display: block;
-      margin-top: 40px;
-
-      @media screen and (max-width: 480px) {
-        margin: 10% 0;
-      }
     }
 
     li {
@@ -44,47 +20,136 @@
         margin-right: -4px;
       }
 
-      &.active-link {
-        font-weight: 900;
-      }
-
+      &.active-link,
       &:hover {
-        font-weight: 900;
+        border-bottom: 3px solid $link_color2;
+      }
+
+      @at-root .mobile #header-nav .no-touch {
+        border: none;
+      }
+
+      a {
+        display: block;
+        padding: 30px 24px;
+        margin: -30px -20px;
+
+        @media screen and (max-width: 350px) {
+          padding: 30px 21px; // breaks under 226px
+        }
       }
     }
-    
-    a {
-      display: block;
-      padding: 30px 24px;
-      margin: -30px -20px;
 
-      @media screen and (max-width: 350px) {
-        padding: 30px 21px; /* breaks under 226px */
+    &.expanded {
+      @media #{$LANDSCAPE} {
+        float: none;
+        width: 100%;
+        height: 100vh;
+        margin: 60px auto;
+        @include show;
+
+        li {
+          width: 100%;
+          float: none;
+          margin: 0 0 17%;
+
+          &:first-child {
+            margin-top: 20px;
+          }
+
+          a {
+            padding: 0;
+            margin: 0;
+          }
+        }
       }
     }
   }
 
-  #collapsed-menu {
-    margin-top: 40px;
+  // ----------------------------- STATE 1
+  .state1 {
+    #header-nav {
+      display: inline-block;
+      margin-top: 85px;
 
-    @media screen and (max-width: 480px) {
+      @media screen and (max-width: 480px) {
+        margin: 0 auto;
+      }
+
+      @media #{$LANDSCAPE} {
+        height: 100%;
+        margin-top: 0;
+
+        li {
+          @include vCentered;
+        }
+      }
+
+      &.expanded {
+        @include show;
+
+        @media screen and (max-width: 480px) {
+          margin: 10% 0;
+        }
+      }
+    }
+  }
+
+  // ----------------------------- STATE 2
+  .state2 {
+    #header-nav {
       display: none;
-    }
-   
-    a {
-      display: block;
-      /* icon size */
-      width: 23px;
-      height: 19px;
-      /* to avoid jumps on hover */
-      padding: 30px;
-      margin: -30px;
-      background: url('../images/menu.png') no-repeat 30px;
-    }
-    
-    &:hover {
-      cursor: pointer;
+      @include hide;
+
+      @media screen and (max-width: 480px) {
+        display: inline-block;
+        @include show;
+      }
+
+      @media #{$LANDSCAPE} {
+        display: block;
+        @include show;
+        position: relative;
+        top: 3%;
+        width: 100%;
+        height: 100%;
+        font-size: .65em;
+        text-align: right;
+      }
+
+      li {
+        @media #{$LANDSCAPE} {
+          width: 90%;
+          height: 15%;
+          display: block;
+          margin: 0;
+          border: none;
+          border-left: 6px solid $color1;
+
+          &.active-link,
+          &:hover {
+            border-left: 6px solid $link_color2;
+          }
+
+          @at-root .mobile .state2 #header-nav .no-touch {
+            @media screen and (max-device-height: 600px) and (orientation: landscape) {
+              border-left: 6px solid $color1;
+            }
+          }
+
+          a {
+            margin: 50% 0 0;
+            padding: 0;
+            line-height: 0;
+          }
+        }
+      }
+
+      &.expanded {
+        display: block;
+        padding-top: 40px;
+        @include show;
+      }
     }
   }
-
 }

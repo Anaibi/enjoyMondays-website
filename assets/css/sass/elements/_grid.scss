@@ -3,9 +3,9 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     opacity: 0;
-    @include transition(opacity, 1s);
+    @include transition(opacity 1s);
 
-    /* redefine font-size put to 0 on parent a */
+    // redefine font-size put to 0 on parent a
     font-size: 30px;
 
     @media screen and (max-width: 650px) {
@@ -58,7 +58,7 @@
     }
       
     img {
-      @include transition(transform, .4s);
+      @include transition(transform .4s);
     }
   }
 }
@@ -74,7 +74,7 @@
       position: relative;
       width: 95%;
       margin: auto;
-      /* remove extra height otherwise adds to tile */
+      // remove extra height otherwise adds to tile
       font-size: 0;
       color: inherit;
 
@@ -102,7 +102,7 @@
 }
 
 @mixin grid {
-  .tiles {
+  .grid {
     @media screen and (max-width: 650px) {
       padding: 0 0 11%;
     }
@@ -114,8 +114,17 @@
         width: 33%;
       
         @media screen and (max-width: 650px) {
-          width: 80%;
+          width: 100%;
           margin: 10% auto;
+        }
+
+        @media screen and (max-width: 350px) {
+          width: 100%;
+        }
+
+        @media #{$LANDSCAPE} {
+          width: 32%;
+          margin: auto;
         }
       }
     }

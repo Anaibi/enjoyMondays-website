@@ -1,11 +1,14 @@
 # enjoyMondays-website
 
-design x 1350px width
+version en general ok. 
 
-* check on devices / resize
-* add transitions
+Falta revisar por devices y detalles disenyo.
 
-doing sass
+Limpiando / reordenando codigo.
+
+handdlebars
+
+do content
 
 
 

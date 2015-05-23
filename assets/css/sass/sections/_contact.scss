@@ -1,51 +1,56 @@
 .contact.section {
-	.container {
-		min-height: 350px;
-		height: 70vh;
 
-		@media screen and (max-width: 650px) {
-			min-height: 350px;
-		}
-	}
-	
-	.header {
-    @include vCentered(40%);
+  .header {
 
-    width: 100%;
+    .hello {
+      display: inline-block;
+      width: 60%;
+    }
 
-	  @media screen and (max-width: 650px) {
-      text-align: right;
-	  }
+    .mail a {
+      float: right;
+    }
 
-	  h1 {
-	  	&:first-child {
-	  		color: $color2;
-	  		font-size: 1.2em;
-	  	}
+    @media screen and (max-width: 650px) {
 
-	  	a {
-		  	color: $color1;
-		  }
-		}
+      .hello {
+        width: 100%;
+      }
+
+      .mail a {
+        float: none;
+      }
+    }
+  }
   
-		.sub-header {
-		  float: right;
-		  font-weight: 400;
+  .sub-header {
 
-		  @media screen and (max-width: 1350px) {
-		  	width: 44%;
-		    margin-right: 4%;
-		  }
+    float: right;
 
-		  @media screen and (max-width: 650px) {
-		  	width: 100%;
-		  	margin: 0;
-		    font-size: .4em;
-		  }
+    @media screen and (max-width: 1350px) {
+      width: 44%;
+      margin-right: 4%;
+    }
 
-		  @media screen and (max-width: 480px) {
-		    float: none;
-		  }
-		}
-	}
+    @media screen and (max-width: 650px) {
+      width: 100%;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 480px) {
+      float: none;
+    }
+
+    @media #{$LANDSCAPE} {
+      float: right;
+    }
+  }
+}
+
+.state2 {
+  @media #{$LANDSCAPE} {
+    #sections .contact.section.last {
+      height: calc(100vh - #{$footer_h_2});
+    }
+  }
 }

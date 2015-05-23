@@ -1,33 +1,29 @@
 $(function() {
 
-  // for use in animateHeader 
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
   var wh = {'actual' : $(window).height()};
       wh.previous = wh.actual;
 
-  var smallHeaderH = 111;
+  var header_h = [139, 111, 100, 85, 60];
 
-  var marks = [325, 480];
+  var marks = [350, 480, 600];
     
   var resizeTimer;
 
   $(window).load(function () {
-  	doWaypoints();
+    doWaypoints();
   });
 
   // Done Resizing Event
-  // https://css-tricks.com/snippets/jquery/done-resizing-event/ 
-  $(window).on('resize', function() {
+  $(window).on('resize', function() { 
+
+    var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
+    resizeTimer = setTimeout(function() { 
 
-      // refresh waypoints
-      Waypoint.refreshAll();
-
-      // Run code here, resizing has "stopped"
       // get new window sizes
       ww.previous = ww.actual; 
       ww.actual = $(window).width(); 
@@ -35,215 +31,215 @@ $(function() {
       wh.previous = wh.actual;
       wh.actual = $(window).height();
 
-      // if window only changes height, return
-      if (ww.previous === ww.actual) {
-      	return; 
-      }
+      setTimeout(function() {
+        refreshHeader(actualSection);
+        Waypoint.refreshAll();
+        
+        // center contents again
+        centerContents('#home'); 
+        centerContents('#contact');
 
-      if (!inSameWidthGap(ww, marks)) { 
-        // refresh header
-        scrollToPosition('#home'); 
-        setTimeout(function() {
-          refreshHeader();
-        }, 350); 
-      }     
+        scrollToPosition(actualSection);
+      }, 150);      
     }, 150);
 
   });
 
-  //-------------------------------------- MENU FUNCTIONALITY
+
+  //---------------------------------------------- MENU
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
-	  scrollToPosition($(this).attr('href'));
+    scrollToPosition($(this).attr('href'));
   });			
 
   // notes link off	
   $('#header-nav a[href="#notes"]').off('click');
 
   // collapsed menu
-  $('#collapsed-menu').hover(function() {
-    $(this).hide();
-    $('#header-nav').addClass('expanded').show();
+  $('#collapsed-menu').hover(function() { 
+    $('#header-nav').addClass('expanded');
+  });
+
+  // collapsed menu mobile
+  var menuExpanded = false;
+  $('#collapsed-menu a').on('click touchstart', function (e) {
+    e.preventDefault();
+    $('#collapsed-menu').trigger('mouseenter');
+    menuExpanded = true;
+  });
+
+  $("#sections").on('mouseenter touchmove', function() {
+    if (menuExpanded) {
+      $('#header-nav').trigger('mouseleave');
+      menuExpanded = false;
+    }
+  });
+
+  // mobile detection ?
+  $('html').on('touchstart', function() {
+    $(this).addClass('mobile');
   });
 
   // expanded menu
   $('#header-nav').hover(
-  	function() {}, 
+    function() {},
     function() {
       if ($(this).hasClass('expanded')) {
-      	$(this).hide().removeClass('expanded');
-        $('#collapsed-menu').show();
+        $(this).removeClass('expanded');
       }   
   });
 
   //----------------------------------------- WAYPOINTS
-  //-------------- http://imakewebthings.com/waypoints/
-  function doWaypoints() {  
+  function doWaypoints() {
 
-	  var $sections = $('.section'); 
-    
-    // update links direction down
-	  $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) {  
-  	  	  if (direction === 'down') { 
-  	  	  	$sections.removeClass('.active-link');
-  	  	  	updateLinks($(this.element).attr('id'));
-  	  	  	// if scrolling from home
-  	  	  	if (isActiveSection('work')) { 
-  	  	  	  animateHeader(direction); 
-  	  	  	} 
-  	  	  }
-  	  	},
-  	    //offset: '100%',
-        offset: '70%',
-  	    group: 'sections'
-  	  });
-    });
-    
-    // update links direction up
-    $sections.each(function() { 
-  	  new Waypoint({
-  	  	element: this,
-  	  	handler: function(direction) { 	  	  
-  	  	  if ((direction === 'up')) {
-  	  	    $sections.removeClass('.active-link'); 
-  	  	    updateLinks($(this.element).attr('id')); 
-  	  	    // if scrolling to home
-  	  	  	if (isActiveSection('home')) { 
-  	  	  	  animateHeader(direction); 
-  	  	  	} 
-  	  	  }	  	 
-  	  	},
-  	   // offset: 'bottom-in-view',
-        //offset: '-70%',
-        offset: function() { 
-          return -this.element.clientHeight;
+    $('.section').each(function() {
+
+      new Waypoint({
+        element: this,
+        handler: function(direction) {
+
+          var next = this.next() ? this.next() : this;
+          var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
+
+          updateState(direction, section);
+          updateLinks(section);
+
         },
-
-  	    group: 'sections'
-  	  });
+        offset: function() {
+          var h = isLandscapeLayout ? 300 : header_h[0]; 
+          return -(this.element.clientHeight - h);
+        },
+        group: 'sections'
+      });
     });
   }
 
-  //------------------------------------------- animateHeader
-  function animateHeader(direction) { 
 
-    // switch headers
-	  $('#site').toggleClass('big-header small-header');
+  //--------------------------------------------- updateState
+  function updateState(direction, section) {
 
-  	// menu collapsed/expanded changes over 480 width
-    // or in landscape mode
-  	if (ww.actual > marks[1] || wh.actual < ww.actual) {
-      // switch menus
-      if (direction === 'down') {
-        $('#header-nav').hide(function() {
-          $('#collapsed-menu').css('display', 'inline-block');
-        }).addClass('expanded');
-      } else {
-        $('#collapsed-menu').hide(function() {
-  	  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	    });
-      }
+    if (direction === 'up' && section === 'home') {
+      $('#site').addClass('state1').removeClass('state2');
+    } 
+    else if (direction === 'down' && section === 'work') {
+      $('#site').addClass('state2').removeClass('state1');
     }
   }
 
   //------------------------------------------- refreshHeader
-  function refreshHeader() { 
-    // home menu is always expanded and header big
-    $('#collapsed-menu').hide(function() {
-  	  $('#header-nav').css('display', 'inline-block').removeClass('expanded');
-  	});
-    $('#site').removeClass('small-header').addClass('big-header');
+  function refreshHeader(section) { 
+    if (section === '#home') { 
+      updateState('up', '#home');
+    } 
   }
 
   //----------------------------------------- centerContainer
-  function centerContents(section) {
-    var $section = $(section),
-        $header = $section.find('.header'),
-        h = ($section.height() - $header.height())/2;
+  function centerContents(section) { 
+    var $section = $(section).find('.container'),
+        $header = $section.find('.header-wrapper'),
+        h_content = $header.outerHeight(),
+        h_container = wh.actual;
 
-        $header.css('transform', 'none');
+    // add position relative to section
+    $section.css('position', 'relative');
 
-      $header.animate({'top': h}, 'slow');
+    if (section === '#home') {
+      h_container = wh.actual - $('#main-header').outerHeight();
+      // TODO h < 0
+      if (isLandscapeLayout) {
+        h_container = wh.actual - header_h[4];
+      }
+    } 
+
+    // contact section
+    else { 
+      var h_footer = $('footer').height();
+
+      h_container = wh.actual - $('footer').height();
+
+      if (!isLandscapeLayout()) { 
+        // there is also header at top
+        h_container = h_container - $('#main-header').height();
+      } 
+
+      if (h_container < h_content) { 
+        // make contact sub-header full-width
+        $header.find('.sub-header').css({'width': 'auto'});
+
+        h_content = $header.outerHeight();  
+
+        // TODO on mobile landscape still not enough
+      }
+    }
+   
+    var h = (h_container - h_content)/2;
+
+    $section.animate({'top': h}, '');
   };
+
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
-    // clicking from home, get small header height
-    var h = (isActiveSection('home')) ? smallHeaderH : $('#main-header').height();
 
-    // if under 480px, header height is 100px always
-    if (ww.actual < marks[1]) { h = 100; }
+    // clicking from home, get small header height (unless section is home)
+    var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
 
-    // if under 350px, header height is 80px always
-    if (ww.actual < marks[0]) { h = 80; }
+    // if under 480px, header height is header_h[2] always
+    if (ww.actual < marks[1]) { h = header_h[2]; }
 
-	  $('body, html')
-	    .stop()
-	    .animate({
-	  	  scrollTop: $(section).offset().top - h
-	    }, 250, function(){ 
-	    $('html, body').clearQueue();
-   	  });
+    // if under 350px, header height is header_h[3] always
+    if (ww.actual < marks[0]) { h = header_h[3]; }
+
+    // landscape has side menu except at home section
+    if (isLandscapeLayout()) { 
+      if (section === '#home') { h = header_h[4]; }
+      else { h = 0; }
+    }
+    
+    $('body, html')
+      .stop()
+      .animate({
+        scrollTop: $(section).offset().top - h
+      }, 250, function(){
+        $('html, body').clearQueue();
+    }); 
   }
 
   //--------------------------------------------- updateLinks
   function updateLinks(id) { 
-    $('#header-nav li').removeClass('active-link no-touch'); 
-    
-    if (id.charAt(0) === '#') {
-      $("#header-nav a[href='"+id+"']").parent().addClass('active-link');
-    } else {
-      $("#header-nav a[href='#"+id+"']").parent().addClass('active-link');
-    }
+    var $header_nav = $('#header-nav');
 
-    if ($('#header-nav a.active-link').attr('href') !== $('#header-nav a:hover').attr('href')) {
-      $('#header-nav a:hover').parent().addClass('no-touch');
-    }
+    $header_nav.find('li').removeClass('active-link').addClass('no-touch'); 
+    
+    if (id.charAt(0) !== '#') { id = '#' + id; }
+
+    $header_nav.find('a[href="'+id+'"]').parent().addClass('active-link').removeClass('no-touch');
   }
 
   //----------------------------------------- isActiveSection
   function isActiveSection(id) {
-  	return ($('#header-nav .active-link a').attr('href') === '#' + id);
+    return ($('#header-nav .active-link a').attr('href') === '#' + id);
   }
+
+  //--------------------------------------- isLandscapeLayout
+  function isLandscapeLayout() {
+    return ($('html').css('content') === 'isLandscape' || wh.actual < ww.actual/3);
+  };
   
-  //------------------------------------------ inSameWidthGap
-  // says if actual width and previous width
-  // are in the same interval defined by values in marks
-  function inSameWidthGap() { 
-    var a = false;
-    for (var i = 0; i < (marks.length - 1); i++) {
-      if (a) return a;
-      if (inSameInterval(ww.actual, ww.previous, marks[i], marks[i+1])) {
-        a = true;
-      }
-    }
-    return a;
-  }
-
-  //------------------------------------------ inSameInterval
-  // check if two values v1, v2 
-  // are in the same interval defined by [i1, i2]
-  function inSameInterval(v1, v2, i1, i2) { 
-  	var a = false;
-    if (v1 <= i2 && v2 <= i2 && v1 >= i1 && v2 >= i1) {
-    	a = true;
-    } 
-    return a;
-  }
-
 
   $(document).ready(function () {
     //------------------------------------------------- fitText
-    $("#home .fittextjs").fitText(.43, { minFontSize: '70px', maxFontSize: '150px' });
+    $("#home .fittextjs").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#work .fittextjs").fitText(.29, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#about .fittextjs").fitText(.39, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#contact .fittextjs.hello").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
+    $("#contact .fittextjs.mail").fitText(1.2, { minFontSize: '20px', maxFontSize: '150px' });
+
     centerContents('#home');
-    $("#work .fittextjs").fitText(.29, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#about .fittextjs").fitText(.38, { minFontSize: '60px', maxFontSize: '150px' });
-    $("#contact .fittextjs").fitText(1.179, { minFontSize: '23px', maxFontSize: '150px' });
-    centerContents('#contact');    
+    centerContents('#contact');
+
+       
     //---------------------------------------------- supersized
     var slides = [];
     var projects = [

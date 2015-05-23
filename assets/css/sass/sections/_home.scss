@@ -1,62 +1,23 @@
-.home.section {
-	.container {
-		min-height: 350px;
-		height: calc(100vh - #{$header_h_big});
+.home {
 
-		@media screen and (max-width: 480px) {
-	  	height: calc(100vh - 100px);
-	  }
+  .header {
 
-	  @media screen and (max-width: 350px) {
-	  	height: calc(100vh - 80px);
-	  }
+    @extend %clearfix;
 
-	}
-	
-	.header {
-		@media screen and (min-width: 350px) and (min-height: 500px) {
-	  	@include vCentered(40%);
-	  }
+    .smile::before {
+      content: " ";
+      width: .55em;
+      height: .5em;
+      display: inline-block;
+      background: url('../images/smile.png') no-repeat 2.5% 34%;
+      background-size: contain;
+      position: relative;
+      top: .1em;
+    }
+  }
 
-	  position: relative;
-	  width: cp(560px, $max_layout_width);
-
-	  @media screen and (max-width: 750px) and (min-height: 500px) {
-	  	width: 60%;
-	  }
-
-	  @media screen and (max-width: 650px) {
-	  	width: 100%;
-	  }
-
-	  @media screen and (max-width: 350px) {
-	  	margin-top: 5%;
-	  }
-   
-    h1 {
-	    &:first-child::before {
-	      content: " ";
-	      width: .55em;
-	      height: .5em;
-	      display: inline-block;
-	      background: url('../images/smile.png') no-repeat 2.5% 34%;
-	      background-size: contain;
-	      position: relative;
-	      top: .1em;
-	    }
-
-	    @media screen and (max-width: 350px) {
-	    	font-size: .9em;
-	    }
-     }
-  
-		.sub-header {
-		  float: right;
-
-		  @media screen and (max-width: 480px) {
-		    float: none;
-		    font-size: .2em;
-		  }
-		}
-	}
+  .sub-header {
+    width: 95%;
+    float: right;
+  }
 }
