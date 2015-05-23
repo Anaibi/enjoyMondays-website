@@ -113,12 +113,12 @@ footer.container .site-info {
 footer.container .social-links {
   font-size: 0; }
 
-.home.section .header:before, .container:before, .home.section .header:after, .container:after {
+.home .header:before, .container:before, .home .header:after, .container:after {
   content: "";
   display: table; }
-.home.section .header:after, .container:after {
+.home .header:after, .container:after {
   clear: both; }
-.home.section .header, .container {
+.home .header, .container {
   zoom: 1; }
 
 a {
@@ -154,7 +154,7 @@ img {
   height: auto;
   display: block; }
 
-.home.section .header .smile::before {
+.home .header .smile::before {
   content: " ";
   width: .55em;
   height: .5em;
@@ -163,7 +163,7 @@ img {
   background-size: contain;
   position: relative;
   top: .1em; }
-.home.section .sub-header {
+.home .sub-header {
   width: 95%;
   float: right; }
 
@@ -244,26 +244,18 @@ img {
   right: 10px;
   font-size: 0; }
 
-@media screen and (max-width: 1350px) and (min-width: 650px) {
-  .about.section .content {
-    padding: 0 0 12%; } }
-@media screen and (max-height: 600px) and (orientation: landscape) {
-  .about.section .content.tiles.three .tile {
-    width: 32%;
-    margin: auto; } }
-.about.section .content .img-wrapper {
+.about .content .img-wrapper {
   width: 70%;
   max-width: 200px;
   margin: 0 auto 8%; }
-.about.section .content hr {
+.about .content hr {
   width: 15%;
   margin: 0 auto 5%; }
-.about.section .content p {
+.about .content p {
   width: 80%;
-  margin: auto;
-  word-spacing: -1px; }
+  margin: auto; }
   @media screen and (max-width: 480px) {
-    .about.section .content p {
+    .about .content p {
       width: 100%; } }
 
 .contact.section .header .hello {
@@ -406,7 +398,18 @@ p {
   padding: 0 6.66667%; }
 
 .content {
-  clear: both; }
+  clear: both;
+  padding: 0 8% 12%;
+  text-align: center; }
+  @media screen and (max-width: 1350px) and (min-width: 650px) {
+    .content {
+      padding: 0 0 12%; } }
+  @media screen and (max-width: 650px) {
+    .content {
+      padding: 0 0 12%; } }
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    .content {
+      padding: 0 0 12%; } }
 
 #main-header {
   position: fixed;
@@ -733,15 +736,6 @@ p {
       @media screen and (max-width: 650px) {
         .section .sub-header hr {
           width: 15%; } }
-  .section .content {
-    padding: 0 8% 12%;
-    text-align: center; }
-    @media screen and (max-width: 650px) {
-      .section .content {
-        padding: 0 0 12%; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
-      .section .content {
-        padding: 0 0 12%; } }
 
 @media screen and (max-width: 650px) {
   .tiles {
@@ -764,6 +758,10 @@ p {
   @media screen and (max-width: 350px) {
     .tiles.three .tile {
       width: 100%; } }
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    .tiles.three .tile {
+      width: 32%;
+      margin: auto; } }
 
 footer.container {
   height: 100px; }

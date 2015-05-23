@@ -121,6 +121,11 @@
         @media screen and (max-width: 350px) {
           width: 100%;
         }
+
+        @media #{$LANDSCAPE} {
+          width: 32%;
+          margin: auto;
+        }
       }
     }
   }

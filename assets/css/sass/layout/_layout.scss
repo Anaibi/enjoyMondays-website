@@ -109,6 +109,20 @@ p {
 // ----------------------------------- CONTENT CLASS
 .content {
 	clear: both;
+  padding: 0 8% 12%;
+  text-align: center;
+
+  @media screen and (max-width: 1350px) and (min-width: 650px) {
+    padding: 0 0 12%;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 0 0 12%;
+  }
+
+  @media #{$LANDSCAPE} {
+    padding: 0 0 12%;
+  }
 }
 
 // ------------------------------------- MAIN HEADER
@@ -157,20 +171,6 @@ p {
 		  @media screen and (max-width: 650px) {
 		  	width: 15%;
 		  }
-		}
-	}
-	
-	// ------------------ CONTENT
-	.content {
-		padding: 0 8% 12%;
-		text-align: center;
-		  
-		@media screen and (max-width: 650px) {
-			padding: 0 0 12%;
-		}
-
-		@media #{$LANDSCAPE} {
-			padding: 0 0 12%;
 		}
 	}
 }

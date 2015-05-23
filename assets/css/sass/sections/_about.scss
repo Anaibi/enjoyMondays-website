@@ -1,17 +1,6 @@
 .about	{
 
-  &.section .content {
-
-  	@media screen and (max-width: 1350px) and (min-width: 650px) {
-		  	padding: 0 0 12%;
-		}
-
-  	&.tiles.three .tile {
-  		@media #{$LANDSCAPE} {
-  			width: 32%;
-        margin: auto;
-  		}
-  	}
+  .content {
 
     .img-wrapper {
       width: 70%;
@@ -27,11 +16,10 @@
     p {
       width: 80%;
       margin: auto;
-      word-spacing: -1px;
 
       @media screen and (max-width: 480px) {
-		  	width: 100%;
-			}	
+        width: 100%;
+      }
     }
   }
 }
