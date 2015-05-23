@@ -49,6 +49,15 @@ p {
 }
 
 
+
+@media #{$LANDSCAPE} {
+	#site {
+	  width: calc(100vw - #{$layout_verticalSidebar_padding});
+	  padding-left: $layout_verticalSidebar_padding;
+	  overflow: hidden;
+	}
+}
+
 // ------------------------------------ STATE 1
 
 .state1 {
@@ -84,12 +93,6 @@ p {
 
   @media #{$LANDSCAPE} {
   	@include setLayoutHeights($header_h_5, $footer_h_2);
-
-	  &#site {
-	    width: calc(100vw - #{$layout_verticalSidebar_padding});
-	    padding-left: $layout_verticalSidebar_padding;
-	    overflow: hidden;
-	  }
 	}
 }
 
