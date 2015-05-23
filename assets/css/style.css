@@ -88,30 +88,18 @@ body {
   .home.section .sub-header {
     font-size: 1.2em; } }
 
-.work.section .header h1 {
-  text-align: center; }
-
 .about.section {
   font-size: .9em; }
   .about.section .content p {
     word-spacing: .1em; }
 
-@media screen and (max-width: 650px) {
-  .contact.section .header {
-    text-align: right; } }
-@media screen and (max-width: 350px) {
-  .contact.section .header {
-    text-align: center; } }
-@media screen and (max-device-height: 550px) and (orientation: landscape) {
-  .contact.section .header h1:last-child {
-    font-size: .85em; } }
-.contact.section .header h1 a {
+.contact.section .header .mail a {
   color: #E9E8E3; }
-.contact.section .header .sub-header {
-  font-size: .9em;
-  font-weight: 100; }
-  @media screen and (max-width: 480px) {
-    .contact.section .header .sub-header {
+.contact.section .sub-header {
+  font-weight: 400;
+  font-size: .9em; }
+  @media screen and (max-width: 650px) {
+    .contact.section .sub-header {
       font-weight: 100; } }
 
 @media screen and (max-width: 650px) {
@@ -278,20 +266,16 @@ img {
     .about.section .content p {
       width: 100%; } }
 
-.contact.section .header-wrapper .header {
-  text-align: right; }
-  .contact.section .header-wrapper .header .hello {
-    display: inline-block;
-    width: 60%; }
-  .contact.section .header-wrapper .header .mail a {
-    float: right; }
-  @media screen and (max-width: 650px) {
-    .contact.section .header-wrapper .header {
-      text-align: center; }
-      .contact.section .header-wrapper .header .hello {
-        width: 100%; }
-      .contact.section .header-wrapper .header .mail a {
-        float: none; } }
+.contact.section .header .hello {
+  display: inline-block;
+  width: 60%; }
+.contact.section .header .mail a {
+  float: right; }
+@media screen and (max-width: 650px) {
+  .contact.section .header .hello {
+    width: 100%; }
+  .contact.section .header .mail a {
+    float: none; } }
 .contact.section .sub-header {
   float: right; }
   @media screen and (max-width: 1350px) {
@@ -330,6 +314,11 @@ body {
 p {
   padding-bottom: .3em; }
 
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  #site {
+    width: calc(100vw - 70px);
+    padding-left: 70px;
+    overflow: hidden; } }
 .state1 #main-header {
   height: 139px; }
 .state1 #sections::before {
@@ -408,11 +397,7 @@ p {
     height: 100%;
     min-height: calc(100vh - 60px); }
     .state2 #sections .section.last {
-      min-height: calc(100vh - 140px); }
-  .state2#site {
-    width: calc(100vw - 70px);
-    padding-left: 70px;
-    overflow: hidden; } }
+      min-height: calc(100vh - 140px); } }
 
 .container {
   max-width: 1200px;
@@ -716,18 +701,27 @@ p {
     width: 100%; }
   .section .header-wrapper {
     display: inline-block;
-    padding: 10% 0; }
-    .section .header-wrapper .header {
-      text-align: center; }
+    padding: 10% 0;
+    text-align: center; }
     @media screen and (max-width: 650px) {
       .section .header-wrapper {
-        width: 70%; } }
+        width: 70%;
+        padding: 3% 0; } }
     @media screen and (max-width: 480px) {
       .section .header-wrapper {
         width: 80%; } }
     @media screen and (max-width: 350px) {
       .section .header-wrapper {
         width: 100%; } }
+    @media screen and (max-height: 600px) and (orientation: landscape) {
+      .section .header-wrapper {
+        padding: 3% 0; } }
+  @media screen and (min-width: 650px) {
+    .contact .header-wrapper {
+      text-align: right; } }
+  @media screen and (max-width: 650px) {
+    .contact .header-wrapper {
+      width: 100%; } }
   .section .sub-header {
     text-align: center; }
     .section .sub-header hr {

@@ -1,58 +1,56 @@
 .contact.section {
 
-	.header-wrapper .header {
+  .header {
 
-		text-align: right;
+    .hello {
+      display: inline-block;
+      width: 60%;
+    }
 
-		.hello {
-			display: inline-block;
-			width: 60%;
-		}
-		.mail a {
-			float: right;
-		}
+    .mail a {
+      float: right;
+    }
 
-		@media screen and (max-width: 650px) {
-			text-align: center;
+    @media screen and (max-width: 650px) {
 
-			.hello {
-				width: 100%;
-			}
+      .hello {
+        width: 100%;
+      }
 
-			.mail a {
-				float: none;
-			}
-		}
-	}
+      .mail a {
+        float: none;
+      }
+    }
+  }
+  
+  .sub-header {
 
-	.sub-header {
-		  
-		float: right;
+    float: right;
 
-		@media screen and (max-width: 1350px) {
-			width: 44%;
-		  margin-right: 4%;
-		}
+    @media screen and (max-width: 1350px) {
+      width: 44%;
+      margin-right: 4%;
+    }
 
-		@media screen and (max-width: 650px) {
-			width: 100%;
-		  margin: 0;
-		}
+    @media screen and (max-width: 650px) {
+      width: 100%;
+      margin: 0;
+    }
 
-		@media screen and (max-width: 480px) {
-			float: none;
-		}
+    @media screen and (max-width: 480px) {
+      float: none;
+    }
 
-		@media #{$LANDSCAPE} {
-			float: right;
-		}
-	}
+    @media #{$LANDSCAPE} {
+      float: right;
+    }
+  }
 }
 
 .state2 {
-	@media #{$LANDSCAPE} {
-		#sections .contact.section.last {
+  @media #{$LANDSCAPE} {
+    #sections .contact.section.last {
       height: calc(100vh - #{$footer_h_2});
     }
-	}
+  }
 }

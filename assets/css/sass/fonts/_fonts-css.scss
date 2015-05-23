@@ -24,10 +24,6 @@ body {
     letter-spacing: .17px;
     word-spacing: .12em;
     font-size: 1em;
-
-    @media #{$LANDSCAPE} {
-    //  font-size: .9em;
-    }
   }
 
   a {
@@ -92,14 +88,6 @@ body {
   }
 }
 
-// ------------------ SECTION 2 
-// ----------------------- WORK
-.work.section {
-
-  .header h1 {
-      text-align: center;
-  }
-}
 
 // ------------------ SECTION 3 
 // ---------------------- ABOUT
@@ -118,36 +106,17 @@ body {
 // -------------------- CONTACT
 .contact.section {
   .header {
+    .mail a {
+      color: $color1;
+    }
+  }
+
+  .sub-header {
+    font-weight: $font_weight_middle;
+    font-size: .9em;
 
     @media screen and (max-width: 650px) {
-      text-align: right;
-    }
-
-    @media screen and (max-width: 350px) {
-      text-align: center;
-    }
-
-    h1 {
-
-      &:last-child {
-        @media screen and (max-device-height: 550px) and (orientation: landscape) {
-          font-size: .85em;
-        }
-      }
-
-      a {
-        color: $color1;
-      }
-    }
-
-    .sub-header {
-    //  font-weight: $font_weight_middle;
-      font-size: .9em;
       font-weight: $font_weight_light;
-
-      @media screen and (max-width: 480px) {
-        font-weight: $font_weight_light;
-      }
     }
   }
 }

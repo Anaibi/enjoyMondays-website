@@ -1,9 +1,9 @@
-@mixin headerWrapper {	
-
+@mixin headerWrapper {
+	
 	@at-root {
 
 		// -------------- SECTION HOME
-		.home .header-wrapper {	
+		.home .header-wrapper {
 			width: cp(560px, $max_layout_width);
 		}
 
@@ -27,11 +27,7 @@
 
 		display: inline-block;
 		padding: 10% 0;
-
-		.header {
-			text-align: center;
-		}
-
+    text-align: center;
 
 		@media screen and (max-width: 650px) {
 			width: 70%;
@@ -39,15 +35,30 @@
 		}
 
 		@media screen and (max-width: 480px) {
-	    width: 80%;
+			width: 80%;
 		}
 
 		@media screen and (max-width: 350px) {
-	    width: 100%;
+			width: 100%;
 		}
 
 		@media #{$LANDSCAPE} {
 			padding: 3% 0;
+		}
+	}
+
+	@at-root {
+
+		// -------------- SECTION HOME
+		.contact .header-wrapper {	
+
+      @media screen and (min-width: 650px) {
+        text-align: right;
+      }
+
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
 		}
 	}
 }
