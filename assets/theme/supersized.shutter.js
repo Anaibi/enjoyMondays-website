@@ -39,7 +39,6 @@
 	 	/* Event Handlers
 		----------------------------*/
 	 	_nextSlideEvent:function(event,nextslide,liveslide){
-	 		console.log("--NEXT SLIDE EVENT HANDLER");
 			var $this = $('#supersized');
 			switch($.supersized.api.options.transition){
 	    		case 6: case 'carouselRight':	// Carousel Right
@@ -73,9 +72,7 @@
 	 		//if(theme._initialized) return;
 	 		if(!theme._initialized) theme._setSliderAnimations();
 	 		theme._initialized = true;
-	 		
-	 		console.log("-- THEME INIT");
-	 		
+	 			 		
 	 		//$('li.activeslide').find('img').fadeIn(1000);	
 				 
 	 		/*
@@ -196,8 +193,7 @@
 			}
 			
 		    $(vars.play_button).click(function() {
-		    	console.log("--THEME PLAY BUTTON");
-				api.playToggle();						    
+					api.playToggle();						    
 		    });
 			
 			
@@ -278,12 +274,10 @@
 		----------------------------*/
 	 	playToggle : function(state){	 		
 	 		if (state =='play'){
-	 			console.log("--THEME PLAY TOGGLE: play");
 	 			// If image, swap to pause
 	 			if ($(vars.play_button).attr('src')) $(vars.play_button).attr("src", vars.image_path + "pause.png");
 				if (api.options.progress_bar && !vars.is_paused) theme.progressBar();
 	 		}else if (state == 'pause'){
-	 			console.log("--THEME PLAY TOGGLE: pause");
 	 			// If image, swap to play
 	 			if ($(vars.play_button).attr('src')) $(vars.play_button).attr("src", vars.image_path + "play.png");
         		if (api.options.progress_bar && vars.is_paused)$(vars.progress_bar).stop().animate({left : -$(window).width()}, 0 );
@@ -361,7 +355,6 @@
 	 	
 	 	
 	 	,show:function(){	 
-	 		console.log("--THEME SHOW");		
 	 		var $controls = $('#controls-wrapper'); 
 	 		$('#progress-back').css({display:'block'}).animate({bottom : $controls.height(), avoidTransforms : true}, 500 );
 	 		$controls.css({display:'block'}).animate({bottom : 0, avoidTransforms : true}, 500 );
@@ -374,7 +367,6 @@
 	 		
 	 	}
 	 	,hide:function(){
-	 		console.log("--THEME HIDE");
 	 		$('#progress-back').css({display:'block'}).animate({bottom : -150, avoidTransforms : true}, 500 );
 	 		$('#controls-wrapper').css({display:'block'}).animate({bottom : -150, avoidTransforms : true}, 500 );
 	 		

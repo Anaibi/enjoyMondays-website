@@ -1,5 +1,5 @@
 $(function() {
-var done = false, i=1;
+
   var ww = {'actual' : $(window).width()};
       ww.previous = ww.actual;
 
@@ -13,7 +13,7 @@ var done = false, i=1;
   var resizeTimer;
 
   $(window).load(function () {
-  	doWaypoints();
+    doWaypoints();
   });
 
   // Done Resizing Event
@@ -45,7 +45,8 @@ var done = false, i=1;
 
   });
 
-  //-------------------------------------- MENU FUNCTIONALITY
+
+  //---------------------------------------------- MENU
   //main menu navigation
   $('#header-nav a').click(function(e){     
     e.preventDefault();
@@ -63,10 +64,11 @@ var done = false, i=1;
   // collapsed menu mobile
   var menuExpanded = false;
   $('#collapsed-menu a').on('click touchstart', function (e) {
-      e.preventDefault(); 
-      $('#collapsed-menu').trigger('mouseenter'); 
-      menuExpanded = true;
+    e.preventDefault();
+    $('#collapsed-menu').trigger('mouseenter');
+    menuExpanded = true;
   });
+
   $("#sections").on('mouseenter touchmove', function() {
     if (menuExpanded) {
       $('#header-nav').trigger('mouseleave');
@@ -91,28 +93,23 @@ var done = false, i=1;
   //----------------------------------------- WAYPOINTS
   function doWaypoints() {
 
-    var $sections = $('.section'); 
-
-    $sections.each(function() {
+    $('.section').each(function() {
 
       new Waypoint({
         element: this,
         handler: function(direction) {
 
           var next = this.next() ? this.next() : this;
-
           var section = (direction === 'up') ? $(this.element).attr('id') : $(next.element).attr('id');
 
           updateState(direction, section);
           updateLinks(section);
 
         },
-
         offset: function() {
           var h = isLandscapeLayout ? 300 : header_h[0]; 
           return -(this.element.clientHeight - h);
         },
-
         group: 'sections'
       });
     });
@@ -124,7 +121,8 @@ var done = false, i=1;
 
     if (direction === 'up' && section === 'home') {
       $('#site').addClass('state1').removeClass('state2');
-    } else if (direction === 'down' && section === 'work') {
+    } 
+    else if (direction === 'down' && section === 'work') {
       $('#site').addClass('state2').removeClass('state1');
     }
   }

@@ -5,7 +5,7 @@
     opacity: 0;
     @include transition(opacity 1s);
 
-    /* redefine font-size put to 0 on parent a */
+    // redefine font-size put to 0 on parent a
     font-size: 30px;
 
     @media screen and (max-width: 650px) {
@@ -74,7 +74,7 @@
       position: relative;
       width: 95%;
       margin: auto;
-      /* remove extra height otherwise adds to tile */
+      // remove extra height otherwise adds to tile
       font-size: 0;
       color: inherit;
 
@@ -102,7 +102,7 @@
 }
 
 @mixin grid {
-  .tiles {
+  .grid {
     @media screen and (max-width: 650px) {
       padding: 0 0 11%;
     }

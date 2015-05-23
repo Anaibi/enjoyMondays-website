@@ -11,23 +11,22 @@
 
   // ----------------------------- STATE 1
   .state1 {
-
     #logo {
-    	width: $logo_w_big;
-    	padding-top: 40px;
+      width: $logo_w_big;
+      padding-top: 40px;
 
-    	@media screen and (max-width: 650px) { 
-    		width: 25%;
-    	}
+      @media screen and (max-width: 650px) {
+        width: 25%;
+      }
 
-    	@media screen and (max-width: 480px) {
-    		margin: 0 auto;
-      	padding: 2.5% 0;
-    	}
+      @media screen and (max-width: 480px) {
+        margin: 0 auto;
+        padding: 2.5% 0;
+      }
 
-    	@media screen and (max-width: 350px) {
-    		width: 20%;
-    	}
+      @media screen and (max-width: 350px) {
+        width: 20%;
+      }
 
       @media #{$LANDSCAPE} {
         width: 18%;
@@ -40,7 +39,6 @@
 
   // ----------------------------- STATE 2
   .state2 {
-    
     #logo {
       width: $logo_w_small;
       padding-top: 18px;

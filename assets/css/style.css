@@ -177,7 +177,6 @@ img {
   -webkit-transition: opacity 1s;
   -ms-transition: opacity 1s;
   transition: opacity 1s;
-  /* redefine font-size put to 0 on parent a */
   font-size: 30px; }
   @media screen and (max-width: 650px) {
     .work #portfolio .details-wrapper {
@@ -224,7 +223,6 @@ img {
   position: relative;
   width: 95%;
   margin: auto;
-  /* remove extra height otherwise adds to tile */
   font-size: 0;
   color: inherit; }
   @media screen and (max-width: 480px) {
@@ -738,28 +736,28 @@ p {
           width: 15%; } }
 
 @media screen and (max-width: 650px) {
-  .tiles {
+  .grid {
     padding: 0 0 11%; } }
-.tiles .tile {
+.grid .tile {
   display: inline-block;
   width: 50%;
   margin-bottom: 4%;
   vertical-align: top; }
   @media screen and (max-width: 480px) {
-    .tiles .tile {
+    .grid .tile {
       margin-bottom: 10%;
       width: 100%; } }
-.tiles.three .tile {
+.grid.three .tile {
   width: 33%; }
   @media screen and (max-width: 650px) {
-    .tiles.three .tile {
+    .grid.three .tile {
       width: 100%;
       margin: 10% auto; } }
   @media screen and (max-width: 350px) {
-    .tiles.three .tile {
+    .grid.three .tile {
       width: 100%; } }
   @media screen and (max-height: 600px) and (orientation: landscape) {
-    .tiles.three .tile {
+    .grid.three .tile {
       width: 32%;
       margin: auto; } }
 
@@ -772,18 +770,18 @@ footer.container {
     footer.container {
       height: 80px; } }
   footer.container > div {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    height: 100%; }
+    footer.container > div > * {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
     @media screen and (max-width: 650px) {
       footer.container > div {
         display: block;
         width: 100%;
-        margin: 3% auto 0;
-        transform: none;
-        top: 0; } }
+        height: 50%; } }
   footer.container .site-info {
     float: left; }
   footer.container .social-links {

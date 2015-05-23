@@ -1,37 +1,36 @@
 @mixin setLayoutHeights($h, $f) {
-  
+
   #main-header {
     height: $h;
   }
 
   #sections {
-  	
-  	&::before {
-	    height: $h;
-  	}
 
-	  .section {
-	    height: 100%;
-	    min-height: calc(100vh - #{$h});
+    &::before {
+      height: $h;
+    }
 
-	    &.last {
-	    	$th: $h + $f;
-	    	min-height: calc(100vh - #{$th});
-	    }
-	  }
-	}
+    .section {
+      height: 100%;
+      min-height: calc(100vh - #{$h});
+
+      &.last {
+        $th: $h + $f;
+        min-height: calc(100vh - #{$th});
+      }
+    }
+  }
 }
 
 
 // ----------------------------------- HTML and BODY
-
 html {
   height: 100%;
 
-  // add some kind of js detectable mark :/
+  // add some kind of js detectable mark
   @media #{$LANDSCAPE} {
-  	content: "isLandscape";
- 	}
+    content: "isLandscape";
+  }
 }
 
 body {
@@ -40,40 +39,38 @@ body {
   overflow-y: scroll;
 
   @media screen and (max-width: 650px) {
-  	text-align: center;
+    text-align: center;
   }
 }
 
 p {
-	padding-bottom: .3em;
+  padding-bottom: .3em;
 }
-
-
 
 @media #{$LANDSCAPE} {
-	#site {
-	  width: calc(100vw - #{$layout_verticalSidebar_padding});
-	  padding-left: $layout_verticalSidebar_padding;
-	  overflow: hidden;
-	}
+  #site {
+    width: calc(100vw - #{$layout_verticalSidebar_padding});
+    padding-left: $layout_verticalSidebar_padding;
+    overflow: hidden;
+  }
 }
 
-// ------------------------------------ STATE 1
 
+// ------------------------------------ STATE 1
 .state1 {
 
   @include setLayoutHeights($header_h_1, $footer_h_1);
 
   @media screen and (max-width: 480px) {
-  	@include setLayoutHeights($header_h_3, $footer_h_1);
+    @include setLayoutHeights($header_h_3, $footer_h_1);
   }
 
   @media screen and (max-width: 350px) {
-  	@include setLayoutHeights($header_h_4, $footer_h_1);
+    @include setLayoutHeights($header_h_4, $footer_h_1);
   }
 
   @media #{$LANDSCAPE} {
-  	@include setLayoutHeights($header_h_5, $footer_h_2);
+    @include setLayoutHeights($header_h_5, $footer_h_2);
   }
 }
 
@@ -92,23 +89,24 @@ p {
   }
 
   @media #{$LANDSCAPE} {
-  	@include setLayoutHeights($header_h_5, $footer_h_2);
-	}
+    @include setLayoutHeights($header_h_5, $footer_h_2);
+  }
 }
 
 
 // --------------------------------- CONTAINER CLASS
 .container {
-	max-width: $max_layout_width;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0 cp($layout_padding, $max_layout_width);
-	@extend %clearfix;
+  max-width: $max_layout_width;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 cp($layout_padding, $max_layout_width);
+  @extend %clearfix;
 }
+
 
 // ----------------------------------- CONTENT CLASS
 .content {
-	clear: both;
+  clear: both;
   padding: 0 8% 12%;
   text-align: center;
 
@@ -131,48 +129,47 @@ p {
 
 
 // ---------------------------------------- SECTIONS
-
 #sections {
-	&::before {
-		content: " ";
-		display: block;
-		width: 100%;
-	}
+  &::before {
+    content: " ";
+    display: block;
+    width: 100%;
+  }
 }
 
 
 // ----------------------------------------- SECTION
 .section {
-	
-	text-align: right;
+
+  text-align: right;
 
   @media screen and (max-width: 650px) {
     text-align: center;
   }
 
 
-	// ----------- HEADER WRAPPER
-	  
-	@include headerWrapper;
+  // ----------- HEADER WRAPPER
 
-			
-	// --------------- SUB-HEADER
-	.sub-header {
+  @include headerWrapper;
 
-		text-align: center;
-		
-		hr {
-			border: 0;
-			height: 3px;
-			width: 20%;
-			margin: 2% auto 4%;
-			clear: both;
 
-		  @media screen and (max-width: 650px) {
-		  	width: 15%;
-		  }
-		}
-	}
+  // --------------- SUB-HEADER
+  .sub-header {
+
+    text-align: center;
+
+    hr {
+      border: 0;
+      height: 3px;
+      width: 20%;
+      margin: 2% auto 4%;
+      clear: both;
+
+      @media screen and (max-width: 650px) {
+        width: 15%;
+      }
+    }
+  }
 }
 
 
@@ -184,4 +181,3 @@ p {
 // ------------------------------------------ FOOTER
 
 @include footer;
-

@@ -1,7 +1,6 @@
 @mixin headerWrapper {
 	
 	@at-root {
-
 		// -------------- SECTION HOME
 		.home .header-wrapper {
 			width: cp(560px, $max_layout_width);
@@ -24,10 +23,9 @@
 	}
 
 	.header-wrapper {
-
 		display: inline-block;
 		padding: 10% 0;
-    text-align: center;
+		text-align: center;
 
 		@media screen and (max-width: 650px) {
 			width: 70%;
@@ -48,17 +46,16 @@
 	}
 
 	@at-root {
+		// ----------- SECTION C0NTACT
+		.contact .header-wrapper {
 
-		// -------------- SECTION HOME
-		.contact .header-wrapper {	
+			@media screen and (min-width: 650px) {
+				text-align: right;
+			}
 
-      @media screen and (min-width: 650px) {
-        text-align: right;
-      }
-
-      @media screen and (max-width: 650px) {
-        width: 100%;
-      }
+			@media screen and (max-width: 650px) {
+				width: 100%;
+			}
 		}
 	}
 }

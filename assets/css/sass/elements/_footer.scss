@@ -11,14 +11,17 @@
     } 
 
     > div {
-      @include vCentered;
+
+      height: 100%;
+
+      > * {
+        @include vCentered;
+      }
 
       @media screen and (max-width: 650px) {
         display: block;
         width: 100%;
-        margin: 3% auto 0;
-        transform: none;
-        top: 0;
+        height: 50%;
       }
     }
     
