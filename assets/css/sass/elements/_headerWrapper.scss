@@ -35,6 +35,7 @@
 
 		@media screen and (max-width: 650px) {
 			width: 70%;
+			padding: 3% 0;
 		}
 
 		@media screen and (max-width: 480px) {
@@ -43,6 +44,10 @@
 
 		@media screen and (max-width: 350px) {
 	    width: 100%;
+		}
+
+		@media #{$LANDSCAPE} {
+			padding: 3% 0;
 		}
 	}
 }
