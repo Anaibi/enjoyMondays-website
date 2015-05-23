@@ -1,7 +1,8 @@
 /*
 Error: File to import not found or unreadable: colors/_fonts-css.
-       Load path: /Users/tatianaburgos/Documents/Trabajos/enjoyMondays/usingGit/enjoyMondays-website/assets/css/sass
-        on line 2 of css/sass/style.scss
+       Load paths:
+         
+        on line 2 of sass/style.scss
 
 1: @import "colors/_colors-css";
 2: @import "colors/_fonts-css";
@@ -12,7 +13,7 @@ Error: File to import not found or unreadable: colors/_fonts-css.
 7: @import "partials/_generals";
 
 Backtrace:
-css/sass/style.scss:2
+sass/style.scss:2
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -56,4 +57,4 @@ css/sass/style.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: colors/_fonts-css.\A        Load path: /Users/tatianaburgos/Documents/Trabajos/enjoyMondays/usingGit/enjoyMondays-website/assets/css/sass\A         on line 2 of css/sass/style.scss\A \A 1: @import \"colors/_colors-css\";\A 2: @import \"colors/_fonts-css\";\A 3: \A 4: @import \"_settings\";\A 5: \A 6: @import \"partials/_mixins\";\A 7: @import \"partials/_generals\";"; }
+  content: "Error: File to import not found or unreadable: colors/_fonts-css.\A        Load paths:\A          \A         on line 2 of sass/style.scss\A \A 1: @import \"colors/_colors-css\";\A 2: @import \"colors/_fonts-css\";\A 3: \A 4: @import \"_settings\";\A 5: \A 6: @import \"partials/_mixins\";\A 7: @import \"partials/_generals\";"; }

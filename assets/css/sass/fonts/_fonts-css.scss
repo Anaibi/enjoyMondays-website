@@ -1,0 +1,145 @@
+$font_family_1: 'Lato', sans-serif !default;
+$font_family_2: 'Dosis', sans-serif !default;
+
+$base_font_size: 16px !default;
+
+body {
+  font-family: $font_family_1;
+  font-weight: $font_weight_light;
+  font-size: $base_font_size;
+
+  @media screen and (max-width: 250px) {
+    font-size: $base_font_size - 4;
+  }
+ 
+
+  h1 {
+    font-family: $font_family_2;
+    font-weight: $font_weight_bold;
+    font-size: 2em;
+  }
+
+  p {
+    line-height: 1.2;
+    letter-spacing: .17px;
+    word-spacing: .12em;
+    font-size: 1em;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  .fittextjs {
+    font-size: 1em;
+  }
+}
+
+
+// ---------------------------------- HEADER
+#header-nav {
+  
+  font-weight: 700;
+  font-size: 1.1em;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 650px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-width: 300px) {
+    font-size: .7em;
+  }
+
+  li {
+    &.active-link {
+      font-weight: $font_weight_boldest;
+    }
+
+    &:hover {
+      font-weight: $font_weight_boldest;
+    }
+  }
+}
+
+// --------------------------------- SECTION
+.section {
+
+  // ------------------------- HEADER
+  .header {
+    h1 {
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+}
+
+// -------------------------------- SECTIONS
+// ------------------ SECTION 1 
+// ----------------------- HOME
+.home.section {
+
+  .sub-header {
+
+    @media screen and (min-width: 480px) and (max-width: 650px) and (min-device-height: 550px) {
+      font-size: 1.2em;
+    }
+  }
+}
+
+
+// ------------------ SECTION 3 
+// ---------------------- ABOUT
+.about.section  {
+
+  font-size: .9em;
+
+  .content {
+    p {
+      word-spacing: .1em;
+    }
+  }
+}
+
+// ------------------ SECTION 4 
+// -------------------- CONTACT
+.contact.section {
+  .header {
+    .mail a {
+      color: $color1;
+    }
+  }
+
+  .sub-header {
+    font-weight: $font_weight_middle;
+    font-size: .9em;
+
+    @media screen and (max-width: 650px) {
+      font-weight: $font_weight_light;
+    }
+  }
+}
+
+
+// ---------------------------------- FOOTER
+
+footer.container {
+  @media screen and (max-width: 650px) {
+    font-size: 13px;
+  }
+
+  .site-info {
+    font-weight: $font_weight_bolder;
+    font-size: .95em;
+
+    a {
+      font-weight: font_weight_boldest;
+    }
+  }
+
+  .social-links {
+    // otherwise webkit adds margin 1em 
+    font-size: 0;
+  }
+}
