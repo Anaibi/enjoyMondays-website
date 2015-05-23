@@ -1,5 +1,30 @@
 .contact.section {
 
+	.header-wrapper .header {
+
+		text-align: right;
+
+		.hello {
+			display: inline-block;
+			width: 60%;
+		}
+		.mail a {
+			float: right;
+		}
+
+		@media screen and (max-width: 650px) {
+			text-align: center;
+
+			.hello {
+				width: 100%;
+			}
+
+			.mail a {
+				float: none;
+			}
+		}
+	}
+
 	.sub-header {
 		  
 		float: right;

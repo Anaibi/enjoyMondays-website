@@ -278,6 +278,20 @@ img {
     .about.section .content p {
       width: 100%; } }
 
+.contact.section .header-wrapper .header {
+  text-align: right; }
+  .contact.section .header-wrapper .header .hello {
+    display: inline-block;
+    width: 60%; }
+  .contact.section .header-wrapper .header .mail a {
+    float: right; }
+  @media screen and (max-width: 650px) {
+    .contact.section .header-wrapper .header {
+      text-align: center; }
+      .contact.section .header-wrapper .header .hello {
+        width: 100%; }
+      .contact.section .header-wrapper .header .mail a {
+        float: none; } }
 .contact.section .sub-header {
   float: right; }
   @media screen and (max-width: 1350px) {
@@ -524,12 +538,14 @@ p {
       margin: 0 auto; } }
   @media screen and (max-height: 600px) and (orientation: landscape) {
     .state1 #header-nav {
-      margin-top: 0;
-      position: relative;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%); } }
+      height: 100%;
+      margin-top: 0; }
+      .state1 #header-nav li {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); } }
   .state1 #header-nav.expanded {
     visibility: visible;
     opacity: 1;
@@ -687,10 +703,6 @@ p {
   @media screen and (max-width: 650px) {
     .section {
       text-align: center; } }
-  .section .header {
-    width: auto; }
-    .section .header a {
-      float: right; }
   .home .header-wrapper {
     width: 46.66667%; }
 
@@ -705,6 +717,8 @@ p {
   .section .header-wrapper {
     display: inline-block;
     padding: 10% 0; }
+    .section .header-wrapper .header {
+      text-align: center; }
     @media screen and (max-width: 650px) {
       .section .header-wrapper {
         width: 70%; } }

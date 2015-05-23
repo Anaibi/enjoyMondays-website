@@ -81,8 +81,13 @@
       }
 
       @media #{$LANDSCAPE} {
+
+        height: 100%;
         margin-top: 0;
-        @include vCentered;
+
+        li {  
+          @include vCentered;
+        }
       }
 
       &.expanded {
