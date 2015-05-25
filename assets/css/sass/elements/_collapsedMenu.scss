@@ -1,9 +1,7 @@
 @mixin collapsedMenu {
   #collapsed-menu {
 
-    @media #{$LANDSCAPE} {
-      display: none;
-    }
+    @include respond-to(landscape) { display: none; }
      
     a {
       display: block;
@@ -16,41 +14,24 @@
       background: url('../images/menu.png') no-repeat 30px;
     }
       
-    &:hover {
-      cursor: pointer;
-    }
-  }
+    &:hover { cursor: pointer; }
 
-
-  // ----------------------------- STATE 1
-  .state1 {
-    #collapsed-menu {
+    // ----------------------------- STATE 1
+    .state1 & {
       @include hide;
-
-      @media screen and (max-width: 480px) {
-        display: none;
-      }
+      @include respond-to(small) { display: none; }
     }
-  }
 
 
-  // ----------------------------- STATE 2
-  .state2 {
-    #collapsed-menu {
+    // ----------------------------- STATE 2
+    .state2 & {
       @include show;
       margin-top: 40px;
+      @include respond-to(small) { display: none; }
 
-      @media screen and (max-width: 480px) {
-        display: none;
-      }
-
-      &:hover {
-        @include hide;
-      }
+      &:hover { @include hide; }
     }
 
-    .expanded + #collapsed-menu {
-      @include hide;
-    }
+    .expanded + & { @include hide; }
   }
 }

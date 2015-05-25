@@ -158,10 +158,10 @@ $(function() {
 
       h_container = wh.actual - $('footer').height();
 
-      if (!isLandscapeLayout()) { 
+    //  if (!isLandscapeLayout()) { 
         // there is also header at top
         h_container = h_container - $('#main-header').height();
-      } 
+    //  } 
 
       if (h_container < h_content) { 
         // make contact sub-header full-width

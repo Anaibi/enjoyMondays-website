@@ -5,52 +5,41 @@
     .hello {
       display: inline-block;
       width: 60%;
+      @include respond-to(medium) { width: 100%; }
     }
 
     .mail a {
       float: right;
-    }
-
-    @media screen and (max-width: 650px) {
-
-      .hello {
-        width: 100%;
-      }
-
-      .mail a {
-        float: none;
-      }
+      @include respond-to(medium) { float: none; }
     }
   }
   
   .sub-header {
 
     float: right;
-
-    @media screen and (max-width: 1350px) {
+    @include respond-to(large) { 
       width: 44%;
       margin-right: 4%;
     }
 
-    @media screen and (max-width: 650px) {
+    @include respond-to(medium) { 
       width: 100%;
       margin: 0;
     }
 
-    @media screen and (max-width: 480px) {
+   @include respond-to(small) { 
       float: none;
     }
 
-    @media #{$LANDSCAPE} {
+    @include respond-to(landscape) { 
       float: right;
     }
   }
-}
 
-.state2 {
-  @media #{$LANDSCAPE} {
-    #sections .contact.section.last {
+  .state2 #sections &.last {
+    @include respond-to(landscape) { 
       height: calc(100vh - #{$footer_h_2});
     }
   }
 }
+

@@ -2,7 +2,7 @@
   #header-nav {
     @include transition(all .5s);
 
-    @media screen and (max-width: 480px) {
+    @include respond-to(small) { 
       float: none;
       margin: auto;
     }
@@ -12,94 +12,48 @@
       margin-left: 8px;
       border-bottom: none;
 
-      &:first-child {
-        margin-left: 0;
-      }
+      &:first-child { margin-left: 0; }
 
-      &:last-child {
-        margin-right: -4px;
-      }
+      &:last-child { margin-right: -4px; }
 
-      &.active-link,
-      &:hover {
-        border-bottom: 3px solid $link_color2;
-      }
+      &.active-link { border-bottom: 3px solid $link_color2; }
+      
+      &:hover { @extend .active-link }
 
-      @at-root .mobile #header-nav .no-touch {
-        border: none;
-      }
+      .mobile &.no-touch { border: none; }
 
       a {
         display: block;
-        padding: 30px 24px;
         margin: -30px -20px;
-
-        @media screen and (max-width: 350px) {
-          padding: 30px 21px; // breaks under 226px
-        }
+        padding: 30px 24px;
+        // breaks under 226px
+        @include respond-to(small) { padding: 30px 21px; }
       }
     }
 
-    &.expanded {
-      @media #{$LANDSCAPE} {
-        float: none;
-        width: 100%;
-        height: 100vh;
-        margin: 60px auto;
-        @include show;
-
-        li {
-          width: 100%;
-          float: none;
-          margin: 0 0 17%;
-
-          &:first-child {
-            margin-top: 20px;
-          }
-
-          a {
-            padding: 0;
-            margin: 0;
-          }
-        }
-      }
-    }
-  }
-
-  // ----------------------------- STATE 1
-  .state1 {
-    #header-nav {
+    // ----------------------------- STATE 1
+    .state1 & {
       display: inline-block;
       margin-top: 85px;
+      @include respond-to(small) { margin: 0 auto; }
 
-      @media screen and (max-width: 480px) {
-        margin: 0 auto;
-      }
-
-      @media #{$LANDSCAPE} {
+      @include respond-to(landscape) {
         height: 100%;
         margin-top: 0;
 
-        li {
-          @include vCentered;
-        }
+        li { @include vCentered; }
       }
 
       &.expanded {
         @include show;
-
-        @media screen and (max-width: 480px) {
-          margin: 10% 0;
-        }
+        @include respond-to(small) { margin: 10% 0; }
       }
     }
-  }
 
-  // ----------------------------- STATE 2
-  .state2 {
-    #header-nav {
+    // ----------------------------- STATE 2
+    .state2 & {
       display: none;
-      @include hide;
+      @include hide; 
 
       @media screen and (max-width: 480px) {
         display: inline-block;
@@ -107,42 +61,9 @@
       }
 
       @media #{$LANDSCAPE} {
-        display: block;
+        display: inline-block;
         @include show;
-        position: relative;
-        top: 3%;
-        width: 100%;
-        height: 100%;
-        font-size: .65em;
-        text-align: right;
-      }
-
-      li {
-        @media #{$LANDSCAPE} {
-          width: 90%;
-          height: 15%;
-          display: block;
-          margin: 0;
-          border: none;
-          border-left: 6px solid $color1;
-
-          &.active-link,
-          &:hover {
-            border-left: 6px solid $link_color2;
-          }
-
-          @at-root .mobile .state2 #header-nav .no-touch {
-            @media screen and (max-device-height: 600px) and (orientation: landscape) {
-              border-left: 6px solid $color1;
-            }
-          }
-
-          a {
-            margin: 50% 0 0;
-            padding: 0;
-            line-height: 0;
-          }
-        }
+        @include vCentered;
       }
 
       &.expanded {
@@ -152,4 +73,5 @@
       }
     }
   }
+//@import "landscapeMenu";
 }
