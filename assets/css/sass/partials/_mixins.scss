@@ -1,33 +1,26 @@
-@mixin transition($args) {
+@mixin transition($args...) {
   -webkit-transition: $args;
   -ms-transition: $args;
   transition: $args;
 }
 
-@mixin transform($args, $t) {
-  -webkit-transform: $args $t;
-  -ms-transform: $args $t;
-  transform: $args $t;
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -ms-transform: $args;
+  transform: $args;
 }
 
-@mixin transformNone {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;  
-}
 
 @mixin hide {
   visibility: hidden;
   opacity: 0;
-  @include transition(visibility 0s linear 0.5s);
-  @include transition(opacity 0.2s linear);
+  @include transition(visibility 0s linear 0.5s, opacity 0.2s linear);
 }
 
 @mixin show {
   visibility: visible;
   opacity: 1;
-  @include transition(visibility 0s linear 0.5s);
-  @include transition(opacity 0.5s linear);
+  @include transition(visibility 0s linear 0.5s, opacity 0.5s linear);
 }
 
 
@@ -54,6 +47,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 
 $break-smallest: 350px !default;
 $break-small: 480px !default;
