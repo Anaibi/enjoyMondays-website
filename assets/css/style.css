@@ -735,4 +735,87 @@ footer.container {
         width: 32px;
         height: 32px; }
 
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  html {
+    content: "hasSideMenu"; }
+
+  #site {
+    width: calc(100vw - 70px);
+    padding-left: 70px;
+    overflow: hidden; }
+
+  .state2 #main-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100vh; }
+
+  .state2 #logo {
+    float: right;
+    margin: 0 auto;
+    padding: 4% 0;
+    width: 95%; }
+
+  .state2 #header-nav {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.5s;
+    -ms-transition: visibility 0s linear 0.5s;
+    transition: visibility 0s linear 0.5s;
+    -webkit-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+    position: relative;
+    top: 3%;
+    width: 100%;
+    height: 100%;
+    font-size: .65em;
+    text-align: right;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none; }
+    .state2 #header-nav li {
+      width: 90%;
+      height: 15%;
+      display: block;
+      margin: 0;
+      border: none;
+      border-left: 6px solid #E9E8E3; }
+      .state2 #header-nav li.active-link, .state2 #header-nav li:hover {
+        border-left: 6px solid #DF3F54; }
+      .state2 #header-nav li:hover {
+        border-left: 6px solid #DF3F54; }
+      .state2 #header-nav li a {
+        margin: 50% 0 0;
+        padding: 0;
+        line-height: 0; } }
+@media screen and (max-height: 600px) and (orientation: landscape) and (max-device-height: 600px) and (orientation: landscape) {
+  .mobile .state2 #header-nav .no-touch {
+    border-left: 6px solid #E9E8E3; } }
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  #header-nav.expanded {
+    float: none;
+    width: 100%;
+    height: 100vh;
+    margin: 60px auto;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.5s;
+    -ms-transition: visibility 0s linear 0.5s;
+    transition: visibility 0s linear 0.5s;
+    -webkit-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear; }
+    #header-nav.expanded li {
+      width: 100%;
+      float: none;
+      margin: 0 0 17%; }
+      #header-nav.expanded li:first-child {
+        margin-top: 20px; }
+      #header-nav.expanded li a {
+        padding: 0;
+        margin: 0; } }
+
 /*# sourceMappingURL=style.css.map */

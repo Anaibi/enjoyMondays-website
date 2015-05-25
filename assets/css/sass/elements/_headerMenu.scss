@@ -55,12 +55,12 @@
       display: none;
       @include hide; 
 
-      @media screen and (max-width: 480px) {
+      @include respond-to(small) {
         display: inline-block;
         @include show;
       }
 
-      @media #{$LANDSCAPE} {
+      @include respond-to(landscape) {
         display: inline-block;
         @include show;
         @include vCentered;
@@ -73,5 +73,4 @@
       }
     }
   }
-//@import "landscapeMenu";
 }

@@ -1,23 +1,25 @@
-@import "colors/_colors-css";
+@import "colors/colors-css";
 
-@import "_settings";
+@import "settings";
 
-@import "fonts/_fonts-css";
+@import "fonts/fonts-css";
 
-@import "partials/_mixins";
-@import "partials/_generals";
+@import "partials/mixins";
+@import "partials/generals";
 
-@import "elements/_headerWrapper";
-@import "elements/_mainHeader";
-@import "elements/_grid";
-@import "elements/_footer";
+@import "elements/headerWrapper";
+@import "elements/mainHeader";
+@import "elements/grid";
+@import "elements/footer";
 
-@import "sections/_home";
-@import "sections/_work";
-@import "sections/_about";
-@import "sections/_contact";
+@import "sections/home";
+@import "sections/work";
+@import "sections/about";
+@import "sections/contact";
 
-@import "layout/_layout";
+@import "layout/layout";
+
+@import "elements/landscapeMenu";
 
 
 

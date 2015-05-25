@@ -41,7 +41,6 @@
 		$.supersized.api = api;
 		
 		base.init = function(){
-			console.log("-INITIALIZING!");
 			
         	/**
         	 * Combine options and vars
@@ -53,7 +52,6 @@
             
             //check if ours is a single gallery slide.
             if(! $.isArray(base.options.slides[0])){
-            	console.log("--WE NEED TO MAKE MAGIC NOW!");
             	base.options.slides = [base.options.slides];
             }  
             
@@ -71,7 +69,6 @@
         /* Build Elements
 		----------------------------*/
         base._build = function(){
-        	console.log("-BASE BUILD!");
         	
         	// Add in slide markers
         	var thisSlide = 0,
@@ -144,9 +141,7 @@
         /* Initialize
 		----------------------------*/
     	base._start = function(){
-			
-			console.log("-BASE START!");
-			
+						
 			// Determine if starting slide random
 			if (base.options.start_slide) vars.current_slide = base.options.start_slide - 1;
 			else vars.current_slide = Math.floor(Math.random()* base.totalSlides() );	// Generate random slide number
@@ -198,7 +193,6 @@
 			img.appendTo(slideCurrent).wrap('<a ' + imageLink + linkTarget + '></a>').parent().parent().addClass('image-loading activeslide');
 			
 			img.load(function(){
-				console.log("--IMAGE LOADED!");				
 				base._origDim($(this));
 				base.resizeNow();	// Resize background image
 				base.launch();
@@ -234,7 +228,6 @@
 		/* Launch Supersized
 		----------------------------*/
 		base.launch = function(){
-			console.log("LAUNCHING SUPERSIZED!");
 			
 			base.$el.css('visibility','visible');
 			$('#supersized-loader').remove();		//Hide loading animation
@@ -492,7 +485,6 @@
         /* Next Slide
 		----------------------------*/
 		base.nextSlide = function(){
-			console.log("NEXT SLIDE!!");
 			
 			if(vars.in_animation || !api.options.slideshow) return false;		// Abort if currently animating
 				else vars.in_animation = true;		// Otherwise set animation marker
@@ -661,13 +653,9 @@
 		/* Play/Pause Toggle
 		----------------------------*/
 		base.playToggle = function(){
-			console.log("- PLAY TOOGLE");
 			if (vars.in_animation || !api.options.slideshow) return false;		// Abort if currently animating
-			
-			console.log("- PLAY TOOGLE: ANIMATION AND SLIDESHOW TRUE OR SLIDESHOW NOT FALSE");
-			
+						
 			if (vars.is_paused){
-				console.log("- PLAY TOOGLE: IS PAUSED");
 				vars.is_paused = false;
 				
 				// Call theme function for play
@@ -677,7 +665,6 @@
 	        	vars.slideshow_interval = setInterval(base.nextSlide, base.options.slide_interval);
 	        	  
         	} else {
-        		console.log("- PLAY TOOGLE: IS NOT PAUSED");
         		vars.is_paused = true;
         		
         		// Call theme function for pause
