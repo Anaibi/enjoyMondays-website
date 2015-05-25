@@ -192,10 +192,14 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu except at home section
-    if (isLandscapeLayout()) { 
+    // only when landscape scss partial on
+   /* if (isLandscapeLayout()) { 
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
-    }
+    }*/
+
+    // landscape has side menu except at home section
+    if (isLandscapeLayout()) { h = header_h[4]; }
     
     $('body, html')
       .stop()
