@@ -1,0 +1,90 @@
+@include respond-to(landscape) {
+
+  html {
+    content: "hasSideMenu";
+  }  
+
+  #site {
+    width: calc(100vw - #{$layout_verticalSidebar_padding});
+    padding-left: $layout_verticalSidebar_padding;
+    overflow: hidden;
+  }
+
+  .state2 #main-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $header_vertical_w;
+    height: 100vh;
+  }
+
+  .state2 #logo {
+    float: right;
+    margin: 0 auto;
+    padding: 4% 0;
+    width: 95%;
+  }
+
+  #header-nav {
+
+    .state2 & {
+      display: block;
+      @include show;
+      position: relative;
+      top: 3%;
+      width: 100%;
+      height: 100%;
+      font-size: .65em;
+      text-align: right;
+      @include transformNone;
+
+      li {
+        width: 90%;
+        height: 15%;
+        display: block;
+        margin: 0;
+        border: none;
+        border-left: 6px solid $color1;
+
+        &.active-link { border-left: 6px solid $link_color2; }
+        
+        &:hover { border-left: 6px solid $link_color2; }
+
+        a {
+          margin: 50% 0 0;
+          padding: 0;
+          line-height: 0;
+        }
+      }
+    }
+
+    @at-root .mobile .state2 #header-nav .no-touch {
+      @media screen and (max-device-height: 600px) and (orientation: landscape) {
+        border-left: 6px solid $color1;
+      }
+    }
+
+    &.expanded {
+      float: none;
+      width: 100%;
+      height: 100vh;
+      margin: 60px auto;
+      @include show;
+
+      li {
+        width: 100%;
+        float: none;
+        margin: 0 0 17%;
+
+        &:first-child {
+          margin-top: 20px;
+        }
+
+        a {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

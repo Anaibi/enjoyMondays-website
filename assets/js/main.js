@@ -158,10 +158,10 @@ $(function() {
 
       h_container = wh.actual - $('footer').height();
 
-      if (!isLandscapeLayout()) { 
+    //  if (!isLandscapeLayout()) { 
         // there is also header at top
         h_container = h_container - $('#main-header').height();
-      } 
+    //  } 
 
       if (h_container < h_content) { 
         // make contact sub-header full-width
@@ -192,10 +192,14 @@ $(function() {
     if (ww.actual < marks[0]) { h = header_h[3]; }
 
     // landscape has side menu except at home section
-    if (isLandscapeLayout()) { 
+    // only when landscape scss partial on
+    if (hasSideMenu()) { 
       if (section === '#home') { h = header_h[4]; }
       else { h = 0; }
     }
+
+    // landscape has side menu except at home section
+    if (isLandscapeLayout()) { h = header_h[4]; }
     
     $('body, html')
       .stop()
@@ -225,6 +229,11 @@ $(function() {
   //--------------------------------------- isLandscapeLayout
   function isLandscapeLayout() {
     return ($('html').css('content') === 'isLandscape' || wh.actual < ww.actual/3);
+  };
+
+  //--------------------------------------------- hasSideMenu
+  function hasSideMenu() {
+    return ($('html').css('content') === 'hasSideMenu' || wh.actual < ww.actual/3);
   };
   
 

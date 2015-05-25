@@ -3,60 +3,55 @@
 
     @include transition(all .3s);
 
-    @media screen and (max-width: 480px) {
+    @include respond-to(small) {
       display: block;
       float: none;
     }
-  }
 
-  // ----------------------------- STATE 1
-  .state1 {
-    #logo {
-      width: $logo_w_big;
+    // ----------------------------- STATE 1
+    .state1 & {
+        width: $logo_w_big;
       padding-top: 40px;
 
-      @media screen and (max-width: 650px) {
+      @include respond-to(medium) {
         width: 25%;
       }
 
-      @media screen and (max-width: 480px) {
+      @include respond-to(small) {
         margin: 0 auto;
         padding: 2.5% 0;
       }
 
-      @media screen and (max-width: 350px) {
+      @include respond-to(smallest) {
         width: 20%;
       }
 
-      @media #{$LANDSCAPE} {
+      @include respond-to(landscape) { 
         width: 18%;
         margin: 0;
         padding: 2% 0;
         float: left;
       }
     }
-  }
 
-  // ----------------------------- STATE 2
-  .state2 {
-    #logo {
+    // ----------------------------- STATE 2
+    .state2 & {
       width: $logo_w_small;
       padding-top: 18px;
 
-      @media screen and (max-width: 650px) {
+      @include respond-to(medium) {
         width: 20%;
       }
 
-      @media screen and (max-width: 480px) {
+      @include respond-to(small) {
         margin: 0 auto;
         padding: 2.5% 0;
       }
 
-      @media #{$LANDSCAPE} {
-        float: right;
-        margin: 0 auto;
-        padding: 4% 0;
-        width: 95%;
+      @include respond-to(landscape) {
+        width: 72px;
+        padding-top: 5px;
+        margin-left: -5%;
       }
     }
   }

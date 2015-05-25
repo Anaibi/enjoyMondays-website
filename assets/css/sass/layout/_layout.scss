@@ -1,14 +1,10 @@
 @mixin setLayoutHeights($h, $f) {
 
-  #main-header {
-    height: $h;
-  }
+  #main-header { height: $h; }
 
   #sections {
 
-    &::before {
-      height: $h;
-    }
+    &::before { height: $h; }
 
     .section {
       height: 100%;
@@ -26,11 +22,8 @@
 // ----------------------------------- HTML and BODY
 html {
   height: 100%;
-
   // add some kind of js detectable mark
-  @media #{$LANDSCAPE} {
-    content: "isLandscape";
-  }
+  @include respond-to(landscape) { content: "isLandscape"; }
 }
 
 body {
@@ -38,22 +31,10 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 
-  @media screen and (max-width: 650px) {
-    text-align: center;
-  }
+  @include respond-to(medium) { text-align: center; }
 }
 
-p {
-  padding-bottom: .3em;
-}
-
-@media #{$LANDSCAPE} {
-  #site {
-    width: calc(100vw - #{$layout_verticalSidebar_padding});
-    padding-left: $layout_verticalSidebar_padding;
-    overflow: hidden;
-  }
-}
+p { padding-bottom: .3em; }
 
 
 // ------------------------------------ STATE 1
@@ -61,17 +42,11 @@ p {
 
   @include setLayoutHeights($header_h_1, $footer_h_1);
 
-  @media screen and (max-width: 480px) {
-    @include setLayoutHeights($header_h_3, $footer_h_1);
-  }
+  @include respond-to(small) { @include setLayoutHeights($header_h_3, $footer_h_1); }
 
-  @media screen and (max-width: 350px) {
-    @include setLayoutHeights($header_h_4, $footer_h_1);
-  }
+  @include respond-to(smallest) { @include setLayoutHeights($header_h_4, $footer_h_1); }
 
-  @media #{$LANDSCAPE} {
-    @include setLayoutHeights($header_h_5, $footer_h_2);
-  }
+  @include respond-to(landscape) { @include setLayoutHeights($header_h_5, $footer_h_2); }
 }
 
 
@@ -80,17 +55,11 @@ p {
 
   @include setLayoutHeights($header_h_2, $footer_h_1);
 
-  @media screen and (max-width: 480px) {
-    @include setLayoutHeights($header_h_3, $footer_h_2);
-  }
+  @include respond-to(small) { @include setLayoutHeights($header_h_3, $footer_h_2); }
 
-  @media screen and (max-width: 350px) {
-    @include setLayoutHeights($header_h_4, $footer_h_2);
-  }
+  @include respond-to(smallest) { @include setLayoutHeights($header_h_4, $footer_h_2); }
 
-  @media #{$LANDSCAPE} {
-    @include setLayoutHeights($header_h_5, $footer_h_2);
-  }
+  @include respond-to(landscape) { @include setLayoutHeights($header_h_5, $footer_h_2); }
 }
 
 
@@ -99,7 +68,7 @@ p {
   max-width: $max_layout_width;
   height: 100%;
   margin: 0 auto;
-  padding: 0 cp($layout_padding, $max_layout_width);
+  padding: 0 percentage($layout_padding/$max_layout_width);
   @extend %clearfix;
 }
 
@@ -107,20 +76,15 @@ p {
 // ----------------------------------- CONTENT CLASS
 .content {
   clear: both;
-  padding: 0 8% 12%;
   text-align: center;
-
-  @media screen and (max-width: 1350px) and (min-width: 650px) {
-    padding: 0 0 12%;
+  padding: 0 8% 12%;
+  @include respond-to(large) {
+     @media screen and (min-width: 650px) {
+        padding: 0 0 12%;
+    }
   }
-
-  @media screen and (max-width: 650px) {
-    padding: 0 0 12%;
-  }
-
-  @media #{$LANDSCAPE} {
-    padding: 0 0 12%;
-  }
+  @include respond-to(medium) { padding: 0 0 12%; }
+  @include respond-to(landscape) { padding: 0 0 12%; }
 }
 
 // ------------------------------------- MAIN HEADER
@@ -140,35 +104,28 @@ p {
 
 // ----------------------------------------- SECTION
 .section {
-
   text-align: right;
+  @include respond-to(medium) { text-align: center; }
+}
 
-  @media screen and (max-width: 650px) {
-    text-align: center;
-  }
+// ---------------------------------- HEADER WRAPPER
 
-
-  // ----------- HEADER WRAPPER
-
-  @include headerWrapper;
+@include headerWrapper;
 
 
-  // --------------- SUB-HEADER
-  .sub-header {
+// -------------------------------------- SUB-HEADER
 
-    text-align: center;
+.sub-header {
 
-    hr {
-      border: 0;
-      height: 3px;
-      width: 20%;
-      margin: 2% auto 4%;
-      clear: both;
+  text-align: center;
 
-      @media screen and (max-width: 650px) {
-        width: 15%;
-      }
-    }
+  hr {
+    border: 0;
+    height: 3px;
+    width: 20%;
+    @include respond-to(medium) { width: 15%; }
+    margin: 2% auto 4%;
+    clear: both; 
   }
 }
 

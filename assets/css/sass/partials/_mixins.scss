@@ -30,9 +30,6 @@
   @include transition(opacity 0.5s linear);
 }
 
-@function cp($target, $container) {
-  @return ($target/$container) * 100%;
-}
 
 %clearfix {
  // For modern browsers
@@ -56,4 +53,35 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+$break-smallest: 350px !default;
+$break-small: 480px !default;
+$break-medium: 650px !default;
+$break-large: 1350px !default;
+
+@mixin respond-to($media) {
+  @if $media == smallest {
+    @media screen and (max-width: $break-smallest) { @content; }
+  }
+
+  @if $media == small {
+    @media screen and (max-width: $break-small) { @content; }
+  }
+    
+  @else if $media == medium {
+    @media screen and (max-width: $break-medium) { @content; }
+  }
+
+  @else if $media == medium-min {
+    @media screen and (min-width: $break-medium) { @content; }
+  }
+
+  @else if $media == large {
+    @media screen and (max-width: $break-large) { @content; }
+  }
+
+  @else if $media == landscape {
+    @media screen and (max-height: 600px) and (orientation: landscape) { @content; }
+  }
 }

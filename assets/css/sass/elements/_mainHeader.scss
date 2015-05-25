@@ -15,14 +15,4 @@
 	@include logo;
 	@include headerMenu;
 	@include collapsedMenu;
-
-	.state2 #main-header {
-		@media #{$LANDSCAPE} {
-		  position: fixed;
-		  left: 0;
-		  top: 0;
-		  width: $header_vertical_w;
-		  height: 100vh;
-		}
-	}
 }
