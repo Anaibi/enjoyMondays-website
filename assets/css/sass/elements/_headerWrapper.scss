@@ -1,7 +1,6 @@
 @mixin headerWrapper {
 
   .header-wrapper {
-
     display: inline-block;
     padding: 10% 0;
     text-align: center;
@@ -10,28 +9,22 @@
     .work & { width: percentage(390px/$max_layout_width); }
     .about & { width: percentage(530px/$max_layout_width); }
     .contact & { width: 100%; }
-	
-		.home &,
-    .work &,
-    .about &,
-    .contact & {
+
+    .home &, .work &, .about &, .contact & {
       @include respond-to(medium) {
         width: 70%;
         padding: 3% 0;
       }
-
-		  @include respond-to(small) { width: 80%; }
-
-		  @include respond-to(smallest) { width: 100%; }
-
-		  @include respond-to(landscape) { padding: 3% 0; }
+      @include respond-to(small) { width: 80%; }
+      @include respond-to(smallest) { width: 100%; }
+      @include respond-to(landscape) { padding: 3% 0; }
     }
 
-		.contact & {
-			@include respond-to(medium, min) { text-align: right; }
-			@include respond-to(medium) { width: 100%; }
-		}
-	}
+    .contact & {
+      @include respond-to(medium, min) { text-align: right; }
+      @include respond-to(medium) { width: 100%; }
+    }
+  }
 }
 
 
