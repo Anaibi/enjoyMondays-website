@@ -60,28 +60,25 @@ $break-small: 480px !default;
 $break-medium: 650px !default;
 $break-large: 1350px !default;
 
-@mixin respond-to($media) {
+@mixin respond-to($media, $val:max) {
+  
   @if $media == smallest {
-    @media screen and (max-width: $break-smallest) { @content; }
+    @media screen and (#{$val}-width: $break-smallest) { @content; }
   }
 
   @if $media == small {
-    @media screen and (max-width: $break-small) { @content; }
+    @media screen and (#{$val}-width: $break-small) { @content; }
   }
     
   @else if $media == medium {
-    @media screen and (max-width: $break-medium) { @content; }
-  }
-
-  @else if $media == medium-min {
-    @media screen and (min-width: $break-medium) { @content; }
+    @media screen and (#{$val}-width: $break-medium) { @content; }
   }
 
   @else if $media == large {
-    @media screen and (max-width: $break-large) { @content; }
+    @media screen and (#{$val}-width: $break-large) { @content; }
   }
 
   @else if $media == landscape {
-    @media screen and (max-height: 600px) and (orientation: landscape) { @content; }
+    @media screen and (#{$val}-height: 600px) and (orientation: landscape) { @content; }
   }
 }

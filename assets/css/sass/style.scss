@@ -1,11 +1,13 @@
+@import "partials/mixins";
+@import "partials/generals";
+
 @import "colors/colors-css";
 
 @import "settings";
 
 @import "fonts/fonts-css";
 
-@import "partials/mixins";
-@import "partials/generals";
+
 
 @import "elements/headerWrapper";
 @import "elements/mainHeader";
@@ -18,9 +20,6 @@
 @import "sections/contact";
 
 @import "layout/layout";
-
-//@import "elements/landscapeMenu";
-
 
 
 
