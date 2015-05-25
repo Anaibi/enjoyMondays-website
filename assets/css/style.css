@@ -108,8 +108,11 @@ body {
   font-size: 1.1em; }
   @media screen and (max-width: 650px) {
     #header-nav {
-      font-size: 0.8em; } }
+      font-size: .85em; } }
   @media screen and (max-width: 480px) {
+    #header-nav {
+      font-size: .9em; } }
+  @media screen and (max-width: 350px) {
     #header-nav {
       font-size: .7em; } }
   #header-nav .active-link, #header-nav li:hover {

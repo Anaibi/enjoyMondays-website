@@ -35,8 +35,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.1em;
-  @include respond-to(medium) { font-size: 0.8em; }
-  @include respond-to(small) { font-size: .7em; }
+  @include respond-to(medium) { font-size: .85em; }
+  @include respond-to(small) { font-size: .9em; }
+  @include respond-to(smallest) { font-size: .7em; }
 
   .active-link { font-weight: $font_weight_boldest; }
 }
