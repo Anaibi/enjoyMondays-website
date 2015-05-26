@@ -1,29 +1,41 @@
 @mixin footer {
-  footer.container {
+  .footer {
     
     height: $footer_h_1;
     @include respond-to(small) { height: $footer_h_2; } 
     @include respond-to(landscape) { height: $footer_h_2; } 
 
-    > div {
-
+    .site-info,
+    .social-links { 
       height: 100%;
 
-      > * { @include vCentered; }
-
+      > * {
+        @include vCentered; 
+      }
+      
       @include respond-to(medium) { 
+        float: none;
         display: block;
         width: 100%;
-        height: 50%;
       }
     }
     
-    .site-info { float: left; }
+    .site-info { 
+      float: left; 
+      @include respond-to(medium) { 
+        height: 40%; 
+        p { padding: 0; }
+      } 
+    }
 
     .social-links {
       
       float: right;
-     
+      @include respond-to(medium) { 
+        height: 60%;
+        ul { padding-bottom: 6px; }
+      }
+
       li {
         display: inline-block;
         padding-left: 6px;

@@ -1,5 +1,5 @@
-@import "_colors-constants";
-@import "_colors-defaultSettings";
+@import "colors-constants";
+@import "colors-defaultSettings";
 
 
 body {
@@ -11,82 +11,59 @@ body {
 // ---------------- MAIN HEADER 
 
 #main-header { 
+  
   background-color: $color1;
 
-  a {
-    color: $color2;
-  }
+  a { color: $color2; }
 }
 
 
-// ------------------ SECTION 1 
-.home.section {
-  background-color: $color1;
-  color: $color2;
-
-  hr {
-    background-color: $color2;
-  }
-}
-
-
-// ------------------ SECTION 2 
-.work.section {
-  background-color: $color2;
-  color: $color1;
-
-  hr {
-    background-color: $color4;
-  }
-}
-
-
-// ------------------ SECTION 3
-.about.section {
-  background-color: $color3;
-  color: $color1;
-
-  hr {
-    background-color: $color4;
-  }
-
-  .content hr {
+// ------------------ SECTIONS 
+.section {
+  
+  &.home {
     background-color: $color1;
+    color: $color2;
+
+    hr { background-color: $color2; }
+  }
+
+  &.work {
+    background-color: $color2;
+    color: $color1;
+
+    hr { background-color: $color4; }
+  }
+
+  &.about {
+    background-color: $color3;
+    color: $color1;
+
+    hr { 
+      background-color: $color4;
+
+      .content & { background-color: $color1; }
+    }
+  }
+
+  &.contact {
+    background-color: $color4;
+    color: $color1;
+
+    .hello { color: $color2; }
+
+    .mail a { color: $color1; }
+
+    hr { background-color: $color5; }
   }
 }
-
-
-// ------------------ SECTION 4
-.contact.section {
-  background-color: $color4;
-  color: $color1;
-
-  .header {
-    h1 {
-      &:first-child {
-        color: $color2;
-      }
-    }
-
-    a {
-      color: $color1;
-    }
-  }
-
-  hr {
-    background-color: $color5;
-  }
-}
-
 
 // --------------------- FOOTER
 .footer {
   background-color: $color2;
   color: $color1;
 
-  a {
-    color: $color4;
-  }
+  a { color: $color4; }
 }
 
 

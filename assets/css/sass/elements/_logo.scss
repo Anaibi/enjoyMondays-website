@@ -8,40 +8,39 @@
       float: none;
     }
 
+    @include respond-to(landscape) { 
+      float: left;
+    }
+
     // ----------------------------- STATE 1
     .state1 & {
-        width: $logo_w_big;
+      
+      width: $logo_w_big;
       padding-top: 40px;
 
-      @include respond-to(medium) {
-        width: 25%;
-      }
+      @include respond-to(medium) { width: 25%; }
 
       @include respond-to(small) {
         margin: 0 auto;
         padding: 2.5% 0;
       }
 
-      @include respond-to(smallest) {
-        width: 20%;
-      }
+      @include respond-to(smallest) { width: 20%; }
 
       @include respond-to(landscape) { 
         width: 18%;
         margin: 0;
         padding: 2% 0;
-        float: left;
       }
     }
 
     // ----------------------------- STATE 2
     .state2 & {
+      
       width: $logo_w_small;
       padding-top: 18px;
 
-      @include respond-to(medium) {
-        width: 20%;
-      }
+      @include respond-to(medium) { width: 20%; }
 
       @include respond-to(small) {
         margin: 0 auto;

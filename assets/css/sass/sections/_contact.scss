@@ -17,6 +17,8 @@
   .sub-header {
 
     float: right;
+    @include respond-to(small) { float: none; }
+    
     @include respond-to(large) { 
       width: 44%;
       margin-right: 4%;
@@ -25,20 +27,6 @@
     @include respond-to(medium) { 
       width: 100%;
       margin: 0;
-    }
-
-   @include respond-to(small) { 
-      float: none;
-    }
-
-    @include respond-to(landscape) { 
-      float: right;
-    }
-  }
-
-  .state2 #sections &.last {
-    @include respond-to(landscape) { 
-      height: calc(100vh - #{$footer_h_2});
     }
   }
 }

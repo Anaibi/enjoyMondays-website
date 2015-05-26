@@ -7,6 +7,11 @@
       margin: auto;
     }
 
+    @include respond-to(landscape) { 
+      float: right;
+      margin: 0;
+    }
+
     li {
       float: left;
       margin-left: 8px;
@@ -33,6 +38,7 @@
 
     // ----------------------------- STATE 1
     .state1 & {
+      
       display: inline-block;
       margin-top: 85px;
       @include respond-to(small) { margin: 0 auto; }
@@ -52,6 +58,7 @@
 
     // ----------------------------- STATE 2
     .state2 & {
+      
       display: none;
       @include hide; 
 

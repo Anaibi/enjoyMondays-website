@@ -166,10 +166,13 @@ $(function() {
       if (h_container < h_content) { 
         // make contact sub-header full-width
         $header.find('.sub-header').css({'width': 'auto'});
+        var $hello = $header.find('.fittextjs.hello');
+        $hello.css({
+          'font-size': parseInt($hello.css('font-size'))/2 + 'px',
+          'text-align': 'right'
+        });
 
         h_content = $header.outerHeight();  
-
-        // TODO on mobile landscape still not enough
       }
     }
    

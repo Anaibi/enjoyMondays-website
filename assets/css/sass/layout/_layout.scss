@@ -78,8 +78,9 @@ p { padding-bottom: .3em; }
   clear: both;
   text-align: center;
   padding: 0 8% 12%;
+  // TODO check this
   @include respond-to(large) {
-     @media screen and (min-width: 650px) {
+     @include respond-to(medium, min) {
         padding: 0 0 12%;
     }
   }

@@ -1,18 +1,16 @@
-@import "_logo";
-@import "_headerMenu";
-@import "_collapsedMenu";
+@import "logo";
+@import "headerMenu";
+@import "collapsedMenu";
 
 @mixin mainHeader {
-	#main-header {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  z-index: 2000;
-	  @include transition(all .5s);
-	}
+  #main-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 2000;
+    @include transition(all .5s);
+  }
 
-	@include logo;
-	@include headerMenu;
-	@include collapsedMenu;
+  @include logo;
+  @include headerMenu;
+  @include collapsedMenu;
 }

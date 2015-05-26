@@ -1,5 +1,6 @@
 @mixin details {
   .details-wrapper {
+    
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     opacity: 0;
@@ -36,19 +37,16 @@
 
 @mixin imgAnimation {
   .tile {
+    
     &:hover {
       img {
         @include transform(translate(0, -33px), scale(0.55));
 
-        @include respond-to(small) { 
-          @include transform(translate(0 , -50px), scale(0.8));
-        }
+        @include respond-to(small) { @include transform(translate(0 , -50px), scale(0.8)); }
       }
     }
       
-    img {
-      @include transition(transform .4s);
-    }
+    img { @include transition(transform .4s); }
   }
 }
 
@@ -74,6 +72,7 @@
 
 @mixin tile {
   .tile {
+    
     display: inline-block;
     width: 50%;
     margin-bottom: 4%;
@@ -88,29 +87,26 @@
 
 @mixin grid {
   .grid {
-    @include respond-to(medium) { 
-      padding: 0 0 11%;
-    }
+    
+    @include respond-to(medium) { padding: 5% 0 11%; }
 
     @include tile;
 
-    &.three {
-      .tile {
-        width: 33%;
+    &.three .tile {
+      width: 33%;
       
-        @include respond-to(medium) { 
-          width: 100%;
-          margin: 10% auto;
-        }
+      @include respond-to(medium) { 
+        width: 100%;
+        margin: 10% auto;
+      }
 
-        @include respond-to(smallest) { 
-          width: 100%;
-        }
+      @include respond-to(smallest) { 
+        width: 100%;
+      }
 
-        @include respond-to(landscape) { 
-          width: 32%;
-          margin: auto;
-        }
+      @include respond-to(landscape) { 
+        width: 32%;
+        margin: auto;
       }
     }
   }

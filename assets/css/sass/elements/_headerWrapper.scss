@@ -1,38 +1,40 @@
 @mixin headerWrapper {
 
   .header-wrapper {
+    display: inline-block;
+    padding: 10% 0;
+    text-align: center;
 
     .home & { width: percentage(560px/$max_layout_width); }
     .work & { width: percentage(390px/$max_layout_width); }
     .about & { width: percentage(530px/$max_layout_width); }
     .contact & { width: 100%; }
-	
-		display: inline-block;
-		padding: 10% 0;
-		text-align: center;
 
-		@include respond-to(medium) {
-			width: 70%;
-			padding: 3% 0;
-		}
+    .home &, .work &, .about &, .contact & {
+      @include respond-to(medium) {
+        width: 70%;
+        padding: 3% 0;
+      }
 
-		@include respond-to(small) {
-			width: 80%;
-		}
+      @include respond-to(small) { width: 80%; }
+      @include respond-to(smallest) { width: 100%; }
+      @include respond-to(landscape) { padding: 3% 0; }
+    }
 
-		@include respond-to(smallest) {
-			width: 100%;
-		}
-
-		@include respond-to(landscape) {
-			padding: 3% 0;
-		}
-
-		.contact & {
-			@include respond-to(medium-min) { text-align: right; }
-			@include respond-to(medium) { width: 100%; }
-		}
-	}
+    .about & {
+      @include respond-to(medium) {
+        width: 100%;
+        .header { 
+          width: 80%; 
+          margin: auto;
+        }
+      }
+    }
+    .contact & {
+      @include respond-to(medium, min) { text-align: right; }
+      @include respond-to(medium) { width: 100%; }
+    }
+  }
 }
 
 
