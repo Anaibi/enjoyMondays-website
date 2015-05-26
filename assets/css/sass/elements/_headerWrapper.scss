@@ -16,6 +16,7 @@
         padding: 3% 0;
       }
     }
+    
     .home &, .work &, .about &, .contact & {
       @include respond-to(small) { width: 80%; }
       @include respond-to(smallest) { width: 100%; }

@@ -8,7 +8,7 @@ $(function() {
 
   var header_h = [139, 111, 100, 85, 60];
 
-  var marks = [350, 480, 600];
+  var marks = [350, 480, 650];
     
   var resizeTimer;
 
@@ -17,7 +17,7 @@ $(function() {
   });
 
   // Done Resizing Event
-  $(window).on('resize', function() { 
+  $(window).on('resize', function() { console.log('resize');
 
     var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
@@ -42,7 +42,6 @@ $(function() {
         scrollToPosition(actualSection);
       }, 150);      
     }, 150);
-
   });
 
 

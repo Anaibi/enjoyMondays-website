@@ -42,11 +42,9 @@
       display: inline-block;
       margin-top: 85px;
       @include respond-to(small) { margin: 0 auto; }
-
       @include respond-to(landscape) {
         height: 100%;
         margin-top: 0;
-
         li { @include vCentered; }
       }
 
@@ -75,8 +73,8 @@
 
       &.expanded {
         display: block;
-        padding-top: 40px;
         @include show;
+        padding-top: 40px;
       }
     }
   }

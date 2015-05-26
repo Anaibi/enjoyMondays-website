@@ -88,6 +88,7 @@ p { padding-bottom: .3em; }
   @include respond-to(landscape) { padding: 0 0 12%; }
 }
 
+
 // ------------------------------------- MAIN HEADER
 
 @include mainHeader;
@@ -113,6 +114,7 @@ p { padding-bottom: .3em; }
   text-align: right;
   @include respond-to(medium) { text-align: center; }
 }
+
 
 // ---------------------------------- HEADER WRAPPER
 

@@ -15,9 +15,8 @@
 
     p {
       width: 80%;
-      margin: auto;
-
       @include respond-to(small) { width: 95%; }
+      margin: auto;
     }
   }
 }

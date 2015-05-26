@@ -530,12 +530,12 @@ p {
         transform: translateY(-50%); } }
     .state2 #header-nav.expanded {
       display: block;
-      padding-top: 40px;
       visibility: visible;
       opacity: 1;
       -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
       -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
+      transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+      padding-top: 40px; }
 
 @media screen and (max-height: 650px) and (orientation: landscape) {
   #collapsed-menu {
