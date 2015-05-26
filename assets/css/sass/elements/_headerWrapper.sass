@@ -1,0 +1,48 @@
+=headerWrapper
+  .header-wrapper
+    display: inline-block
+    padding: 10% 0
+    text-align: center
+
+    .home &
+      width: percentage(560px/$max_layout_width)
+    .work &
+      width: percentage(390px/$max_layout_width)
+    .about &
+      width: percentage(530px/$max_layout_width)
+    .contact &
+      width: 100%
+
+    .home &, .work &
+      +respond-to(medium)
+        width: 70%
+        padding: 3% 0
+
+    .home &, .work &, .about &, .contact &
+      +respond-to(small)
+        width: 80%
+      +respond-to(smallest)
+        width: 100%
+      +respond-to(landscape)
+        padding: 3% 0
+
+    .about &
+      +respond-to(medium)
+        width: 100%
+        .header
+          width: 80%
+          margin: auto
+
+      +respond-to(small-height)
+        width: 100%
+        .header
+          width: 80%
+          margin: auto
+    .contact &
+      +respond-to(medium, min)
+        text-align: right
+      +respond-to(medium)
+        width: 100%
+
+
+

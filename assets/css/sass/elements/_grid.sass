@@ -1,0 +1,85 @@
+=details
+  .details-wrapper
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    +transition(opacity 1s)
+    // redefine font-size put to 0 on parent a
+    font-size: 30px
+    +respond-to(medium)
+      font-size: 22px
+    +respond-to(small)
+      font-size: 30px
+    &:hover 
+      opacity: 1
+    .details
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+    .title
+      font-size: 1em
+      +respond-to(small)
+        font-size: .75em
+    p
+      font-size: 0.5em
+      +respond-to(small) 
+        margin-top: 1%
+        font-size: .5em
+        line-height: 1.1
+
+=imgAnimation
+  .tile
+    &:hover
+      img
+        +transform(translate(0, -33px), scale(0.55))
+        +respond-to(small)
+          +transform(translate(0 , -50px), scale(0.8))
+    img
+      +transition(transform .4s)
+
+=tileLink
+  .tile
+    &:hover
+      cursor: pointer
+    a
+      display: block
+      position: relative
+      width: 95%
+      +respond-to(small)
+        width: 100%
+      margin: auto
+      // remove extra height otherwise adds to tile
+      font-size: 0
+      color: inherit
+
+// ------------------------ SIMPLE GRID
+=tile
+  .tile
+    display: inline-block
+    width: 50%
+    margin-bottom: 4%
+    vertical-align: top
+    +respond-to(small)
+      margin-bottom: 10%
+      width: 100%
+
+=grid
+  .grid
+    +respond-to(medium)
+      padding: 5% 0 11%
+    +tile
+    &.three .tile
+      width: 33%
+      +respond-to(medium)
+        width: 100%
+        margin: 10% auto
+      +respond-to(smallest)
+        width: 100%
+      +respond-to(landscape)
+        width: 32%
+        margin: auto
+

@@ -94,8 +94,8 @@ body {
     font-size: 2em; }
   body p {
     line-height: 1.2;
-    letter-spacing: .17px;
-    word-spacing: .12em;
+    letter-spacing: 0.17px;
+    word-spacing: 0.12em;
     font-size: 1em; }
   body a {
     font-size: 1em; }
@@ -108,13 +108,13 @@ body {
   font-size: 1.1em; }
   @media screen and (max-width: 650px) {
     #header-nav {
-      font-size: .85em; } }
+      font-size: 0.85em; } }
   @media screen and (max-width: 480px) {
     #header-nav {
-      font-size: .9em; } }
+      font-size: 0.9em; } }
   @media screen and (max-width: 350px) {
     #header-nav {
-      font-size: .7em; } }
+      font-size: 0.7em; } }
   #header-nav .active-link, #header-nav li:hover {
     font-weight: 900; }
 
@@ -123,11 +123,11 @@ body {
   text-transform: uppercase;
   white-space: nowrap; }
 .section.about {
-  font-size: .9em; }
+  font-size: 0.9em; }
   .section.about .content p {
-    word-spacing: .1em; }
+    word-spacing: 0.1em; }
 .section.contact .sub-header {
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 400; }
   @media screen and (max-width: 650px) {
     .section.contact .sub-header {
@@ -138,7 +138,7 @@ body {
     font-size: 13px; } }
 footer.container .site-info {
   font-weight: 700;
-  font-size: .95em; }
+  font-size: 0.95em; }
   footer.container .site-info a {
     font-weight: font_weight_boldest; }
 footer.container .social-links {
@@ -146,13 +146,13 @@ footer.container .social-links {
 
 .home .header .smile::before {
   content: " ";
-  width: .55em;
-  height: .5em;
+  width: 0.55em;
+  height: 0.5em;
   display: inline-block;
   background: url("../images/smile.png") no-repeat 2.5% 34%;
   background-size: contain;
   position: relative;
-  top: .1em; }
+  top: 0.1em; }
 .home .sub-header {
   width: 95%;
   float: right; }
@@ -185,13 +185,13 @@ footer.container .social-links {
     font-size: 1em; }
     @media screen and (max-width: 480px) {
       .work #portfolio .details-wrapper .title {
-        font-size: .75em; } }
+        font-size: 0.75em; } }
   .work #portfolio .details-wrapper p {
     font-size: 0.5em; }
     @media screen and (max-width: 480px) {
       .work #portfolio .details-wrapper p {
         margin-top: 1%;
-        font-size: .5em;
+        font-size: 0.5em;
         line-height: 1.1; } }
 .work #portfolio .tile:hover img {
   -webkit-transform: translate(0, -33px), scale(0.55);
@@ -227,7 +227,6 @@ footer.container .social-links {
   height: 56px;
   background: transparent url(../images/close.png) no-repeat top right;
   background-size: 100%;
-  position: absolute;
   top: 10px;
   right: 10px;
   font-size: 0; }
@@ -286,7 +285,7 @@ body {
       text-align: center; } }
 
 p {
-  padding-bottom: .3em; }
+  padding-bottom: 0.3em; }
 
 .state1 #main-header {
   height: 139px; }

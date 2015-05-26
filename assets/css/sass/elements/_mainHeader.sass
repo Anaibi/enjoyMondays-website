@@ -1,0 +1,16 @@
+@import "logo"
+@import "headerMenu"
+@import "collapsedMenu"
+
+=mainHeader
+  #main-header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 2000
+    +transition(all .5s)
+
+  +logo
+  +headerMenu
+  +collapsedMenu

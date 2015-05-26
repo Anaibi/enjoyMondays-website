@@ -1,0 +1,39 @@
+=logo
+  #logo
+    +transition(all .3s)
+
+    +respond-to(small)
+      display: block
+      float: none
+    +respond-to(landscape)
+      float: left
+
+    // ----------------------------- STATE 1
+    .state1 &
+      width: $logo_w_big
+      padding-top: 40px
+      +respond-to(medium)
+        width: 25%
+      +respond-to(small)
+        margin: 0 auto
+        padding: 2.5% 0
+      +respond-to(smallest)
+        width: 20%
+      +respond-to(landscape)
+        width: 18%
+        margin: 0
+        padding: 2% 0
+
+    // ----------------------------- STATE 2
+    .state2 &
+      width: $logo_w_small
+      padding-top: 18px
+      +respond-to(medium)
+        width: 20%
+      +respond-to(small)
+        margin: 0 auto
+        padding: 2.5% 0
+      +respond-to(landscape)
+        width: 72px
+        padding-top: 5px
+        margin-left: -5%

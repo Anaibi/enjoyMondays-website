@@ -1,0 +1,37 @@
+=collapsedMenu
+  #collapsed-menu
+    +respond-to(landscape)
+      display: none
+     
+    a
+      display: block
+      // -------- icon size
+      width: 23px
+      height: 19px
+      // -------- to avoid jumps on hover
+      padding: 30px
+      margin: -30px
+      background: url('../images/menu.png') no-repeat 30px
+      
+    &:hover
+      cursor: pointer
+
+    // ----------------------------- STATE 1
+    .state1 &
+      +hide
+      +respond-to(small)
+        display: none
+
+
+    // ----------------------------- STATE 2
+    .state2 &
+      +show
+      margin-top: 40px
+      +respond-to(small)
+        display: none
+
+      &:hover
+        +hide
+
+    .expanded + &
+      +hide
