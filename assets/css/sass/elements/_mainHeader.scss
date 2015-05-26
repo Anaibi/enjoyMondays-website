@@ -1,6 +1,6 @@
-@import "_logo";
-@import "_headerMenu";
-@import "_collapsedMenu";
+@import "logo";
+@import "headerMenu";
+@import "collapsedMenu";
 
 @mixin mainHeader {
   #main-header {
