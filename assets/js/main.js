@@ -172,10 +172,7 @@ $(function() {
           'text-align': 'right'
         });
 
-
         h_content = $header.outerHeight();  
-
-        // TODO on mobile landscape still not enough
       }
     }
    

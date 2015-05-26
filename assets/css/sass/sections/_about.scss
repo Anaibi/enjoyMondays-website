@@ -17,7 +17,7 @@
       width: 80%;
       margin: auto;
 
-      @include respond-to(small) { width: 100%; }
+      @include respond-to(small) { width: 95%; }
     }
   }
 }

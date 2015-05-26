@@ -15,11 +15,21 @@
         width: 70%;
         padding: 3% 0;
       }
+
       @include respond-to(small) { width: 80%; }
       @include respond-to(smallest) { width: 100%; }
       @include respond-to(landscape) { padding: 3% 0; }
     }
 
+    .about & {
+      @include respond-to(medium) {
+        width: 100%;
+        .header { 
+          width: 80%; 
+          margin: auto;
+        }
+      }
+    }
     .contact & {
       @include respond-to(medium, min) { text-align: right; }
       @include respond-to(medium) { width: 100%; }

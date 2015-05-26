@@ -244,7 +244,7 @@ footer.container .social-links {
   margin: auto; }
   @media screen and (max-width: 480px) {
     .about .content p {
-      width: 100%; } }
+      width: 95%; } }
 
 .contact.section .header .hello {
   display: inline-block;
@@ -617,6 +617,12 @@ p {
   @media screen and (max-height: 600px) and (orientation: landscape) {
     .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
       padding: 3% 0; } }
+  @media screen and (max-width: 650px) {
+    .about .header-wrapper {
+      width: 100%; }
+      .about .header-wrapper .header {
+        width: 80%;
+        margin: auto; } }
   @media screen and (min-width: 650px) {
     .contact .header-wrapper {
       text-align: right; } }
@@ -638,7 +644,7 @@ p {
 
 @media screen and (max-width: 650px) {
   .grid {
-    padding: 0 0 11%; } }
+    padding: 5% 0 11%; } }
 .grid .tile {
   display: inline-block;
   width: 50%;
