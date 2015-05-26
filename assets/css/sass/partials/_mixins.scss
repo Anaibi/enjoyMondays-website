@@ -73,6 +73,10 @@ $break-large: 1350px !default;
   }
 
   @else if $media == landscape {
-    @media screen and (#{$val}-height: 600px) and (orientation: landscape) { @content; }
+    @media screen and (#{$val}-height: $break-medium) and (orientation: landscape) { @content; }
+  }
+
+  @else if $media == small-height {
+    @media screen and (max-height: $break-medium) and (max-width: 700px) { @content; }
   }
 }

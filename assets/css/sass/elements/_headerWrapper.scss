@@ -30,6 +30,14 @@
           margin: auto;
         }
       }
+
+      @include respond-to(small-height) {
+        width: 100%;
+        .header { 
+          width: 80%; 
+          margin: auto;
+        }
+      }
     }
     .contact & {
       @include respond-to(medium, min) { text-align: right; }

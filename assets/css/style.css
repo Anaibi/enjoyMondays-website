@@ -273,7 +273,7 @@ footer.container .social-links {
 
 html {
   height: 100%; }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     html {
       content: "isLandscape"; } }
 
@@ -317,7 +317,7 @@ p {
     min-height: calc(100vh - 85px); }
     .state1 #sections .section.last {
       min-height: calc(100vh - 185px); } }
-@media screen and (max-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 #main-header {
     height: 60px; }
   .state1 #sections::before {
@@ -357,7 +357,7 @@ p {
     min-height: calc(100vh - 85px); }
     .state2 #sections .section.last {
       min-height: calc(100vh - 165px); } }
-@media screen and (max-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .state2 #main-header {
     height: 60px; }
   .state2 #sections::before {
@@ -385,7 +385,7 @@ p {
   @media screen and (max-width: 650px) {
     .content {
       padding: 0 0 12%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     .content {
       padding: 0 0 12%; } }
 
@@ -407,7 +407,7 @@ p {
     #logo {
       display: block;
       float: none; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     #logo {
       float: left; } }
   .state1 #logo {
@@ -423,7 +423,7 @@ p {
     @media screen and (max-width: 350px) {
       .state1 #logo {
         width: 20%; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
+    @media screen and (max-height: 650px) and (orientation: landscape) {
       .state1 #logo {
         width: 18%;
         margin: 0;
@@ -438,7 +438,7 @@ p {
       .state2 #logo {
         margin: 0 auto;
         padding: 2.5% 0; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
+    @media screen and (max-height: 650px) and (orientation: landscape) {
       .state2 #logo {
         width: 72px;
         padding-top: 5px;
@@ -452,7 +452,7 @@ p {
     #header-nav {
       float: none;
       margin: auto; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     #header-nav {
       float: right;
       margin: 0; } }
@@ -481,7 +481,7 @@ p {
     @media screen and (max-width: 480px) {
       .state1 #header-nav {
         margin: 0 auto; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
+    @media screen and (max-height: 650px) and (orientation: landscape) {
       .state1 #header-nav {
         height: 100%;
         margin-top: 0; }
@@ -515,7 +515,7 @@ p {
         -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
         -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
         transition: visibility 0s linear 0.5s, opacity 0.5s linear; } }
-    @media screen and (max-height: 600px) and (orientation: landscape) {
+    @media screen and (max-height: 650px) and (orientation: landscape) {
       .state2 #header-nav {
         display: inline-block;
         visibility: visible;
@@ -537,7 +537,7 @@ p {
       -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
       transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
 
-@media screen and (max-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 650px) and (orientation: landscape) {
   #collapsed-menu {
     display: none; } }
 #collapsed-menu a {
@@ -614,10 +614,16 @@ p {
   @media screen and (max-width: 350px) {
     .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
       width: 100%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
       padding: 3% 0; } }
   @media screen and (max-width: 650px) {
+    .about .header-wrapper {
+      width: 100%; }
+      .about .header-wrapper .header {
+        width: 80%;
+        margin: auto; } }
+  @media screen and (max-height: 650px) and (max-width: 700px) {
     .about .header-wrapper {
       width: 100%; }
       .about .header-wrapper .header {
@@ -663,7 +669,7 @@ p {
   @media screen and (max-width: 350px) {
     .grid.three .tile {
       width: 100%; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     .grid.three .tile {
       width: 32%;
       margin: auto; } }
@@ -673,7 +679,7 @@ p {
   @media screen and (max-width: 480px) {
     .footer {
       height: 80px; } }
-  @media screen and (max-height: 600px) and (orientation: landscape) {
+  @media screen and (max-height: 650px) and (orientation: landscape) {
     .footer {
       height: 80px; } }
   .footer .site-info,
