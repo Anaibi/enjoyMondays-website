@@ -86,6 +86,10 @@ $useSideMenu: false !default;
           }
         }
       }
+
+      #sections .section.last {
+        min-height: calc(100vh - #{$footer_h_2});
+      }
     }
   }
 }

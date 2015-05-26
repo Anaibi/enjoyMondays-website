@@ -158,10 +158,10 @@ $(function() {
 
       h_container = wh.actual - $('footer').height();
 
-    //  if (!isLandscapeLayout()) { 
+      if (!hasSideMenu()) { 
         // there is also header at top
         h_container = h_container - $('#main-header').height();
-    //  } 
+      } 
 
       if (h_container < h_content) { 
         // make contact sub-header full-width
@@ -202,7 +202,7 @@ $(function() {
     }
 
     // landscape has side menu except at home section
-    if (isLandscapeLayout()) { h = header_h[4]; }
+    if (isLandscapeLayout() && !hasSideMenu()) { h = header_h[4]; }
     
     $('body, html')
       .stop()
