@@ -39,7 +39,7 @@ Thumbs.db
 # SASS               #
 ######################
 .sass-cache
-*.css.map
+style.css.map
 
 # IMAGES             #
 ######################
