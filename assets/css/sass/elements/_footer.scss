@@ -24,17 +24,18 @@
       float: left; 
       @include respond-to(medium) { 
         height: 40%; 
-      }
+        p { padding: 0; }
+      } 
     }
 
     .social-links {
       
       float: right;
-
       @include respond-to(medium) { 
-        height: 60%; 
+        height: 60%;
+        ul { padding-bottom: 6px; }
       }
-     
+
       li {
         display: inline-block;
         padding-left: 6px;
