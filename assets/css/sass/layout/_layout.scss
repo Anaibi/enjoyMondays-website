@@ -93,6 +93,11 @@ p { padding-bottom: .3em; }
 @include mainHeader;
 
 
+// --------------------------------------- SIDE MENU
+
+@if $useSideMenu { @include sideMenu; }
+
+
 // ---------------------------------------- SECTIONS
 #sections {
   &::before {
