@@ -681,7 +681,7 @@ p {
   .contact .header-wrapper {
     width: 100%; }
   @media screen and (max-width: 650px) {
-    .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
+    .home .header-wrapper, .work .header-wrapper {
       width: 70%;
       padding: 3% 0; } }
   @media screen and (max-width: 480px) {
