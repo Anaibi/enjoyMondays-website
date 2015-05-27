@@ -8,7 +8,7 @@
   #sections 
     &::before
       height: $h 
-      +respond-to(small)
+      +respond-to(small-height, max)
         height: 0
     .section 
       height: 100%
@@ -20,7 +20,7 @@
         min-height: $with_header_and_footer_h
         &.fullscreen
           max-height: $with_header_and_footer_h
-          +respond-to(small)
+          +respond-to(small-height, max)
             max-height: $with_footer_h !important
             min-height: $with_footer_h !important
   .footer 

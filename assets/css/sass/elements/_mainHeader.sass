@@ -5,12 +5,13 @@
 =mainHeader
   #main-header
     +transition(all .5s)
-    +respond-to(small-height, min)
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      z-index: 2000  
+    position: fixed
+    +respond-to(small, max)
+      position: static
+    top: 0
+    left: 0
+    right: 0
+    z-index: 2000  
   +logo
   +headerMenu
   +collapsedMenu
