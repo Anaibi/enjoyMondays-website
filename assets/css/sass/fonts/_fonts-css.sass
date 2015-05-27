@@ -13,6 +13,8 @@ $font_weight_boldest: 900 !default
 body 
   font-family: $font_family_1
   font-weight: $font_weight_light
+  +respond-to(small)
+    font-weight: $font_weight_middle
   .mobile &
     font-weight: $font_weight_middle
   font-size: $base_font_size

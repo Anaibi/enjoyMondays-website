@@ -85,6 +85,9 @@ body {
   font-weight: 100;
   font-size: 16px;
   text-rendering: optimizeLegibility; }
+  @media screen and (max-width: 480px) {
+    body {
+      font-weight: 400; } }
   .mobile body {
     font-weight: 400; }
   @media screen and (max-width: 480px) {
@@ -296,116 +299,68 @@ body {
 p {
   padding-bottom: 0.3em; }
 
-.state1 #main-header {
-  height: 139px; }
-.state1 #sections::before {
-  height: 139px; }
-.state1 #sections .section {
-  height: 100%;
-  min-height: calc(100vh - 139px); }
-  .state1 #sections .section.last {
-    min-height: calc(100vh - 239px); }
-    .mobile .state1 #sections .section.last {
-      min-height: calc(100vh - 100px); }
-.state1 .footer {
-  height: 100px; }
-@media screen and (max-width: 480px) {
-  .state1 #main-header {
-    height: 100px; }
-  .state1 #sections::before {
-    height: 100px; }
-  .state1 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 100px); }
-    .state1 #sections .section.last {
-      min-height: calc(100vh - 200px); }
-      .mobile .state1 #sections .section.last {
-        min-height: calc(100vh - 100px); }
-  .state1 .footer {
-    height: 100px; } }
-@media screen and (max-width: 350px) {
-  .state1 #main-header {
-    height: 85px; }
-  .state1 #sections::before {
-    height: 85px; }
-  .state1 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 85px); }
-    .state1 #sections .section.last {
-      min-height: calc(100vh - 185px); }
-      .mobile .state1 #sections .section.last {
-        min-height: calc(100vh - 100px); }
-  .state1 .footer {
-    height: 100px; } }
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  .state1 #main-header {
-    height: 60px; }
-  .state1 #sections::before {
-    height: 60px; }
-  .state1 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 60px); }
-    .state1 #sections .section.last {
-      min-height: calc(100vh - 120px); }
-      .mobile .state1 #sections .section.last {
-        min-height: calc(100vh - 60px); }
-  .state1 .footer {
-    height: 60px; } }
-
-.state2 #main-header {
+.state1 #main-header, .state2 #main-header {
   height: 111px; }
-.state2 #sections::before {
+.state1 #sections::before, .state2 #sections::before {
   height: 111px; }
-.state2 #sections .section {
+.state1 #sections .section, .state2 #sections .section {
   height: 100%;
   min-height: calc(100vh - 111px); }
-  .state2 #sections .section.last {
+  .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+    max-height: calc(100vh - 111px); }
+  .state1 #sections .section.last, .state2 #sections .section.last {
     min-height: calc(100vh - 211px); }
-    .mobile .state2 #sections .section.last {
-      min-height: calc(100vh - 100px); }
-.state2 .footer {
+    .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+      max-height: calc(100vh - 211px); }
+.state1 .footer, .state2 .footer {
   height: 100px; }
 @media screen and (max-width: 480px) {
-  .state2 #main-header {
+  .state1 #main-header, .state2 #main-header {
     height: 100px; }
-  .state2 #sections::before {
+  .state1 #sections::before, .state2 #sections::before {
     height: 100px; }
-  .state2 #sections .section {
+  .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 100px); }
-    .state2 #sections .section.last {
+    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+      max-height: calc(100vh - 100px); }
+    .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 180px); }
-      .mobile .state2 #sections .section.last {
-        min-height: calc(100vh - 80px); }
-  .state2 .footer {
+      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+        max-height: calc(100vh - 180px); }
+  .state1 .footer, .state2 .footer {
     height: 80px; } }
 @media screen and (max-width: 350px) {
-  .state2 #main-header {
+  .state1 #main-header, .state2 #main-header {
     height: 85px; }
-  .state2 #sections::before {
+  .state1 #sections::before, .state2 #sections::before {
     height: 85px; }
-  .state2 #sections .section {
+  .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 85px); }
-    .state2 #sections .section.last {
+    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+      max-height: calc(100vh - 85px); }
+    .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 165px); }
-      .mobile .state2 #sections .section.last {
-        min-height: calc(100vh - 80px); }
-  .state2 .footer {
+      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+        max-height: calc(100vh - 165px); }
+  .state1 .footer, .state2 .footer {
     height: 80px; } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
-  .state2 #main-header {
+  .state1 #main-header, .state2 #main-header {
     height: 60px; }
-  .state2 #sections::before {
+  .state1 #sections::before, .state2 #sections::before {
     height: 60px; }
-  .state2 #sections .section {
+  .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 60px); }
-    .state2 #sections .section.last {
+    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+      max-height: calc(100vh - 60px); }
+    .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 120px); }
-      .mobile .state2 #sections .section.last {
-        min-height: calc(100vh - 60px); }
-  .state2 .footer {
+      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+        max-height: calc(100vh - 120px); }
+  .state1 .footer, .state2 .footer {
     height: 60px; } }
 
 .container {
@@ -429,6 +384,9 @@ p {
     .content {
       padding: 0 0 12%; } }
 
+.fullscreen {
+  overflow: hidden; }
+
 #main-header {
   position: fixed;
   top: 0;
@@ -438,7 +396,7 @@ p {
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s; }
-  .mobile .state2 #main-header {
+  .mobile #main-header {
     position: static; }
 
 #logo {

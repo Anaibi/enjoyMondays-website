@@ -134,49 +134,24 @@ $(function() {
 
   //----------------------------------------- centerContainer
   function centerContents(section) { 
-    var $section = $(section).find('.container'),
-        $header = $section.find('.header-wrapper'),
-        h_content = $header.outerHeight(),
-        h_container = wh.actual;
 
-    // add position relative to section
-    $section.css('position', 'relative');
+    console.log('window ' + wh.actual);
+    console.log('section ' + $(section).outerHeight());
+    console.log('.footer ' + $('.footer').outerHeight());
+    console.log('.footer css ' + $('.footer').css('height'));
 
-    if (section === '#home') {
-      h_container = wh.actual - $('#main-header').outerHeight();
-      // TODO h < 0
-      if (isLandscapeLayout) {
-        h_container = wh.actual - header_h[4];
-      }
-    } 
+    console.log('header ' + $('#main-header').outerHeight());
+    console.log('container ' + $(section).find('.container').outerHeight());
+    setTimeout(function() {
+      console.log('after .55s ');
+      console.log('window ' + wh.actual);
+    console.log('section ' + $(section).outerHeight());
+    console.log('.footer ' + $('.footer').outerHeight());
+        console.log('.footer css ' + $('.footer').css('height'));
 
-    // contact section
-    else { 
-      var h_footer = $('footer').height();
-
-      h_container = wh.actual - $('footer').height();
-
-      if (!hasSideMenu() && !isMobile) { 
-        // there is also header at top
-        h_container = h_container - $('#main-header').height();
-      } 
-
-      if (h_container < h_content) { 
-        // make contact sub-header full-width
-        $header.find('.sub-header').css({'width': 'auto'});
-        var $hello = $header.find('.fittextjs.hello');
-        $hello.css({
-          'font-size': parseInt($hello.css('font-size'))/2 + 'px',
-          'text-align': 'right'
-        });
-
-        h_content = $header.outerHeight();  
-      }
-    }
-   
-    var h = (h_container - h_content)/2;
-
-    $section.animate({'top': h}, '');
+    console.log('header ' + $('#main-header').outerHeight());
+    console.log('container ' + $(section).find('.container').outerHeight());
+    }, 550)
   };
 
 
