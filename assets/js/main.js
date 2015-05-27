@@ -133,7 +133,7 @@ $(function() {
   }
 
   //------------------------------------------ centerContents
-  function centerContents(section) { 
+  function centerContents(section) {
     
     var $section = $(section),
         $content = $section.find('.container'),
@@ -160,9 +160,9 @@ $(function() {
       .animate({'top': h});
 
     function getHeights() { 
-      content_h = $content.outerHeight();
-      section_h = $section.outerHeight();
-      h = (section_h - content_h)/2;
+      content_h = $content.outerHeight(); console.log(content_h);
+      section_h = $section.outerHeight(); console.log(section_h);
+      h = (section_h - content_h)/2; console.log(h);
     }
   }
 

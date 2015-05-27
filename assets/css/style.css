@@ -318,7 +318,7 @@ p {
       @media screen and (max-width: 480px) {
         .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
           max-height: calc(100vh - 100px) !important;
-          height: calc(100vh - 100px) !important; } }
+          min-height: calc(100vh - 100px) !important; } }
 .state1 .footer, .state2 .footer {
   height: 100px; }
 @media screen and (max-width: 480px) {
@@ -342,7 +342,7 @@ p {
       @media screen and (max-width: 480px) and (max-width: 480px) {
         .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
           max-height: calc(100vh - 80px) !important;
-          height: calc(100vh - 80px) !important; } }
+          min-height: calc(100vh - 80px) !important; } }
 @media screen and (max-width: 480px) {
   .state1 .footer, .state2 .footer {
     height: 80px; } }
@@ -367,7 +367,7 @@ p {
       @media screen and (max-width: 350px) and (max-width: 480px) {
         .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
           max-height: calc(100vh - 80px) !important;
-          height: calc(100vh - 80px) !important; } }
+          min-height: calc(100vh - 80px) !important; } }
 @media screen and (max-width: 350px) {
   .state1 .footer, .state2 .footer {
     height: 80px; } }
@@ -392,7 +392,7 @@ p {
       @media screen and (max-height: 650px) and (orientation: landscape) and (max-width: 480px) {
         .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
           max-height: calc(100vh - 60px) !important;
-          height: calc(100vh - 60px) !important; } }
+          min-height: calc(100vh - 60px) !important; } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 .footer, .state2 .footer {
     height: 60px; } }
