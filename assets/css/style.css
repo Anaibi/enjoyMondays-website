@@ -88,7 +88,7 @@ body {
   @media screen and (max-width: 480px) {
     body {
       font-weight: 400; } }
-  .mobile body {
+  .touch-device body {
     font-weight: 400; }
   @media screen and (max-width: 480px) {
     body {
@@ -141,7 +141,7 @@ a {
   @media screen and (max-width: 650px) {
     .section.contact .sub-header {
       font-weight: 100; }
-      .mobile .section.contact .sub-header {
+      .touch-device .section.contact .sub-header {
         font-weight: 400; } }
 
 @media screen and (max-width: 650px) {
@@ -465,7 +465,7 @@ p {
       margin-right: -4px; }
     #header-nav li.active-link, #header-nav li:hover {
       border-bottom: 3px solid #DF3F54; }
-    .mobile #header-nav li.no-touch {
+    .touch-device #header-nav li.no-touch {
       border: none; }
     #header-nav li a {
       display: block;

@@ -75,9 +75,9 @@ $(function() {
     }
   });
 
-  // mobile detection ?
+  // touch-device detection
   $('html').on('touchstart', function() {
-    $(this).addClass('mobile');
+    $(this).addClass('touch-device');
   });
 
   // expanded menu
