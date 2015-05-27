@@ -430,7 +430,7 @@ p {
   left: 0;
   right: 0;
   z-index: 2000; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-height: 650px) and (max-width: 700px) {
     #main-header {
       position: static; } }
 
