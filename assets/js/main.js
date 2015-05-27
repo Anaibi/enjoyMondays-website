@@ -114,7 +114,6 @@ $(function() {
     });
   }
 
-
   //--------------------------------------------- updateState
   function updateState(direction, section) {
 
@@ -245,6 +244,7 @@ $(function() {
   
 
   $(document).ready(function () {
+
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
     $("#work .fittextjs").fitText(.29, { minFontSize: '40px', maxFontSize: '150px' });

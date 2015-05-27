@@ -16,6 +16,8 @@
         min-height: calc(100vh - #{$th})
         .mobile &
           min-height: calc(100vh - #{$f})
+  .footer 
+    height: $f
        
 // ----------------------------------- HTML and BODY
 html 
@@ -42,7 +44,7 @@ p
   +respond-to(smallest)
     +setLayoutHeights($header_h_4, $footer_h_1) 
   +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_2) 
+    +setLayoutHeights($header_h_5, $footer_h_3) 
 
 // ------------------------------------ STATE 2
 .state2 
@@ -52,7 +54,7 @@ p
   +respond-to(smallest)
     +setLayoutHeights($header_h_4, $footer_h_2) 
   +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_2) 
+    +setLayoutHeights($header_h_5, $footer_h_3) 
 
 // --------------------------------- CONTAINER CLASS
 .container 
