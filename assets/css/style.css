@@ -306,11 +306,11 @@ p {
 .state1 #sections .section, .state2 #sections .section {
   height: 100%;
   min-height: calc(100vh - 111px); }
-  .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+  .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
     max-height: calc(100vh - 111px); }
   .state1 #sections .section.last, .state2 #sections .section.last {
     min-height: calc(100vh - 211px); }
-    .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+    .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
       max-height: calc(100vh - 211px); }
 .state1 .footer, .state2 .footer {
   height: 100px; }
@@ -322,11 +322,11 @@ p {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 100px); }
-    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
       max-height: calc(100vh - 100px); }
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 180px); }
-      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
         max-height: calc(100vh - 180px); }
   .state1 .footer, .state2 .footer {
     height: 80px; } }
@@ -338,11 +338,11 @@ p {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 85px); }
-    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
       max-height: calc(100vh - 85px); }
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 165px); }
-      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
         max-height: calc(100vh - 165px); }
   .state1 .footer, .state2 .footer {
     height: 80px; } }
@@ -354,11 +354,11 @@ p {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 60px); }
-    .state1 #sections .section .fullscreen, .state2 #sections .section .fullscreen {
+    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
       max-height: calc(100vh - 60px); }
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 120px); }
-      .state1 #sections .section.last .fullscreen, .state2 #sections .section.last .fullscreen {
+      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
         max-height: calc(100vh - 120px); }
   .state1 .footer, .state2 .footer {
     height: 60px; } }
@@ -396,8 +396,6 @@ p {
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s; }
-  .mobile #main-header {
-    position: static; }
 
 #logo {
   max-width: 149px;
@@ -666,7 +664,7 @@ p {
   @media screen and (max-width: 650px) {
     .grid.three .tile {
       width: 100%;
-      margin: 10% auto; } }
+      margin: 0 auto 10% auto; } }
   @media screen and (max-width: 350px) {
     .grid.three .tile {
       width: 100%; } }
@@ -685,7 +683,7 @@ p {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 480px) {
     .footer .site-info,
     .footer .social-links {
       float: none;
@@ -693,14 +691,14 @@ p {
       width: 100%; } }
 .footer .site-info {
   float: left; }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 480px) {
     .footer .site-info {
       height: 40%; }
       .footer .site-info p {
         padding: 0; } }
 .footer .social-links {
   float: right; }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 480px) {
     .footer .social-links {
       height: 60%; }
       .footer .social-links ul {

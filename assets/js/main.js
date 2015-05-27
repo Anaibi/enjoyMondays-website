@@ -36,7 +36,7 @@ $(function() {
         Waypoint.refreshAll();
         
         // center contents again
-        centerContents('#home'); 
+        centerContents('#home');
         centerContents('#contact');
 
         scrollToPosition(actualSection);
@@ -132,28 +132,40 @@ $(function() {
     } 
   }
 
-  //----------------------------------------- centerContainer
+  //------------------------------------------ centerContents
   function centerContents(section) { 
+    
+    var $section = $(section),
+        $content = $section.find('.container'),
+        content_h = 0, section_h = 0, h = 0;
 
-    console.log('window ' + wh.actual);
-    console.log('section ' + $(section).outerHeight());
-    console.log('.footer ' + $('.footer').outerHeight());
-    console.log('.footer css ' + $('.footer').css('height'));
+    getHeights();
 
-    console.log('header ' + $('#main-header').outerHeight());
-    console.log('container ' + $(section).find('.container').outerHeight());
-    setTimeout(function() {
-      console.log('after .55s ');
-      console.log('window ' + wh.actual);
-    console.log('section ' + $(section).outerHeight());
-    console.log('.footer ' + $('.footer').outerHeight());
-        console.log('.footer css ' + $('.footer').css('height'));
+    if (h < 0) {
+      var i = 0,
+          $fittextjs = (section === '#home') ? $content.find('.fittextjs') : $content.find('.hello');
+      if (section === '#contact') {
+        $content.find('.sub-header').css('width', 'auto');
+        getHeights();
+      }
+      while (h < 0 && i < 10) { 
+        $fittextjs.css('font-size', parseInt($fittextjs.css('font-size')) - 10 + 'px');
+        $content.find('.header-wrapper').css('width', 'auto');
+        getHeights();
+        i++;
+      }
+    }
 
-    console.log('header ' + $('#main-header').outerHeight());
-    console.log('container ' + $(section).find('.container').outerHeight());
-    }, 550)
-  };
+    $content
+      .css('position', 'relative')
+      .animate({'top': h});
 
+    function getHeights() {
+      content_h = $content.outerHeight();
+      section_h = $section.outerHeight();
+      h = (section_h - content_h)/2;
+    }
+  }
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
@@ -175,7 +187,7 @@ $(function() {
     if (isLandscapeLayout() && !hasSideMenu()) { h = header_h[4]; }
 
     // menu scrolls up on mobile *testing*
-    if (isMobile() && section !== '#home' && !hasSideMenu()) { h = 0 - $('#main-header').height(); }
+  //  if (isMobile() && section !== '#home' && !hasSideMenu()) { h = 0 - $('#main-header').height(); }
 
     $('body, html')
       .stop()
@@ -229,7 +241,6 @@ $(function() {
 
     centerContents('#home');
     centerContents('#contact');
-
        
     //---------------------------------------------- supersized
     var slides = [];
