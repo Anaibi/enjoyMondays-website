@@ -83,7 +83,10 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 100;
-  font-size: 16px; }
+  font-size: 16px;
+  text-rendering: optimizeLegibility; }
+  .mobile body {
+    font-weight: 400; }
   @media screen and (max-width: 480px) {
     body {
       font-size: 13px; } }
@@ -134,7 +137,9 @@ a {
   font-weight: 400; }
   @media screen and (max-width: 650px) {
     .section.contact .sub-header {
-      font-weight: 100; } }
+      font-weight: 100; }
+      .mobile .section.contact .sub-header {
+        font-weight: 400; } }
 
 @media screen and (max-width: 650px) {
   footer.container {

@@ -13,9 +13,12 @@ $font_weight_boldest: 900 !default
 body 
   font-family: $font_family_1
   font-weight: $font_weight_light
+  .mobile &
+    font-weight: $font_weight_middle
   font-size: $base_font_size
   +respond-to(small)
-    font-size: $base_font_size - 3 
+    font-size: $base_font_size - 3
+  text-rendering: optimizeLegibility  
 h1 
   font-family: $font_family_2
   font-weight: $font_weight_bold
@@ -59,6 +62,8 @@ a
     font-weight: $font_weight_middle
     +respond-to(medium)  
       font-weight: $font_weight_light 
+      .mobile &
+        font-weight: $font_weight_middle
     
 // ---------------------------------- FOOTER
 footer.container 
