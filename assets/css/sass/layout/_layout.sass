@@ -1,21 +1,20 @@
 // -------------------------------- setLayoutHeights
-
 =setLayoutHeights($h, $f) 
-
   #main-header  
     height: $h 
-
   #sections 
     &::before
       height: $h 
     .section 
       height: 100%
       min-height: calc(100vh - #{$h})
+      .fullscreen
+        max-height: calc(100vh - #{$h})
       &.last 
         $th: $h + $f
         min-height: calc(100vh - #{$th})
-        .mobile &
-          min-height: calc(100vh - #{$f})
+        .fullscreen
+          max-height: calc(100vh - #{$th})
   .footer 
     height: $f
        
@@ -36,18 +35,8 @@ body
 p
   padding-bottom: .3em 
 
-// ------------------------------------ STATE 1
-.state1 
-  +setLayoutHeights($header_h_1, $footer_h_1)
-  +respond-to(small)
-    +setLayoutHeights($header_h_3, $footer_h_1) 
-  +respond-to(smallest)
-    +setLayoutHeights($header_h_4, $footer_h_1) 
-  +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_3) 
-
-// ------------------------------------ STATE 2
-.state2 
+// ------------------------------- setLayoutHeights
+.state1, .state2
   +setLayoutHeights($header_h_2, $footer_h_1)
   +respond-to(small)
     +setLayoutHeights($header_h_3, $footer_h_2) 
@@ -55,7 +44,7 @@ p
     +setLayoutHeights($header_h_4, $footer_h_2) 
   +respond-to(landscape)
     +setLayoutHeights($header_h_5, $footer_h_3) 
-
+ 
 // --------------------------------- CONTAINER CLASS
 .container 
   max-width: $max_layout_width
@@ -78,6 +67,10 @@ p
   +respond-to(landscape)
     padding: 0 0 12% 
 
+// -------------------------------- FULLSCREEN CLASS
+.fullscreen
+  overflow: hidden
+  
 // ------------------------------------- MAIN HEADER
 +mainHeader
 
