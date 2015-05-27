@@ -303,6 +303,9 @@ p {
   height: 111px; }
 .state1 #sections::before, .state2 #sections::before {
   height: 111px; }
+  @media screen and (max-width: 480px) {
+    .state1 #sections::before, .state2 #sections::before {
+      height: 0; } }
 .state1 #sections .section, .state2 #sections .section {
   height: 100%;
   min-height: calc(100vh - 111px); }
@@ -312,13 +315,21 @@ p {
     min-height: calc(100vh - 211px); }
     .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
       max-height: calc(100vh - 211px); }
+      @media screen and (max-width: 480px) {
+        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
+          max-height: calc(100vh - 100px) !important;
+          height: calc(100vh - 100px) !important; } }
 .state1 .footer, .state2 .footer {
   height: 100px; }
 @media screen and (max-width: 480px) {
   .state1 #main-header, .state2 #main-header {
     height: 100px; }
   .state1 #sections::before, .state2 #sections::before {
-    height: 100px; }
+    height: 100px; } }
+  @media screen and (max-width: 480px) and (max-width: 480px) {
+    .state1 #sections::before, .state2 #sections::before {
+      height: 0; } }
+@media screen and (max-width: 480px) {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 100px); }
@@ -327,14 +338,23 @@ p {
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 180px); }
       .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 180px); }
+        max-height: calc(100vh - 180px); } }
+      @media screen and (max-width: 480px) and (max-width: 480px) {
+        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
+          max-height: calc(100vh - 80px) !important;
+          height: calc(100vh - 80px) !important; } }
+@media screen and (max-width: 480px) {
   .state1 .footer, .state2 .footer {
     height: 80px; } }
 @media screen and (max-width: 350px) {
   .state1 #main-header, .state2 #main-header {
     height: 85px; }
   .state1 #sections::before, .state2 #sections::before {
-    height: 85px; }
+    height: 85px; } }
+  @media screen and (max-width: 350px) and (max-width: 480px) {
+    .state1 #sections::before, .state2 #sections::before {
+      height: 0; } }
+@media screen and (max-width: 350px) {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 85px); }
@@ -343,14 +363,23 @@ p {
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 165px); }
       .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 165px); }
+        max-height: calc(100vh - 165px); } }
+      @media screen and (max-width: 350px) and (max-width: 480px) {
+        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
+          max-height: calc(100vh - 80px) !important;
+          height: calc(100vh - 80px) !important; } }
+@media screen and (max-width: 350px) {
   .state1 .footer, .state2 .footer {
     height: 80px; } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 #main-header, .state2 #main-header {
     height: 60px; }
   .state1 #sections::before, .state2 #sections::before {
-    height: 60px; }
+    height: 60px; } }
+  @media screen and (max-height: 650px) and (orientation: landscape) and (max-width: 480px) {
+    .state1 #sections::before, .state2 #sections::before {
+      height: 0; } }
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 #sections .section, .state2 #sections .section {
     height: 100%;
     min-height: calc(100vh - 60px); }
@@ -359,7 +388,12 @@ p {
     .state1 #sections .section.last, .state2 #sections .section.last {
       min-height: calc(100vh - 120px); }
       .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 120px); }
+        max-height: calc(100vh - 120px); } }
+      @media screen and (max-height: 650px) and (orientation: landscape) and (max-width: 480px) {
+        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
+          max-height: calc(100vh - 60px) !important;
+          height: calc(100vh - 60px) !important; } }
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 .footer, .state2 .footer {
     height: 60px; } }
 
@@ -388,14 +422,16 @@ p {
   overflow: hidden; }
 
 #main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2000;
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s; }
+  @media screen and (min-height: 650px) and (max-width: 700px) {
+    #main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2000; } }
 
 #logo {
   max-width: 149px;

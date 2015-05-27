@@ -133,7 +133,7 @@ $(function() {
   }
 
   //------------------------------------------ centerContents
-  function centerContents(section) { console.log('center');
+  function centerContents(section) { 
     
     var $section = $(section),
         $content = $section.find('.container'),
@@ -159,7 +159,7 @@ $(function() {
       .css('position', 'relative')
       .animate({'top': h});
 
-    function getHeights() {
+    function getHeights() { 
       content_h = $content.outerHeight();
       section_h = $section.outerHeight();
       h = (section_h - content_h)/2;
@@ -170,23 +170,14 @@ $(function() {
   function scrollToPosition(section) { 
 
     // clicking from home, get small header height (unless section is home)
-    var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
-
-    // if under 480px, header height is header_h[2] always
-    if (ww.actual < marks[1]) { h = header_h[2]; }
-
-    // if under 350px, header height is header_h[3] always
-    if (ww.actual < marks[0]) { h = header_h[3]; }
+    var h = $('#main-header').height();
 
     // landscape has side menu except at home section
     // only when landscape scss partial on
-    if (hasSideMenu()) { h = (section === '#home') ? header_h[4] : h = 0; }
+    if (hasSideMenu()) { h = (section === '#home') ? h : 0; }
 
-    // landscape has side menu except at home section
-    if (isLandscapeLayout() && !hasSideMenu()) { h = header_h[4]; }
-
-    // menu scrolls up on mobile *testing*
-  //  if (isMobile() && section !== '#home' && !hasSideMenu()) { h = 0 - $('#main-header').height(); }
+    // menu scrolls up on small-height *testing* TODO
+   if (!fixMenu() && section !== '#home') { h = 0; }
 
     $('body, html')
       .stop()
@@ -224,8 +215,8 @@ $(function() {
   };
 
   //------------------------------------------------ isMobile
-  function isMobile() {
-    return ($('html').hasClass('mobile'));
+  function fixMenu() {
+    return ($('#main-header').css('position') === 'fixed');
   };
   
 

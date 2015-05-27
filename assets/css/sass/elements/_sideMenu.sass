@@ -5,13 +5,14 @@ $useSideMenu: false !default
     html  
       content: "hasSideMenu"   
     #site 
-      width: calc(100vw - #$layout_verticalSidebar_padding)
+      width: calc(100vw - #{$layout_verticalSidebar_padding})
       padding-left: $layout_verticalSidebar_padding
       overflow: hidden
     
     .state2 
       #sections .section.last 
-        min-height: calc(100vh - #$footer_h_2)
+        height: calc(100vh - #{$footer_h_3})
+        max-height: calc(100vh - #{$footer_h_3}) !important
       #main-header 
         position: fixed
         left: 0 
@@ -44,7 +45,7 @@ $useSideMenu: false !default
             border-left: 6px solid $link_color2 
           &:hover  
             border-left: 6px solid $link_color2 
-          .mobile &.no-touch  
+          .touch-device &.no-touch  
             border-left: 6px solid $color1
           a 
             margin: 50% 0 0

@@ -67,5 +67,5 @@ $break-large: 1350px !default
       @content 
   
   @else if $media == small-height 
-    @media screen and (max-height: $break-medium) and (max-width: 700px)
+    @media screen and (#{$val}-height: $break-medium) and (max-width: 700px)
       @content 
