@@ -133,7 +133,7 @@ $(function() {
   }
 
   //------------------------------------------ centerContents
-  function centerContents(section) { 
+  function centerContents(section) { console.log('center');
     
     var $section = $(section),
         $content = $section.find('.container'),
@@ -150,7 +150,6 @@ $(function() {
       }
       while (h < 0 && i < 10) { 
         $fittextjs.css('font-size', parseInt($fittextjs.css('font-size')) - 10 + 'px');
-        $content.find('.header-wrapper').css('width', 'auto');
         getHeights();
         i++;
       }
