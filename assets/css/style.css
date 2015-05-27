@@ -1,7 +1,6 @@
 .home .header:before, .container:before, .home .header:after, .container:after {
   content: "";
-  display: table; }
-.home .header:after, .container:after {
+  display: table;
   clear: both; }
 .home .header, .container {
   zoom: 1; }
@@ -88,19 +87,23 @@ body {
   @media screen and (max-width: 480px) {
     body {
       font-size: 13px; } }
-  body h1 {
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    font-size: 2em; }
-  body p {
-    line-height: 1.2;
-    letter-spacing: 0.17px;
-    word-spacing: 0.12em;
-    font-size: 1em; }
-  body a {
-    font-size: 1em; }
-  body .fittextjs {
-    font-size: 1em; }
+
+h1 {
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-size: 2em; }
+
+p {
+  line-height: 1.2;
+  letter-spacing: 0.17px;
+  word-spacing: 0.12em;
+  font-size: 1em; }
+
+a {
+  font-size: 1em; }
+
+.fittextjs {
+  font-size: 1em; }
 
 #header-nav {
   font-weight: 700;
@@ -227,6 +230,7 @@ footer.container .social-links {
   height: 56px;
   background: transparent url(../images/close.png) no-repeat top right;
   background-size: 100%;
+  position: absolute;
   top: 10px;
   right: 10px;
   font-size: 0; }
@@ -440,8 +444,8 @@ p {
     @media screen and (max-height: 650px) and (orientation: landscape) {
       .state2 #logo {
         width: 72px;
-        padding-top: 5px;
-        margin-left: -5%; } }
+        margin-left: -5%;
+        padding-top: 5px; } }
 
 #header-nav {
   -webkit-transition: all 0.5s;
@@ -536,6 +540,8 @@ p {
       transition: visibility 0s linear 0.5s, opacity 0.5s linear;
       padding-top: 40px; }
 
+#collapsed-menu:hover {
+  cursor: pointer; }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   #collapsed-menu {
     display: none; } }
@@ -546,8 +552,6 @@ p {
   padding: 30px;
   margin: -30px;
   background: url("../images/menu.png") no-repeat 30px; }
-#collapsed-menu:hover {
-  cursor: pointer; }
 .state1 #collapsed-menu {
   visibility: hidden;
   opacity: 0;
@@ -564,15 +568,15 @@ p {
   -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
   margin-top: 40px; }
-  @media screen and (max-width: 480px) {
-    .state2 #collapsed-menu {
-      display: none; } }
   .state2 #collapsed-menu:hover {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
     -ms-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
     transition: visibility 0s linear 0.5s, opacity 0.2s linear; }
+  @media screen and (max-width: 480px) {
+    .state2 #collapsed-menu {
+      display: none; } }
 .expanded + #collapsed-menu {
   visibility: hidden;
   opacity: 0;
@@ -657,8 +661,8 @@ p {
   vertical-align: top; }
   @media screen and (max-width: 480px) {
     .grid .tile {
-      margin-bottom: 10%;
-      width: 100%; } }
+      width: 100%;
+      margin-bottom: 10%; } }
 .grid.three .tile {
   width: 33%; }
   @media screen and (max-width: 650px) {

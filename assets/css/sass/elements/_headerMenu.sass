@@ -1,11 +1,9 @@
 =headerMenu
   #header-nav
     +transition(all .5s)
-
     +respond-to(small)
       float: none
       margin: auto
-  
     +respond-to(landscape)
       float: right
       margin: 0
@@ -14,16 +12,12 @@
       float: left
       margin-left: 8px
       border-bottom: none
-
       &:first-child
         margin-left: 0
-
       &:last-child
         margin-right: -4px
-
       &.active-link
         border-bottom: 3px solid $link_color2
-      
       &:hover
         @extend .active-link
       .mobile &.no-touch

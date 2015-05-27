@@ -16,24 +16,19 @@ body
   font-size: $base_font_size
   +respond-to(small)
     font-size: $base_font_size - 3 
-
-  h1 
-    font-family: $font_family_2
-    font-weight: $font_weight_bold
-    font-size: 2em
-
-  p 
-    line-height: 1.2
-    letter-spacing: .17px
-    word-spacing: .12em
-    font-size: 1em
-
-  a  
-    font-size: 1em 
-
-  .fittextjs  
-    font-size: 1em 
-
+h1 
+  font-family: $font_family_2
+  font-weight: $font_weight_bold
+  font-size: 2em
+p 
+  line-height: 1.2
+  letter-spacing: .17px
+  word-spacing: .12em
+  font-size: 1em
+a  
+  font-size: 1em 
+.fittextjs  
+  font-size: 1em 
 
 // ---------------------------------- HEADER
 #header-nav 
@@ -46,7 +41,6 @@ body
     font-size: .9em 
   +respond-to(smallest)
     font-size: .7em 
-
   .active-link  
     font-weight: $font_weight_boldest 
 
@@ -56,12 +50,10 @@ body
     line-height: 1
     text-transform: uppercase
     white-space: nowrap
-  
   &.about  
     font-size: .9em
     .content p  
       word-spacing: .1em 
-
   &.contact .sub-header
     font-size: .9em
     font-weight: $font_weight_middle
@@ -72,15 +64,11 @@ body
 footer.container 
   +respond-to(medium)  
     font-size: 13px 
-
   .site-info 
     font-weight: $font_weight_bolder
     font-size: .95em
     a
       font-weight: font_weight_boldest 
-  
   .social-links 
     // otherwise webkit adds margin 1em 
     font-size: 0
-  
-

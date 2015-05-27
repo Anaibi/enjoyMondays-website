@@ -1,5 +1,7 @@
 =collapsedMenu
   #collapsed-menu
+    &:hover
+      cursor: pointer
     +respond-to(landscape)
       display: none
      
@@ -13,25 +15,20 @@
       margin: -30px
       background: url('../images/menu.png') no-repeat 30px
       
-    &:hover
-      cursor: pointer
-
     // ----------------------------- STATE 1
     .state1 &
       +hide
       +respond-to(small)
         display: none
 
-
     // ----------------------------- STATE 2
     .state2 &
+      &:hover
+        +hide
       +show
       margin-top: 40px
       +respond-to(small)
         display: none
-
-      &:hover
-        +hide
 
     .expanded + &
       +hide

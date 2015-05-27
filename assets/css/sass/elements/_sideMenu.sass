@@ -1,34 +1,28 @@
 $useSideMenu: false !default
 
 =sideMenu  
-
   +respond-to(landscape) 
-
     html  
       content: "hasSideMenu"   
-
     #site 
       width: calc(100vw - #$layout_verticalSidebar_padding)
       padding-left: $layout_verticalSidebar_padding
       overflow: hidden
     
-
     .state2 
+      #sections .section.last 
+        min-height: calc(100vh - #$footer_h_2)
       #main-header 
         position: fixed
         left: 0 
         top: 0
         width: $header_vertical_w
         height: 100vh
-      
-
       #logo 
         float: right
         width: 95%
         margin: 0 auto
         padding: 4% 0
-      
-
       #header-nav 
         display: block
         +show
@@ -39,7 +33,6 @@ $useSideMenu: false !default
         font-size: .65em
         text-align: right
         +transform(none)
-
         li 
           width: 90%
           height: 15%
@@ -47,23 +40,16 @@ $useSideMenu: false !default
           margin: 0
           border: none
           border-left: 6px solid $color1
-
           &.active-link  
             border-left: 6px solid $link_color2 
-          
           &:hover  
             border-left: 6px solid $link_color2 
-
           .mobile &.no-touch  
             border-left: 6px solid $color1
-          
           a 
             margin: 50% 0 0
             padding: 0
             line-height: 0
-
-      #sections .section.last 
-        min-height: calc(100vh - #$footer_h_2)
       
     
   
