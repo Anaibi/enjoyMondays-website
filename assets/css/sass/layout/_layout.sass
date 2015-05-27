@@ -14,6 +14,8 @@
       &.last 
         $th: $h + $f
         min-height: calc(100vh - #{$th})
+        .mobile &
+          min-height: calc(100vh - #{$f})
        
 // ----------------------------------- HTML and BODY
 html 

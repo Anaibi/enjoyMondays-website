@@ -157,7 +157,7 @@ $(function() {
 
       h_container = wh.actual - $('footer').height();
 
-      if (!hasSideMenu()) { 
+      if (!hasSideMenu() && !isMobile) { 
         // there is also header at top
         h_container = h_container - $('#main-header').height();
       } 
@@ -195,14 +195,14 @@ $(function() {
 
     // landscape has side menu except at home section
     // only when landscape scss partial on
-    if (hasSideMenu()) { 
-      if (section === '#home') { h = header_h[4]; }
-      else { h = 0; }
-    }
+    if (hasSideMenu()) { h = (section === '#home') ? header_h[4] : h = 0; }
 
     // landscape has side menu except at home section
     if (isLandscapeLayout() && !hasSideMenu()) { h = header_h[4]; }
-    
+
+    // menu scrolls up on mobile *testing*
+    if (isMobile() && section !== '#home' && !hasSideMenu()) { h = 0 - $('#main-header').height(); }
+
     $('body, html')
       .stop()
       .animate({
@@ -236,6 +236,11 @@ $(function() {
   //--------------------------------------------- hasSideMenu
   function hasSideMenu() {
     return ($('html').css('content') === 'hasSideMenu' || wh.actual < ww.actual/3);
+  };
+
+  //------------------------------------------------ isMobile
+  function isMobile() {
+    return ($('html').hasClass('mobile'));
   };
   
 

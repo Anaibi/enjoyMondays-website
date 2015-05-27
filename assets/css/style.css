@@ -305,6 +305,8 @@ p {
   min-height: calc(100vh - 139px); }
   .state1 #sections .section.last {
     min-height: calc(100vh - 239px); }
+    .mobile .state1 #sections .section.last {
+      min-height: calc(100vh - 100px); }
 @media screen and (max-width: 480px) {
   .state1 #main-header {
     height: 100px; }
@@ -314,7 +316,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 100px); }
     .state1 #sections .section.last {
-      min-height: calc(100vh - 200px); } }
+      min-height: calc(100vh - 200px); }
+      .mobile .state1 #sections .section.last {
+        min-height: calc(100vh - 100px); } }
 @media screen and (max-width: 350px) {
   .state1 #main-header {
     height: 85px; }
@@ -324,7 +328,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 85px); }
     .state1 #sections .section.last {
-      min-height: calc(100vh - 185px); } }
+      min-height: calc(100vh - 185px); }
+      .mobile .state1 #sections .section.last {
+        min-height: calc(100vh - 100px); } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   .state1 #main-header {
     height: 60px; }
@@ -334,7 +340,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 60px); }
     .state1 #sections .section.last {
-      min-height: calc(100vh - 140px); } }
+      min-height: calc(100vh - 140px); }
+      .mobile .state1 #sections .section.last {
+        min-height: calc(100vh - 80px); } }
 
 .state2 #main-header {
   height: 111px; }
@@ -345,6 +353,8 @@ p {
   min-height: calc(100vh - 111px); }
   .state2 #sections .section.last {
     min-height: calc(100vh - 211px); }
+    .mobile .state2 #sections .section.last {
+      min-height: calc(100vh - 100px); }
 @media screen and (max-width: 480px) {
   .state2 #main-header {
     height: 100px; }
@@ -354,7 +364,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 100px); }
     .state2 #sections .section.last {
-      min-height: calc(100vh - 180px); } }
+      min-height: calc(100vh - 180px); }
+      .mobile .state2 #sections .section.last {
+        min-height: calc(100vh - 80px); } }
 @media screen and (max-width: 350px) {
   .state2 #main-header {
     height: 85px; }
@@ -364,7 +376,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 85px); }
     .state2 #sections .section.last {
-      min-height: calc(100vh - 165px); } }
+      min-height: calc(100vh - 165px); }
+      .mobile .state2 #sections .section.last {
+        min-height: calc(100vh - 80px); } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   .state2 #main-header {
     height: 60px; }
@@ -374,7 +388,9 @@ p {
     height: 100%;
     min-height: calc(100vh - 60px); }
     .state2 #sections .section.last {
-      min-height: calc(100vh - 140px); } }
+      min-height: calc(100vh - 140px); }
+      .mobile .state2 #sections .section.last {
+        min-height: calc(100vh - 80px); } }
 
 .container {
   max-width: 1200px;
@@ -406,6 +422,8 @@ p {
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s; }
+  .mobile .state2 #main-header {
+    position: static; }
 
 #logo {
   -webkit-transition: all 0.3s;
