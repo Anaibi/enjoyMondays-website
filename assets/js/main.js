@@ -14,6 +14,10 @@ $(function() {
 
   $(window).load(function () {
     doWaypoints();
+    if (Modernizr.touch) { $('html').addClass('mobile'); }
+    // adds class on laptop not touch device
+    // does not add on google nexus mobile touch device for instance
+    $('html').on('mouseenter').removeClass('mobile');s
   });
 
   // Done Resizing Event
@@ -113,7 +117,6 @@ $(function() {
       });
     });
   }
-
 
   //--------------------------------------------- updateState
   function updateState(direction, section) {
