@@ -14,10 +14,6 @@ $(function() {
 
   $(window).load(function () {
     doWaypoints();
-    if (Modernizr.touch) { $('html').addClass('mobile'); }
-    // adds class on laptop not touch device
-    // does not add on google nexus mobile touch device for instance
-    $('html').on('mouseenter').removeClass('mobile');s
   });
 
   // Done Resizing Event
@@ -248,6 +244,7 @@ $(function() {
   
 
   $(document).ready(function () {
+
     //------------------------------------------------- fitText
     $("#home .fittextjs").fitText(.43, { minFontSize: '40px', maxFontSize: '150px' });
     $("#work .fittextjs").fitText(.29, { minFontSize: '40px', maxFontSize: '150px' });
