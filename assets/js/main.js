@@ -160,7 +160,7 @@ $(function() {
     var h = $('#main-header').height(),
         isHomeSection = section === '#home'; 
 
-    if (!isHomeSection) { console.log(h);
+    if (!isHomeSection) { 
       if (hasSideMenu() || (hasStaticMenu())) { h = 0; }
     }
 
@@ -191,7 +191,7 @@ $(function() {
 
   //--------------------------------------- isLandscapeLayout
   function isLandscapeLayout() {
-    return ($('html').css('content') === 'isLandscape' || wh.actual < ww.actual/3);
+    return ($('html').css('content') === 'isLandscape' || wh < ww/3);
   };
 
   //--------------------------------------------- hasSideMenu
