@@ -33,13 +33,13 @@ p
   padding-bottom: .3em 
 
 // ------------------------------- setLayoutHeights
-+setLayoutHeights($header_h_2, $footer_h_1)
++setLayoutHeights($header_h_1, $footer_h_1)
 +respond-to(small)
-  +setLayoutHeights($header_h_3, $footer_h_2) 
+  +setLayoutHeights($header_h_2, $footer_h_2) 
 +respond-to(smallest)
-  +setLayoutHeights($header_h_4, $footer_h_2) 
+  +setLayoutHeights($header_h_3, $footer_h_2) 
 +respond-to(landscape)
-  +setLayoutHeights($header_h_5, $footer_h_3) 
+  +setLayoutHeights($header_h_4, $footer_h_3) 
  
 // --------------------------------- CONTAINER CLASS
 .container 
@@ -70,15 +70,14 @@ p
 // ------------------------------------- MAIN HEADER
 +mainHeader
 
-// --------------------------------------- SIDE MENU
-@if $useSideMenu
-  +respond-to(landscape)
++respond-to(landscape)
+  @if $useSideMenu
     +sideMenu($footer_h_3)
 
-// ------------------------------------- STATIC MENU
-@if $useStaticMenu 
-  +respond-to(small-height, max) 
-    +staticMenu($footer_h_3)
+
++respond-to(small-height, max)
+  @if $useStaticMenu
+    +staticMenu($footer_h_2)
 
 // ---------------------------------------- SECTIONS
 #sections 
@@ -95,7 +94,8 @@ p
     text-align: center 
 
 // ---------------------------------- HEADER WRAPPER
-+headerWrapper
+.header-wrapper
+  +headerWrapper
 
 // -------------------------------------- SUB-HEADER
 .sub-header 

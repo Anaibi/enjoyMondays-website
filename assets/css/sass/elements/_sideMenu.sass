@@ -3,10 +3,12 @@ $useSideMenu: false !default
 =sideMenu($f)
   html
     content: "hasSideMenu"
-  #site
-    width: calc(100vw - #{$layout_verticalSidebar_padding})
-    padding-left: $layout_verticalSidebar_padding
+  #sections
+    width: calc(100vw - #{$side_menu_w})
+    padding-left: $side_menu_w
     overflow: hidden
+  #main-header
+    +fixed(0)
   .state2
     #sections .section.last
       $h: calc(100vh - #{$f})
@@ -14,7 +16,7 @@ $useSideMenu: false !default
       max-height: $h
     #main-header
       +fixed(0, $l: 0)
-      width: $header_vertical_w
+      width: $side_menu_w
       height: 100vh
     #logo
       float: right

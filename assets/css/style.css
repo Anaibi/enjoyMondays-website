@@ -439,7 +439,9 @@ p {
     @media screen and (max-height: 650px) and (orientation: landscape) {
       .state2 #logo {
         width: 72px;
-        margin-left: -5%;
+        -webkit-transform: translateX(-5%);
+        -ms-transform: translateX(-5%);
+        transform: translateX(-5%);
         padding-top: 5px; } }
 
 @media screen and (max-width: 480px) {
@@ -571,63 +573,21 @@ p {
 .expanded + #collapsed-menu {
   display: none; }
 
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  html {
-    content: "hasSideMenu"; }
-
-  #site {
-    width: calc(100vw - 70px);
-    padding-left: 70px;
-    overflow: hidden; }
-
-  .state2 #sections .section.last {
-    min-height: calc(100vh - 60px);
-    max-height: calc(100vh - 60px); }
-  .state2 #main-header {
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    width: 70px;
-    height: 100vh; }
-  .state2 #logo {
-    float: right;
-    width: 95%;
-    margin: 0 auto;
-    padding: 4% 0; }
-  .state2 #header-nav {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    position: relative;
-    top: 3%;
-    width: 100%;
-    height: 100%;
-    font-size: 0.65em;
-    text-align: right;
+@media screen and (max-height: 650px) and (max-width: 700px) {
+  #main-header {
+    position: static;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none; }
-    .state2 #header-nav li {
-      width: 90%;
-      height: 15%;
-      display: block;
-      margin: 0;
-      border: none;
-      border-left: 6px solid #E9E8E3; }
-      .state2 #header-nav li.active-link, .state2 #header-nav li:hover {
-        border-left: 6px solid #DF3F54; }
-      .state2 #header-nav li:hover {
-        border-left: 6px solid #DF3F54; }
-      .touch-device .state2 #header-nav li.no-touch {
-        border-left: 6px solid #E9E8E3; }
-      .state2 #header-nav li a {
-        margin: 50% 0 0;
-        padding: 0;
-        line-height: 0; } }
+
+  #sections::before {
+    height: 0; }
+  #sections .section.fullscreen.last {
+    max-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px); }
+
+  .footer {
+    height: 80px; } }
 #sections::before {
   content: " ";
   display: block;
