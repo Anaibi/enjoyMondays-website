@@ -1,10 +1,7 @@
 $(function() {
 
-  var ww = {'actual' : $(window).width()};
-      ww.previous = ww.actual;
-
-  var wh = {'actual' : $(window).height()};
-      wh.previous = wh.actual;
+  var ww = $(window).width(),
+      wh = $(window).height();
     
   var resizeTimer;
 
@@ -13,19 +10,16 @@ $(function() {
   });
 
   // Done Resizing Event
-  $(window).on('resize', function() { console.log('resize');
+  $(window).on('resize', function() { 
 
     var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() { 
+    resizeTimer = setTimeout(function() { alert('resize');
 
       // get new window sizes
-      ww.previous = ww.actual; 
-      ww.actual = $(window).width(); 
-
-      wh.previous = wh.actual;
-      wh.actual = $(window).height();
+      ww = $(window).width(); 
+      wh = $(window).height();
 
       setTimeout(function() {
         refreshHeader(actualSection);
@@ -202,7 +196,7 @@ $(function() {
 
   //--------------------------------------------- hasSideMenu
   function hasSideMenu() {
-    return ($('html').css('content') === 'hasSideMenu' || wh.actual < ww.actual/3);
+    return ($('html').css('content') === 'hasSideMenu' || wh < ww/3);
   };
 
   //------------------------------------------------ isMobile
