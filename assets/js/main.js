@@ -171,10 +171,10 @@ $(function() {
         isHomeSection = section === '#home'; console.log(isHomeSection);
         console.log(h);
         console.log('side menu ' + hasSideMenu());
-        console.log('fix menu ' + fixMenu());
+        console.log('static menu ' + hasStaticMenu());
 
-    if (!isHomeSection) {
-      if (hasSideMenu() || (!hasSideMenu() && !fixMenu())) { h = 0; }
+    if (!isHomeSection) { console.log(h);
+      if (hasSideMenu() || (hasStaticMenu())) { h = 0; }
     }
 console.log(h);
     $('body, html')
@@ -213,8 +213,8 @@ console.log(h);
   };
 
   //------------------------------------------------ isMobile
-  function fixMenu() {
-    return ($('#main-header').css('position') === 'fixed');
+  function hasStaticMenu() {
+    return ($('#main-header').css('position') === 'static');
   };
   
 
