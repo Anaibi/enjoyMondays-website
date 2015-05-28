@@ -1,0 +1,9 @@
+=staticMenu($f)
+  #main-header
+    position: static
+  #sections::before
+    height: 0
+    .section.fullscreen
+      $h: calc(100vh - $f)
+      max-height: $h !important
+      min-height: $h !important

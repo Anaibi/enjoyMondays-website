@@ -1,57 +1,45 @@
 // -------------------------------- setLayoutHeights
 =setLayoutHeights($h, $f) 
-  $with_header_h: calc(100vh - #{$h})
-  $with_header_and_footer_h: calc(100vh - #{$h + $f})
-  $with_footer_h: calc(100vh - #{$f})
+  $h1: calc(100vh - #{$h})
+  $h2: calc(100vh - #{$h + $f})
+  $h3: calc(100vh - #{$f})
   #main-header  
     height: $h 
   #sections 
     &::before
       height: $h 
-      +respond-to(small-height, max)
-        height: 0
     .section 
-      height: 100%
-      min-height: $with_header_h
+      min-height: $h1
       &.fullscreen
-        max-height: $with_header_h
+        max-height: $h1
       &.last 
         $th: $h + $f
-        min-height: $with_header_and_footer_h
+        min-height: $h2
         &.fullscreen
-          max-height: $with_header_and_footer_h
-          +respond-to(small-height, max)
-            max-height: $with_footer_h !important
-            min-height: $with_footer_h !important
+          max-height: $h2            
   .footer 
     height: $f
        
 // ----------------------------------- HTML and BODY
 html 
-  height: 100%
-  // add some kind of js detectable mark
-  +respond-to(landscape)  
-    content: "isLandscape" 
-
+  height: 100% 
 body 
   margin: 0
   overflow-x: hidden
   overflow-y: scroll
   +respond-to(medium)
     text-align: center 
-
 p
   padding-bottom: .3em 
 
 // ------------------------------- setLayoutHeights
-.state1, .state2
-  +setLayoutHeights($header_h_2, $footer_h_1)
-  +respond-to(small)
-    +setLayoutHeights($header_h_3, $footer_h_2) 
-  +respond-to(smallest)
-    +setLayoutHeights($header_h_4, $footer_h_2) 
-  +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_3) 
++setLayoutHeights($header_h_2, $footer_h_1)
++respond-to(small)
+  +setLayoutHeights($header_h_3, $footer_h_2) 
++respond-to(smallest)
+  +setLayoutHeights($header_h_4, $footer_h_2) 
++respond-to(landscape)
+  +setLayoutHeights($header_h_5, $footer_h_3) 
  
 // --------------------------------- CONTAINER CLASS
 .container 
@@ -83,8 +71,14 @@ p
 +mainHeader
 
 // --------------------------------------- SIDE MENU
-@if $useSideMenu  
-  +sideMenu 
+@if $useSideMenu
+  +respond-to(landscape)
+    +sideMenu($footer_h_3)
+
+// ------------------------------------- STATIC MENU
+@if $useStaticMenu 
+  +respond-to(small-height, max) 
+    +staticMenu($footer_h_3)
 
 // ---------------------------------------- SECTIONS
 #sections 
@@ -94,7 +88,8 @@ p
     width: 100%
   
 // ----------------------------------------- SECTION
-.section 
+.section
+  height: 100% 
   text-align: right
   +respond-to(medium)
     text-align: center 
@@ -105,7 +100,6 @@ p
 // -------------------------------------- SUB-HEADER
 .sub-header 
   text-align: center
-
   hr 
     border: 0
     height: 3px

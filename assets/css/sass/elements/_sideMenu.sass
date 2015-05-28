@@ -1,56 +1,50 @@
 $useSideMenu: false !default
 
-=sideMenu  
-  +respond-to(landscape) 
-    html  
-      content: "hasSideMenu"   
-    #site 
-      width: calc(100vw - #{$layout_verticalSidebar_padding})
-      padding-left: $layout_verticalSidebar_padding
-      overflow: hidden
-    
-    .state2 
-      #sections .section.last 
-        height: calc(100vh - #{$footer_h_3})
-        max-height: calc(100vh - #{$footer_h_3}) !important
-      #main-header 
-        position: fixed
-        left: 0 
-        top: 0
-        width: $header_vertical_w
-        height: 100vh
-      #logo 
-        float: right
-        width: 95%
-        margin: 0 auto
-        padding: 4% 0
-      #header-nav 
+=sideMenu($f)
+  html
+    content: "hasSideMenu"
+  #site
+    width: calc(100vw - #{$layout_verticalSidebar_padding})
+    padding-left: $layout_verticalSidebar_padding
+    overflow: hidden
+  .state2
+    #sections .section.last
+      $h: calc(100vh - #{$f})
+      min-height: $h
+      max-height: $h
+    #main-header
+      +fixed(0, $l: 0)
+      width: $header_vertical_w
+      height: 100vh
+    #logo
+      float: right
+      width: 95%
+      margin: 0 auto
+      padding: 4% 0
+    #header-nav
+      display: block
+      +show
+      position: relative
+      top: 3%
+      width: 100%
+      height: 100%
+      font-size: .65em
+      text-align: right
+      +transform(none)
+      li 
+        width: 90%
+        height: 15%
         display: block
-        +show
-        position: relative
-        top: 3%
-        width: 100%
-        height: 100%
-        font-size: .65em
-        text-align: right
-        +transform(none)
-        li 
-          width: 90%
-          height: 15%
-          display: block
-          margin: 0
-          border: none
+        margin: 0
+        border: none
+        border-left: 6px solid $color1
+        &.active-link  
+          border-left: 6px solid $link_color2 
+        &:hover  
+          border-left: 6px solid $link_color2 
+        .touch-device &.no-touch  
           border-left: 6px solid $color1
-          &.active-link  
-            border-left: 6px solid $link_color2 
-          &:hover  
-            border-left: 6px solid $link_color2 
-          .touch-device &.no-touch  
-            border-left: 6px solid $color1
-          a 
-            margin: 50% 0 0
-            padding: 0
-            line-height: 0
-      
-    
-  
+        a 
+          margin: 50% 0 0
+          padding: 0
+          line-height: 0

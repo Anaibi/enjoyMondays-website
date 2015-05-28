@@ -155,30 +155,28 @@ $(function() {
       }
     }
 
-    $content
-      .css('position', 'relative')
-      .animate({'top': h});
+    $content.css('position', 'relative').animate({'top': h});
 
     function getHeights() { 
-      content_h = $content.outerHeight(); console.log(content_h);
-      section_h = $section.outerHeight(); console.log(section_h);
-      h = (section_h - content_h)/2; console.log(h);
+      content_h = $content.outerHeight(); 
+      section_h = $section.outerHeight(); 
+      h = (section_h - content_h)/2; 
     }
   }
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
 
-    // clicking from home, get small header height (unless section is home)
-    var h = $('#main-header').height();
+    var h = $('#main-header').height(),
+        isHomeSection = section === '#home'; console.log(isHomeSection);
+        console.log(h);
+        console.log('side menu ' + hasSideMenu());
+        console.log('fix menu ' + fixMenu());
 
-    // landscape has side menu except at home section
-    // only when landscape scss partial on
-    if (hasSideMenu()) { h = (section === '#home') ? h : 0; }
-
-    // menu scrolls up on small-height *testing* TODO
-   if (!fixMenu() && section !== '#home') { h = 0; }
-
+    if (!isHomeSection) {
+      if (hasSideMenu() || (!hasSideMenu() && !fixMenu())) { h = 0; }
+    }
+console.log(h);
     $('body, html')
       .stop()
       .animate({

@@ -4,14 +4,10 @@
 
 =mainHeader
   #main-header
-    +transition(all .5s)
-    position: fixed
-    +respond-to(small-height, max)
-      position: static
-    top: 0
-    left: 0
-    right: 0
-    z-index: 2000  
-  +logo
-  +headerMenu
-  +collapsedMenu
+    +fixed(0)
+  #logo  
+    +logo($logo_w_big, $logo_w_small)
+  #header-nav
+    +headerMenu
+  #collapsed-menu
+    +collapsedMenu

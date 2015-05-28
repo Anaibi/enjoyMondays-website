@@ -284,9 +284,6 @@ footer.container .social-links {
 
 html {
   height: 100%; }
-  @media screen and (max-height: 650px) and (orientation: landscape) {
-    html {
-      content: "isLandscape"; } }
 
 body {
   margin: 0;
@@ -299,104 +296,74 @@ body {
 p {
   padding-bottom: 0.3em; }
 
-.state1 #main-header, .state2 #main-header {
+#main-header {
   height: 111px; }
-.state1 #sections::before, .state2 #sections::before {
-  height: 111px; }
-  @media screen and (max-height: 650px) and (max-width: 700px) {
-    .state1 #sections::before, .state2 #sections::before {
-      height: 0; } }
-.state1 #sections .section, .state2 #sections .section {
-  height: 100%;
-  min-height: calc(100vh - 111px); }
-  .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
-    max-height: calc(100vh - 111px); }
-  .state1 #sections .section.last, .state2 #sections .section.last {
-    min-height: calc(100vh - 211px); }
-    .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-      max-height: calc(100vh - 211px); }
-      @media screen and (max-height: 650px) and (max-width: 700px) {
-        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-          max-height: calc(100vh - 100px) !important;
-          min-height: calc(100vh - 100px) !important; } }
-.state1 .footer, .state2 .footer {
-  height: 100px; }
-@media screen and (max-width: 480px) {
-  .state1 #main-header, .state2 #main-header {
-    height: 100px; }
-  .state1 #sections::before, .state2 #sections::before {
-    height: 100px; } }
-  @media screen and (max-width: 480px) and (max-height: 650px) and (max-width: 700px) {
-    .state1 #sections::before, .state2 #sections::before {
-      height: 0; } }
-@media screen and (max-width: 480px) {
-  .state1 #sections .section, .state2 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 100px); }
-    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
-      max-height: calc(100vh - 100px); }
-    .state1 #sections .section.last, .state2 #sections .section.last {
-      min-height: calc(100vh - 180px); }
-      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 180px); } }
-      @media screen and (max-width: 480px) and (max-height: 650px) and (max-width: 700px) {
-        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-          max-height: calc(100vh - 80px) !important;
-          min-height: calc(100vh - 80px) !important; } }
-@media screen and (max-width: 480px) {
-  .state1 .footer, .state2 .footer {
-    height: 80px; } }
-@media screen and (max-width: 350px) {
-  .state1 #main-header, .state2 #main-header {
-    height: 85px; }
-  .state1 #sections::before, .state2 #sections::before {
-    height: 85px; } }
-  @media screen and (max-width: 350px) and (max-height: 650px) and (max-width: 700px) {
-    .state1 #sections::before, .state2 #sections::before {
-      height: 0; } }
-@media screen and (max-width: 350px) {
-  .state1 #sections .section, .state2 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 85px); }
-    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
-      max-height: calc(100vh - 85px); }
-    .state1 #sections .section.last, .state2 #sections .section.last {
-      min-height: calc(100vh - 165px); }
-      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 165px); } }
-      @media screen and (max-width: 350px) and (max-height: 650px) and (max-width: 700px) {
-        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-          max-height: calc(100vh - 80px) !important;
-          min-height: calc(100vh - 80px) !important; } }
-@media screen and (max-width: 350px) {
-  .state1 .footer, .state2 .footer {
-    height: 80px; } }
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  .state1 #main-header, .state2 #main-header {
-    height: 60px; }
-  .state1 #sections::before, .state2 #sections::before {
-    height: 60px; } }
-  @media screen and (max-height: 650px) and (orientation: landscape) and (max-height: 650px) and (max-width: 700px) {
-    .state1 #sections::before, .state2 #sections::before {
-      height: 0; } }
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  .state1 #sections .section, .state2 #sections .section {
-    height: 100%;
-    min-height: calc(100vh - 60px); }
-    .state1 #sections .section.fullscreen, .state2 #sections .section.fullscreen {
-      max-height: calc(100vh - 60px); }
-    .state1 #sections .section.last, .state2 #sections .section.last {
-      min-height: calc(100vh - 120px); }
-      .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-        max-height: calc(100vh - 120px); } }
-      @media screen and (max-height: 650px) and (orientation: landscape) and (max-height: 650px) and (max-width: 700px) {
-        .state1 #sections .section.last.fullscreen, .state2 #sections .section.last.fullscreen {
-          max-height: calc(100vh - 60px) !important;
-          min-height: calc(100vh - 60px) !important; } }
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  .state1 .footer, .state2 .footer {
-    height: 60px; } }
 
+#sections::before {
+  height: 111px; }
+#sections .section {
+  min-height: calc(100vh - 111px); }
+  #sections .section.fullscreen {
+    max-height: calc(100vh - 111px); }
+  #sections .section.last {
+    min-height: calc(100vh - 211px); }
+    #sections .section.last.fullscreen {
+      max-height: calc(100vh - 211px); }
+
+.footer {
+  height: 100px; }
+
+@media screen and (max-width: 480px) {
+  #main-header {
+    height: 100px; }
+
+  #sections::before {
+    height: 100px; }
+  #sections .section {
+    min-height: calc(100vh - 100px); }
+    #sections .section.fullscreen {
+      max-height: calc(100vh - 100px); }
+    #sections .section.last {
+      min-height: calc(100vh - 180px); }
+      #sections .section.last.fullscreen {
+        max-height: calc(100vh - 180px); }
+
+  .footer {
+    height: 80px; } }
+@media screen and (max-width: 350px) {
+  #main-header {
+    height: 85px; }
+
+  #sections::before {
+    height: 85px; }
+  #sections .section {
+    min-height: calc(100vh - 85px); }
+    #sections .section.fullscreen {
+      max-height: calc(100vh - 85px); }
+    #sections .section.last {
+      min-height: calc(100vh - 165px); }
+      #sections .section.last.fullscreen {
+        max-height: calc(100vh - 165px); }
+
+  .footer {
+    height: 80px; } }
+@media screen and (max-height: 650px) and (orientation: landscape) {
+  #main-header {
+    height: 60px; }
+
+  #sections::before {
+    height: 60px; }
+  #sections .section {
+    min-height: calc(100vh - 60px); }
+    #sections .section.fullscreen {
+      max-height: calc(100vh - 60px); }
+    #sections .section.last {
+      min-height: calc(100vh - 120px); }
+      #sections .section.last.fullscreen {
+        max-height: calc(100vh - 120px); }
+
+  .footer {
+    height: 60px; } }
 .container {
   max-width: 1200px;
   height: 100%;
@@ -422,17 +389,12 @@ p {
   overflow: hidden; }
 
 #main-header {
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
   position: fixed;
+  z-index: 2000;
   top: 0;
-  left: 0;
   right: 0;
-  z-index: 2000; }
-  @media screen and (max-height: 650px) and (max-width: 700px) {
-    #main-header {
-      position: static; } }
+  bottom: 0;
+  left: 0; }
 
 #logo {
   max-width: 149px;
@@ -480,98 +442,94 @@ p {
         margin-left: -5%;
         padding-top: 5px; } }
 
-#header-nav {
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s; }
+@media screen and (max-width: 480px) {
+  #header-nav {
+    float: none;
+    margin: auto; } }
+@media screen and (max-height: 650px) and (orientation: landscape) {
+  #header-nav {
+    float: right;
+    margin: 0; } }
+#header-nav li {
+  float: left;
+  margin-left: 8px;
+  border-bottom: none; }
+  #header-nav li:first-child {
+    margin-left: 0; }
+  #header-nav li:last-child {
+    margin-right: -4px; }
+  #header-nav li.active-link, #header-nav li:hover {
+    border-bottom: 3px solid #DF3F54; }
+  .touch-device #header-nav li.no-touch {
+    border: none; }
+  #header-nav li a {
+    display: block;
+    margin: -30px -20px;
+    padding: 30px 24px; }
+    @media screen and (max-width: 480px) {
+      #header-nav li a {
+        padding: 30px 21px; } }
+.state1 #header-nav {
+  display: inline-block;
+  margin-top: 85px; }
   @media screen and (max-width: 480px) {
-    #header-nav {
-      float: none;
-      margin: auto; } }
+    .state1 #header-nav {
+      margin: 0 auto; } }
   @media screen and (max-height: 650px) and (orientation: landscape) {
-    #header-nav {
-      float: right;
-      margin: 0; } }
-  #header-nav li {
-    float: left;
-    margin-left: 8px;
-    border-bottom: none; }
-    #header-nav li:first-child {
-      margin-left: 0; }
-    #header-nav li:last-child {
-      margin-right: -4px; }
-    #header-nav li.active-link, #header-nav li:hover {
-      border-bottom: 3px solid #DF3F54; }
-    .touch-device #header-nav li.no-touch {
-      border: none; }
-    #header-nav li a {
-      display: block;
-      margin: -30px -20px;
-      padding: 30px 24px; }
-      @media screen and (max-width: 480px) {
-        #header-nav li a {
-          padding: 30px 21px; } }
-  .state1 #header-nav {
-    display: inline-block;
-    margin-top: 85px; }
-    @media screen and (max-width: 480px) {
-      .state1 #header-nav {
-        margin: 0 auto; } }
-    @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state1 #header-nav {
-        height: 100%;
-        margin-top: 0; }
-        .state1 #header-nav li {
-          position: relative;
-          top: 50%;
-          -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%); } }
-    .state1 #header-nav.expanded {
-      visibility: visible;
-      opacity: 1;
-      -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
-      @media screen and (max-width: 480px) {
-        .state1 #header-nav.expanded {
-          margin: 10% 0; } }
-  .state2 #header-nav {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-    -ms-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-    transition: visibility 0s linear 0.5s, opacity 0.2s linear; }
-    @media screen and (max-width: 480px) {
-      .state2 #header-nav {
-        display: inline-block;
-        visibility: visible;
-        opacity: 1;
-        -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        transition: visibility 0s linear 0.5s, opacity 0.5s linear; } }
-    @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state2 #header-nav {
-        display: inline-block;
-        visibility: visible;
-        opacity: 1;
-        -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+    .state1 #header-nav {
+      height: 100%;
+      margin-top: 0; }
+      .state1 #header-nav li {
         position: relative;
         top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%); } }
-    .state2 #header-nav.expanded {
-      display: block;
+  .state1 #header-nav.expanded {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    transition: visibility 0s linear 0.3s, opacity 0.3s linear; }
+    @media screen and (max-width: 480px) {
+      .state1 #header-nav.expanded {
+        margin: 10% 0; } }
+.state2 #header-nav {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+  -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+  transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
+  @media screen and (max-width: 480px) {
+    .state2 #header-nav {
+      display: inline-block;
       visibility: visible;
       opacity: 1;
-      -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-      padding-top: 40px; }
+      -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      transition: visibility 0s linear 0.3s, opacity 0.3s linear; } }
+  @media screen and (max-height: 650px) and (orientation: landscape) {
+    .state2 #header-nav {
+      display: inline-block;
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); } }
+  .state2 #header-nav.expanded {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    padding-top: 40px; }
 
 #collapsed-menu:hover {
   cursor: pointer; }
@@ -588,41 +546,95 @@ p {
 .state1 #collapsed-menu {
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-  -ms-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-  transition: visibility 0s linear 0.5s, opacity 0.2s linear; }
+  -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+  -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+  transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
   @media screen and (max-width: 480px) {
     .state1 #collapsed-menu {
       display: none; } }
 .state2 #collapsed-menu {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-  -ms-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
   margin-top: 40px; }
-  .state2 #collapsed-menu:hover {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-    -ms-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-    transition: visibility 0s linear 0.5s, opacity 0.2s linear; }
   @media screen and (max-width: 480px) {
     .state2 #collapsed-menu {
       display: none; } }
+  .state2 #collapsed-menu:hover {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+    -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+    transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
 .expanded + #collapsed-menu {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-  -ms-transition: visibility 0s linear 0.5s, opacity 0.2s linear;
-  transition: visibility 0s linear 0.5s, opacity 0.2s linear; }
+  display: none; }
 
+@media screen and (max-height: 650px) and (orientation: landscape) {
+  html {
+    content: "hasSideMenu"; }
+
+  #site {
+    width: calc(100vw - 70px);
+    padding-left: 70px;
+    overflow: hidden; }
+
+  .state2 #sections .section.last {
+    min-height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px); }
+  .state2 #main-header {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100vh; }
+  .state2 #logo {
+    float: right;
+    width: 95%;
+    margin: 0 auto;
+    padding: 4% 0; }
+  .state2 #header-nav {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    position: relative;
+    top: 3%;
+    width: 100%;
+    height: 100%;
+    font-size: 0.65em;
+    text-align: right;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none; }
+    .state2 #header-nav li {
+      width: 90%;
+      height: 15%;
+      display: block;
+      margin: 0;
+      border: none;
+      border-left: 6px solid #E9E8E3; }
+      .state2 #header-nav li.active-link, .state2 #header-nav li:hover {
+        border-left: 6px solid #DF3F54; }
+      .state2 #header-nav li:hover {
+        border-left: 6px solid #DF3F54; }
+      .touch-device .state2 #header-nav li.no-touch {
+        border-left: 6px solid #E9E8E3; }
+      .state2 #header-nav li a {
+        margin: 50% 0 0;
+        padding: 0;
+        line-height: 0; } }
 #sections::before {
   content: " ";
   display: block;
   width: 100%; }
 
 .section {
+  height: 100%;
   text-align: right; }
   @media screen and (max-width: 650px) {
     .section {
