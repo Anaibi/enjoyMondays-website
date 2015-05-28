@@ -13,13 +13,13 @@
 =hide 
   visibility: hidden
   opacity: 0
-  +transition(visibility 0s linear 0.5s, opacity 0.2s linear)
+  +transition(visibility 0s linear 0.2s, opacity 0.1s linear)
 
 
 =show 
   visibility: visible
   opacity: 1
-  +transition(visibility 0s linear 0.5s, opacity 0.5s linear)
+  +transition(visibility 0s linear 0.3s, opacity 0.3s linear)
 
 
 %clearfix
@@ -38,6 +38,26 @@
   position: relative
   top: $y
   +transform(translateY(-50%))
+
+
+=fixed($t: false, $r: false, $b: false, $l: false)
+  position: fixed
+  z-index: 2000
+  @if $t
+    @if not $r and not $b and not $l
+      top: $t
+      right: $t
+      bottom: $t
+      left: $t
+    @else
+      top: $t
+  @if $r
+    right: $r
+  @if $b
+    bottom: $b
+  @if $l
+    left: $l  
+  
 
 
 $break-smallest: 350px !default
@@ -67,5 +87,5 @@ $break-large: 1350px !default
       @content 
   
   @else if $media == small-height 
-    @media screen and (max-height: $break-medium) and (max-width: 700px)
+    @media screen and (#{$val}-height: $break-medium) and (#{$val}-width: 700px)
       @content 

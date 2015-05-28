@@ -1,61 +1,46 @@
 // -------------------------------- setLayoutHeights
-
 =setLayoutHeights($h, $f) 
-
+  $h1: calc(100vh - #{$h})
+  $h2: calc(100vh - #{$h + $f})
+  $h3: calc(100vh - #{$f})
   #main-header  
     height: $h 
-
   #sections 
     &::before
       height: $h 
     .section 
-      height: 100%
-      min-height: calc(100vh - #{$h})
+      min-height: $h1
+      &.fullscreen
+        max-height: $h1
       &.last 
         $th: $h + $f
-        min-height: calc(100vh - #{$th})
-        .mobile &
-          min-height: calc(100vh - #{$f})
+        min-height: $h2
+        &.fullscreen
+          max-height: $h2            
   .footer 
     height: $f
        
 // ----------------------------------- HTML and BODY
 html 
-  height: 100%
-  // add some kind of js detectable mark
-  +respond-to(landscape)  
-    content: "isLandscape" 
-
+  height: 100% 
 body 
   margin: 0
   overflow-x: hidden
   overflow-y: scroll
   +respond-to(medium)
     text-align: center 
-
 p
   padding-bottom: .3em 
 
-// ------------------------------------ STATE 1
-.state1 
-  +setLayoutHeights($header_h_1, $footer_h_1)
-  +respond-to(small)
-    +setLayoutHeights($header_h_3, $footer_h_1) 
-  +respond-to(smallest)
-    +setLayoutHeights($header_h_4, $footer_h_1) 
-  +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_3) 
-
-// ------------------------------------ STATE 2
-.state2 
-  +setLayoutHeights($header_h_2, $footer_h_1)
-  +respond-to(small)
-    +setLayoutHeights($header_h_3, $footer_h_2) 
-  +respond-to(smallest)
-    +setLayoutHeights($header_h_4, $footer_h_2) 
-  +respond-to(landscape)
-    +setLayoutHeights($header_h_5, $footer_h_3) 
-
+// ------------------------------- setLayoutHeights
++setLayoutHeights($header_h_1, $footer_h_1)
++respond-to(small)
+  +setLayoutHeights($header_h_2, $footer_h_2) 
++respond-to(smallest)
+  +setLayoutHeights($header_h_3, $footer_h_2) 
++respond-to(landscape)
+  +setLayoutHeights($header_h_4, $footer_h_3) 
+ 
 // --------------------------------- CONTAINER CLASS
 .container 
   max-width: $max_layout_width
@@ -78,12 +63,20 @@ p
   +respond-to(landscape)
     padding: 0 0 12% 
 
+// -------------------------------- FULLSCREEN CLASS
+.fullscreen
+  overflow: hidden
+
 // ------------------------------------- MAIN HEADER
 +mainHeader
 
-// --------------------------------------- SIDE MENU
-@if $useSideMenu  
-  +sideMenu 
++respond-to(landscape)
+  @if $useSideMenu
+    +sideMenu($header_h_4,$footer_h_3)
+
++respond-to(small-height, max)
+  @if $useStaticMenu
+    +staticMenu($footer_h_2)
 
 // ---------------------------------------- SECTIONS
 #sections 
@@ -93,18 +86,19 @@ p
     width: 100%
   
 // ----------------------------------------- SECTION
-.section 
+.section
+  height: 100% 
   text-align: right
   +respond-to(medium)
     text-align: center 
 
 // ---------------------------------- HEADER WRAPPER
-+headerWrapper
+.header-wrapper
+  +headerWrapper
 
 // -------------------------------------- SUB-HEADER
 .sub-header 
   text-align: center
-
   hr 
     border: 0
     height: 3px

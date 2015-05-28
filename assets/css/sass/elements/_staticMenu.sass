@@ -1,0 +1,13 @@
+=staticMenu($f)
+  #main-header
+    position: static
+    +transform(none)
+  #sections
+    &::before
+      height: 0
+    .section.fullscreen.last
+      $h: calc(100vh - #{$f})
+      max-height: $h
+      min-height: $h
+  .footer
+    height: $f

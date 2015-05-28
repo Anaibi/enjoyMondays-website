@@ -13,7 +13,9 @@ $font_weight_boldest: 900 !default
 body 
   font-family: $font_family_1
   font-weight: $font_weight_light
-  .mobile &
+  +respond-to(small)
+    font-weight: $font_weight_middle
+  .touch-device &
     font-weight: $font_weight_middle
   font-size: $base_font_size
   +respond-to(small)
@@ -62,7 +64,7 @@ a
     font-weight: $font_weight_middle
     +respond-to(medium)  
       font-weight: $font_weight_light 
-      .mobile &
+      .touch-device &
         font-weight: $font_weight_middle
     
 // ---------------------------------- FOOTER

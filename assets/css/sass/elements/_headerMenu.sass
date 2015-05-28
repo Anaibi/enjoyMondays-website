@@ -1,64 +1,60 @@
 =headerMenu
-  #header-nav
-    +transition(all .5s)
+  +respond-to(small)
+    float: none
+    margin: auto
+  +respond-to(landscape)
+    float: right
+    margin: 0
+  li
+    float: left
+    margin-left: 8px
+    border-bottom: none
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: -4px
+    &.active-link
+      border-bottom: 3px solid $link_color2
+    &:hover
+      @extend .active-link
+    .touch-device &.no-touch
+      border: none
+    a
+      display: block
+      margin: -30px -20px
+      padding: 30px 24px
+      // breaks under 226px
+      +respond-to(small)
+        padding: 30px 21px
+
+  // ----------------------------- STATE 1
+  .state1 &
+    display: inline-block
+    margin-top: 85px
     +respond-to(small)
-      float: none
-      margin: auto
+      margin: 0 auto
     +respond-to(landscape)
-      float: right
-      margin: 0
-
-    li
-      float: left
-      margin-left: 8px
-      border-bottom: none
-      &:first-child
-        margin-left: 0
-      &:last-child
-        margin-right: -4px
-      &.active-link
-        border-bottom: 3px solid $link_color2
-      &:hover
-        @extend .active-link
-      .mobile &.no-touch
-        border: none
-
-      a
-        display: block
-        margin: -30px -20px
-        padding: 30px 24px
-        // breaks under 226px
-        +respond-to(small)
-          padding: 30px 21px
-
-    // ----------------------------- STATE 1
-    .state1 &
-      display: inline-block
-      margin-top: 85px
-      +respond-to(small)
-        margin: 0 auto
-      +respond-to(landscape)
-        height: 100%
-        margin-top: 0
-        li
-          +vCentered
-      &.expanded
-        +show
-        +respond-to(small)
-          margin: 10% 0
-
-    // ----------------------------- STATE 2
-    .state2 &
-      display: none
-      +hide
-      +respond-to(small)
-        display: inline-block
-        +show
-      +respond-to(landscape)
-        display: inline-block
-        +show
+      height: 100%
+      margin-top: 0
+      li
         +vCentered
-      &.expanded
-        display: block
-        +show
-        padding-top: 40px
+    &.expanded
+      +show
+      +respond-to(small)
+        margin: 10% 0
+
+  // ----------------------------- STATE 2
+  .state2 &
+    display: none
+    +hide
+    +respond-to(small)
+      display: inline-block
+      +show
+    +respond-to(landscape)
+      display: inline-block
+      +show
+      +vCentered
+    &.expanded
+      display: block
+      +show
+      padding-top: 40px

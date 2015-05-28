@@ -36,7 +36,7 @@ $(function() {
         Waypoint.refreshAll();
         
         // center contents again
-        centerContents('#home'); 
+        centerContents('#home');
         centerContents('#contact');
 
         scrollToPosition(actualSection);
@@ -75,9 +75,9 @@ $(function() {
     }
   });
 
-  // mobile detection ?
+  // touch-device detection
   $('html').on('touchstart', function() {
-    $(this).addClass('mobile');
+    $(this).addClass('touch-device');
   });
 
   // expanded menu
@@ -132,76 +132,51 @@ $(function() {
     } 
   }
 
-  //----------------------------------------- centerContainer
-  function centerContents(section) { 
-    var $section = $(section).find('.container'),
-        $header = $section.find('.header-wrapper'),
-        h_content = $header.outerHeight(),
-        h_container = wh.actual;
+  //------------------------------------------ centerContents
+  function centerContents(section) {
+    
+    var $section = $(section),
+        $content = $section.find('.container'),
+        content_h = 0, section_h = 0, h = 0;
 
-    // add position relative to section
-    $section.css('position', 'relative');
+    getHeights();
 
-    if (section === '#home') {
-      h_container = wh.actual - $('#main-header').outerHeight();
-      // TODO h < 0
-      if (isLandscapeLayout) {
-        h_container = wh.actual - header_h[4];
+    if (h < 0) {
+      var i = 0,
+          $fittextjs = (section === '#home') ? $content.find('.fittextjs') : $content.find('.hello');
+      if (section === '#contact') {
+        $content.find('.sub-header').css('width', 'auto');
+        getHeights();
       }
-    } 
-
-    // contact section
-    else { 
-      var h_footer = $('footer').height();
-
-      h_container = wh.actual - $('footer').height();
-
-      if (!hasSideMenu() && !isMobile) { 
-        // there is also header at top
-        h_container = h_container - $('#main-header').height();
-      } 
-
-      if (h_container < h_content) { 
-        // make contact sub-header full-width
-        $header.find('.sub-header').css({'width': 'auto'});
-        var $hello = $header.find('.fittextjs.hello');
-        $hello.css({
-          'font-size': parseInt($hello.css('font-size'))/2 + 'px',
-          'text-align': 'right'
-        });
-
-        h_content = $header.outerHeight();  
+      while (h < 0 && i < 10) { 
+        $fittextjs.css('font-size', parseInt($fittextjs.css('font-size')) - 10 + 'px');
+        getHeights();
+        i++;
       }
     }
-   
-    var h = (h_container - h_content)/2;
 
-    $section.animate({'top': h}, '');
-  };
+    $content.css('position', 'relative').animate({'top': h});
 
+    function getHeights() { 
+      content_h = $content.outerHeight(); 
+      section_h = $section.outerHeight(); 
+      h = (section_h - content_h)/2; 
+    }
+  }
 
   //---------------------------------------- scrollToPosition
   function scrollToPosition(section) { 
 
-    // clicking from home, get small header height (unless section is home)
-    var h = (isActiveSection('home') && section !== '#home') ? header_h[1] : $('#main-header').height();
+    var h = $('#main-header').height(),
+        isHomeSection = section === '#home'; console.log(isHomeSection);
+        console.log(h);
+        console.log('side menu ' + hasSideMenu());
+        console.log('static menu ' + hasStaticMenu());
 
-    // if under 480px, header height is header_h[2] always
-    if (ww.actual < marks[1]) { h = header_h[2]; }
-
-    // if under 350px, header height is header_h[3] always
-    if (ww.actual < marks[0]) { h = header_h[3]; }
-
-    // landscape has side menu except at home section
-    // only when landscape scss partial on
-    if (hasSideMenu()) { h = (section === '#home') ? header_h[4] : h = 0; }
-
-    // landscape has side menu except at home section
-    if (isLandscapeLayout() && !hasSideMenu()) { h = header_h[4]; }
-
-    // menu scrolls up on mobile *testing*
-    if (isMobile() && section !== '#home' && !hasSideMenu()) { h = 0 - $('#main-header').height(); }
-
+    if (!isHomeSection) { console.log(h);
+      if (hasSideMenu() || (hasStaticMenu())) { h = 0; }
+    }
+console.log(h);
     $('body, html')
       .stop()
       .animate({
@@ -238,8 +213,8 @@ $(function() {
   };
 
   //------------------------------------------------ isMobile
-  function isMobile() {
-    return ($('html').hasClass('mobile'));
+  function hasStaticMenu() {
+    return ($('#main-header').css('position') === 'static');
   };
   
 
@@ -254,7 +229,6 @@ $(function() {
 
     centerContents('#home');
     centerContents('#contact');
-
        
     //---------------------------------------------- supersized
     var slides = [];
