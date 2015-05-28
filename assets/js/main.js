@@ -5,10 +5,6 @@ $(function() {
 
   var wh = {'actual' : $(window).height()};
       wh.previous = wh.actual;
-
-  var header_h = [139, 111, 100, 85, 60];
-
-  var marks = [350, 480, 650];
     
   var resizeTimer;
 
@@ -106,7 +102,7 @@ $(function() {
 
         },
         offset: function() {
-          var h = isLandscapeLayout ? 300 : header_h[0]; 
+          var h = isLandscapeLayout ? 300 : 139; 
           return -(this.element.clientHeight - h);
         },
         group: 'sections'
@@ -168,15 +164,12 @@ $(function() {
   function scrollToPosition(section) { 
 
     var h = $('#main-header').height(),
-        isHomeSection = section === '#home'; console.log(isHomeSection);
-        console.log(h);
-        console.log('side menu ' + hasSideMenu());
-        console.log('static menu ' + hasStaticMenu());
+        isHomeSection = section === '#home'; 
 
     if (!isHomeSection) { console.log(h);
       if (hasSideMenu() || (hasStaticMenu())) { h = 0; }
     }
-console.log(h);
+
     $('body, html')
       .stop()
       .animate({
