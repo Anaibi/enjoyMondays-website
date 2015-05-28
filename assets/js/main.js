@@ -15,12 +15,12 @@ $(function() {
     var actualSection = $('#header-nav').find('.active-link a').attr('href');
 
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() { alert('resize');
+    resizeTimer = setTimeout(function() { 
 
       // get new window sizes
-      ww = $(window).width(); 
+      ww = $(window).width(),
       wh = $(window).height();
-
+      
       setTimeout(function() {
         refreshHeader(actualSection);
         Waypoint.refreshAll();
@@ -150,7 +150,7 @@ $(function() {
     function getHeights() { 
       content_h = $content.outerHeight(); 
       section_h = $section.outerHeight(); 
-      h = (section_h - content_h)/2; 
+      h = (section_h - content_h)/2;
     }
   }
 
