@@ -124,7 +124,7 @@ a {
   @media screen and (max-width: 350px) {
     #header-nav {
       font-size: 0.7em; } }
-  #header-nav .active-link, #header-nav li:hover {
+  #header-nav .active-link, #main-header #header-nav li:hover {
     font-weight: 900; }
 
 #sections section header {
@@ -395,189 +395,186 @@ footer {
   right: 0;
   bottom: 0;
   left: 0; }
-
-#logo {
-  float: left;
-  max-width: 149px;
-  -webkit-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s; }
-  @media screen and (max-width: 480px) {
-    #logo {
-      display: block;
-      float: none; } }
-  @media screen and (max-height: 650px) and (orientation: landscape) {
-    #logo {
-      float: left;
-      position: absolute; } }
-  .state1 #logo {
-    width: 149px;
-    padding-top: 40px; }
-    @media screen and (max-width: 650px) {
-      .state1 #logo {
-        width: 25%; } }
-    @media screen and (max-width: 480px) {
-      .state1 #logo {
-        margin: 0 auto;
-        padding: 2.5% 0; } }
-    @media screen and (max-width: 350px) {
-      .state1 #logo {
-        width: 20%; } }
-    @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state1 #logo {
-        width: 18%;
-        margin: 0;
-        padding: 2% 0; } }
-  .state2 #logo {
-    width: 111px;
-    padding-top: 18px; }
-    @media screen and (max-width: 650px) {
-      .state2 #logo {
-        width: 20%; } }
-    @media screen and (max-width: 480px) {
-      .state2 #logo {
-        margin: 0 auto;
-        padding: 2.5% 0; } }
-    @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state2 #logo {
-        width: 72px;
-        -webkit-transform: translateX(-5%);
-        -ms-transform: translateX(-5%);
-        transform: translateX(-5%);
-        padding-top: 5px; } }
-
-#header-nav {
-  float: right; }
-  @media screen and (max-width: 480px) {
-    #header-nav {
-      float: none;
-      margin: auto; } }
-  @media screen and (max-height: 650px) and (orientation: landscape) {
-    #header-nav {
-      float: right;
-      margin: 0; } }
-  #header-nav li {
+  #main-header #logo {
     float: left;
-    margin-left: 8px;
-    border-bottom: none; }
-    #header-nav li:first-child {
-      margin-left: 0; }
-    #header-nav li:last-child {
-      margin-right: -4px; }
-    #header-nav li.active-link, #header-nav li:hover {
-      border-bottom: 3px solid #DF3F54; }
-    .touch-device #header-nav li.no-touch {
-      border: none; }
-    #header-nav li a {
-      display: block;
-      margin: -30px -20px;
-      padding: 30px 24px; }
-      @media screen and (max-width: 480px) {
-        #header-nav li a {
-          padding: 30px 21px; } }
-  .state1 #header-nav {
-    display: inline-block;
-    margin-top: 85px; }
+    max-width: 149px;
+    -webkit-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s; }
     @media screen and (max-width: 480px) {
-      .state1 #header-nav {
-        margin: 0 auto; } }
+      #main-header #logo {
+        display: block;
+        float: none; } }
     @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state1 #header-nav {
-        height: 100%;
-        margin-top: 0; }
-        .state1 #header-nav li {
-          position: relative;
-          top: 50%;
-          -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%); } }
-    .state1 #header-nav.expanded {
-      visibility: visible;
-      opacity: 1;
-      -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-      -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-      transition: visibility 0s linear 0.3s, opacity 0.3s linear; }
-      @media screen and (max-width: 480px) {
-        .state1 #header-nav.expanded {
-          margin: 10% 0; } }
-  .state2 #header-nav {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
-    -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
-    transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
-    @media screen and (max-width: 480px) {
-      .state2 #header-nav {
-        display: inline-block;
-        visibility: visible;
-        opacity: 1;
-        -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-        -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-        transition: visibility 0s linear 0.3s, opacity 0.3s linear; } }
-    @media screen and (max-height: 650px) and (orientation: landscape) {
-      .state2 #header-nav {
-        display: inline-block;
-        visibility: visible;
-        opacity: 1;
-        -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-        -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-        transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); } }
-    .state2 #header-nav.expanded {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-      -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-      -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-      transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      #main-header #logo {
+        float: left;
+        position: absolute; } }
+    .state1 #main-header #logo {
+      width: 149px;
       padding-top: 40px; }
-
-#collapsed-menu {
-  float: right; }
-  #collapsed-menu:hover {
-    cursor: pointer; }
-  @media screen and (max-height: 650px) and (orientation: landscape) {
-    #collapsed-menu {
-      display: none; } }
-  #collapsed-menu a {
-    display: block;
-    width: 23px;
-    height: 19px;
-    padding: 30px;
-    margin: -30px;
-    background: url("../images/menu.png") no-repeat 30px; }
-  .state1 #collapsed-menu {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
-    -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
-    transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
+      @media screen and (max-width: 650px) {
+        .state1 #main-header #logo {
+          width: 25%; } }
+      @media screen and (max-width: 480px) {
+        .state1 #main-header #logo {
+          margin: 0 auto;
+          padding: 2.5% 0; } }
+      @media screen and (max-width: 350px) {
+        .state1 #main-header #logo {
+          width: 20%; } }
+      @media screen and (max-height: 650px) and (orientation: landscape) {
+        .state1 #main-header #logo {
+          width: 18%;
+          margin: 0;
+          padding: 2% 0; } }
+    .state2 #main-header #logo {
+      width: 111px;
+      padding-top: 18px; }
+      @media screen and (max-width: 650px) {
+        .state2 #main-header #logo {
+          width: 20%; } }
+      @media screen and (max-width: 480px) {
+        .state2 #main-header #logo {
+          margin: 0 auto;
+          padding: 2.5% 0; } }
+      @media screen and (max-height: 650px) and (orientation: landscape) {
+        .state2 #main-header #logo {
+          width: 72px;
+          -webkit-transform: translateX(-5%);
+          -ms-transform: translateX(-5%);
+          transform: translateX(-5%);
+          padding-top: 5px; } }
+  #main-header #header-nav {
+    float: right; }
     @media screen and (max-width: 480px) {
-      .state1 #collapsed-menu {
-        display: none; } }
-  .state2 #collapsed-menu {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    transition: visibility 0s linear 0.3s, opacity 0.3s linear;
-    margin-top: 40px; }
-    @media screen and (max-width: 480px) {
-      .state2 #collapsed-menu {
-        display: none; } }
-    .state2 #collapsed-menu:hover {
+      #main-header #header-nav {
+        float: none;
+        margin: auto; } }
+    @media screen and (max-height: 650px) and (orientation: landscape) {
+      #main-header #header-nav {
+        float: right;
+        margin: 0; } }
+    #main-header #header-nav li {
+      float: left;
+      margin-left: 8px;
+      border-bottom: none; }
+      #main-header #header-nav li:first-child {
+        margin-left: 0; }
+      #main-header #header-nav li:last-child {
+        margin-right: -4px; }
+      #main-header #header-nav li.active-link, #main-header #header-nav li:hover {
+        border-bottom: 3px solid #DF3F54; }
+      .touch-device #main-header #header-nav li.no-touch {
+        border: none; }
+      #main-header #header-nav li a {
+        display: block;
+        margin: -30px -20px;
+        padding: 30px 24px; }
+        @media screen and (max-width: 480px) {
+          #main-header #header-nav li a {
+            padding: 30px 21px; } }
+    .state1 #main-header #header-nav {
+      display: inline-block;
+      margin-top: 85px; }
+      @media screen and (max-width: 480px) {
+        .state1 #main-header #header-nav {
+          margin: 0 auto; } }
+      @media screen and (max-height: 650px) and (orientation: landscape) {
+        .state1 #main-header #header-nav {
+          height: 100%;
+          margin-top: 0; }
+          .state1 #main-header #header-nav li {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%); } }
+      .state1 #main-header #header-nav.expanded {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear; }
+        @media screen and (max-width: 480px) {
+          .state1 #main-header #header-nav.expanded {
+            margin: 10% 0; } }
+    .state2 #main-header #header-nav {
+      display: none;
       visibility: hidden;
       opacity: 0;
       -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
       -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
       transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
-  .expanded + #collapsed-menu {
-    display: none; }
+      @media screen and (max-width: 480px) {
+        .state2 #main-header #header-nav {
+          display: inline-block;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+          -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+          transition: visibility 0s linear 0.3s, opacity 0.3s linear; } }
+      @media screen and (max-height: 650px) and (orientation: landscape) {
+        .state2 #main-header #header-nav {
+          display: inline-block;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+          -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+          transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%); } }
+      .state2 #main-header #header-nav.expanded {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        padding-top: 40px; }
+  #main-header #collapsed-menu {
+    float: right; }
+    #main-header #collapsed-menu:hover {
+      cursor: pointer; }
+    @media screen and (max-height: 650px) and (orientation: landscape) {
+      #main-header #collapsed-menu {
+        display: none; } }
+    #main-header #collapsed-menu a {
+      display: block;
+      width: 23px;
+      height: 19px;
+      padding: 30px;
+      margin: -30px;
+      background: url("../images/menu.png") no-repeat 30px; }
+    .state1 #main-header #collapsed-menu {
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+      -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+      transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
+      @media screen and (max-width: 480px) {
+        .state1 #main-header #collapsed-menu {
+          display: none; } }
+    .state2 #main-header #collapsed-menu {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      -ms-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      margin-top: 40px; }
+      @media screen and (max-width: 480px) {
+        .state2 #main-header #collapsed-menu {
+          display: none; } }
+      .state2 #main-header #collapsed-menu:hover {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+        -ms-transition: visibility 0s linear 0.2s, opacity 0.1s linear;
+        transition: visibility 0s linear 0.2s, opacity 0.1s linear; }
+    .expanded + #main-header #collapsed-menu {
+      display: none; }
 
 @media screen and (max-height: 650px) and (max-width: 700px) {
   #main-header {
