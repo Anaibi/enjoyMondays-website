@@ -3,14 +3,13 @@
 body 
   font-family: $font_family_1
   font-weight: $font_weight_light
-  +respond-to(small)
-    font-weight: $font_weight_middle
-  .touch-device &
-    font-weight: $font_weight_middle
   font-size: $base_font_size
+  text-rendering: optimizeLegibility 
   +respond-to(small)
+    font-weight: $font_weight_middle
     font-size: $base_font_size - 3
-  text-rendering: optimizeLegibility  
+  .touch-device &
+    font-weight: $font_weight_middle    
 h1 
   font-family: $font_family_2
   font-weight: $font_weight_bold

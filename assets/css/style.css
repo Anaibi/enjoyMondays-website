@@ -87,12 +87,10 @@ body {
   text-rendering: optimizeLegibility; }
   @media screen and (max-width: 480px) {
     body {
-      font-weight: 400; } }
+      font-weight: 400;
+      font-size: 13px; } }
   .touch-device body {
     font-weight: 400; }
-  @media screen and (max-width: 480px) {
-    body {
-      font-size: 13px; } }
 
 h1 {
   font-family: "Dosis", sans-serif;
@@ -122,6 +120,9 @@ a {
     #header-nav {
       font-size: 0.9em; } }
   @media screen and (max-width: 350px) {
+    #header-nav {
+      font-size: 0.7em; } }
+  @media screen and (max-width: smallest) {
     #header-nav {
       font-size: 0.7em; } }
   #header-nav .active-link, #main-header #header-nav li:hover {
@@ -347,6 +348,23 @@ footer {
 
   footer {
     height: 80px; } }
+@media screen and (max-width: smallest) {
+  #main-header {
+    height: 85px; }
+
+  #sections::before {
+    height: 85px; }
+  #sections section {
+    min-height: calc(100vh - 85px); }
+    #sections section.fullscreen {
+      max-height: calc(100vh - 85px); }
+    #sections section:last-child {
+      min-height: calc(100vh - 165px); }
+      #sections section:last-child.fullscreen {
+        max-height: calc(100vh - 165px); }
+
+  footer {
+    height: 80px; } }
 @media screen and (max-height: 650px) and (orientation: landscape) {
   #main-header {
     height: 60px; }
@@ -374,11 +392,7 @@ footer {
   clear: both;
   text-align: center;
   padding: 0 8% 12%; }
-@media screen and (max-width: 1350px) and (min-width: 650px) {
-  .content {
-    padding: 0 0 12%; } }
-
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 1350px) {
     .content {
       padding: 0 0 12%; } }
   @media screen and (max-height: 650px) and (orientation: landscape) {
@@ -420,6 +434,9 @@ footer {
           margin: 0 auto;
           padding: 2.5% 0; } }
       @media screen and (max-width: 350px) {
+        .state1 #main-header #logo {
+          width: 20%; } }
+      @media screen and (max-width: smallest) {
         .state1 #main-header #logo {
           width: 20%; } }
       @media screen and (max-height: 650px) and (orientation: landscape) {
@@ -626,6 +643,9 @@ footer {
   @media screen and (max-width: 350px) {
     .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
       width: 100%; } }
+  @media screen and (max-width: smallest) {
+    .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
+      width: 100%; } }
   @media screen and (max-height: 650px) and (orientation: landscape) {
     .home .header-wrapper, .work .header-wrapper, .about .header-wrapper, .contact .header-wrapper {
       padding: 3% 0; } }
@@ -679,6 +699,9 @@ footer {
       width: 100%;
       margin: 0 auto 10% auto; } }
   @media screen and (max-width: 350px) {
+    .grid.three .tile {
+      width: 100%; } }
+  @media screen and (max-width: smallest) {
     .grid.three .tile {
       width: 100%; } }
   @media screen and (max-height: 650px) and (orientation: landscape) {
