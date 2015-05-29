@@ -603,11 +603,11 @@ footer {
   #sections::before {
     height: 0; }
   #sections section.fullscreen:last-child {
-    max-height: calc(100vh - 80px);
-    min-height: calc(100vh - 80px); }
+    max-height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px); }
 
   footer {
-    height: 80px; } }
+    height: 60px; } }
 #sections::before {
   content: " ";
   display: block;
