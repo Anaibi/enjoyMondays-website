@@ -82,7 +82,7 @@ $(function() {
   //----------------------------------------- WAYPOINTS
   function doWaypoints() {
 
-    $('.section').each(function() {
+    $('#sections section').each(function() {
 
       new Waypoint({
         element: this,

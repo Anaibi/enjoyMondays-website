@@ -8,16 +8,16 @@
   #sections 
     &::before
       height: $h 
-    .section 
+    section 
       min-height: $h1
       &.fullscreen
         max-height: $h1
-      &.last 
+      &:last-child 
         $th: $h + $f
         min-height: $h2
         &.fullscreen
           max-height: $h2            
-  .footer 
+  footer 
     height: $f
        
 // ----------------------------------- HTML and BODY
@@ -69,11 +69,9 @@ p
 
 // ------------------------------------- MAIN HEADER
 +mainHeader
-
 +respond-to(landscape)
   @if $useSideMenu
     +sideMenu($header_h_4,$footer_h_3)
-
 +respond-to(small-height, max)
   @if $useStaticMenu
     +staticMenu($footer_h_2)
@@ -86,7 +84,7 @@ p
     width: 100%
   
 // ----------------------------------------- SECTION
-.section
+#sections section
   height: 100% 
   width: 100%
   text-align: right
@@ -113,4 +111,5 @@ p
 +grid
 
 // ------------------------------------------ FOOTER
-+footer
+footer
+  +footer
