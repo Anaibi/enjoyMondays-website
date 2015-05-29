@@ -30,17 +30,15 @@
         margin-top: 1%
         font-size: .5em
         line-height: 1.1
-
 =imgAnimation
   .tile
-    &:hover
-      img
-        +transform(translate(0, -33px), scale(0.55))
-        +respond-to(small)
-          +transform(translate(0 , -50px), scale(0.8))
     img
       +transition(transform .4s)
-
+    &:hover
+      img
+        +transform(translate(0, -33px) scale(0.55))
+        +respond-to(small)
+          +transform(translate(0 , -50px) scale(0.8))
 =tileLink
   .tile
     &:hover

@@ -205,19 +205,19 @@ footer .social-links {
         margin-top: 1%;
         font-size: 0.5em;
         line-height: 1.1; } }
-.work #portfolio .tile:hover img {
-  -webkit-transform: translate(0, -33px), scale(0.55);
-  -ms-transform: translate(0, -33px), scale(0.55);
-  transform: translate(0, -33px), scale(0.55); }
-  @media screen and (max-width: 480px) {
-    .work #portfolio .tile:hover img {
-      -webkit-transform: translate(0, -50px), scale(0.8);
-      -ms-transform: translate(0, -50px), scale(0.8);
-      transform: translate(0, -50px), scale(0.8); } }
 .work #portfolio .tile img {
   -webkit-transition: transform 0.4s;
   -ms-transition: transform 0.4s;
   transition: transform 0.4s; }
+.work #portfolio .tile:hover img {
+  -webkit-transform: translate(0, -33px) scale(0.55);
+  -ms-transform: translate(0, -33px) scale(0.55);
+  transform: translate(0, -33px) scale(0.55); }
+  @media screen and (max-width: 480px) {
+    .work #portfolio .tile:hover img {
+      -webkit-transform: translate(0, -50px) scale(0.8);
+      -ms-transform: translate(0, -50px) scale(0.8);
+      transform: translate(0, -50px) scale(0.8); } }
 .work #portfolio .tile:hover {
   cursor: pointer; }
 .work #portfolio .tile a {
