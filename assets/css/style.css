@@ -152,7 +152,7 @@ footer .site-info {
   font-weight: 700;
   font-size: 0.95em; }
   footer .site-info a {
-    font-weight: font_weight_boldest; }
+    font-weight: 900; }
 footer .social-links {
   font-size: 0; }
 
@@ -735,6 +735,9 @@ footer .site-info {
       height: 40%; }
       footer .site-info p {
         padding: 0; } }
+  footer .site-info a:hover {
+    -webkit-filter: contrast(2);
+    filter: contrast(2); }
 footer .social-links {
   float: right; }
   @media screen and (max-width: 480px) {
@@ -746,7 +749,9 @@ footer .social-links {
     display: inline-block;
     padding-left: 6px; }
     footer .social-links li:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      -webkit-filter: sepia(0.6);
+      filter: sepia(0.6); }
     footer .social-links li:first-child {
       padding-left: 0; }
     footer .social-links li a {

@@ -6,7 +6,7 @@ Falta revisar por devices y detalles disenyo.
 
 Limpiando / reordenando codigo.
 
-handdlebars
+handlebars
 
 do content
 
