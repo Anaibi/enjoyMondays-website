@@ -1,0 +1,38 @@
+=logo($w1, $w2)
+  float: left
+  max-width: $w1
+  +transition(all .3s)
+  +respond-to(small)
+    display: block
+    float: none
+  +respond-to(landscape)
+    float: left
+    position: absolute
+  // ----------------------------- STATE 1
+  .state1 &
+    width: $w1
+    padding-top: 40px
+    +respond-to(medium)
+      width: 25%
+    +respond-to(small)
+      margin: 0 auto
+      padding: 2.5% 0
+    +respond-to(smallest)
+      width: 20%
+    +respond-to(landscape)
+      width: 18%
+      margin: 0
+      padding: 2% 0
+  // ----------------------------- STATE 2
+  .state2 &
+    width: $w2
+    padding-top: 18px
+    +respond-to(medium)
+      width: 20%
+    +respond-to(small)
+      margin: 0 auto
+      padding: 2.5% 0
+    +respond-to(landscape)
+      width: 72px
+      +transform(translateX(-5%))
+      padding-top: 5px
