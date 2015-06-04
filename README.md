@@ -1,14 +1,10 @@
 # enjoyMondays-website
 
-version en general ok. 
+subiendo online, 2.1 junio 2015
 
-Falta revisar por devices y detalles disenyo.
-
-Limpiando / reordenando codigo.
-
-handlebars
-
-do content
+TODO
+revisar/update works
+handlebars x dynamic content?
 
 
 
