@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -15,10 +15,14 @@
   <link rel="stylesheet" href="assets2/css/supersized.min.css">
   <link rel="stylesheet" href="assets2/theme/supersized.shutter.css">
   
+  <!-- Scroll Effects -->
+  <link rel="stylesheet" href="assets2/scrollEffects/css/style.css">
+  <script src="assets2/scrollEffects/js/modernizr.js"></script> <!-- Modernizr --> 
+
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis:600|Lato:100,400,700,900:latin">
 </head>
 
-<body>
+<body data-hijacking="on" data-animation="rotate">
   <div id="site" class="state1">
     <div id="main-header">
     <header class="container">
@@ -45,7 +49,7 @@
 
     <div id="sections"> 
 
-      <section id="home" class="home fullscreen">
+      <section id="home" class="home fullscreen cd-section visible">
         <div class="container">
           <div class="header-wrapper">
             <header>  
@@ -61,7 +65,7 @@
         </div>                 
       </section>
 
-      <section id="work" class="work">
+      <section id="work" class="work cd-section">
         <div class="container">
           <div class="header-wrapper">
             <header>
@@ -81,7 +85,7 @@
         </div>
       </section>
 
-      <section id="about" class="about">
+      <section id="about" class="about cd-section">
         <div class="container">
           <div class="header-wrapper">
             <header>
@@ -114,7 +118,7 @@
         </div>
       </section>
           
-      <section id="contact" class="contact fullscreen">
+      <section id="contact" class="contact fullscreen cd-section">
         <div class="container">
           <div class="header-wrapper">
             <header>
@@ -179,6 +183,10 @@
   <script src="assets2/js/main.js"></script>
   <script src="assets2/js/supersized.3.2.5.js"></script>
   <script src="assets2/theme/supersized.shutter.js"></script> 
+  <!-- Scroll Effects -->
+  <script src="assets2/scrollEffects/js/velocity.min.js"></script>
+  <script src="assets2/scrollEffects/js/velocity.ui.min.js"></script>
+  <script src="assets2/scrollEffects/js/main.js"></script> 
 
   </body>
 </html>

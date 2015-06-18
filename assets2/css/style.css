@@ -304,6 +304,7 @@ p {
   #sections::before {
     height: 111px; }
   #sections section {
+    top: 111px;
     min-height: calc(100vh - 111px); }
     #sections section.fullscreen {
       max-height: calc(100vh - 111px); }
@@ -321,6 +322,7 @@ p {
   #sections::before {
     height: 100px; }
   #sections section {
+    top: 100px;
     min-height: calc(100vh - 100px); }
     #sections section.fullscreen {
       max-height: calc(100vh - 100px); }
@@ -338,6 +340,7 @@ p {
   #sections::before {
     height: 85px; }
   #sections section {
+    top: 85px;
     min-height: calc(100vh - 85px); }
     #sections section.fullscreen {
       max-height: calc(100vh - 85px); }
@@ -355,6 +358,7 @@ p {
   #sections::before {
     height: 85px; }
   #sections section {
+    top: 85px;
     min-height: calc(100vh - 85px); }
     #sections section.fullscreen {
       max-height: calc(100vh - 85px); }
@@ -372,6 +376,7 @@ p {
   #sections::before {
     height: 60px; }
   #sections section {
+    top: 60px;
     min-height: calc(100vh - 60px); }
     #sections section.fullscreen {
       max-height: calc(100vh - 60px); }
@@ -758,3 +763,4 @@ footer .social-links {
       width: 32px;
       height: 32px; }
 
+/*# sourceMappingURL=style.css.map */

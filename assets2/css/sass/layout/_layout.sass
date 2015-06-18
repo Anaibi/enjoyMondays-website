@@ -5,10 +5,12 @@
   $h3: calc(100vh - #{$f})
   #main-header  
     height: $h 
-  #sections 
+  #sections
     &::before
       height: $h 
-    section 
+    section
+      // scrollEffects position absolute need defined top
+      top: $h
       min-height: $h1
       &.fullscreen
         max-height: $h1

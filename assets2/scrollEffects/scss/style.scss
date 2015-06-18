@@ -1,0 +1,197 @@
+@import '../bourbon/bourbon'; // http://bourbon.io/
+
+@import '../partials/variables'; // colors, fonts etc...
+
+@import '../partials/mixins'; // custom mixins
+
+@import '../partials/layout'; // responsive grid and media queries
+
+// -------------------------------- 
+// testing. Measures from css/sass/settings.sass
+$header_h_1: 111px;
+$header_h_2: 100px;
+$header_h_3: 85px;
+$header_h_4: 60px;
+
+$footer_h_1: 100px;
+$footer_h_2: 80px;
+$footer_h_3: 60px;
+
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+
+body {
+	@include font-smoothing;
+
+	&::before {
+		/* never visible - this is used in jQuery to check the current MQ */ 
+		content: 'mobile';
+		display: none;
+	}
+
+	@include MQ(L) {
+		
+		&::before {
+			/* never visible - this is used in jQuery to check the current MQ */ 
+			content: 'desktop';
+		}
+	}
+}
+
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+
+body[data-hijacking="on"] {
+	
+	@include MQ(L) {
+		overflow: hidden;
+	}
+}
+
+.cd-section {
+	height: 100vh;
+
+	&:first-of-type > div {
+
+		&::before {
+			/* alert -> all scrolling effects are not visible on small devices */
+			content: 'Effects not visible on mobile!';
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 20px;
+			z-index: 2;	
+			font-weight: bold;
+			font-size: 1.3rem;
+			text-transform: uppercase;
+			color: tint($color-1, 30%);
+		}
+	}
+
+
+	[data-animation="parallax"] & > div,
+	[data-animation="fixed"] & > div,
+	[data-animation="opacity"] & > div {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	[data-animation="parallax"] &:first-of-type > div,
+	[data-animation="fixed"] &:first-of-type > div,
+	[data-animation="opacity"] &:first-of-type > div {
+		background-image: url('../img/img-1.jpg');
+	}
+
+	[data-animation="parallax"] &:nth-of-type(2) > div,
+	[data-animation="fixed"] &:nth-of-type(2) > div,
+	[data-animation="opacity"] &:nth-of-type(2) > div {
+		background-image: url('../img/img-2.jpg');
+	}
+
+	[data-animation="parallax"] &:nth-of-type(3) > div,
+	[data-animation="fixed"] &:nth-of-type(3) > div,
+	[data-animation="opacity"] &:nth-of-type(3) > div {
+		background-image: url('../img/img-3.jpg');
+	}
+
+	[data-animation="parallax"] &:nth-of-type(4) > div,
+	[data-animation="fixed"] &:nth-of-type(4) > div,
+	[data-animation="opacity"] &:nth-of-type(4) > div {
+		background-image: url('../img/img-4.jpg');
+	}
+
+	[data-animation="parallax"] &:nth-of-type(5) > div,
+	[data-animation="fixed"] &:nth-of-type(5) > div,
+	[data-animation="opacity"] &:nth-of-type(5) > div {
+		background-image: url('../img/img-5.jpg');
+	}
+
+	@include MQ(L) {
+
+		[data-hijacking="on"] & {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+
+			> div {
+				visibility: visible;
+			}
+		}
+
+		[data-hijacking="off"] & > div {
+			opacity: 0;
+		}
+
+		[data-animation="rotate"] & {
+			/* enable a 3D-space for children elements */
+			@include perspective(1800px);
+		}
+
+		[data-hijacking="on"][data-animation="rotate"] &:not(:first-of-type) {
+			@include perspective-origin(center 0);
+		}
+
+		[data-animation="scaleDown"] & > div,
+		[data-animation="gallery"] & > div,
+		[data-animation="catch"] & > div {
+			// box-shadow: 0 0 40px rgba(darken($color-1, 10%), .4);
+			box-shadow: 0 0 0 rgba(darken($color-1, 10%), .4);
+		}
+
+		[data-animation="opacity"] &.visible > div {
+			z-index: 1;
+		}
+	}
+}
+
+@include MQ(L) {
+	.cd-section:first-of-type > div::before {
+		display: none;
+	}
+}
+
+.cd-section > div {
+
+	@include MQ(L) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		
+		/* Force Hardware Acceleration */
+		@include transform(translateZ(0));
+		@include backface-visibility(hidden);
+
+		[data-hijacking="on"] & {
+			position: absolute;
+		}
+
+		[data-animation="rotate"] & {
+			@include transform-origin(center bottom);
+		}
+	}
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
