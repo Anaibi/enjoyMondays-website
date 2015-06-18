@@ -106,12 +106,18 @@ $(function() {
 
   //--------------------------------------------- updateState
   function updateState(direction, section) {
-
-    if (direction === 'up' && section === 'home') {
-      $('#site').addClass('state1').removeClass('state2');
+    console.log(section);
+    if (direction === 'up') {
+      $('#'+section).removeClass('rotate-in').addClass('rotate-in');
+      if (section === 'home') {
+        $('#site').addClass('state1').removeClass('state2');
+      }
     } 
-    else if (direction === 'down' && section === 'work') {
-      $('#site').addClass('state2').removeClass('state1');
+    else if (direction === 'down') {
+      $('#'+section).prev().addClass('rotate-out');
+      if (section === 'work') {
+        $('#site').addClass('state2').removeClass('state1');
+      }
     }
   }
 

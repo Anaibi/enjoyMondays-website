@@ -1,0 +1,31 @@
+#sections {
+  background-color: black; }
+  #sections .rotate-out,
+  #sections .rotate-in {
+    background-color: black;
+    perspective: 900px;
+    perspective-origin: 60% 25%; }
+    #sections .rotate-out .container,
+    #sections .rotate-in .container {
+      opacity: 1;
+      -webkit-transition: transform 1s, opacity 1.5s;
+      -ms-transition: transform 1s, opacity 1.5s;
+      transition: transform 1s, opacity 1.5s;
+      -webkit-transform-origin: 0% 100%;
+      transform-origin: 0% 100%; }
+  #sections .rotate-out .container {
+    opacity: 0;
+    -webkit-transform: translateY(-100%) scale(1) rotateX(90deg);
+    -ms-transform: translateY(-100%) scale(1) rotateX(90deg);
+    transform: translateY(-100%) scale(1) rotateX(90deg); }
+  #sections .rotate-in .container {
+    opacity: 1;
+    -webkit-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    box-shadow: black 0px 0px 0px 0px;
+    -webkit-transform: translateY(0px) scale(1);
+    -ms-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1); }
+
+/*# sourceMappingURL=style.css.map */
